@@ -1,0 +1,31 @@
+node ("${BUILD_SLAVE}") {
+  // get the jenkinsfile root directory
+  def rootDir = pwd()
+  
+  def JAVA_HOME = tool 'jdk180' 
+  env.PATH = "${JAVA_HOME}/bin:${env.PATH}" 
+  sh 'which java' 
+  sh 'java -version'
+  
+  env.DOCKER_HOST="tcp://localhost:4243"
+  
+  // load external groovy scripts
+  def build
+  def checkout
+  def deploy
+  dir('tmp') {
+		git url: "${GIT_URL}", branch: "${GIT_BRANCH}"
+		checkout = load 'src/main/jenkins/checkout.groovy'
+		build = load 'src/main/jenkins/build.groovy'
+		deploy = load 'src/main/jenkins/deploy.groovy'
+    }
+  
+  // check out code from git
+  checkout.gitCheckout()
+  
+  // build the git project 
+  build.buildProject()
+  
+  deploy.deployService()
+ 
+}

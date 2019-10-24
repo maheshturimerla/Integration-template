@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.att.dets</groupId>
+	<artifactId>Integration-testing</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>CCC API Automation</name>
+	<!-- <packaging>jar</packaging> -->
+
+	<distributionManagement>
+		<repository>
+			<id>digitalexp-nexus</id>
+			<name>DigitalExp Release Repository</name>
+			<url>http://mavencentral.it.att.com:8084/nexus/content/repositories/digitalexp-releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>digitalexp-nexus</id>
+			<name>DigitalExp Snapshot Repository</name>
+			<url>http://mavencentral.it.att.com:8084/nexus/content/repositories/digitalexp-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>digitalexp</id>
+			<name>digitalexp</name>
+			<url>http://mavencentral-read.web.att.com/nexus/content/repositories/digitalexp-repository/</url>
+			<snapshots>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>att-repository-nexus</id>
+			<name>att-public-group</name>
+			<url>http://mavencentral-read.web.att.com/nexus/content/repositories/att-public-group/</url>
+			<snapshots>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>att-public-nexus</id>
+			<name>att-public-group</name>
+			<url>http://mavencentral.it.att.com:8084/nexus/content/repositories/att-public-group/</url>
+			<snapshots>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>digitalexp</id>
+			<name>digitalexp</name>
+			<url>http://mavencentral-read.web.att.com/nexus/content/repositories/digitalexp-repository/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>att-repository-nexus</id>
+			<name>att-public-group</name>
+			<url>http://mavencentral.it.att.com:8084/nexus/content/repositories/att-public-group/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+
+		<maven-resources-plugin-version>2.6</maven-resources-plugin-version>
+		<build-helper-maven-plugin-version>1.7</build-helper-maven-plugin-version>
+
+		<java.version>1.8</java.version>
+		<gpg.skip>true</gpg.skip>
+		<e2e-lifecycle-mapping.version>1.0.0</e2e-lifecycle-mapping.version>
+		<sdk.java.rest>6.2.0.4</sdk.java.rest>
+		<jacoco.version>0.7.9</jacoco.version>
+		<pmd.version>3.8</pmd.version>
+		<findbugs.version>3.0.4</findbugs.version>
+		<jxr-plugin.version>2.3</jxr-plugin.version>
+		<junit.version>4.12</junit.version>
+		<assertj.version>3.8.0</assertj.version>
+		<gson.version>2.8.1</gson.version>
+		<groovy.version>2.4.12</groovy.version>
+		<logback.version>1.2.3</logback.version>
+		<config.version>1.3.1</config.version>
+		<restassured.version>2.9.0</restassured.version>
+		<jsonassert.version>0.4.9</jsonassert.version>
+		<skipUTs>true</skipUTs>
+		<gpg-plugin.version>1.6</gpg-plugin.version>
+		<surefire-plugin.version>2.12.4</surefire-plugin.version>
+		<failsafe-plugin.version>2.20</failsafe-plugin.version>
+		<snakeyaml.version>1.18</snakeyaml.version>
+		<guava.version>23.0</guava.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<json-io.version>4.9.12</json-io.version>
+		<jcabi-matchers.version>1.4</jcabi-matchers.version>
+		<jackson.version>2.9.0</jackson.version>
+
+		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+		<sonar.java.binaries>${project.basedir}/target/test-classes</sonar.java.binaries>
+		<sonar.junit.reportPaths>${project.basedir}/target/surefire-reports</sonar.junit.reportPaths>
+		<sonar.projectBaseDir>${project.basedir}</sonar.projectBaseDir>
+		<sonar.jacoco.reportPaths>${project.basedir}/target/jacoco-it.exec</sonar.jacoco.reportPaths>
+
+		<sonar.language>java</sonar.language>
+
+	</properties>
+
+	<developers>
+		<developer>
+			<id>${userId}</id>
+		</developer>
+	</developers>
+	<dependencies>
+ 		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>3.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-path</artifactId>
+			<version>3.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>3.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.typesafe</groupId>
+			<artifactId>config</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.doctusoft</groupId>
+			<artifactId>json-schema-java7</artifactId>
+			<version>1.4.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.json</groupId>
+					<artifactId>json</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160810</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.skyscreamer</groupId>
+			<artifactId>jsonassert</artifactId>
+			<version>1.5.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-joda</artifactId>
+			<version>2.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.sonar.plugins</groupId>
+			<artifactId>sonar-surefire-plugin</artifactId>
+			<version>3.3.2</version>
+			<scope>provided</scope>
+		</dependency>
+ 		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>3.0.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.18</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<!-- <sourceDirectory>src/test/java</sourceDirectory> -->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>-Xmx1024m -XX:MaxPermSize=256m -XX:-UseGCOverheadLimit
+						-Dsun.lang.ClassLoader.allowArraySyntax=true</argLine>
+					<includes>
+						<include>**/*Test.java</include>
+						<include>**/*TestExecutor.java</include>
+					</includes>
+					<excludes>
+						<exclude>**/*_IT.java</exclude>
+						<exclude>**/*_DIT.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.9</version>
+				<configuration>
+					<destFile>${sonar.jacoco.reportPaths}</destFile>
+					<append>true</append>
+				</configuration>
+				<executions>
+					<execution>
+						<id>pre-test</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<!-- <configuration> <resources> <resource> <directory>src/test/java</directory> 
+							</resource> </resources> </configuration> -->
+					</execution>
+					<execution>
+						<id>post-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+ 			</plugin>
+		</plugins>
+	</build>
+</project>

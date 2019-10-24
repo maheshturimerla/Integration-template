@@ -1,0 +1,17 @@
+{
+	"sales_profile_lookup": {
+	    "namedcache": "profilelookup",
+		"contenttype": "application/json",
+		"version": "1.0",
+		"cachettl": 10800,
+		"backingmapttl": 31536000,
+		"maxlength": 10000,
+		"strictvalidation": "false",
+		"profilelookup": {
+			"versions": {
+				"v1": {
+				}
+			}
+		}
+	}
+}

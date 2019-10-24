@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: ccc-cosc
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    app: ccc-cosc
+  template:
+    metadata:
+      labels:
+        app: ccc-cosc
+    spec:
+      serviceAccount: ajsc-ccc
+      containers:
+      - name: ccc-cosc
+        image: local/com-att-ajsc/ccc-cosc:latest
+        imagePullPolicy: Always
+        ports:
+         - containerPort: 8080

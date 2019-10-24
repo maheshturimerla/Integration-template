@@ -1,0 +1,99 @@
+{
+"sales_cart": {
+	
+		"namedcache": "cart",
+		"contenttype": "application/json",
+		"version": "1.0",
+		"cachettl": 10800,
+		"backingmapttl": 5184000,
+		"maxlength": 2097152,
+		"strictvalidation": "false",
+		
+		"header": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"common_cart_info": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"wireless_metadata": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"wireline_metadata": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"dfw_metadata": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"transient": {
+			"cachettl": 10800,
+			"backingmapttl": -1,
+		    "versions": {
+				"v1": {
+				}
+			}
+		},
+		"hub": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"wireline": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"wireless": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"dfw": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"wireless_shipping": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"dfw_shipping": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"shipment_dates": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"wireline_voip_info": {
+			"versions": {
+				"v1": {
+				}
+			}
+		}
+	}
+}

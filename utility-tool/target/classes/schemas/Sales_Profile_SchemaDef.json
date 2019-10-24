@@ -1,0 +1,62 @@
+{
+	"sales_profile": {
+	
+		"namedcache": "profile",
+		"contenttype": "application/json",
+		"version": "1.0",
+		"cachettl": 10800,
+		"backingmapttl": 31536000,
+		"maxlength": 2097152,
+		"strictvalidation": "false",
+		
+		"header": {
+			"versions": {
+				"v1": {}
+			}
+		},
+		"transient": {
+			"cachettl": 10800,
+			"backingmapttl": -1,
+			"versions": {
+				"v1": {}
+			}
+		},
+		"order": {
+			"versions": {
+				"v1": {}
+			}
+		},
+		"customer_info": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"private_customer_info": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"customer_auth_info": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"session_info": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"geography": {
+			"versions": {
+				"v1": {
+				}
+			}
+		}
+	}
+}

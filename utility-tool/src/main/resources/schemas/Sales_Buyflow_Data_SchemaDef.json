@@ -1,0 +1,117 @@
+{
+	"sales_buyflow_data": {
+	
+		"namedcache": "buyflowData",
+		"contenttype": "application/json",
+		"version": "1.0",
+		"cachettl": 10800,
+		"backingmapttl": 20000,
+		"maxlength": 2097152,
+		"strictvalidation": "false",
+		
+		"transient": {
+			"cachettl": 10800,
+			"backingmapttl": -1,
+		  	"versions": {
+				"v1": {
+				}
+			}
+		},
+		"wireline_session_data": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"wireless_session_data": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+				}
+			}
+		},		
+		"iucsp": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"customer_login_profile": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"wireless_account_profile_info": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+				}
+			}
+		},		
+		"itpa": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"facility_check_info": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"wireline_porting_info": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"wireless_upgrade_info": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"common_account_profile_info": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"iap": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"dtvnow_session_data": {
+			"backingmapttl": 14400,
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+        "common_session_info": {
+            "backingmapttl": 14400,
+            "versions": {
+                "v1": {
+                }
+            }
+        }		
+	}
+}

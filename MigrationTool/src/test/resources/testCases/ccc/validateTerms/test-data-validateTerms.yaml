@@ -1,0 +1,1017 @@
+
+testCases: 
+  validateTermsAccessoryFlowGETResponse:
+    body: ""
+    cookies:
+      uuid: "accessoryFlow"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsAccessoryFlowGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/orderterms/wireless/accessoryFlow"
+    validationType: actual
+  validateTermsAccessoryFlowPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateTermsRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "accessoryFlow"
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsAccessoryFlowPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/orderterms/wireless/accessoryFlow"
+    validationType: actual
+  validateTermsDeviceOnlyGETResponse:
+    body: ""
+    cookies:
+      uuid: "device-only"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsDeviceOnlyGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/orderterms/wireless/device-only"
+    validationType: actual
+  validateTermsDeviceOnlyPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateTermsRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "device-only"
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsDeviceOnlyPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/orderterms/wireless/device-only"
+    validationType: actual
+  validateTermsSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/orderterms/wireless/smartphone-next-term-downpayment-insurance-tablet-accessory"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.terms[0].type: "DEV"
+     - payload.terms[0].accepted: false
+     - payload.terms[0].label: "Retail Installment Agreement"
+    validationType: partial
+  validateTermsSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateTermsRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/orderterms/wireless/smartphone-next-term-downpayment-insurance-tablet-accessory"
+    validationType: actual
+  validateTermsSmartphoneMultiDeviceEnjoyGETResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsSmartphoneMultiDeviceEnjoyGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/orderterms/wireless/smartphone-multi-device-enjoy"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.terms[0].type: "DEV"
+     - payload.terms[0].accepted: false
+     - payload.terms[0].label: "Retail Installment Agreement"
+    validationType: partial
+  validateTermsSmartphoneMultiDeviceEnjoyPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateTermsRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsSmartphoneMultiDeviceEnjoyPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/orderterms/wireless/smartphone-multi-device-enjoy"
+    validationType: actual
+  validateTermsNewPostPaidDownPaymentGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsNewPostPaidDownPaymentGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/orderterms/wireless/new-postpaid-down-payment"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.terms[0].type: "DEV"
+     - payload.terms[0].accepted: false
+     - payload.terms[0].label: "Retail Installment Agreement"
+     - payload.terms[0].lobType: "wireless"
+    validationType: partial
+  validateTermsNewPostPaidDownPaymentPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateTermsRequest.json    
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsNewPostPaidDownPaymentPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/orderterms/wireless/new-postpaid-down-payment"
+    validationType: actual
+
+  validateBillingPreferenceProvideSMBBusinessAppsGETResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-business-apps"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideSMBBusinessAppsGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/smb-provide-business-apps"
+    validationType: actual
+  validateBillingPreferenceProvideSMBBusinessAppsPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "smb-provide-business-apps"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideSMBBusinessAppsPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/smb-provide-business-apps"
+    validationType: actual
+  validateBillingPreferenceProvideSmbDtvPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    cookies:
+      uuid: "smb-provide-new-dtv-flow"
+    headers:
+      Referer: "terms.html"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideSmbDtvPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/smb-provide-new-dtv-flow"
+    validationType: actual
+
+  validateBillingPreferenceProvideSmbDtvGETResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-new-dtv-flow"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideSmbDtvGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/smb-provide-new-dtv-flow"
+    validationType: actual
+  validateBillingPreferenceProvideSmbDtvFailurePOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    cookies:
+      uuid: "smb-provide-new-dtv-flow-failure"
+    headers:
+      Referer: "terms.html"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideSmbDtvFailurePOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/smb-provide-new-dtv-flow-failure"
+    validationType: actual
+
+  validateBillingPreferenceProvideSmbDtvFailureGETResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-new-dtv-flow-failure"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideSmbDtvFailureGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/smb-provide-new-dtv-flow-failure"
+    validationType: actual
+
+
+  validateBillingPreferenceProvideHsiaGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-hsia"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideHsiaGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-hsia"
+    validationType: actual
+  validateBillingPreferenceProvideHsiaPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "provide-hsia"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideHsiaPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-hsia"
+    validationType: actual
+  validateBillingPreferenceProvideSmbDslPotsGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-pots"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideSmbDslPotsGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-smb-dsl-pots"
+    validationType: actual
+  validateBillingPreferenceProvideSmbDslPotsPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "provide-smb-dsl-pots"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideSmbDslPotsPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-smb-dsl-pots"
+    validationType: actual
+  validateBillingPreferenceProvideDtvGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-dtv"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideDtvGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-dtv"
+    validationType: actual
+
+
+  validateBillingPreferenceProvideDtvPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "provide-dtv"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideDtvPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-dtv"
+    validationType: actual
+  validateBillingPreferenceAccessoryFlowGETResponse:
+    body: ""
+    cookies:
+      uuid: "accessoryFlow"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceAccessoryFlowGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/accessoryFlow"
+    validationType: actual
+  validateBillingPreferenceAccessoryFlowPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "accessoryFlow"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceAccessoryFlowPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/accessoryFlow"
+    validationType: actual
+  validateBillingPreferenceDeviceOnlyGETResponse:
+    body: ""
+    cookies:
+      uuid: "device-only"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceDeviceOnlyGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/device-only"
+    validationType: actual
+  validateBillingPreferenceDeviceOnlyPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "device-only"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceDeviceOnlyPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/device-only"
+    validationType: actual
+  validateBillingPreferenceSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/smartphone-next-term-downpayment-insurance-tablet-accessory"
+    validationType: actual
+
+
+  validateBillingPreferenceSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/smartphone-next-term-downpayment-insurance-tablet-accessory"
+    validationType: actual
+  validateBillingPreferenceSmartphoneMultiDeviceEnjoyGETResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceSmartphoneMultiDeviceEnjoyGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/smartphone-multi-device-enjoy"
+    validationType: actual
+  validateBillingPreferenceSmartphoneMultiDeviceEnjoyPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json    
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceSmartphoneMultiDeviceEnjoyPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/smartphone-multi-device-enjoy"
+    validationType: actual
+  validateBillingPreferenceNewPostPaidDownPaymentGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceNewPostPaidDownPaymentGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/new-postpaid-down-payment"
+    validationType: actual
+  validateBillingPreferenceNewPostPaidDownPaymentPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceNewPostPaidDownPaymentPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/new-postpaid-down-payment"
+    validationType: actual
+  validateBillingPreference4PostpaidWirelessCreditCGETResponse:
+    body: ""
+    cookies:
+      uuid: "4-postpaid-wireless-creditC-deposit"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreference4PostpaidWirelessCreditCGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/4-postpaid-wireless-creditC-deposit"
+    validationType: actual
+
+
+  validateBillingPreference4PostpaidWirelessCreditCPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "4-postpaid-wireless-creditC-deposit"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreference4PostpaidWirelessCreditCPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/4-postpaid-wireless-creditC-deposit"
+    validationType: actual
+  validateBillingPreferenceNewPostpaidNextDPCreditCGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-nextDP-creditC"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceNewPostpaidNextDPCreditCGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/new-postpaid-nextDP-creditC"
+    validationType: actual
+
+
+  validateBillingPreferenceNewPostpaidNextDPCreditCPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "new-postpaid-nextDP-creditC"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceNewPostpaidNextDPCreditCPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/new-postpaid-nextDP-creditC"
+    validationType: actual
+  validateTerms4PostpaidWirelessCreditCGETResponse:
+    body: ""
+    cookies:
+      uuid: "4-postpaid-wireless-creditC-deposit"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTerms4PostpaidWirelessCreditCGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/orderterms/wireless/4-postpaid-wireless-creditC-deposit"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.terms[0].type: "DEV"
+     - payload.terms[0].accepted: false
+     - payload.terms[0].label: "Retail Installment Agreement"
+    validationType: partial
+
+  validateTerms4PostpaidWirelessCreditCPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateTermsRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "4-postpaid-wireless-creditC-deposit"
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTerms4PostpaidWirelessCreditCPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/orderterms/wireless/4-postpaid-wireless-creditC-deposit"
+    validationType: actual
+  validateTermsNewPostpaidNextDPCreditCGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-nextDP-creditC"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsNewPostpaidNextDPCreditCGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/orderterms/wireless/new-postpaid-nextDP-creditC"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.terms[0].type: "DEV"
+     - payload.terms[0].accepted: false
+     - payload.terms[0].label: "Retail Installment Agreement"
+    validationType: partial
+  validateTermsNewPostpaidNextDPCreditCPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateTermsRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "new-postpaid-nextDP-creditC"
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsNewPostpaidNextDPCreditCPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/orderterms/wireless/new-postpaid-nextDP-creditC"
+    validationType: actual
+  validateBillingPreferenceNewDtvHsiaVoipHighRiskGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceNewDtvHsiaVoipHighRiskGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/new-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: actual
+  validateBillingPreferenceNewDtvHsiaVoipHighRiskPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceNewDtvHsiaVoipHighRiskPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/new-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: actual
+  validateBillingPreferenceModifyDtvRtpProductsGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-rtpproducts"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifyDtvRtpProductsGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-dtv-rtpproducts"
+    validationType: actual
+  validateBillingPreferenceModifyDtvRtpProductsPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "modify-dtv-rtpproducts"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifyDtvRtpProductsPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-dtv-rtpproducts"
+    validationType: actual
+  validateBillingPreferenceModifyIptvAddReceiverSelfInstallHybridGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifyIptvAddReceiverSelfInstallHybridGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    validationType: actual
+  validateBillingPreferenceModifyIptvAddReceiverSelfInstallHybridPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifyIptvAddReceiverSelfInstallHybridPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    validationType: actual
+  validateTermsNewCitiFlowGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-citi-flow"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsNewCitiFlowGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/orderterms/wireless/new-citi-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.terms[0].type: "WCA"
+     - payload.terms[0].accepted: false
+     - payload.terms[0].label: "Wireless Customer Agreement"
+     - payload.terms[0].termsKey: "WIRELESS_CUSTOMER_AGREEMENT"
+    validationType: partial
+
+  validateTermsNewCitiFlowPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateTermsRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "new-citi-flow"
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsNewCitiFlowPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/orderterms/wireless/new-citi-flow"
+    validationType: actual
+  validateBillingPreferenceNewCitiFlowGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-citi-flow"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceNewCitiFlowGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/new-citi-flow"
+    validationType: actual
+
+  validateBillingPreferenceNewCitiFlowPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "new-citi-flow"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceNewCitiFlowPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/new-citi-flow"
+    validationType: actual
+  validateBillingPreferenceProvideIptvVoipPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    cookies:
+      uuid: "provide-iptv-voip"
+    headers:
+      Referer: "terms.html"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideIptvVoipPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-iptv-voip"
+    validationType: actual
+  validateBillingPreferenceProvideIptvVoipGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-iptv-voip"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideIptvVoipGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-iptv-voip"
+    validationType: actual
+  validateBillingPreferenceProvideIptvVoipPortinPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    cookies:
+      uuid: "provide-iptv-voip-portin"
+    headers:
+      Referer: "terms.html"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideIptvVoipPortinPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-iptv-voip-portin"
+    validationType: actual
+  validateBillingPreferenceProvideIptvVoipPortinGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-iptv-voip-portin"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideIptvVoipPortinGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-iptv-voip-portin"
+    validationType: actual
+  validateBillingPreferenceModifyDtvHsiaVoipNonPublishedListingPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    cookies:
+      uuid: "modify-dtv-hsia-voip-non-published-listing"
+    headers:
+      Referer: "terms.html"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifyDtvHsiaVoipNonPublishedListingPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-dtv-hsia-voip-non-published-listing"
+    validationType: actual
+  validateBillingPreferenceModifyDtvHsiaVoipNonPublishedListingGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-hsia-voip-non-published-listing"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifyDtvHsiaVoipNonPublishedListingGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-dtv-hsia-voip-non-published-listing"
+    validationType: actual
+
+  validateBillingPreferenceModifyIptvHisaVoipModifyAllPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    cookies:
+      uuid: "modify-iptvhisavoip-modifyall"
+    headers:
+      Referer: "terms.html"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifyIptvHisaVoipModifyAllPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-iptvhisavoip-modifyall"
+    validationType: actual
+
+  validateBillingPreferenceModifyIptvHisaVoipModifyAllGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptvhisavoip-modifyall"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifyIptvHisaVoipModifyAllGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-iptvhisavoip-modifyall"
+    validationType: actual
+  validateBillingPreferenceModifyDtvAddingSubsAccessoriesExpressCheckoutPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    cookies:
+      uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    headers:
+      Referer: "terms.html"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifyDtvAddingSubsAccessoriesExpressCheckoutPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-dtv-adding-subs-accessories-express-checkout"
+    validationType: actual
+  validateBillingPreferenceModifyDtvAddingSubsAccessoriesExpressCheckoutGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifyDtvAddingSubsAccessoriesExpressCheckoutGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-dtv-adding-subs-accessories-express-checkout"
+    validationType: actual
+    
+  validateTermsExpressUpgradeGETResponse:
+    body: ""
+    cookies:
+      uuid: "express-upgrade"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsExpressUpgradeGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/orderterms/wireless/express-upgrade"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.terms[0].type: "DEV"
+     - payload.terms[0].accepted: false
+     - payload.terms[0].label: "Retail Installment Agreement"
+    validationType: partial
+
+  validateTermsExpressUpgradePOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateTermsRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "express-upgrade"
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsExpressUpgradePOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/orderterms/wireless/express-upgrade"
+    validationType: actual
+  validateBillingPreferenceExpressUpgradeGETResponse:
+    body: ""
+    cookies:
+      uuid: "express-upgrade"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceExpressUpgradeGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/express-upgrade"
+    validationType: actual
+
+  validateBillingPreferenceExpressUpgradePOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "express-upgrade"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceExpressUpgradePOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/express-upgrade"
+    validationType: actual
+ 
+  validateBillingPreferenceProvideSmbDtvHsiaVoipHighRiskGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideSmbDtvHsiaVoipHighRiskGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: actual
+
+  validateBillingPreferenceProvideSmbDtvHsiaVoipHighRiskPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideSmbDtvHsiaVoipHighRiskPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: actual
+  validateBillingPreferenceModifySmbPotsAddHsiaTechInstallGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifySmbPotsAddHsiaTechInstallGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    validationType: actual
+  validateBillingPreferenceModifySmbPotsAddHsiaTechInstallPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifySmbPotsAddHsiaTechInstallPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    validationType: actual
+  validateBillingPreferenceReplaceYourDeviceFlowGETResponse:
+    body: ""
+    cookies:
+      uuid: "replace-your-device-flow"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceReplaceYourDeviceFlowGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/replace-your-device-flow"
+    validationType: actual
+
+
+  validateBillingPreferenceReplaceYourDeviceFlowPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    body: |
+        {"billingLanguage":"en_US","paperLessBilling":true,"type":"PAPERLESSBILLINGOPIN"}
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "replace-your-device-flow"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceReplaceYourDeviceFlowPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/replace-your-device-flow"
+    validationType: actual
+  validateTermsReplaceYourDeviceFlowGETResponse:
+    body: ""
+    cookies:
+      uuid: "replace-your-device-flow"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsReplaceYourDeviceFlowGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/orderterms/wireless/replace-your-device-flow"
+    validationType: actual
+  validateTermsReplaceYourDeviceFlowPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateTermsRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "replace-your-device-flow"
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsReplaceYourDeviceFlowPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/orderterms/wireless/replace-your-device-flow"
+    validationType: actual
+  validateBillingPreferenceProvideSmbDslSelfInstallPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    cookies:
+      uuid: "provide-smb-dsl-self-install"
+    headers:
+      Referer: "terms.html"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideSmbDslSelfInstallPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-smb-dsl-self-install"
+    validationType: actual
+
+  validateBillingPreferenceProvideSmbDslSelfInstallGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-self-install"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceProvideSmbDslSelfInstallGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/provide-smb-dsl-self-install"
+    validationType: actual
+  validateBillingPreferenceModifySmbIptvHsiaProvideVoipPortInPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    cookies:
+      uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    headers:
+      Referer: "terms.html"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifySmbIptvHsiaProvideVoipPortInPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-smb-iptv-hsia-provide-voip-portIn"
+    validationType: actual
+
+  validateBillingPreferenceModifySmbIptvHsiaProvideVoipPortInGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceModifySmbIptvHsiaProvideVoipPortInGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/modify-smb-iptv-hsia-provide-voip-portIn"
+    validationType: actual
+  validateTermsSmartphoneNoCommitmentTermGETResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-no-commitment-term"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsSmartphoneNoCommitmentTermGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/orderterms/wireless/smartphone-no-commitment-term"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.terms[0].type: "WCA"
+     - payload.terms[0].accepted: false
+     - payload.terms[0].label: "Wireless Customer Agreement"
+     - payload.terms[0].termsKey: "WIRELESS_CUSTOMER_AGREEMENT"
+    validationType: partial
+  validateTermsSmartphoneNoCommitmentTermPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateTermsRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "smartphone-no-commitment-term"
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsSmartphoneNoCommitmentTermPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/orderterms/wireless/smartphone-no-commitment-term"
+    validationType: actual
+  validateBillingPreferenceSmartphoneNoCommitmentTermGETResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-no-commitment-term"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceSmartphoneNoCommitmentTermGETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/smartphone-no-commitment-term"
+    validationType: actual
+
+
+  validateBillingPreferenceSmartphoneNoCommitmentTermPOSTResponse:
+    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "smartphone-no-commitment-term"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceSmartphoneNoCommitmentTermPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/smartphone-no-commitment-term"
+    validationType: actual
+    
+  validateTermsNewPostpaidC2SCredit$100GETResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-c2s-creditC-$100"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsNewPostpaidC2SCredit$100GETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/orderterms/wireless/new-postpaid-c2s-creditC-$100"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.terms[0].type: "DEV"
+     - payload.terms[0].accepted: false
+     - payload.terms[0].label: "Retail Installment Agreement"
+    validationType: partial
+  validateTermsNewPostpaidC2SCredit$100POSTResponse:
+    requsstBodyReference: validateTerms/schema/validateTermsRequest.json
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "new-postpaid-c2s-creditC-$100"
+    referenceData: "validateTerms/schema/validateTerms.json"
+    testCaseName: validateTermsNewPostpaidC2SCredit$100POSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/orderterms/wireless/new-postpaid-c2s-creditC-$100"
+    validationType: actual
+  validateBillingPreferenceNewPostpaidC2SCredit$100GETResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-c2s-creditC-$100"
+    params:
+      serviceType: None
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceNewPostpaidC2SCredit$100GETResponse
+    type: "GET"
+    url: "/apis/checkout/account/options/v1/billpreference/new-postpaid-c2s-creditC-$100"
+    validationType: actual
+  validateBillingPreferenceNewPostpaidC2SCredit$100POSTResponse:
+#    requsstBodyReference: validateTerms/schema/validateBillingPreferenceRequest.json
+    body: |
+      {"billingLanguage":"en_US","paperLessBilling":true,"type":"PAPERLESSBILLINGOPIN"},
+    headers:
+      Referer: "terms.html"
+    cookies:
+      uuid: "new-postpaid-c2s-creditC-$100"
+    referenceData: "validateTerms/schema/validateBillingPreference.json"
+    testCaseName: validateBillingPreferenceNewPostpaidC2SCredit$100POSTResponse
+    type: "POST"
+    url: "/apis/checkout/account/options/v1/billpreference/new-postpaid-c2s-creditC-$100"
+    validationType: actual

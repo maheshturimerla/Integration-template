@@ -1,0 +1,100 @@
+{
+  "UniversalPersonalizationProfile": {
+    "namedcache": "universal_personalization_profile",
+    "contenttype": "application/json",
+    "version": "1.0",
+    "cachettl": 10800,
+    "backingmapttl": 2592000,
+    "maxlength": 2500,
+    "strictvalidation": "false",
+    "header": {
+      "versions": {
+        "v1": {}
+      }
+    },
+    "universalPrivate": {
+      "cachettl": 10800,
+      "backingmapttl": 2592000,
+      "versions": {
+        "v1": {}
+      }
+    },
+    "universalPrivateTransient": {
+      "cachettl": 1800,
+      "backingmapttl": 1801,
+      "versions": {
+        "v1": {}
+      }
+    },
+    "universalPublic": {
+      "cachettl": 10800,
+      "backingmapttl": 2592000,
+      "versions": {
+        "v1": {}
+      }
+    },
+    "universalPublicTransient": {
+      "cachettl": 5400,
+      "backingmapttl": 5401,
+      "versions": {
+        "v1": {}
+      }
+    },
+    "wirelessPrivate": {
+      "cachettl": 10800,
+      "backingmapttl": 2592000,
+      "versions": {
+        "v1": {}
+      }
+    },
+    "wirelessPrivateTransient": {
+      "cachettl": 10800,
+      "backingmapttl": 10801,
+      "versions": {
+        "v1": {}
+      }
+    },
+    "wirelessPublic": {
+      "cachettl": 10800,
+      "backingmapttl": 2592000,
+      "versions": {
+        "v1": {}
+      }
+    },
+    "wirelessPublicTransient": {
+      "cachettl": 10800,
+      "backingmapttl": 10801,
+      "versions": {
+        "v1": {}
+      }
+    },
+    "wirelinePublic": {
+      "cachettl": 10800,
+      "backingmapttl": 2592000,
+      "versions": {
+        "v1": {}
+      }
+    },
+    "wirelinePublicTransient": {
+      "cachettl": 10800,
+      "backingmapttl": 10801,
+      "versions": {
+        "v1": {}
+      }
+    },
+    "wirelinePrivate": {
+      "cachettl": 10800,
+      "backingmapttl": 2592000,
+      "versions": {
+        "v1": {}
+      }
+    },
+    "wirelinePrivateTransient": {
+      "cachettl": 10800,
+      "backingmapttl": 10801,
+      "versions": {
+        "v1": {}
+      }
+    }
+  }
+}

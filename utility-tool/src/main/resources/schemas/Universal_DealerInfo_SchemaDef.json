@@ -1,0 +1,18 @@
+{
+	"universal_dealerInfo": {
+		"namedcache": "universal_dealerInfo",
+		"contenttype": "application/json",
+		"version": "1.0",
+		"cachettl": 10800,
+		"backingmapttl": 5184000,
+		"maxlength": 50000,
+		"strictvalidation": "false",
+		"dealerCodeInfo": {
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		}
+	}
+}

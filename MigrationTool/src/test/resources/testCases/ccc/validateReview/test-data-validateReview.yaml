@@ -1,0 +1,2826 @@
+#
+#testCases:
+#
+#  validateReviewProvideSmbDtvResponse:
+#    body: ""
+#    cookies:
+#      uuid: "smb-provide-new-dtv-flow"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewProvideSmbDtvResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/smb-provide-new-dtv-flow"
+#    validationType: actual
+#  validateReviewProvideHsiaResponse:
+#    body: ""
+#    cookies:
+#      uuid: "provide-hsia"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewProvideHsiaResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/provide-hsia"
+#    validationType: actual
+#  validateReviewProvideSmbDslPotsResponse:
+#    body: ""
+#    cookies:
+#      uuid: "provide-smb-dsl-pots"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewProvideSmbDslPotsResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/provide-smb-dsl-pots"
+#    validationType: actual
+#  validateReviewProvideDtvResponse:
+#    body: ""
+#    cookies:
+#      uuid: "provide-dtv"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewProvideDtvResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/provide-dtv"
+#    validationType: actual
+#  validateReviewAccessoryFlowResponse:
+#    body: ""
+#    cookies:
+#      uuid: "accessoryFlow"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewAccessoryFlowResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/accessoryFlow"
+#    validationType: actual
+#  validateReviewDeviceOnlyResponse:
+#    body: ""
+#    cookies:
+#      uuid: "device-only"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewDeviceOnlyResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/device-only"
+#    validationType: actual
+#  validateReviewSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse:
+#    body: ""
+#    cookies:
+#      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/smartphone-next-term-downpayment-insurance-tablet-accessory"
+#    validationType: actual
+#  validateReviewSmartphoneMultiDeviceEnjoyResponse:
+#    body: ""
+#    cookies:
+#      uuid: "smartphone-multi-device-enjoy"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewSmartphoneMultiDeviceEnjoyResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/smartphone-multi-device-enjoy"
+#    validationType: actual
+#  validateReviewProvideSMBBusinessAppsResponse:
+#    body: ""
+#    cookies:
+#      uuid: "smb-provide-business-apps"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewProvideSMBBusinessAppsResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/smb-provide-business-apps"
+#    validationType: actual
+#  validateReviewNewPostPaidDownPaymentResponse:
+#    body: ""
+#    cookies:
+#      uuid: "new-postpaid-down-payment"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewNewPostPaidDownPaymentResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/new-postpaid-down-payment"
+#    validationType: actual
+#  validateReview4PostpaidWirelessCreditCResponse:
+#    body: ""
+#    cookies:
+#      uuid: "4-postpaid-wireless-creditC-deposit"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReview4PostpaidWirelessCreditCResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/4-postpaid-wireless-creditC-deposit"
+#    validationType: actual
+#  validateReviewNewPostpaidNextDPCreditCResponse:
+#    body: ""
+#    cookies:
+#      uuid: "new-postpaid-nextDP-creditC"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewNewPostpaidNextDPCreditCResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/new-postpaid-nextDP-creditC"
+#    validationType: actual
+#  validateReviewProvideSmbDtvResponse:
+#    body: ""
+#    cookies:
+#      uuid: "smb-provide-new-dtv-flow"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewProvideSmbDtvResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/smb-provide-new-dtv-flow"
+#    validationType: actual
+#  validateReviewProvideHsiaResponse:
+#    body: ""
+#    cookies:
+#      uuid: "provide-hsia"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewProvideHsiaResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/provide-hsia"
+#    validationType: actual
+#  validateReviewProvideSmbDslPotsResponse:
+#    body: ""
+#    cookies:
+#      uuid: "provide-smb-dsl-pots"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewProvideSmbDslPotsResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/provide-smb-dsl-pots"
+#    validationType: actual
+#  validateReviewProvideDtvResponse:
+#    body: ""
+#    cookies:
+#      uuid: "provide-dtv"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewProvideDtvResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/provide-dtv"
+#    validationType: actual
+#  validateReviewAccessoryFlowResponse:
+#    body: ""
+#    cookies:
+#      uuid: "accessoryFlow"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewAccessoryFlowResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/accessoryFlow"
+#    validationType: actual
+#  validateReviewDeviceOnlyResponse:
+#    body: ""
+#    cookies:
+#      uuid: "device-only"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewDeviceOnlyResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/device-only"
+#    validationType: actual
+#  validateReviewSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse:
+#    body: ""
+#    cookies:
+#      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/smartphone-next-term-downpayment-insurance-tablet-accessory"
+#    validationType: actual
+#  validateReviewSmartphoneMultiDeviceEnjoyResponse:
+#    body: ""
+#    cookies:
+#      uuid: "smartphone-multi-device-enjoy"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewSmartphoneMultiDeviceEnjoyResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/smartphone-multi-device-enjoy"
+#    validationType: actual
+#  validateReviewProvideSMBBusinessAppsResponse:
+#    body: ""
+#    cookies:
+#      uuid: "smb-provide-business-apps"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewProvideSMBBusinessAppsResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/smb-provide-business-apps"
+#    validationType: actual
+#  validateReviewNewPostPaidDownPaymentResponse:
+#    body: ""
+#    cookies:
+#      uuid: "new-postpaid-down-payment"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewNewPostPaidDownPaymentResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/new-postpaid-down-payment"
+#    validationType: actual
+#  validateReview4PostpaidWirelessCreditCResponse:
+#    body: ""
+#    cookies:
+#      uuid: "4-postpaid-wireless-creditC-deposit"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReview4PostpaidWirelessCreditCResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/4-postpaid-wireless-creditC-deposit"
+#    validationType: actual
+#  validateReviewNewPostpaidNextDPCreditCResponse:
+#    body: ""
+#    cookies:
+#      uuid: "new-postpaid-nextDP-creditC"
+#    params:
+#      serviceType: None
+#    referenceData: "validateReview/schema/validateReview.json"
+#    testCaseName: validateReviewNewPostpaidNextDPCreditCResponse
+#    type: "GET"
+#    url: "/apis/checkout/orders/v1/info/new-postpaid-nextDP-creditC"
+#    validationType: actual
+
+testCases:
+  validateReviewProvideSmbDtvResponse:
+    body: ""
+    cookies: 
+      uuid: "smb-provide-new-dtv-flow"
+    params: 
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideSmbDtvResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smb-provide-new-dtv-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.business.addressLine1: "314 MAPLE CT" 
+     - payload.address.service.addressLine1: 314 MAPLE CT
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateReviewProvideSmbDtvFailureResponse:
+    body: ""
+    cookies: 
+      uuid: "smb-provide-new-dtv-flow-failure"
+    params: 
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideSmbDtvFailureResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smb-provide-new-dtv-flow-failure"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.business.addressLine1: "314 MAPLE CT " 
+     - payload.address.service.addressLine1: 314 MAPLE CT
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+  validateReviewProvideHsiaResponse:
+    body: ""
+    cookies:
+      uuid: "provide-hsia"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideHsiaResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-hsia"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.business.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.service.addressLine1: 625 CENTER
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: Consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+  validateReviewProvideSmbDslPotsResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-pots"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideSmbDslPotsResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-smb-dsl-pots"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false     
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false 
+     - response.redirect: false
+    validationType: partial
+
+  validateReviewProvideDtvResponse:
+    body: ""
+    cookies:
+      uuid: "provide-dtv"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideDtvResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-dtv"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.business.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.service.addressLine1: 14 MAPLE CT
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+  validateReviewAccessoryFlowResponse:
+    body: ""
+    cookies:
+      uuid: "accessoryFlow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewAccessoryFlowResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/accessoryFlow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Surya
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: true
+     - payload.shippingInfoList[0].shipping_method: Priority
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400020
+     - payload.shippingInfoList[0].shipping_group.price_code: 88888
+     - payload.shippingInfoList[0].shipping_group.display_name: Standard Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+  validateReviewDeviceOnlyResponse:
+    body: ""
+    cookies:
+      uuid: "device-only"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewDeviceOnlyResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/device-only"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: true
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+  validateReviewSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smartphone-next-term-downpayment-insurance-tablet-accessory"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: true
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.ppuAddressList.ADDRESS_01.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+  validateReviewSmartphoneMultiDeviceEnjoyResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewSmartphoneMultiDeviceEnjoyResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smartphone-multi-device-enjoy"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+    validationType: partial
+
+  validateReviewProvideSMBBusinessAppsResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-business-apps"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideSMBBusinessAppsResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smb-provide-business-apps"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.service.addressLine1: 314 MAPLE CT
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+  validateReviewNewPostpaidNextDPCreditCResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-nextDP-creditC"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewNewPostpaidNextDPCreditCResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/new-postpaid-nextDP-creditC"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: ONALD
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: true
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+
+  validateReviewProvideHsiaResponse:
+    body: ""
+    cookies:
+      uuid: "provide-hsia"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideHsiaResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-hsia"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+  validateReviewProvideSmbDslPotsResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-pots"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideSmbDslPotsResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-smb-dsl-pots"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateReviewProvideDtvResponse:
+    body: ""
+    cookies:
+      uuid: "provide-dtv"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideDtvResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-dtv"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+  validateReviewAccessoryFlowResponse:
+    body: ""
+    cookies:
+      uuid: "accessoryFlow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewAccessoryFlowResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/accessoryFlow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+    validationType: partial
+  validateReviewDeviceOnlyResponse:
+    body: ""
+    cookies:
+      uuid: "device-only"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewDeviceOnlyResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/device-only"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+    validationType: partial
+  validateReviewSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smartphone-next-term-downpayment-insurance-tablet-accessory"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+    validationType: partial
+  validateReviewSmartphoneMultiDeviceEnjoyResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewSmartphoneMultiDeviceEnjoyResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smartphone-multi-device-enjoy"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+    validationType: partial
+  validateReviewProvideSMBBusinessAppsResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-business-apps"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideSMBBusinessAppsResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smb-provide-business-apps"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+  validateReviewNewPostPaidDownPaymentResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewNewPostPaidDownPaymentResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/new-postpaid-down-payment"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 8139 GREENHOLLOW LN
+     - payload.address.billing.addressLine1: 8139 GREENHOLLOW LN
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: true
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.ppuAddressList.ADDRESS_01.addressLine1: 8139 GREENHOLLOW LN
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+  validateReviewNewDtvHsiaVoipHighRiskResponse:
+    body: ""
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: "validateReviewNewDtvHsiaVoipHighRiskResponse"
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/new-dtv-hsia-voip-high-unkonwn-risk"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateReviewModifyDtvRtpProductsResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-rtpproducts"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: "validateReviewModifyDtvRtpProductsResponse"
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-dtv-rtpproducts"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+  validateOrderSubmitProvideSmbDtvResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-new-dtv-flow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideSmbDtvResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/smb-provide-new-dtv-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "smb-provide-new-dtv-flow"
+    validationType: partial
+  validateOrderSubmitProvideSmbDtvFailureResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-new-dtv-flow-failure"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideSmbDtvFailureResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/smb-provide-new-dtv-flow-failure"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "smb-provide-new-dtv-flow-failure"
+    validationType: partial
+  validateOrderSubmitProvideHsiaResponse:
+    body: ""
+    cookies:
+      uuid: "provide-hsia"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideHsiaResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/provide-hsia"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "provide-hsia"
+    validationType: partial
+
+  validateOrderSubmitProvideSmbDslPotsResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-pots"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideSmbDslPotsResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/provide-smb-dsl-pots"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "provide-smb-dsl-pots" 
+    validationType: partial
+  validateOrderSubmitProvideDtvResponse:
+    body: ""
+    cookies:
+      uuid: "provide-dtv"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideDtvResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/provide-dtv"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "provide-dtv"
+    validationType: partial
+  validateOrderSubmitAccessoryFlowResponse:
+    body: ""
+    cookies:
+      uuid: "accessoryFlow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitAccessoryFlowResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/accessoryFlow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "accessoryFlow"
+    validationType: partial
+  validateOrderSubmitDeviceOnlyResponse:
+    body: ""
+    cookies:
+      uuid: "device-only"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitDeviceOnlyResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/device-only"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "device-only"
+    validationType: partial
+  validateOrderSubmitSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/smartphone-next-term-downpayment-insurance-tablet-accessory"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    validationType: partial
+  validateOrderSubmitSmartphoneMultiDeviceEnjoyResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitSmartphoneMultiDeviceEnjoyResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/smartphone-multi-device-enjoy"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "smartphone-multi-device-enjoy"
+    validationType: partial
+  validateOrderSubmitProvideSMBBusinessAppsResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-business-apps"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideSMBBusinessAppsResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/smb-provide-business-apps"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "smb-provide-business-apps"
+    validationType: partial
+  validateOrderSubmitNewPostPaidDownPaymentResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitNewPostPaidDownPaymentResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/new-postpaid-down-payment"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "new-postpaid-down-payment"
+    validationType: partial
+  validateOrderSubmit4PostpaidWirelessCreditCResponse:
+    body: ""
+    cookies:
+      uuid: "4-postpaid-wireless-creditC-deposit"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmit4PostpaidWirelessCreditCResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/4-postpaid-wireless-creditC-deposit"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "4-postpaid-wireless-creditC-deposit"
+    validationType: partial
+  validateOrderSubmitNewPostpaidNextDPCreditCResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-nextDP-creditC"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitNewPostpaidNextDPCreditCResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/new-postpaid-nextDP-creditC"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "new-postpaid-nextDP-creditC"
+    validationType: partial
+  validateOrderSubmitNewDtvHsiaVoipHighRiskResponse:
+    body: ""
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitNewDtvHsiaVoipHighRiskResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/new-dtv-hsia-voip-high-unkonwn-risk"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: partial
+
+  validateThankYouProvideSmbDtvResponse:
+    body: ""
+    cookies: 
+      uuid: "smb-provide-new-dtv-flow"
+    params: 
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideSmbDtvResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smb-provide-new-dtv-flow/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.business.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.service.addressLine1: 314 MAPLE CT
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateThankYouProvideSmbDtvFailureResponse:
+    body: ""
+    cookies: 
+      uuid: "smb-provide-new-dtv-flow-failure"
+    params: 
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideSmbDtvFailureResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smb-provide-new-dtv-flow-failure/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.business.addressLine1: 314 MAPLE CT 
+     - payload.address.service.addressLine1: 314 MAPLE CT
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+  validateThankYouProvideHsiaResponse:
+    body: ""
+    cookies:
+      uuid: "provide-hsia"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideHsiaResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-hsia/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.business.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.service.addressLine1: 625 CENTER
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: Consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false   
+    validationType: partial
+  validateThankYouProvideSmbDslPotsResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-pots"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideSmbDslPotsResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-smb-dsl-pots/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.billingPreferences.paperless_eligibility: false     
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false  
+    validationType: partial
+  validateThankYouProvideDtvResponse:
+    body: ""
+    cookies:
+      uuid: "provide-dtv"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideDtvResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-dtv/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.business.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.service.addressLine1: 14 MAPLE CT
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateThankYouAccessoryFlowResponse:
+    body: ""
+    cookies:
+      uuid: "accessoryFlow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouAccessoryFlowResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/accessoryFlow/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Surya
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: true
+     - payload.shippingInfoList[0].shipping_method: Priority
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400020
+     - payload.shippingInfoList[0].shipping_group.price_code: 88888
+     - payload.shippingInfoList[0].shipping_group.display_name: Standard Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateThankYouDeviceOnlyResponse:
+    body: ""
+    cookies:
+      uuid: "device-only"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouDeviceOnlyResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/device-only/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: true
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateThankYouSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smartphone-next-term-downpayment-insurance-tablet-accessory/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: true
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateThankYouSmartphoneMultiDeviceEnjoyResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouSmartphoneMultiDeviceEnjoyResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smartphone-multi-device-enjoy/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+    validationType: partial
+  validateThankYouProvideSMBBusinessAppsResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-business-apps"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideSMBBusinessAppsResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smb-provide-business-apps/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.service.addressLine1: 314 MAPLE CT
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateThankYouNewPostPaidDownPaymentResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouNewPostPaidDownPaymentResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/new-postpaid-down-payment/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 8139 GREENHOLLOW LN
+     - payload.address.billing.addressLine1: 8139 GREENHOLLOW LN
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.ppuAddressList.ADDRESS_01.addressLine1: 8139 GREENHOLLOW LN
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateReviewNewWirelessByodSimOnlyResponse:
+    body: ""
+    cookies:
+      uuid: "new-wireless-byod-simonly-flow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewNewWirelessByodSimOnlyResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/new-wireless-byod-simonly-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 8139 GREENHOLLOW LN
+     - payload.address.billing.addressLine1: 8139 GREENHOLLOW LN
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.ppuAddressList.ADDRESS_01.addressLine1: 8139 GREENHOLLOW LN
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateOrderSubmitNewWirelessByodSimOnlyResponse:
+    body: ""
+    cookies:
+      uuid: "new-wireless-byod-simonly-flow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitNewWirelessByodSimOnlyResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/new-wireless-byod-simonly-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "new-wireless-byod-simonly-flow"
+    validationType: partial
+
+  validateThankYouNewDtvHsiaVoipHighRiskResponse:
+    body: ""
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: "validateThankYouNewDtvHsiaVoipHighRiskResponse"
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/new-dtv-hsia-voip-high-unkonwn-risk/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+
+  validateOrderSubmitProvideSmbDtvResponse:
+    body: ""
+    cookies: 
+      uuid: "smb-provide-new-dtv-flow"
+    params: 
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideSmbDtvResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/smb-provide-new-dtv-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "smb-provide-new-dtv-flow"
+    validationType: partial
+  validateOrderSubmitProvideHsiaResponse:
+    body: ""
+    cookies:
+      uuid: "provide-hsia"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideHsiaResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/provide-hsia"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "provide-hsia"
+    validationType: partial
+  validateOrderSubmitProvideSmbDslPotsResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-pots"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideSmbDslPotsResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/provide-smb-dsl-pots"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "provide-smb-dsl-pots"
+    validationType: partial
+  validateOrderSubmitProvideDtvResponse:
+    body: ""
+    cookies:
+      uuid: "provide-dtv"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideDtvResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/provide-dtv"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "provide-dtv"
+    validationType: partial
+  validateOrderSubmitAccessoryFlowResponse:
+    body: ""
+    cookies:
+      uuid: "accessoryFlow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitAccessoryFlowResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/accessoryFlow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "accessoryFlow"
+    validationType: partial
+  validateOrderSubmitDeviceOnlyResponse:
+    body: ""
+    cookies:
+      uuid: "device-only"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitDeviceOnlyResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/device-only"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "device-only"
+    validationType: partial
+  validateOrderSubmitSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/smartphone-next-term-downpayment-insurance-tablet-accessory"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    validationType: partial
+  validateOrderSubmitSmartphoneMultiDeviceEnjoyResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitSmartphoneMultiDeviceEnjoyResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/smartphone-multi-device-enjoy"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "smartphone-multi-device-enjoy"
+    validationType: partial
+  validateOrderSubmitProvideSMBBusinessAppsResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-business-apps"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideSMBBusinessAppsResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/smb-provide-business-apps"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "smb-provide-business-apps"
+    validationType: partial
+  validateOrderSubmitNewPostPaidDownPaymentResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitNewPostPaidDownPaymentResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/new-postpaid-down-payment"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "new-postpaid-down-payment"
+    validationType: partial
+  validateOrderSubmitNewDtvHsiaVoipHighRiskResponse:
+    body: ""
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitNewDtvHsiaVoipHighRiskResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/new-dtv-hsia-voip-high-unkonwn-risk/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: partial
+  validateOrderSubmitModifyDtvRtpProductsResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-rtpproducts"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitModifyDtvRtpProductsResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/modify-dtv-rtpproducts"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "modify-dtv-rtpproducts"
+    validationType: partial
+  validateReviewModifyIptvAddReceiverSelfInstallHybridCheckoutResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewModifyIptvAddReceiverSelfInstallHybridCheckoutResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    asserts:
+      - response.status: success
+      - response.redirect: false
+      - payload.orderType: wireline
+      - payload.address.service.addressLine1: 2511 RESTON
+      - payload.address.billing.addressLine1: 2511 Reston Dr
+      - payload.personalInfo.firstName: Sales
+      - payload.creditInfo.identityType: SSN
+      - payload.metadata.wireline_customer_type: consumer
+      - payload.billingPreferences.paperless_eligibility: false
+      - payload.supressBillingPreference: false
+      - payload.hylaTradeInCustomerConsented: false
+      - payload.enjoy: false
+    validationType: partial
+
+  validateThankYouProvideSmbDtvResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-new-dtv-flow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideSmbDtvResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smb-provide-new-dtv-flow/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+
+  validateThankYouProvideHsiaResponse:
+    body: ""
+    cookies:
+      uuid: "provide-hsia"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideHsiaResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-hsia/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+  validateThankYouProvideSmbDslPotsResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-pots"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideSmbDslPotsResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-smb-dsl-pots/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+  validateThankYouProvideDtvResponse:
+    body: ""
+    cookies:
+      uuid: "provide-dtv"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideDtvResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-dtv/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateThankYouAccessoryFlowResponse:
+    body: ""
+    cookies:
+      uuid: "accessoryFlow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouAccessoryFlowResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/accessoryFlow/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateThankYouDeviceOnlyResponse:
+    body: ""
+    cookies:
+      uuid: "device-only"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouDeviceOnlyResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/device-only/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+
+  validateThankYouNewPostPaidDownPaymentResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouNewPostPaidDownPaymentResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/new-postpaid-down-payment/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+    validationType: partial
+  validateThankYouNewWirelessByodSimOnlyResponse:
+    body: ""
+    cookies:
+      uuid: "new-wireless-byod-simonly-flow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouNewWirelessByodSimOnlyResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/new-wireless-byod-simonly-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+#     - payload.orderType: wireless
+#     - payload.address.shipping.addressLine1: 8139 GREENHOLLOW LN
+#     - payload.address.billing.addressLine1: 8139 GREENHOLLOW LN
+#     - payload.personalInfo.firstName: Sales
+#     - payload.creditInfo.identityType: SSN
+#     - payload.metadata.wireless_customer_type: consumer
+#     - payload.shippingInfoList[0].shipping_method: Overnight
+#     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+#     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+#     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+#     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+#     - payload.supressBillingPreference: true
+#     - payload.ppuAddressList.ADDRESS_01.addressLine1: 8139 GREENHOLLOW LN
+#     - payload.hylaTradeInCustomerConsented: false
+#     - payload.enjoy: false
+    validationType: partial
+
+  validateOrderSubmitProvideSmbDtvResponse:
+    body: ""
+    cookies: 
+      uuid: "smb-provide-new-dtv-flow"
+    params: 
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideSmbDtvResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/smb-provide-new-dtv-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "smb-provide-new-dtv-flow"
+    validationType: partial
+
+  validateOrderSubmitNewDtvHsiaVoipHighRiskResponse:
+    body: ""
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitNewDtvHsiaVoipHighRiskResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/new-dtv-hsia-voip-high-unkonwn-risk/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: partial
+  
+  validateOrderSubmitNewDtvHsiaVoipHighRiskResponse:
+    body: ""
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitNewDtvHsiaVoipHighRiskResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/new-dtv-hsia-voip-high-unkonwn-risk/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: partial
+
+  validateThankYouNewPostpaidNextDPCreditCResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-nextDP-creditC"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouNewPostpaidNextDPCreditCResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/new-postpaid-nextDP-creditC/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: ONALD
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: true
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+
+
+  validateOrderSubmitNewPostpaidNextDPCreditCResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-nextDP-creditC"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitNewPostpaidNextDPCreditCResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/new-postpaid-nextDP-creditC"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "new-postpaid-nextDP-creditC"
+    validationType: partial
+
+  validateOrderSubmitNewDtvHsiaVoipHighRiskResponse:
+    body: ""
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitNewDtvHsiaVoipHighRiskResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/new-dtv-hsia-voip-high-unkonwn-risk"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: partial
+
+
+  validateThankYou4PostpaidWirelessCreditCResponse:
+    body: ""
+    cookies:
+      uuid: "4-postpaid-wireless-creditC-deposit"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYou4PostpaidWirelessCreditCResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/4-postpaid-wireless-creditC-deposit/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: true
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateReview4PostpaidWirelessCreditCResponse:
+    body: ""
+    cookies:
+      uuid: "4-postpaid-wireless-creditC-deposit"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReview4PostpaidWirelessCreditCResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/4-postpaid-wireless-creditC-deposit"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: true
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateThankYouModifyDtvRtpProductsResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-rtpproducts"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: "validateThankYouModifyDtvRtpProductsResponse"
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-dtv-rtpproducts/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+
+  validateOrderSubmitModifySmbIptvHsiaProvideVoipPortInResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitModifySmbIptvHsiaProvideVoipPortInResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/modify-smb-iptv-hsia-provide-voip-portIn"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    validationType: partial
+  validateReviewModifySmbIptvHsiaProvideVoipPortInResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewModifySmbIptvHsiaProvideVoipPortInResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-smb-iptv-hsia-provide-voip-portIn"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.supressBillingPreference: false
+     - payload.enjoy: false
+    validationType: partial
+  validateThankYouModifySmbIptvHsiaProvideVoipPortInResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouModifySmbIptvHsiaProvideVoipPortInResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-smb-iptv-hsia-provide-voip-portIn/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateOrderSubmitModifySmbHsiaAddDtvBusinessAppsResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-hsia-add-dtv-businessApps"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitModifySmbHsiaAddDtvBusinessAppsResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/modify-smb-hsia-add-dtv-businessApps"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "modify-smb-hsia-add-dtv-businessApps"
+    validationType: partial
+  validateThankYouModifySmbHsiaAddDtvBusinessAppsResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-hsia-add-dtv-businessApps"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouModifySmbHsiaAddDtvBusinessAppsResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-smb-hsia-add-dtv-businessApps/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.billing.addressLine1: PO Box 4697
+     - payload.personalInfo.firstName: VICTOR
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateReviewModifySmbHsiaAddDtvBusinessAppsResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-hsia-add-dtv-businessApps"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewModifySmbHsiaAddDtvBusinessAppsResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-smb-hsia-add-dtv-businessApps"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.billing.addressLine1: PO Box 4697
+     - payload.personalInfo.firstName: VICTOR
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial	
+  validateOrderSubmitProvideSmbDslSelfInstallResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-self-install"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideSmbDslSelfInstallResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/provide-smb-dsl-self-install"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "provide-smb-dsl-self-install"
+    validationType: partial
+
+
+  validateThankYouProvideSmbDslSelfInstallResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-self-install"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideSmbDslSelfInstallResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-smb-dsl-self-install/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateReviewProvideSmbDslSelfInstallResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-self-install"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideSmbDslSelfInstallResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-smb-dsl-self-install"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateOrderSubmitSmartphoneNoCommitmentTermResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-no-commitment-term"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitSmartphoneNoCommitmentTermResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/smartphone-no-commitment-term"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "smartphone-no-commitment-term"
+    validationType: partial
+
+  validateThankYouSmartphoneNoCommitmentTermResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-no-commitment-term"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouSmartphoneNoCommitmentTermResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smartphone-no-commitment-term/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+#     - payload.billingPreferences.paperless_eligibility: false
+#     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateReviewSmartphoneNoCommitmentTermResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-no-commitment-term"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewSmartphoneNoCommitmentTermResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smartphone-no-commitment-term"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+#     - payload.billingPreferences.paperless_eligibility: false
+#     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+  validateReviewNewCitiFlowResponse:
+    body: ""
+    cookies:
+      uuid: "new-citi-flow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewNewCitiFlowResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/new-citi-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 8139 GREENHOLLOW LN
+     - payload.address.billing.addressLine1: 8139 GREENHOLLOW LN
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateOrderSubmitNewCitiFlowResponse:
+    body: ""
+    cookies:
+      uuid: "new-citi-flow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitNewCitiFlowResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/new-citi-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "new-citi-flow"
+    validationType: partial
+  validateThankYouNewCitiFlowResponse:
+    body: ""
+    cookies:
+      uuid: "new-citi-flow"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: "validateThankYouNewCitiFlowResponse"
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/new-citi-flow/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 8139 GREENHOLLOW LN
+     - payload.address.billing.addressLine1: 8139 GREENHOLLOW LN
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateReviewProvideIptvVoipResponse:
+    body: ""
+    cookies:
+      uuid: "provide-iptv-voip"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideIptvVoipResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-iptv-voip"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: Consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateOrderSubmitProvideIptvVoipResponse:
+    body: ""
+    cookies:
+      uuid: "provide-iptv-voip"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideIptvVoipResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/provide-iptv-voip"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "provide-iptv-voip"
+    validationType: partial
+
+  validateThankYouProvideIptvVoipResponse:
+    body: ""
+    cookies:
+      uuid: "provide-iptv-voip"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideIptvVoipResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-iptv-voip/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: Consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateReviewProvideIptvVoipPortinResponse:
+    body: ""
+    cookies:
+      uuid: "provide-iptv-voip-portin"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewProvideIptvVoipPortinResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-iptv-voip-portin"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: Consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateOrderSubmitProvideIptvVoipPortinResponse:
+    body: ""
+    cookies:
+      uuid: "provide-iptv-voip-portin"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideIptvVoipPortinResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/provide-iptv-voip-portin"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "provide-iptv-voip-portin"
+    validationType: partial
+  validateThankYouProvideIptvVoipPortinResponse:
+    body: ""
+    cookies:
+      uuid: "provide-iptv-voip-portin"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideIptvVoipPortinResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-iptv-voip-portin/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: Consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateReviewModifyDtvHsiaVoipNonPublishedListingResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-hsia-voip-non-published-listing"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewModifyDtvHsiaVoipNonPublishedListingResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-dtv-hsia-voip-non-published-listing"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+  validateOrderSubmitModifyDtvHsiaVoipNonPublishedListingResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-hsia-voip-non-published-listing"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitModifyDtvHsiaVoipNonPublishedListingResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/modify-dtv-hsia-voip-non-published-listing"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "modify-dtv-hsia-voip-non-published-listing"
+    validationType: partial
+  validateThankYouModifyDtvHsiaVoipNonPublishedListingResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-hsia-voip-non-published-listing"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouModifyDtvHsiaVoipNonPublishedListingResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-dtv-hsia-voip-non-published-listing/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+
+
+  validateReviewModifyIptvHisaVoipModifyAllResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptvhisavoip-modifyall"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewModifyIptvHisaVoipModifyAllResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-iptvhisavoip-modifyall"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.metadata.wireline_customer_type: Consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+
+  validateOrderSubmitModifyIptvHisaVoipModifyAllResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptvhisavoip-modifyall"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitModifyIptvHisaVoipModifyAllResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/modify-iptvhisavoip-modifyall"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "modify-iptvhisavoip-modifyall"
+    validationType: partial
+
+  validateThankYouModifyIptvHisaVoipModifyAllResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptvhisavoip-modifyall"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouModifyIptvHisaVoipModifyAllResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-iptvhisavoip-modifyall/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+  validateReviewModifyDtvAddingSubsAccessoriesExpressCheckoutResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewModifyDtvAddingSubsAccessoriesExpressCheckoutResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-dtv-adding-subs-accessories-express-checkout"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.service.addressLine1: 17435 OAK PARK ROW
+     - payload.address.billing.addressLine1: 1640 MAPLE DR
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: Consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateOrderSubmitModifyDtvAddingSubsAccessoriesExpressCheckoutResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitModifyDtvAddingSubsAccessoriesExpressCheckoutResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/modify-dtv-adding-subs-accessories-express-checkout"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    validationType: partial
+  validateThankYouModifyDtvAddingSubsAccessoriesExpressCheckoutResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouModifyDtvAddingSubsAccessoriesExpressCheckoutResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-dtv-adding-subs-accessories-express-checkout/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.service.addressLine1: 17435 OAK PARK ROW
+     - payload.address.billing.addressLine1: 1640 MAPLE DR
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: Consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateOrderSubmitModifyIptvAddReceiverSelfInstallHybridCheckoutResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitModifyIptvAddReceiverSelfInstallHybridCheckoutResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    validationType: partial
+  validateThankYouModifyIptvAddReceiverSelfInstallHybridCheckoutResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouModifyIptvAddReceiverSelfInstallHybridCheckoutResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-iptv-add-receiver-selfInstall-hybrid-checkout/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial   
+    
+  validateReviewExpressUpgradeResponse:
+    body: ""
+    cookies:
+      uuid: "express-upgrade"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateReviewExpressUpgradeResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/express-upgrade"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+     - payload.address.shipping.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.billing.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireless_customer_type: consumer
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: true
+     - payload.ppuAddressList.ADDRESS_02.addressLine1: 1306 E BELT LINE RD
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateOrderSubmitExpressUpgradeResponse:
+    body: ""
+    cookies:
+      uuid: "express-upgrade"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitExpressUpgradeResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/express-upgrade"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "express-upgrade"
+    validationType: partial
+  validateThankYouExpressUpgradeResponse:
+    body: ""
+    cookies:
+      uuid: "express-upgrade"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouExpressUpgradeResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/express-upgrade/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireless
+    validationType: partial    
+
+  validateReviewProvideSmbDtvHsiaVoipHighRiskResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateReviewProvideSmbDtvHsiaVoipHighRiskResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateOrderSubmitProvideSmbDtvHsiaVoipHighRiskResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitProvideSmbDtvHsiaVoipHighRiskResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: partial
+  validateThankYouProvideSmbDtvHsiaVoipHighRiskResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouProvideSmbDtvHsiaVoipHighRiskResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/provide-smb-dtv-hsia-voip-high-unkonwn-risk/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+  validateReviewModifySmbPotsAddHsiaTechInstallResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewModifySmbPotsAddHsiaTechInstallResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.business.addressLine1: 12516 NE 183RD ST APT 513
+     - payload.address.service.addressLine1: 2620 HIGHLAND AV
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false 
+     - payload.shippingInfoList[0].shipping_method: Overnight
+     - payload.shippingInfoList[0].shipping_group.shipping_method_Id: 400019
+     - payload.shippingInfoList[0].shipping_group.price_code: 88879
+     - payload.shippingInfoList[0].shipping_group.display_name: Express Shipping
+     - payload.shippingInfoList[0].shipping_group.customer_type: Consumer
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateOrderSubmitModifySmbPotsAddHsiaTechInstallResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitModifySmbPotsAddHsiaTechInstallResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    validationType: partial
+  validateThankYouModifySmbPotsAddHsiaTechInstallResponse:
+    body: ""
+    cookies: 
+      uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    params: 
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouModifySmbPotsAddHsiaTechInstallResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-smb-existing-pots-highrisk-add-hsia-tech-install/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+  validateReviewSmbModifyExtDslAddingHsiaBizAppsResponse:
+    body: ""
+    cookies:
+      uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: validateReviewSmbModifyExtDslAddingHsiaBizAppsResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smb-modify-extdsl-addinghsia-bizapps"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+     - payload.address.business.addressLine1: 1050 NINE NORTH DR
+     - payload.address.service.addressLine1: 1050 NINE NORTH DR
+     - payload.personalInfo.firstName: Sales
+     - payload.creditInfo.identityType: SSN
+     - payload.metadata.wireline_customer_type: smallbusiness
+     - payload.billingPreferences.paperless_eligibility: false
+     - payload.supressBillingPreference: false
+     - payload.hylaTradeInCustomerConsented: false
+     - payload.enjoy: false
+    validationType: partial
+  validateThankYouSmbModifyExtDslAddingHsiaBizAppsResponse:
+    body: ""
+    cookies:
+      uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateThankYou.json"
+    testCaseName: validateThankYouSmbModifyExtDslAddingHsiaBizAppsResponse
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/smb-modify-extdsl-addinghsia-bizapps/last"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateOrderSubmitSmbModifyExtDslAddingHsiaBizAppsResponse:
+    body: ""
+    cookies:
+      uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitSmbModifyExtDslAddingHsiaBizAppsResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/smb-modify-extdsl-addinghsia-bizapps"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    validationType: partial
+  validateReviewModifyExistingIptvHighriskAddingVoipResponse:
+    body: ""
+    cookies:
+      uuid: "modify-existing-iptv-highrisk-adding-voip"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateReview.json"
+    testCaseName: "validateReviewModifyExistingIptvHighriskAddingVoipResponse"
+    type: "GET"
+    url: "/apis/checkout/orders/v1/info/modify-existing-iptv-highrisk-adding-voip"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.orderType: wireline
+    validationType: partial
+  validateOrderSubmitModifyExistingIptvHighriskAddingVoipResponse:
+    body: ""
+    cookies:
+      uuid: "modify-existing-iptv-highrisk-adding-voip"
+    params:
+      serviceType: None
+    referenceData: "validateReview/schema/validateOrderSubmit.json"
+    testCaseName: validateOrderSubmitModifyExistingIptvHighriskAddingVoipResponse
+    type: "POST"
+    url: "/apis/checkout/order/v1/submit/modify-existing-iptv-highrisk-adding-voip"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.status: submitted
+     - payload.uuid: "modify-existing-iptv-highrisk-adding-voip"
+    validationType: partial
+  validateThankYouModifyExistingIptvHighriskAddingVoipResponse:
+      testCaseName: validateThankYouModifyExistingIptvHighriskAddingVoipResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-existing-iptv-highrisk-adding-voip"
+      body: ""
+      referenceData: "validateReview/schema/validateThankYou.json"
+      type: "GET"
+      url: "/apis/checkout/orders/v1/info/modify-existing-iptv-highrisk-adding-voip/last"
+      asserts:
+       - response.status: success
+       - response.redirect: false
+       - payload.orderType: wireline
+      validationType: partial
+  validateOrderSubmitReplaceYourDeviceFlowResponse:
+      testCaseName: validateOrderSubmitReplaceYourDeviceFlowResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "replace-your-device-flow"
+      body: ""
+      referenceData: "validateReview/schema/validateOrderSubmit.json"
+      type: "POST"
+      url: "/apis/checkout/order/v1/submit/replace-your-device-flow"
+      asserts:
+       - response.status: success
+       - response.redirect: false
+       - payload.status: submitted
+       - payload.uuid: "replace-your-device-flow"
+      validationType: partial
+  validateReviewReplaceYourDeviceFlowResponse:
+      testCaseName: validateReviewReplaceYourDeviceFlowResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "replace-your-device-flow"
+      body: ""
+      referenceData: "validateReview/schema/validateReview.json"
+      type: "GET"
+      url: "/apis/checkout/orders/v1/info/replace-your-device-flow"
+      asserts:
+       - response.status: success
+       - response.redirect: false
+       - payload.orderType: wireless
+      validationType: partial
+  validateThankYouReplaceYourDeviceFlowResponse:
+      testCaseName: validateThankYouReplaceYourDeviceFlowResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "replace-your-device-flow"
+      body: ""
+      referenceData: "validateReview/schema/validateThankYou.json"
+      type: "GET"
+      url: "/apis/checkout/orders/v1/info/replace-your-device-flow/last"
+      asserts:
+       - response.status: success
+       - response.redirect: false
+#       - payload.orderType: wireless
+      validationType: partial
+  validateOrderSubmitNewPostpaidC2SCredit$100Response:
+      testCaseName: validateOrderSubmitNewPostpaidC2SCredit$100Response
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "new-postpaid-c2s-creditC-$100"
+      body: ""
+      referenceData: "validateReview/schema/validateOrderSubmit.json"
+      type: "POST"
+      url: "/apis/checkout/order/v1/submit/new-postpaid-c2s-creditC-$100"
+      asserts:
+       - response.status: success
+       - response.redirect: false
+       - payload.status: submitted
+       - payload.uuid: "new-postpaid-c2s-creditC-$100"
+      validationType: partial
+  validateReviewNewPostpaidC2SCredit$100Response:
+      testCaseName: validateReviewNewPostpaidC2SCredit$100Response
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "new-postpaid-c2s-creditC-$100"
+      body: ""
+      referenceData: "validateReview/schema/validateReview.json"
+      type: "GET"
+      url: "/apis/checkout/orders/v1/info/new-postpaid-c2s-creditC-$100"
+      asserts:
+       - response.status: success
+       - response.redirect: false
+       - payload.orderType: wireless
+       - payload.address.shipping.addressLine1: 8139 GREENHOLLOW LN
+       - payload.address.billing.addressLine1: 8139 GREENHOLLOW LN
+       - payload.personalInfo.firstName: Sales
+       - payload.creditInfo.identityType: SSN
+       - payload.billingPreferences.paperless_eligibility: true
+       - payload.supressBillingPreference: true
+       - payload.hylaTradeInCustomerConsented: false
+       - payload.enjoy: false
+      validationType: partial
+  validateThankYouNewPostpaidC2SCredit$100Response:
+      testCaseName: validateThankYouNewPostpaidC2SCredit$100Response
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "new-postpaid-c2s-creditC-$100"
+      body: ""
+      referenceData: "validateReview/schema/validateThankYou.json"
+      type: "GET"
+      url: "/apis/checkout/orders/v1/info/new-postpaid-c2s-creditC-$100/last"
+      asserts:
+       - response.status: success
+       - response.redirect: false
+       - payload.orderType: wireless
+      validationType: partial

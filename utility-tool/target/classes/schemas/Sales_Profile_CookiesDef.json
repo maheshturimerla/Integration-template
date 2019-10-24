@@ -1,0 +1,27 @@
+{
+"sales_profile_Cookies": {
+
+	"namedcache": "sales_profile_Cookies",
+	"contenttype": "application/json",
+	"version": "1.0",
+	"cachettl": 10800,
+	"backingmapttl": 31536000,
+	"maxlength": 10000,
+	"strictvalidation": "false",
+	
+	"bintent": {
+		"description": "This is used to maintain the Citi Cookie details. Cookie lives for 7 days",
+		"backingmapttl": 604800,
+		"versions": {
+			"v1": {}
+		}
+	},
+	"CAAddressId": {
+		"decription": "This is used to maintain the CAAddressId Cookie details. Cookie lives for 365 days",
+		"backingmapttl": 31536000,
+		"versions": {
+			"v1": {}
+		}
+	}
+ }
+}

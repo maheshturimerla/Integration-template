@@ -1,0 +1,1027 @@
+--- 
+testCases:
+  validatePreCheckoutProvideSMBBusinessApps:
+    testCaseName: validatePreCheckoutProvideSMBBusinessApps
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-provide-business-apps"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/smb-provide-business-apps"
+    validationType: actual
+  validateCheckoutMetadataProvideSMBBusinessAppsResponse:
+    testCaseName: validateCheckoutMetadataProvideSMBBusinessAppsResponse
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-provide-business-apps"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/smb-provide-business-apps"
+    validationType: actual
+  validatePreCheckoutProvideHsia:
+    testCaseName: validatePreCheckoutProvideHsia
+    body: ""
+    cookies:
+      uuid: provide-hsia
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: GET
+    url: "/apis/checkout/pre/v1/start/provide-hsia"
+    validationType: actual
+  validateCheckoutMetadataProvideHsiaResponse:
+    testCaseName: validateCheckoutMetadataProvideHsiaResponse
+    body: ""
+    cookies:
+      uuid: provide-hsia
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: GET
+    url: "/apis/checkout/v1/metadata/provide-hsia"
+    validationType: actual
+  validatePreCheckoutProvideSmbDslPots:
+    testCaseName: validatePreCheckoutProvideSmbDslPots
+    body: ""
+    cookies:
+      uuid: provide-smb-dsl-pots
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: GET
+    url: "/apis/checkout/pre/v1/start/provide-smb-dsl-pots"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: actual
+  validateCheckoutMetadataProvideSmbDslPotsResponse:
+    testCaseName: validateCheckoutMetadataProvideSmbDslPotsResponse
+    body: ""
+    cookies:
+      uuid: provide-smb-dsl-pots
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: GET
+    url: "/apis/checkout/v1/metadata/provide-smb-dsl-pots"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: false
+    validationType: actual
+  validatePreCheckoutAccessoryFlow:
+    testCaseName: validatePreCheckoutAccessoryFlow
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "accessoryFlow"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/accessoryFlow"
+    validationType: actual
+  validateCheckoutMetadataAccessoryFlowResponse:
+    testCaseName: validateCheckoutMetadataAccessoryFlowResponse
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "accessoryFlow"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/accessoryFlow"
+    validationType: actual
+  validatePreCheckoutSmartphoneMultiDeviceEnjoy:
+    testCaseName: validatePreCheckoutSmartphoneMultiDeviceEnjoy
+    body: ""
+    cookies:
+      uuid: smartphone-multi-device-enjoy
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: GET
+    url: "/apis/checkout/pre/v1/start/smartphone-multi-device-enjoy"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: actual
+  validateCheckoutMetadataSmartphoneMultiDeviceEnjoyResponse:
+    body: ""
+    cookies:
+      uuid: smartphone-multi-device-enjoy
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutMetadataSmartphoneMultiDeviceEnjoyResponse
+    type: GET
+    url: "/apis/checkout/v1/metadata/smartphone-multi-device-enjoy"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: actual
+
+  validatePreCheckoutSmartphoneNextTermDownpaymentInsuranceTabletAccessory:
+    testCaseName: validatePreCheckoutSmartphoneNextTermDownpaymentInsuranceTabletAccessory
+    body: ""
+    cookies:
+      uuid: smartphone-next-term-downpayment-insurance-tablet-accessory
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: GET
+    url: "/apis/checkout/pre/v1/start/smartphone-next-term-downpayment-insurance-tablet-accessory"
+    validationType: actual
+  validateCheckoutMetadataSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse:
+    body: ""
+    cookies:
+      uuid: smartphone-next-term-downpayment-insurance-tablet-accessory
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutMetadataSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+    type: GET
+    url: "/apis/checkout/v1/metadata/smartphone-next-term-downpayment-insurance-tablet-accessory"
+    validationType: actual
+  validatePreCheckoutDeviceOnly:
+    body: ""
+    cookies:
+      uuid: device-only
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validatePreCheckoutDeviceOnly
+    type: GET
+    url: "/apis/checkout/pre/v1/start/device-only"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: actual
+  validateCheckoutMetadataDeviceOnlyResponse:
+    body: ""
+    cookies:
+      uuid: device-only
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutMetadataDeviceOnlyResponse
+    type: GET
+    url: "/apis/checkout/v1/metadata/device-only"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: false
+    validationType: actual
+  validateCheckoutAddLineSmartphoneNextDpCreditCNoDepositResponse: 
+    body: ""
+    cookies: 
+      uuid: add-line-smartphone-next-dp-credit-c-no-deposit
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutAddLineSmartphoneNextDpCreditCNoDepositResponse
+    type: GET
+    url: /apis/cart/v1/add-line-smartphone-next-dp-credit-c-no-deposit
+    validationType: actual
+  validateCheckoutAddLineSmbFlexBanDtvHisaVoipResponse: 
+    body: ""
+    cookies: 
+      uuid: add-line-smb-flex-ban-dtv-hisa-voip
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutAddLineSmbFlexBanDtvHisaVoipResponse
+    type: GET
+    url: /apis/cart/v1/add-line-smb-flex-ban-dtv-hisa-voip
+    validationType: actual
+  validateCheckoutAddLineSmbSmartphoneNextDpCreditCNoDepositResponse: 
+    body: ""
+    cookies: 
+      uuid: add-line-smb-smartphone-next-dp-credit-c-no-deposit
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutAddLineSmbSmartphoneNextDpCreditCNoDepositResponse
+    type: GET
+    url: /apis/cart/v1/add-line-smb-smartphone-next-dp-credit-c-no-deposit
+    validationType: actual
+  validatePreCheckoutProvideSmbDtv:
+    body: ""
+    cookies:
+      uuid: smb-provide-new-dtv-flow
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validatePreCheckoutProvideSmbDtv
+    type: GET
+    url: /apis/checkout/pre/v1/start/smb-provide-new-dtv-flow
+    validationType: actual
+  validateCheckoutMetadataProvideSmbDtvResponse:
+    body: ""
+    cookies:
+      uuid: smb-provide-new-dtv-flow
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutMetadataProvideSmbDtvResponse
+    type: GET
+    url:  /apis/checkout/v1/metadata/smb-provide-new-dtv-flow
+    validationType: actual
+  validatePreCheckoutProvideSmbDtvFailure:
+    body: ""
+    cookies:
+      uuid: smb-provide-new-dtv-flow-failure
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validatePreCheckoutProvideSmbDtvFailure
+    type: GET
+    url: /apis/checkout/pre/v1/start/smb-provide-new-dtv-flow-failure
+    validationType: actual
+  validateCheckoutMetadataProvideSmbDtvFailureResponse:
+    body: ""
+    cookies:
+      uuid: smb-provide-new-dtv-flow-failure
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutMetadataProvideSmbDtvFailureResponse
+    type: GET
+    url:  /apis/checkout/v1/metadata/smb-provide-new-dtv-flow-failure
+    validationType: actual
+  validateCheckoutModifyDtvAddingSubsAccessoriesExpressCheckoutResponse:
+    body: ""
+    cookies: 
+      uuid: modify-dtv-adding-subs-accessories-express-checkout
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutModifyDtvAddingSubsAccessoriesExpressCheckoutResponse
+    type: GET
+    url: /apis/cart/v1/modify-dtv-adding-subs-accessories-express-checkout
+    validationType: actual
+  validateCheckoutModifyHisaVoiprResponse: 
+    body: ""
+    cookies: 
+      uuid: modify-hisa-voip
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutModifyHisaVoipResponse
+    type: GET
+    url: /apis/cart/v1/modify-hisa-voip
+    validationType: actual
+  validateCheckoutModifyIptvHsiaVoipAddChannelonsProtectionplansReceiverVoipResponse: 
+    body: ""
+    cookies: 
+      uuid: modify-iptv-hsia-voip-add-channelons-protectionplans-receiver-voip
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutModifyIptvHsiaVoipAddChannelonsProtectionplansReceiverVoipResponse
+    type: GET
+    url: /apis/cart/v1/modify-iptv-hsia-voip-add-channelons-protectionplans-receiver-voip
+    validationType: actual
+  validateCheckoutModifySmbHisaProfessionalInstallResponse: 
+    body: ""
+    cookies: 
+      uuid: modify-smb-hisa-professionalinstall
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutModifySmbHisaProfessionalInstallResponse
+    type: GET
+    url: /apis/cart/v1/modify-smb-hisa-professionalinstall
+    validationType: actual
+  validateCheckoutModifySmbHsiaAddDtvBusinessAppsResponse: 
+    body: ""
+    cookies: 
+      uuid: modify-smb-hsia-add-dtv-businessApps
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutModifySmbHsiaAddDtvBusinessAppsResponse
+    type: GET
+    url: /apis/cart/v1/modify-smb-hsia-add-dtv-businessApps
+    validationType: actual
+  validateCheckoutModifySmbIptvHsiaProvideVoipPortInResponse: 
+    body: ""
+    cookies: 
+      uuid: modify-smb-iptv-hsia-provide-voip-portIn
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutModifySmbIptvHsiaProvideVoipPortInResponse
+    type: GET
+    url: /apis/cart/v1/modify-smb-iptv-hsia-provide-voip-portIn
+    validationType: actual
+  validateCheckoutNewNewByodSimonlyHsiaSelfInstallHniResponse: 
+    body: ""
+    cookies: 
+      uuid: new-new-byod-simonly-hsia-selfinstall-hni
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutNewNewByodSimonlyHsiaSelfInstallHniResponse
+    type: GET
+    url: /apis/cart/v1/new-new-byod-simonly-hsia-selfinstall-hni
+    validationType: actual
+  validateCheckoutNewNewCitiFlowNewUverseTvNewHsiaResponse: 
+    body: ""
+    cookies: 
+      uuid: new-new-citi-flow-new-uverse-tv-new-hsia
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutNewNewCitiFlowNewUverseTvNewHsiaResponse
+    type: GET
+    url: /apis/cart/v1/new-new-citi-flow-new-uverse-tv-new-hsia
+    validationType: actual
+  validateCheckoutNewNewPostpaidWirelessLineNewDtvNewHisa4AccessoryResponse: 
+    body: ""
+    cookies: 
+      uuid: new-new-postpaid-wireless-line-new-dtv-new-hisa-4-accessory
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutNewNewPostpaidWirelessLineNewDtvNewHisa4AccessoryResponse
+    type: GET
+    url: /apis/cart/v1/new-new-postpaid-wireless-line-new-dtv-new-hisa-4-accessory
+    validationType: actual
+  validateCheckoutNewWirelessSmartphoneC2sCreditC$100DepositResponse: 
+    body: ""
+    cookies: 
+      uuid: "new-wireless-smartphone -c2s-credit-c-$100-deposit"
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutNewWirelessSmartphoneC2sCreditC$100DepositResponse
+    type: GET
+    url: "/apis/cart/v1/new-wireless-smartphone -c2s-credit-c-$100-deposit"
+    validationType: actual
+  validateCheckoutProvideDtvHisaVoip2HighUnknownRiskResponse: 
+    body: ""
+    cookies: 
+      uuid: provide-dtv-hisa-voip2-high-unknownrisk
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutProvideDtvHisaVoip2HighUnknownRiskResponse
+    type: GET
+    url: /apis/cart/v1/provide-dtv-hisa-voip2-high-unknownrisk
+    validationType: actual
+  validateCheckoutMetadataProvideDtvResponse: 
+    body: ""
+    cookies: 
+      uuid: provide-dtv
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutMetadataProvideDtvResponse
+    type: GET
+    url: /apis/checkout/v1/metadata/provide-dtv
+    validationType: actual
+  validateCheckoutProvideIptvVoipResponse:
+    body: ""
+    cookies: 
+      uuid: provide-iptv-voip
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutProvideIptvVoipResponse
+    type: GET
+    url: /apis/checkout/v1/metadata/provide-iptv-voip
+    validationType: actual
+  validateCheckoutProvideSmbAppsResponse: 
+    body: ""
+    cookies: 
+      uuid: provide-smb-apps
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutProvideSmbAppsResponse
+    type: GET
+    url: /apis/cart/v1/provide-smb-apps
+    validationType: actual
+  validateCheckoutProvideSmbDslSelfInstallResponse:
+    body: ""
+    cookies: 
+      uuid: provide-smb-dsl-self-install
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutProvideSmbDslSelfInstallResponse
+    type: GET
+    url: /apis/cart/v1/provide-smb-dsl-self-install
+    validationType: actual
+  validateCheckoutProvideSmbDtvHisaVoip2HighUnknownriskResponse: 
+    body: ""
+    cookies: 
+      uuid: provide-smb-dtv-hisa-voip2-high-unknownrisk
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutProvideSmbDtvHisaVoip2HighUnknownriskResponse
+    type: GET
+    url: /apis/cart/v1/provide-smb-dtv-hisa-voip2-high-unknownrisk
+    validationType: actual
+  validateCheckoutReplaceYourDeviceFlowResponse:
+    body: ""
+    cookies: 
+      uuid: replace-your-device-flow
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutReplaceYourDeviceFlowResponse
+    type: GET
+    url: /apis/cart/v1/replace-your-device-flow
+    validationType: actual
+  validateCheckoutSmartphoneNoTermDtvHsiaVoipResponse:
+    body: ""
+    cookies: 
+      uuid: smartphone-no-term-dtv-hsia-voip
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutSmartphoneNoTermDtvHsiaVoipResponse
+    type: GET
+    url: /apis/cart/v1/smartphone-no-term-dtv-hsia-voip
+    validationType: actual
+  validateCheckoutUpgradeExpressUpgradeAccessoriesResponse: 
+    body: ""
+    cookies: 
+      uuid: upgrade-express-upgrade-accessories
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutUpgradeExpressUpgradeAccessoriesResponse
+    type: GET
+    url: /apis/cart/v1/upgrade-express-upgrade-accessories
+    validationType: actual
+  validatePreCheckoutProvideDtv: 
+    body: ""
+    cookies: 
+      uuid: provide-dtv
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validatePreCheckoutProvideDtv
+    type: GET
+    url: /apis/checkout/pre/v1/start/provide-dtv
+    validationType: actual
+  validatePreCheckoutNewPostPaidDownPayment:
+    testCaseName:
+        validatePreCheckoutNewPostPaidDownPayment
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-postpaid-down-payment"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/new-postpaid-down-payment"
+    validationType: actual
+  validateCheckoutMetadataNewPostPaidDownPaymentResponse:
+    testCaseName: validateCheckoutMetadataNewPostPaidDownPaymentResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "new-postpaid-down-payment"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/new-postpaid-down-payment"
+    validationType: actual
+  validatePreCheckoutNewWirelessByodSimOnly:
+    testCaseName: validatePreCheckoutNewWirelessByodSimOnly
+    body: ""
+    cookies:
+      uuid: new-wireless-byod-simonly-flow
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: GET
+    url: "/apis/checkout/pre/v1/start/new-wireless-byod-simonly-flow"
+    validationType: actual
+  validateCheckoutMetadataNewWirelessByodSimOnlyResponse:
+    testCaseName: validateCheckoutMetadataNewWirelessByodSimOnlyResponse
+    body: ""
+    cookies:
+      uuid: new-wireless-byod-simonly-flow
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: GET
+    url: "/apis/checkout/v1/metadata/new-wireless-byod-simonly-flow"
+    validationType: actual
+  validatePreCheckoutModifyDtvAddingSubsAccessoriesExpressCheckout:
+    testCaseName:
+        validatePreCheckoutModifyDtvAddingSubsAccessoriesExpressCheckout
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/modify-dtv-adding-subs-accessories-express-checkout"
+    validationType: actual
+  validateCheckoutMetadataModifyDtvAddingSubsAccessoriesExpressCheckoutResponse:
+    testCaseName: validateCheckoutMetadataModifyDtvAddingSubsAccessoriesExpressCheckoutResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/modify-dtv-adding-subs-accessories-express-checkout"
+    validationType: actual
+  validatePreCheckoutModifyDtvRtpProducts:
+    testCaseName: validatePreCheckoutModifyDtvRtpProducts
+    body: ""
+    cookies:
+      uuid: modify-dtv-rtpproducts
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: GET
+    url: "/apis/checkout/pre/v1/start/modify-dtv-rtpproducts"
+    validationType: actual
+  validateCheckoutMetadataModifyDtvRtpProductsResponse:
+    testCaseName: validateCheckoutMetadataModifyDtvRtpProductsResponse
+    body: ""
+    cookies:
+      uuid: modify-dtv-rtpproducts
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: GET
+    url: "/apis/checkout/v1/metadata/modify-dtv-rtpproducts"
+    validationType: actual
+  validatePreCheckoutModifyIptvHisaVoipModifyAll:
+    testCaseName:
+        validatePreCheckoutModifyIptvHisaVoipModifyAll
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-iptvhisavoip-modifyall"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/modify-iptvhisavoip-modifyall"
+    validationType: actual
+  validateCheckoutMetadataModifyIptvHisaVoipModifyAllResponse:
+    testCaseName: validateCheckoutMetadataModifyIptvHisaVoipModifyAllResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "modify-iptvhisavoip-modifyall"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/modify-iptvhisavoip-modifyall"
+    validationType: actual
+  validatePreCheckoutModifyIptvAddReceiverSelfInstallHybridCheckout:
+    testCaseName: validatePreCheckoutModifyIptvAddReceiverSelfInstallHybridCheckout
+    body: ""
+    cookies:
+      uuid: modify-iptv-add-receiver-selfInstall-hybrid-checkout
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: GET
+    url: "/apis/checkout/pre/v1/start/modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    validationType: actual
+  validateCheckoutMetadataModifyIptvAddReceiverSelfInstallHybridCheckoutResponse:
+    testCaseName: validateCheckoutMetadataModifyIptvAddReceiverSelfInstallHybridCheckoutResponse
+    body: ""
+    cookies:
+      uuid: modify-iptv-add-receiver-selfInstall-hybrid-checkout
+    params:
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: GET
+    url: "/apis/checkout/v1/metadata/modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    validationType: actual
+  validatePreCheckoutNewCitiFlow:
+    testCaseName:
+        validatePreCheckoutNewCitiFlow
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-citi-flow"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/new-citi-flow"
+    validationType: actual
+  validateCheckoutMetadataNewCitiFlowResponse:
+    testCaseName: validateCheckoutMetadataNewCitiFlowResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "new-citi-flow"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/new-citi-flow"
+    validationType: actual
+  validatePreCheckoutProvideIptvVoip:
+    testCaseName:
+        validatePreCheckoutProvideIptvVoip
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-iptv-voip"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/provide-iptv-voip"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: actual
+
+  validateCheckoutMetadataProvideIptvVoipResponse:
+    testCaseName: validateCheckoutMetadataProvideIptvVoipResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "provide-iptv-voip"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/provide-iptv-voip"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: actual
+  validatePreCheckoutProvideIptvVoipPortin:
+    testCaseName:
+        validatePreCheckoutProvideIptvVoipPortin
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-iptv-voip-portin"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/provide-iptv-voip-portin"
+    validationType: actual
+  validateCheckoutMetadataProvideIptvVoipPortinResponse:
+    testCaseName: validateCheckoutMetadataProvideIptvVoipPortinResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "provide-iptv-voip-portin"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/provide-iptv-voip-portin"
+    validationType: actual 
+  validatePreCheckoutModifyDtvHsiaVoipNonPublishedListing:
+    testCaseName:
+        validatePreCheckoutModifyDtvHsiaVoipNonPublishedListing
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-dtv-hsia-voip-non-published-listing"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/modify-dtv-hsia-voip-non-published-listing"
+    validationType: actual
+  validateCheckoutMetadataModifyDtvHsiaVoipNonPublishedListingResponse:
+    testCaseName: validateCheckoutMetadataModifyDtvHsiaVoipNonPublishedListingResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "modify-dtv-hsia-voip-non-published-listing"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/modify-dtv-hsia-voip-non-published-listing"
+    validationType: actual
+  validatePreCheckoutReplaceYourDeviceFlow:
+    testCaseName:
+        validatePreCheckoutReplaceYourDeviceFlow
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "replace-your-device-flow"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/replace-your-device-flow"
+    validationType: actual
+  validateCheckoutMetadataReplaceYourDeviceFlowResponse:
+    testCaseName: validateCheckoutMetadataReplaceYourDeviceFlowResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "replace-your-device-flow"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/replace-your-device-flow"
+    validationType: actual
+  validatePreCheckoutModifySmbIptvHsiaProvideVoipPortIn:
+    testCaseName:
+        validatePreCheckoutModifySmbIptvHsiaProvideVoipPortIn
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/modify-smb-iptv-hsia-provide-voip-portIn"
+    validationType: actual
+  validateCheckoutMetadataModifySmbIptvHsiaProvideVoipPortInResponse:
+    testCaseName: validateCheckoutMetadataModifySmbIptvHsiaProvideVoipPortInResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/modify-smb-iptv-hsia-provide-voip-portIn"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: actual
+  validatePreCheckoutSmartphoneNoCommitmentTerm:
+    testCaseName: validatePreCheckoutSmartphoneNoCommitmentTerm
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smartphone-no-commitment-term"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/smartphone-no-commitment-term"
+    validationType: actual
+  validateCheckoutMetadataSmartphoneNoCommitmentTermResponse:
+    testCaseName: validateCheckoutMetadataSmartphoneNoCommitmentTermResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "smartphone-no-commitment-term"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/smartphone-no-commitment-term"
+    validationType: actual 
+  validatePreCheckoutModifySmbHsiaAddDtvBusinessApps:
+    testCaseName:
+        validatePreCheckoutModifySmbHsiaAddDtvBusinessApps
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-smb-hsia-add-dtv-businessApps"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/modify-smb-hsia-add-dtv-businessApps"
+    validationType: actual
+  validateCheckoutMetadataModifySmbHsiaAddDtvBusinessAppsResponse:
+    testCaseName: validateCheckoutMetadataModifySmbHsiaAddDtvBusinessAppsResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "modify-smb-hsia-add-dtv-businessApps"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/modify-smb-hsia-add-dtv-businessApps"
+    validationType: actual 
+  validatePreCheckoutProvideSmbDslSelfInstall:
+    testCaseName:
+        validatePreCheckoutProvideSmbDslSelfInstall
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-smb-dsl-self-install"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/provide-smb-dsl-self-install"
+    validationType: actual
+  validateCheckoutMetadataProvideSmbDslSelfInstallResponse:
+    testCaseName: validateCheckoutMetadataProvideSmbDslSelfInstallResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "provide-smb-dsl-self-install"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/provide-smb-dsl-self-install"
+    validationType: actual  
+  validatePreCheckout4PostpaidWirelessCreditC:
+    testCaseName:
+        validatePreCheckout4PostpaidWirelessCreditC
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "4-postpaid-wireless-creditC-deposit"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/4-postpaid-wireless-creditC-deposit"
+    validationType: actual
+  validateCheckoutMetadata4PostpaidWirelessCreditCResponse:
+    testCaseName: validateCheckoutMetadata4PostpaidWirelessCreditCResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "4-postpaid-wireless-creditC-deposit"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/4-postpaid-wireless-creditC-deposit"
+    validationType: actual  
+  validatePreCheckoutNewPostpaidNextDPCreditC:
+    testCaseName:
+        validatePreCheckoutNewPostpaidNextDPCreditC
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-postpaid-nextDP-creditC"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/new-postpaid-nextDP-creditC"
+    validationType: actual
+  validateCheckoutMetadataNewPostpaidNextDPCreditCResponse:
+    testCaseName: validateCheckoutMetadataNewPostpaidNextDPCreditCResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "new-postpaid-nextDP-creditC"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/new-postpaid-nextDP-creditC"
+    validationType: actual  
+  validatePreCheckoutNewDtvHsiaVoipHighRisk:
+    testCaseName:
+        validatePreCheckoutNewDtvHsiaVoipHighRisk
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/new-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: actual
+  validateCheckoutMetadataNewDtvHsiaVoipHighRiskResponse:
+    testCaseName: validateCheckoutMetadataNewDtvHsiaVoipHighRiskResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/new-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: actual  
+  validatePreCheckoutExpressUpgrade:
+    testCaseName:
+        validatePreCheckoutExpressUpgrade
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "express-upgrade"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/express-upgrade"
+    validationType: actual
+  validateCheckoutMetadataExpressUpgradeResponse:
+    testCaseName: validateCheckoutMetadataExpressUpgradeResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "express-upgrade"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/express-upgrade"
+    validationType: actual  
+  validatePreCheckoutProvideSmbDtvHsiaVoipHighRisk:
+    testCaseName:
+        validatePreCheckoutProvideSmbDtvHsiaVoipHighRisk
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: actual
+  validateCheckoutMetadataProvideSmbDtvHsiaVoipHighRiskResponse:
+    testCaseName: validateCheckoutMetadataProvideSmbDtvHsiaVoipHighRiskResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    body: ""  
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: actual
+  validatePreCheckoutSmbModifyExtDslAddingHsiaBizApps:
+    testCaseName: validatePreCheckoutSmbModifyExtDslAddingHsiaBizApps
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/smb-modify-extdsl-addinghsia-bizapps"
+    validationType: actual
+  validateCheckoutMetadataSmbModifyExtDslAddingHsiaBizAppsResponse:
+    testCaseName: validateCheckoutMetadataSmbModifyExtDslAddingHsiaBizAppsResponse
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/smb-modify-extdsl-addinghsia-bizapps"
+    validationType: actual
+  validatePreCheckoutModifySmbPotsAddHsiaTechInstall:
+    testCaseName: validatePreCheckoutModifySmbPotsAddHsiaTechInstall
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    validationType: actual
+  validateCheckoutMetadataModifySmbPotsAddHsiaTechInstallResponse:
+    testCaseName: validateCheckoutMetadataModifySmbPotsAddHsiaTechInstallResponse
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    validationType: actual
+  validatePreCheckoutModifyExistingIptvHighriskAddingVoip:
+    testCaseName: validatePreCheckoutModifyExistingIptvHighriskAddingVoip
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-existing-iptv-highrisk-adding-voip"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/modify-existing-iptv-highrisk-adding-voip"
+    validationType: actual
+  validateCheckoutMetadataModifyExistingIptvHighriskAddingVoipResponse:
+    testCaseName: validateCheckoutMetadataModifyExistingIptvHighriskAddingVoipResponse
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-existing-iptv-highrisk-adding-voip"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/v1/metadata/modify-existing-iptv-highrisk-adding-voip"
+    validationType: actual
+  validateCheckoutNewPostpaidC2SCredit$100Response:
+    body: ""
+    cookies: 
+      uuid: "new-postpaid-c2s-creditC-$100"
+    params: 
+      serviceType: None
+    referenceData: validateCheckout/schema/validateCheckout.json
+    testCaseName: validateCheckoutNewPostpaidC2SCredit$100Response
+    type: GET
+    url: "/apis/checkout/v1/metadata/new-postpaid-c2s-creditC-$100"
+    validationType: actual
+  validatePreCheckoutNewPostpaidC2SCredit$100:
+    testCaseName:
+        validatePreCheckoutNewPostpaidC2SCredit$100
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-postpaid-c2s-creditC-$100"
+    body: ""
+    referenceData: validateCheckout/schema/validateCheckout.json
+    type: "GET"
+    url: "/apis/checkout/pre/v1/start/new-postpaid-c2s-creditC-$100"
+    validationType: actual

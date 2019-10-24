@@ -1,0 +1,712 @@
+---
+intergrationTestCases:
+### - Use to validate the cloud data against the Submitted Order per flow
+  validateBulk:
+    - validateCloudDataNACK627
+  validateNack:
+    - clearCheckoutDataNACK565
+    - postCloudDataNACK565
+    - validateCloudDataNACK565
+    - clearCheckoutDataNACK581
+    - postCloudDataNACK581
+    - validateCloudDataNACK581
+#EDS_CCC_PROVIDE_SMB_DTV_TC_10
+  provideSMBDTV:
+    - clearCheckoutDataProvideSmbDtv
+    - flowDataSetupProvideSmbDtv
+    - validateCartProvideSmbDtvResponse
+    - validatePreCheckoutProvideSmbDtv
+    - validateCheckoutMetadataProvideSmbDtvResponse
+    - validateBusinessInfoProvideSmbDtvPOSTResponse
+    - validatePersonalInfoProvideSmbDtvPOSTResponse
+    - validateBusinessInfoProvideSmbDtvGETResponse
+    - validatePersonalInfoProvideSmbDtvGETResponse
+    - validateAddressProvideSmbDtvPOSTResponse
+    - validateAddressProvideSmbDtvGETResponse
+    - validatePaymentProvideSmbDtvPOSTResponse
+    - validatePaymentProvideSmbDtvGETResponse
+    - validateBillingPreferenceProvideSmbDtvPOSTResponse
+    - validateBillingPreferenceProvideSmbDtvGETResponse
+    - validateReviewProvideSmbDtvResponse
+    - validateOrderSubmitProvideSmbDtvResponse
+    - validateThankYouProvideSmbDtvResponse
+## - Use to validate the cloud data against the Submitted Order per flow
+    - validateCloudDataProvideSmbDtv
+  #EDS_CCC_PROVIDE_DTV_TC_20
+  provideDtv:
+    - clearCheckoutDataProvideDtv
+    - flowDataSetupProvideDtv
+    - validateCartProvideDtvResponse
+    - validatePreCheckoutProvideDtv
+    - validateCheckoutMetadataProvideDtvResponse
+    - validatePersonalInfoProvideDtvPOSTResponse
+    - validatePersonalInfoProvideDtvGETResponse
+    - validateAddressProvideDtvPOSTResponse
+    - validateAddressProvideDtvGETResponse
+    - validateScheduleInfoProvideDtvPostResponse
+    - validateScheduleInfoProvideDtvGetResponse
+    - validatePaymentProvideDtvPOSTResponse
+    - validatePaymentProvideDtvGETResponse
+    - validateBillingPreferenceProvideDtvPOSTResponse
+    - validateBillingPreferenceProvideDtvGETResponse
+    - validateReviewProvideDtvResponse
+    - validateOrderSubmitProvideDtvResponse
+    - validateThankYouProvideDtvResponse
+  #EDS_CCC_PROVIDE_IPTV_VOIP_TC_30
+  provideIptvVoip:
+    - clearCheckoutDataProvideIptvVoip
+    - flowDataSetupProvideIptvVoip
+    - validateCartProvideIptvVoipResponse
+    - validatePreCheckoutProvideIptvVoip
+    - validateCheckoutMetadataProvideIptvVoipResponse
+    - validatePersonalInfoProvideIptvVoipPOSTResponse
+    - validatePersonalInfoProvideIptvVoipGETResponse
+    - validateAddressProvideIptvVoipPOSTResponse
+    - validateAddressProvideIptvVoipGETResponse
+    - validateScheduleInfoProvideIptvVoipPostResponse
+    - validateScheduleInfoProvideIptvVoipGetResponse
+    - validateAccountSetupProvideIptvVoipPostResponse
+    - validatePaymentProvideIptvVoipPOSTResponse
+    - validatePaymentProvideIptvVoipGETResponse
+    - validateBillingPreferenceProvideIptvVoipPOSTResponse
+    - validateBillingPreferenceProvideIptvVoipGETResponse
+    - validateReviewProvideIptvVoipResponse
+    - validateOrderSubmitProvideIptvVoipResponse
+    - validateThankYouProvideIptvVoipResponse
+  #EDS_CCC_PROVIDE_HSIA_TC_40
+  provideHsia:
+    - clearCheckoutDataProvideHsia
+    - flowDataSetupProvideHsia
+    - validateCartProvideHsiaResponse
+    - validatePreCheckoutProvideHsia
+    - validateCheckoutMetadataProvideHsiaResponse
+    - validatePersonalInfoProvideHsiaPOSTResponse
+    - validatePersonalInfoProvideHsiaGETResponse
+    - validateAddressProvideHsiaPOSTResponse
+    - validateAddressProvideHsiaGETResponse
+    - validatePaymentProvideHsiaPOSTResponse
+    - validatePaymentProvideHsiaGETResponse
+    - validateBillingPreferenceProvideHsiaPOSTResponse
+    - validateBillingPreferenceProvideHsiaGETResponse
+    - validateReviewProvideHsiaResponse
+    - validateOrderSubmitProvideHsiaResponse
+    - validateThankYouProvideHsiaResponse
+  #EDS_CCC_PROVIDE_IPTV_VOIP_TC_50
+  provideIptvVoipPortin:
+    - clearCheckoutDataProvideIptvVoipPortin
+    - flowDataSetupProvideIptvVoipPortin
+    - validateCartProvideIptvVoipPortinResponse
+    - validatePreCheckoutProvideIptvVoipPortin
+    - validateCheckoutMetadataProvideIptvVoipPortinResponse
+    - validatePersonalInfoProvideIptvVoipPortinPOSTResponse
+    - validatePersonalInfoProvideIptvVoipPortinGETResponse
+    - validateAddressProvideIptvVoipPortinPOSTResponse
+    - validateAddressProvideIptvVoipPortinGETResponse
+    - validatePaymentProvideIptvVoipPortinPOSTResponse
+    - validatePaymentProvideIptvVoipPortinGETResponse
+    - ValidateAccountSetupProvideIptvVoipPortinPostResponse
+    - ValidateAccountSetupProvideIptvVoipPortinAllGetResponse
+    - validateBillingPreferenceProvideIptvVoipPortinPOSTResponse
+    - validateBillingPreferenceProvideIptvVoipPortinGETResponse
+    - validateReviewProvideIptvVoipPortinResponse
+    - validateOrderSubmitProvideIptvVoipPortinResponse
+    - validateThankYouProvideIptvVoipPortinResponse
+  #EDS_CCC_NEW_DTV_VOIP_HIGH_RISK_TC_60
+  newDtvHsiaVoipHighRisk:
+    - clearCheckoutDataNewDtvHsiaVoipHighRisk
+    - flowDataSetupNewDtvHsiaVoipHighRisk
+    - validateCartNewDtvHsiaVoipHighRiskResponse
+    - validatePreCheckoutNewDtvHsiaVoipHighRisk
+    - validateCheckoutMetadataNewDtvHsiaVoipHighRiskResponse
+    - validatePersonalInfoNewDtvHsiaVoipHighRiskPOSTResponse
+    - validatePersonalInfoNewDtvHsiaVoipHighRiskGETResponse
+    - validateAddressNewDtvHsiaVoipHighRiskPOSTResponse
+    - validateAddressNewDtvHsiaVoipHighRiskGETResponse
+    - validatePaymentNewDtvHsiaVoipHighRiskPOSTResponse
+    - validatePaymentNewDtvHsiaVoipHighRiskGETResponse
+    - validateBillingPreferenceNewDtvHsiaVoipHighRiskPOSTResponse
+    - validateBillingPreferenceNewDtvHsiaVoipHighRiskGETResponse
+    - validateReviewNewDtvHsiaVoipHighRiskResponse
+    - validateOrderSubmitNewDtvHsiaVoipHighRiskResponse
+    - validateThankYouNewDtvHsiaVoipHighRiskResponse
+  #EDS_CCC_MODIFY_DTV_HSIA_VOIP_NON_PUBLISHED_LISTING_TC_70
+  modifyDtvHsiaVoipNonPublishedListing:
+    - clearCheckoutDataModifyDtvHsiaVoipNonPublishedListing
+    - flowDataSetupModifyDtvHsiaVoipNonPublishedListing
+    - validateCartModifyDtvHsiaVoipNonPublishedListingResponse
+    - validateProfileInfoModifyDtvHsiaVoipNonPublishedListing
+    - validatePreCheckoutModifyDtvHsiaVoipNonPublishedListing
+    - validateCheckoutMetadataModifyDtvHsiaVoipNonPublishedListingResponse
+    - validatePersonalInfoModifyDtvHsiaVoipNonPublishedListingPOSTResponse
+    - validatePersonalInfoModifyDtvHsiaVoipNonPublishedListingGETResponse
+    - validateAddressModifyDtvHsiaVoipNonPublishedListingPOSTResponse
+    - validateAddressModifyDtvHsiaVoipNonPublishedListingGETResponse
+    - validateScheduleInfoModifyDtvHsiaVoipNonPublishedListingPostResponse
+    - validateScheduleInfoModifyDtvHsiaVoipNonPublishedListingGetResponse
+    - validatePaymentModifyDtvHsiaVoipNonPublishedListingPOSTResponse
+    - validatePaymentModifyDtvHsiaVoipNonPublishedListingGETResponse
+    - validateBillingPreferenceModifyDtvHsiaVoipNonPublishedListingPOSTResponse
+    - validateBillingPreferenceModifyDtvHsiaVoipNonPublishedListingGETResponse
+    - validateReviewModifyDtvHsiaVoipNonPublishedListingResponse
+    - validateOrderSubmitModifyDtvHsiaVoipNonPublishedListingResponse
+    - validateThankYouModifyDtvHsiaVoipNonPublishedListingResponse
+  #EDS_CCC_EXISTING_IPTV_HIGH_RISK_ADDING_VOIP_TC_80
+  modifyExistingIptvHighriskAddingVoip:
+    - clearCheckoutDataModifyExistingIptvHighriskAddingVoip
+    - flowDataSetupModifyExistingIptvHighriskAddingVoip
+    - validateCartModifyExistingIptvHighriskAddingVoipResponse
+    - validatePreCheckoutModifyExistingIptvHighriskAddingVoip
+    - validateCheckoutMetadataModifyExistingIptvHighriskAddingVoipResponse
+    - validatePersonalInfoModifyExistingIptvHighriskAddingVoipPOSTResponse
+    - validatePersonalInfoModifyExistingIptvHighriskAddingVoipGETResponse
+    - validateAddressModifyExistingIptvHighriskAddingVoipPOSTResponse
+    - validateAddressModifyExistingIptvHighriskAddingVoipGETResponse
+    - validatePaymentModifyExistingIptvHighriskAddingVoipPOSTResponse
+    - validatePaymentModifyExistingIptvHighriskAddingVoipGETResponse
+#    - validateBillingPreferenceModifyExistingIptvHighriskAddingVoipPOSTResponse
+#    - validateBillingPreferenceModifyExistingIptvHighriskAddingVoipGETResponse
+    - validateReviewModifyExistingIptvHighriskAddingVoipResponse
+    - validateOrderSubmitModifyExistingIptvHighriskAddingVoipResponse
+    - validateThankYouModifyExistingIptvHighriskAddingVoipResponse
+  #EDS_CCC_MODIFY_DTV_RTP_PRODUCTS_TC_90
+  modifyDtvRtpProducts:
+    - clearCheckoutDataModifyDtvRtpProducts
+    - flowDataSetupModifyDtvRtpProducts
+    - validateCartModifyDtvRtpProductsResponse
+    - validatePreCheckoutModifyDtvRtpProducts
+    - validateCheckoutMetadataModifyDtvRtpProductsResponse
+    - validatePersonalInfoModifyDtvRtpProductsPOSTResponse
+    - validatePersonalInfoModifyDtvRtpProductsGETResponse
+    - validateAddressModifyDtvRtpProductsPOSTResponse
+    - validateAddressModifyDtvRtpProductsGETResponse
+#    - validatePaymentModifyDtvRtpProductsPOSTResponse
+#    - validatePaymentModifyDtvRtpProductsGETResponse
+    - validateBillingPreferenceModifyDtvRtpProductsPOSTResponse
+    - validateBillingPreferenceModifyDtvRtpProductsGETResponse
+    - validateReviewModifyDtvRtpProductsResponse
+    - validateOrderSubmitModifyDtvRtpProductsResponse
+    - validateThankYouModifyDtvRtpProductsResponse
+  #EDS_CCC_DTV_ADDING_SUB_ACCESSORIES_EXPRESS_CHECKOUT_TC_100
+  modifyDtvAddingSubsAccessoriesExpressCheckout:
+    - clearCheckoutDataModifyDtvAddingSubsAccessoriesExpressCheckout
+    - flowDataSetupModifyDtvAddingSubsAccessoriesExpressCheckout
+    - validateCartModifyDtvAddingSubsAccessoriesExpressCheckoutResponse
+    - validatePreCheckoutModifyDtvAddingSubsAccessoriesExpressCheckout
+    - validateCheckoutMetadataModifyDtvAddingSubsAccessoriesExpressCheckoutResponse
+    - validatePersonalInfoModifyDtvAddingSubsAccessoriesExpressCheckoutPOSTResponse
+    - validatePersonalInfoModifyDtvAddingSubsAccessoriesExpressCheckoutGETResponse
+    - validateAddressModifyDtvAddingSubsAccessoriesExpressCheckoutPOSTResponse
+    - validateAddressModifyDtvAddingSubsAccessoriesExpressCheckoutGETResponse
+    - validatePaymentModifyDtvAddingSubsAccessoriesExpressCheckoutPOSTResponse
+    - validatePaymentModifyDtvAddingSubsAccessoriesExpressCheckoutGETResponse
+    - validateBillingPreferenceModifyDtvAddingSubsAccessoriesExpressCheckoutPOSTResponse
+    - validateBillingPreferenceModifyDtvAddingSubsAccessoriesExpressCheckoutGETResponse
+    - validateReviewModifyDtvAddingSubsAccessoriesExpressCheckoutResponse
+    - validateOrderSubmitModifyDtvAddingSubsAccessoriesExpressCheckoutResponse
+    - validateThankYouModifyDtvAddingSubsAccessoriesExpressCheckoutResponse
+  #EDS_CCC_MODIFY_IPTV_ADD_RECEIVER_SELF_INSTALL_HYBRID_CHECKOUT_TC_110
+  modifyIptvAddReceiverSelfInstallHybridCheckout:
+    - clearCheckoutDataModifyIptvAddReceiverSelfInstallHybridCheckout
+    - flowDataSetupModifyIptvAddReceiverSelfInstallHybridCheckout
+    - validateCartModifyIptvAddReceiverSelfInstallHybridCheckoutResponse
+    - validatePreCheckoutModifyIptvAddReceiverSelfInstallHybridCheckout
+    - validateCheckoutMetadataModifyIptvAddReceiverSelfInstallHybridCheckoutResponse
+    - validatePersonalInfoModifyIptvAddReceiverSelfInstallHybridPOSTResponse
+    - validatePersonalInfoModifyIptvAddReceiverSelfInstallHybridGETResponse
+    - validateAddressModifyIptvAddReceiverSelfInstallHybridPOSTResponse
+    - validateAddressModifyIptvAddReceiverSelfInstallHybridGETResponse
+    - validatePaymentModifyIptvAddReceiverSelfInstallHybridPOSTResponse
+    - validatePaymentModifyIptvAddReceiverSelfInstallHybridGETResponse
+    - validateReviewModifyIptvAddReceiverSelfInstallHybridCheckoutResponse
+    - validateOrderSubmitModifyIptvAddReceiverSelfInstallHybridCheckoutResponse
+    - validateThankYouModifyIptvAddReceiverSelfInstallHybridCheckoutResponse
+  #EDS_CCC_MODIFY_IPTV_HSIA_VOIP_MODIFY_ALL_TC_120
+  modifyIptvHisaVoipModifyAll:
+    - clearCheckoutDataModifyIptvHisaVoipModifyAll
+    - flowDataSetupModifyIptvHisaVoipModifyAll
+    - validateCartModifyIptvHisaVoipModifyAllResponse
+    - validatePreCheckoutModifyIptvHisaVoipModifyAll
+    - validateCheckoutMetadataModifyIptvHisaVoipModifyAllResponse
+    - validatePersonalInfoModifyIptvHisaVoipModifyAllPOSTResponse
+    - validatePersonalInfoModifyIptvHisaVoipModifyAllGETResponse
+    - validateAddressModifyIptvHisaVoipModifyAllPOSTResponse
+    - validateAddressModifyIptvHisaVoipModifyAllGETResponse
+    - validateScheduleInfoModifyIptvHisaVoipModifyAllPostResponse
+    - validateScheduleInfoModifyIptvHisaVoipModifyAllGetResponse
+    - validatePaymentModifyIptvHisaVoipModifyAllPOSTResponse
+    - validatePaymentModifyIptvHisaVoipModifyAllGETResponse
+    - validateBillingPreferenceModifyIptvHisaVoipModifyAllPOSTResponse
+    - validateBillingPreferenceModifyIptvHisaVoipModifyAllGETResponse
+    - validateReviewModifyIptvHisaVoipModifyAllResponse
+    - validateOrderSubmitModifyIptvHisaVoipModifyAllResponse
+    - validateThankYouModifyIptvHisaVoipModifyAllResponse
+  #EDS_CCC_PROVIDE_SMB_DTV_HSIA_VOIP_HIGH_RISK_TC_130
+  provideSmbDtvHsiaVoipHighRisk:
+    - clearCheckoutDataProvideSmbDtvHsiaVoipHighRisk
+    - flowDataSetupProvideSmbDtvHsiaVoipHighRisk
+    - validateCartProvideSmbDtvHsiaVoipHighRiskResponse
+    - validatePreCheckoutProvideSmbDtvHsiaVoipHighRisk
+    - validateCheckoutMetadataProvideSmbDtvHsiaVoipHighRiskResponse
+    - validateBusinessInfoProvideSmbDtvHsiaVoipHighRiskPOSTResponse
+    - validateBusinessInfoProvideSmbDtvHsiaVoipHighRiskGETResponse
+    - validatePersonalInfoProvideSmbDtvHsiaVoipHighRiskPOSTResponse
+    - validatePersonalInfoProvideSmbDtvHsiaVoipHighRiskGETResponse
+    - validateAddressProvideSmbDtvHsiaVoipHighRiskPOSTResponse
+    - validateAddressProvideSmbDtvHsiaVoipHighRiskGETResponse
+    - validatePaymentProvideSmbDtvHsiaVoipHighRiskPOSTResponse
+    - validatePaymentProvideSmbDtvHsiaVoipHighRiskGETResponse
+    - validateBillingPreferenceProvideSmbDtvHsiaVoipHighRiskPOSTResponse
+    - validateBillingPreferenceProvideSmbDtvHsiaVoipHighRiskGETResponse
+    - validateReviewProvideSmbDtvHsiaVoipHighRiskResponse
+    - validateOrderSubmitProvideSmbDtvHsiaVoipHighRiskResponse
+    - validateThankYouProvideSmbDtvHsiaVoipHighRiskResponse
+  #EDS_CCC_PROVIDE_SMB_DSL_SELF_INSTALL_TC_140
+  provideSmbDslSelfInstall:
+    - clearCheckoutDataProvideSmbDslSelfInstall
+    - flowDataSetupProvideSmbDslSelfInstall
+    - validateCartProvideSmbDslSelfInstallResponse
+    - validatePreCheckoutProvideSmbDslSelfInstall
+    - validateCheckoutMetadataProvideSmbDslSelfInstallResponse
+    - validateBusinessInfoProvideSmbDslSelfInstallPOSTResponse
+    - validateBusinessInfoProvideSmbDslSelfInstallGETResponse
+    - validatePersonalInfoProvideSmbDslSelfInstallPOSTResponse
+    - validatePersonalInfoProvideSmbDslSelfInstallGETResponse
+    - validateAddressProvideSmbDslSelfInstallPOSTResponse
+    - validateAddressProvideSmbDslSelfInstallGETResponse
+    - validatePaymentProvideSmbDslSelfInstallPOSTResponse
+    - validatePaymentProvideSmbDslSelfInstallGETResponse
+    - validateBillingPreferenceProvideSmbDslSelfInstallPOSTResponse
+    - validateBillingPreferenceProvideSmbDslSelfInstallGETResponse
+    - validateReviewProvideSmbDslSelfInstallResponse
+    - validateOrderSubmitProvideSmbDslSelfInstallResponse
+    - validateThankYouProvideSmbDslSelfInstallResponse
+  #EDS_CCC_PROVIDE_SMB_DSL_POTS_TC_150
+  provideSmbDslPots:
+    - clearCheckoutDataProvideSmbDslPots
+    - flowDataSetupProvideSmbDslPots
+    - validateCartProvideSmbDslPotsResponse
+    - validatePreCheckoutProvideSmbDslPots
+    - validateCheckoutMetadataProvideSmbDslPotsResponse
+    - validateBusinessInfoProvideSmbDslPotsPOSTResponse
+    - validateBusinessInfoProvideSmbDslPotsGETResponse
+    - validatePersonalInfoProvideSmbDslPotsPOSTResponse
+    - validatePersonalInfoProvideSmbDslPotsGETResponse
+    - validateAddressProvideSmbDslPotsPOSTResponse
+    - validateAddressProvideSmbDslPotsGETResponse
+    - validatePaymentProvideSmbDslPotsPOSTResponse
+    - validatePaymentProvideSmbDslPotsGETResponse
+    - validateBillingPreferenceProvideSmbDslPotsPOSTResponse
+    - validateBillingPreferenceProvideSmbDslPotsGETResponse
+    - validateReviewProvideSmbDslPotsResponse
+    - validateOrderSubmitProvideSmbDslPotsResponse
+    - validateThankYouProvideSmbDslPotsResponse
+  #EDS_CCC_PROVIDE_SMB_BUSINESS_APPS_TC_160
+  provideSMBBusinessApps:
+    - clearCheckoutDataProvideSMBBusinessApps
+    - flowDataSetupProvideSMBBusinessApps
+    - validateCartProvideSMBBusinessAppsResponse
+    - validatePreCheckoutProvideSMBBusinessApps
+    - validateCheckoutMetadataProvideSMBBusinessAppsResponse
+    - validateBusinessInfoProvideSMBBusinessAppsPOSTResponse
+    - validateBusinessInfoProvideSMBBusinessAppsGETResponse
+    - validatePersonalInfoProvideSMBBusinessAppsPOSTResponse
+    - validatePersonalInfoProvideSMBBusinessAppsGETResponse
+    - validateAddressProvideSMBBusinessAppsPOSTResponse
+    - validateAddressProvideSMBBusinessAppsGETResponse
+    - validatePaymentProvideSMBBusinessAppsPOSTResponse
+    - validatePaymentProvideSMBBusinessAppsGETResponse
+    - validateBillingPreferenceProvideSMBBusinessAppsPOSTResponse
+    - validateBillingPreferenceProvideSMBBusinessAppsGETResponse
+    - validateReviewProvideSMBBusinessAppsResponse
+    - validateOrderSubmitProvideSMBBusinessAppsResponse
+    - validateThankYouProvideSMBBusinessAppsResponse
+  #EDS_CCC_PROVIDE_SMB_IPTV_HSIA_PROVIDE_VOIP_PORT_IN_TC_170
+  modifySmbIptvHsiaProvideVoipPortIn:
+    - clearCheckoutDataModifySmbIptvHsiaProvideVoipPortIn
+    - flowDataSetupModifySmbIptvHsiaProvideVoipPortIn
+    - validateCartModifySmbIptvHsiaProvideVoipPortInResponse
+    - validatePreCheckoutModifySmbIptvHsiaProvideVoipPortIn
+    - validateCheckoutMetadataModifySmbIptvHsiaProvideVoipPortInResponse
+ #   - validateBusinessInfoModifySmbIptvHsiaProvideVoipPortInPOSTResponse
+  #  - validateBusinessInfoModifySmbIptvHsiaProvideVoipPortInGETResponse
+    - validatePersonalInfoModifySmbIptvHsiaProvideVoipPortInPOSTResponse
+    - validatePersonalInfoModifySmbIptvHsiaProvideVoipPortInGETResponse
+    - validateAddressModifySmbIptvHsiaProvideVoipPortInPOSTResponse
+    - validateAddressModifySmbIptvHsiaProvideVoipPortInGETResponse
+#    - validatePaymentModifySmbIptvHsiaProvideVoipPortInPOSTResponse
+#    - validatePaymentModifySmbIptvHsiaProvideVoipPortInGETResponse
+    - validateBillingPreferenceModifySmbIptvHsiaProvideVoipPortInPOSTResponse
+    - validateBillingPreferenceModifySmbIptvHsiaProvideVoipPortInGETResponse
+    - validateReviewModifySmbIptvHsiaProvideVoipPortInResponse
+    - validateOrderSubmitModifySmbIptvHsiaProvideVoipPortInResponse
+    - validateThankYouModifySmbIptvHsiaProvideVoipPortInResponse
+  #EDS_CCC_MODIFY_SMB_HSIA_ADD_DTV_BUSINESS_APPS_TC_180
+  modifySmbHsiaAddDtvBusinessApps:
+    - clearCheckoutDataModifySmbHsiaAddDtvBusinessApps
+    - flowDataSetupModifySmbHsiaAddDtvBusinessApps
+    - validateCartModifySmbHsiaAddDtvBusinessAppsResponse
+    - validatePreCheckoutModifySmbHsiaAddDtvBusinessApps
+    - validateCheckoutMetadataModifySmbHsiaAddDtvBusinessAppsResponse
+#    - validateBusinessInfoModifySmbHsiaAddDtvBusinessAppsPOSTResponse
+    - validateBusinessInfoModifySmbHsiaAddDtvBusinessAppsGETResponse
+    - validatePersonalInfoModifySmbHsiaAddDtvBusinessAppsPOSTResponse
+    - validatePersonalInfoModifySmbHsiaAddDtvBusinessAppsGETResponse
+#    - validateAddressModifySmbHsiaAddDtvBusinessAppsPOSTResponse
+    - validateAddressModifySmbHsiaAddDtvBusinessAppsGETResponse
+#    - validatePaymentModifySmbHsiaAddDtvBusinessAppsPOSTResponse
+    - validatePaymentModifySmbHsiaAddDtvBusinessAppsGETResponse
+    - validateReviewModifySmbHsiaAddDtvBusinessAppsResponse
+    - validateOrderSubmitModifySmbHsiaAddDtvBusinessAppsResponse
+    - validateThankYouModifySmbHsiaAddDtvBusinessAppsResponse
+  #EDS_CCC_MODIFY_EXT_DSL_ADDING_HSIA_BIZ_APPS_TC_190
+  smbModifyExtDslAddingHsiaBizApps:
+    - clearCheckoutDataSmbModifyExtDslAddingHsiaBizApps
+    - flowDataSetupSmbModifyExtDslAddingHsiaBizApps
+    - validateCartSmbModifyExtDslAddingHsiaBizAppsResponse
+    - validatePreCheckoutSmbModifyExtDslAddingHsiaBizApps
+    - validateCheckoutMetadataSmbModifyExtDslAddingHsiaBizAppsResponse
+    - validateBusinessInfoSmbModifyExtDslAddingHsiaBizAppsPOSTResponse
+    - validateBusinessInfoSmbModifyExtDslAddingHsiaBizAppsGETResponse
+    - validatePersonalInfoSmbModifyExtDslAddingHsiaBizAppsPOSTResponse
+    - validatePersonalInfoSmbModifyExtDslAddingHsiaBizAppsGETResponse
+    - validateAddressSmbModifyExtDslAddingHsiaBizAppsPOSTResponse
+    - validateAddressSmbModifyExtDslAddingHsiaBizAppsGETResponse
+    - validatePaymentSmbModifyExtDslAddingHsiaBizAppsPOSTResponse
+    - validatePaymentSmbModifyExtDslAddingHsiaBizAppsGETResponse
+#    - validateBillingPreferenceSmbModifyExtDslAddingHsiaBizAppsPOSTResponse
+#    - validateBillingPreferenceSmbModifyExtDslAddingHsiaBizAppsGETResponse
+    - validateReviewSmbModifyExtDslAddingHsiaBizAppsResponse
+    - validateOrderSubmitSmbModifyExtDslAddingHsiaBizAppsResponse
+    - validateThankYouSmbModifyExtDslAddingHsiaBizAppsResponse
+  #EDS_CCC_MODIFY_SMB_POTS_ADDING_HSIA_TECH_INSTALL_TC_200
+  modifySmbPotsAddHsiaTechInstall:
+    - clearCheckoutDataModifySmbPotsAddHsiaTechInstall
+    - flowDataSetupModifySmbPotsAddHsiaTechInstall
+    - validateCartModifySmbPotsAddHsiaTechInstallResponse
+    - validatePreCheckoutModifySmbPotsAddHsiaTechInstall
+    - validateCheckoutMetadataModifySmbPotsAddHsiaTechInstallResponse
+    - validateBusinessInfoModifySmbPotsAddHsiaTechInstallPOSTResponse
+    - validateBusinessInfoModifySmbPotsAddHsiaTechInstallGETResponse
+    - validatePersonalInfoModifySmbPotsAddHsiaTechInstallPOSTResponse
+    - validatePersonalInfoModifySmbPotsAddHsiaTechInstallGETResponse
+    - validateAddressModifySmbPotsAddHsiaTechInstallPOSTResponse
+    - validateAddressModifySmbPotsAddHsiaTechInstallGETResponse
+    - validatePaymentModifySmbPotsAddHsiaTechInstallPOSTResponse
+    - validatePaymentModifySmbPotsAddHsiaTechInstallGETResponse
+    - validateBillingPreferenceModifySmbPotsAddHsiaTechInstallPOSTResponse
+    - validateBillingPreferenceModifySmbPotsAddHsiaTechInstallGETResponse
+    - validateReviewModifySmbPotsAddHsiaTechInstallResponse
+    - validateOrderSubmitModifySmbPotsAddHsiaTechInstallResponse
+    - validateThankYouModifySmbPotsAddHsiaTechInstallResponse
+  #MDS_CCC_ACCESSORY_FLOW_TC_210
+  accessoryFlow:
+    - clearCheckoutDataAccessoryFlow
+    - flowDataSetupAccessoryFlow
+    - validateCartAccessoryFlowResponse
+    - validatePreCheckoutAccessoryFlow
+    - validateCheckoutMetadataAccessoryFlowResponse
+    - validatePersonalInfoAccessoryFlowPOSTResponse
+    - validatePersonalInfoAccessoryFlowGETResponse
+    - validateAddressAccessoryFlowPOSTResponse
+    - validateAddressAccessoryFlowGETResponse
+    - validatePaymentAccessoryFlowPOSTResponse
+    - validatePaymentAccessoryFlowGETResponse
+    - validateTermsAccessoryFlowPOSTResponse
+    - validateTermsAccessoryFlowGETResponse
+    - validateBillingPreferenceAccessoryFlowPOSTResponse
+    - validateBillingPreferenceAccessoryFlowGETResponse
+    - validateReviewAccessoryFlowResponse
+    - validateOrderSubmitAccessoryFlowResponse
+    - validateThankYouAccessoryFlowResponse
+  #MDS_CCC_SMARTPHONE_NEXT_TERM_DOWNPAYMENT_INSURANCE_TABLET_ACCESSORY_TC_220
+  smartphoneNextTermDownpaymentInsuranceTabletAccessory:
+    - clearCheckoutDataSmartphoneNextTermDownpaymentInsuranceTabletAccessory
+    - flowDataSetupSmartphoneNextTermDownpaymentInsuranceTabletAccessory
+    - validateCartSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+    - validatePreCheckoutSmartphoneNextTermDownpaymentInsuranceTabletAccessory
+    - validateCheckoutMetadataSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+    - validatePersonalInfoSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse
+    - validatePersonalInfoSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse
+    - validateAddressSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse
+    - validateAddressSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse
+    - validateNumberSelectionSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPostResponse
+    - validateNumberSelectionSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGetResponse
+    - validateCarrierInfoSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPostResponse
+    - validateCarrierInfoSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGetResponse
+    - validatePaymentSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse
+    - validatePaymentSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse
+    - validateTermsSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse
+    - validateTermsSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse
+    - validateBillingPreferenceSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse
+    - validateBillingPreferenceSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse
+    - validateReviewSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+    - validateOrderSubmitSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+    - validateThankYouSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+  #MDS_CCC_SMARTPHONE_MULTI_DEVICE_ENJOY_TC_230
+  smartphoneMultiDeviceEnjoy:
+    - clearCheckoutDataSmartphoneMultiDeviceEnjoy
+    - flowDataSetupSmartphoneMultiDeviceEnjoy
+    - validateCartSmartphoneMultiDeviceEnjoyResponse
+    - validatePreCheckoutSmartphoneMultiDeviceEnjoy
+    - validateCheckoutMetadataSmartphoneMultiDeviceEnjoyResponse
+    - validatePersonalInfoSmartphoneMultiDeviceEnjoyPOSTResponse
+    - validatePersonalInfoSmartphoneMultiDeviceEnjoyGETResponse
+    - validateAddressSmartphoneMultiDeviceEnjoyPOSTResponse
+    - validateAddressSmartphoneMultiDeviceEnjoyGETResponse
+    - validateNumberSelectionSmartphoneMultiDeviceEnjoyPostResponse
+    - validateNumberSelectionSmartphoneMultiDeviceEnjoyGetResponse
+    - validateCarrierInfoSmartphoneMultiDeviceEnjoyPostResponse
+    - validateCarrierInfoSmartphoneMultiDeviceEnjoyGetResponse
+    - validatePaymentSmartphoneMultiDeviceEnjoyPOSTResponse
+    - validatePaymentSmartphoneMultiDeviceEnjoyGETResponse
+    - validateTermsSmartphoneMultiDeviceEnjoyPOSTResponse
+    - validateTermsSmartphoneMultiDeviceEnjoyGETResponse
+    - validateBillingPreferenceSmartphoneMultiDeviceEnjoyPOSTResponse
+    - validateBillingPreferenceSmartphoneMultiDeviceEnjoyGETResponse
+    - validateReviewSmartphoneMultiDeviceEnjoyResponse
+    - validateOrderSubmitSmartphoneMultiDeviceEnjoyResponse
+    - validateThankYouSmartphoneMultiDeviceEnjoyResponse
+  #MDS_CCC_NEW_POSTPAID_NEXTDP_CREDITC_TC_240
+  newPostpaidNextDPCreditC:
+    - clearCheckoutDataNewPostpaidNextDPCreditC
+    - flowDataSetupNewPostpaidNextDPCreditC
+    - validateCartNewPostpaidNextDPCreditCResponse
+    - validatePreCheckoutNewPostpaidNextDPCreditC
+    - validateCheckoutMetadataNewPostpaidNextDPCreditCResponse
+    - validatePersonalInfoNewPostpaidNextDPCreditCPOSTResponse
+    - validatePersonalInfoNewPostpaidNextDPCreditCGETResponse
+    - validateAddressNewPostpaidNextDPCreditCPOSTResponse
+    - validateAddressNewPostpaidNextDPCreditCGETResponse
+    - validatePaymentNewPostpaidNextDPCreditCPOSTResponse
+    - validatePaymentNewPostpaidNextDPCreditCGETResponse
+    - validateTermsNewPostpaidNextDPCreditCPOSTResponse
+    - validateTermsNewPostpaidNextDPCreditCGETResponse
+    - validateBillingPreferenceNewPostpaidNextDPCreditCPOSTResponse
+    - validateBillingPreferenceNewPostpaidNextDPCreditCGETResponse
+    - validateReviewNewPostpaidNextDPCreditCResponse
+    - validateOrderSubmitNewPostpaidNextDPCreditCResponse
+    - validateThankYouNewPostpaidNextDPCreditCResponse
+  #MDS_CCC_DEVICE_ONLY_TC_250
+  deviceOnly:
+    - clearCheckoutDataDeviceOnly
+    - flowDataSetupDeviceOnly
+    - validateCartDeviceOnlyResponse
+    - validatePreCheckoutDeviceOnly
+    - validateCheckoutMetadataDeviceOnlyResponse
+    - validatePersonalInfoDeviceOnlyPOSTResponse
+    - validatePersonalInfoDeviceOnlyGETResponse
+    - validateAddressDeviceOnlyPOSTResponse
+    - validateAddressDeviceOnlyGETResponse
+    - validateNumberSelectionDeviceOnlyPostResponse
+    - validateNumberSelectionDeviceOnlyGetResponse
+    - validateCarrierInfoDeviceOnlyPostResponse
+    - validateCarrierInfoDeviceOnlyGetResponse
+    - validatePaymentDeviceOnlyPOSTResponse
+    - validatePaymentDeviceOnlyGETResponse
+    - validateTermsDeviceOnlyPOSTResponse
+    - validateTermsDeviceOnlyGETResponse
+    - validateBillingPreferenceDeviceOnlyPOSTResponse
+    - validateBillingPreferenceDeviceOnlyGETResponse
+    - validateReviewDeviceOnlyResponse
+    - validateOrderSubmitDeviceOnlyResponse
+    - validateThankYouDeviceOnlyResponse
+  #MDS_CCC_EXPRESS_UPGRADE_TC_260
+  expressUpgrade:
+    - clearCheckoutDataExpressUpgrade
+    - flowDataSetupExpressUpgrade
+    - validateCartExpressUpgradeResponse
+    - validatePreCheckoutExpressUpgrade
+    - validateCheckoutMetadataExpressUpgradeResponse
+    - validatePersonalInfoExpressUpgradePOSTResponse
+    - validatePersonalInfoExpressUpgradeGETResponse
+    - validateAddressExpressUpgradePOSTResponse
+    - validateAddressExpressUpgradeGETResponse
+    - validatePaymentExpressUpgradePOSTResponse
+    - validatePaymentExpressUpgradeGETResponse
+    - validateTermsExpressUpgradePOSTResponse
+    - validateTermsExpressUpgradeGETResponse
+    - validateBillingPreferenceExpressUpgradePOSTResponse
+    - validateBillingPreferenceExpressUpgradeGETResponse
+    - validateReviewExpressUpgradeResponse
+    - validateOrderSubmitExpressUpgradeResponse
+    - validateThankYouExpressUpgradeResponse
+  #MDS_CCC_REPLACE_YOUR_DEVICE_TC_270
+  replaceYourDeviceFlow:
+    - clearCheckoutDataReplaceYourDeviceFlow
+    - flowDataSetupReplaceYourDeviceFlow
+    - validateCartReplaceYourDeviceFlowResponse
+    - validatePreCheckoutReplaceYourDeviceFlow
+    - validateCheckoutMetadataReplaceYourDeviceFlowResponse
+    - validatePersonalInfoReplaceYourDeviceFlowPOSTResponse
+    - validatePersonalInfoReplaceYourDeviceFlowGETResponse
+    - validateAddressReplaceYourDeviceFlowPOSTResponse
+    - validateAddressReplaceYourDeviceFlowGETResponse
+    - validatePaymentReplaceYourDeviceFlowPOSTResponse
+    - validatePaymentReplaceYourDeviceFlowGETResponse
+    - validateTermsReplaceYourDeviceFlowPOSTResponse
+    - validateTermsReplaceYourDeviceFlowGETResponse
+    - validateBillingPreferenceReplaceYourDeviceFlowPOSTResponse
+    - validateBillingPreferenceReplaceYourDeviceFlowGETResponse
+    - validateReviewReplaceYourDeviceFlowResponse
+    - validateOrderSubmitReplaceYourDeviceFlowResponse
+    - validateThankYouReplaceYourDeviceFlowResponse
+  #MDS_CCC_NEW_POSTPAID_DOWNPAYMENT_TC_280
+  newPostPaidDownPayment:
+    - clearCheckoutDataNewPostPaidDownPayment
+    - flowDataSetupNewPostPaidDownPayment
+    - validateCartNewPostPaidDownPaymentResponse
+    - validatePreCheckoutNewPostPaidDownPayment
+    - validateCheckoutMetadataNewPostPaidDownPaymentResponse
+    - validatePersonalInfoNewPostPaidDownPaymentPOSTResponse
+    - validatePersonalInfoNewPostPaidDownPaymentGETResponse
+    - validateAddressNewPostPaidDownPaymentPOSTResponse
+    - validateAddressNewPostPaidDownPaymentGETResponse
+    - validatePaymentNewPostPaidDownPaymentPOSTResponse
+    - validatePaymentNewPostPaidDownPaymentGETResponse
+    - validateTermsNewPostPaidDownPaymentPOSTResponse
+    - validateTermsNewPostPaidDownPaymentGETResponse
+    - validateBillingPreferenceNewPostPaidDownPaymentPOSTResponse
+    - validateBillingPreferenceNewPostPaidDownPaymentGETResponse
+    - validateReviewNewPostPaidDownPaymentResponse
+    - validateOrderSubmitNewPostPaidDownPaymentResponse
+    - validateThankYouNewPostPaidDownPaymentResponse
+  #MDS_CCC_SMARTPHONE_NOCOMMITMENT_TERM_TC_290
+  smartphoneNoCommitmentTerm:
+    - clearCheckoutDataSmartphoneNoCommitmentTerm
+    - flowDataSetupSmartphoneNoCommitmentTerm
+    - validateCartSmartphoneNoCommitmentTermResponse
+    - validatePreCheckoutSmartphoneNoCommitmentTerm
+    - validateCheckoutMetadataSmartphoneNoCommitmentTermResponse
+    - validatePersonalInfoSmartphoneNoCommitmentTermPOSTResponse
+    - validatePersonalInfoSmartphoneNoCommitmentTermGETResponse
+    - validateAddressSmartphoneNoCommitmentTermPOSTResponse
+    - validateAddressSmartphoneNoCommitmentTermGETResponse
+    - validateNumberSelectionSmartphoneNoCommitmentTermPostResponse
+    - validateNumberSelectionSmartphoneNoCommitmentTermGetResponse
+    - validateCarrierInfoSmartphoneNoCommitmentTermPostResponse
+    - validateCarrierInfoSmartphoneNoCommitmentTermGetResponse
+    - validatePaymentSmartphoneNoCommitmentTermPOSTResponse
+    - validatePaymentSmartphoneNoCommitmentTermGETResponse
+    - validateTermsSmartphoneNoCommitmentTermPOSTResponse
+    - validateTermsSmartphoneNoCommitmentTermGETResponse
+    - validateBillingPreferenceSmartphoneNoCommitmentTermPOSTResponse
+    - validateBillingPreferenceSmartphoneNoCommitmentTermGETResponse
+    - validateReviewSmartphoneNoCommitmentTermResponse
+    - validateOrderSubmitSmartphoneNoCommitmentTermResponse
+    - validateThankYouSmartphoneNoCommitmentTermResponse
+  #MDS_CCC_4POSTPAID_WIRELESS_CREDITC_TC_300
+  4PostpaidWirelessCreditC:
+    - clearCheckoutData4PostpaidWirelessCreditC
+    - flowDataSetup4PostpaidWirelessCreditC
+    - validateCart4PostpaidWirelessCreditCResponse
+    - validatePreCheckout4PostpaidWirelessCreditC
+    - validateCheckoutMetadata4PostpaidWirelessCreditCResponse
+    - validatePersonalInfo4PostpaidWirelessCreditCPOSTResponse
+    - validatePersonalInfo4PostpaidWirelessCreditCGETResponse
+    - validateAddress4PostpaidWirelessCreditCPOSTResponse
+    - validateAddress4PostpaidWirelessCreditCGETResponse
+    - validateNumberSelectionInfo4PostpaidWirelessCreditCPostResponse
+    - validateNumberSelectionInfo4PostpaidWirelessCreditCGetResponse
+    - validateCarrierInfo4PostpaidWirelessCreditCPostResponse
+    - validateCarrierInfo4PostpaidWirelessCreditCGetResponse
+    - validatePayment4PostpaidWirelessCreditCPOSTResponse
+    - validatePayment4PostpaidWirelessCreditCGETResponse
+    - validateTerms4PostpaidWirelessCreditCPOSTResponse
+    - validateTerms4PostpaidWirelessCreditCGETResponse
+    - validateBillingPreference4PostpaidWirelessCreditCPOSTResponse
+    - validateBillingPreference4PostpaidWirelessCreditCGETResponse
+    - validateReview4PostpaidWirelessCreditCResponse
+    - validateOrderSubmit4PostpaidWirelessCreditCResponse
+    - validateThankYou4PostpaidWirelessCreditCResponse
+  #MDS_CCC_NEW_CITI_FLOW_TC_310
+  newCitiFlow:
+    - clearCheckoutDataNewCitiFlow
+    - flowDataSetupNewCitiFlow
+    - validateCartNewCitiFlowResponse
+    - validatePreCheckoutNewCitiFlow
+    - validateCheckoutMetadataNewCitiFlowResponse
+    - validatePersonalInfoNewCitiFlowPOSTResponse
+    - validatePersonalInfoNewCitiFlowGETResponse
+    - validateAddressNewCitiFlowPOSTResponse
+    - validateAddressNewCitiFlowGETResponse
+    - validateNumberSelectionNewCitiFlowPostResponse
+    - validateNumberSelectionNewCitiFlowGetResponse
+    - validateCarrierInfoNewCitiFlowPostResponse
+    - validateCarrierInfoNewCitiFlowGetResponse
+    - validatePaymentNewCitiFlowPOSTResponse
+    - validatePaymentNewCitiFlowGETResponse
+    - validateTermsNewCitiFlowPOSTResponse
+    - validateTermsNewCitiFlowGETResponse
+    - validateBillingPreferenceNewCitiFlowPOSTResponse
+    - validateBillingPreferenceNewCitiFlowGETResponse
+    - validateReviewNewCitiFlowResponse
+    - validateOrderSubmitNewCitiFlowResponse
+    - validateThankYouNewCitiFlowResponse
+  #MDS_CCC_NEW_WIRELESS_BYOD_SIM_ONLY_TC_320
+  newWirelessByodSimOnly:
+    - clearCheckoutDataNewWirelessByodSimOnly
+    - flowDataSetupNewWirelessByodSimOnly
+    - validateCartNewWirelessByodSimOnlyResponse
+    - validatePreCheckoutNewWirelessByodSimOnly
+    - validateCheckoutMetadataNewWirelessByodSimOnlyResponse
+    - validatePersonalInfoNewWirelessByodSimOnlyPOSTResponse
+    - validatePersonalInfoNewWirelessByodSimOnlyGETResponse
+    - validateAddressNewWirelessByodSimOnlyPOSTResponse
+    - validateAddressNewWirelessByodSimOnlyGETResponse
+    - validateNumberSelectionNewWirelessByodSimOnlyPostResponse
+    - validateNumberSelectionNewWirelessByodSimOnlyGetResponse
+#    - validateCarrierInfoNewWirelessByodSimOnlyPostResponse
+#    - validateCarrierInfoNewWirelessByodSimOnlyGetResponse
+    - validatePaymentNewWirelessByodSimOnlyPOSTResponse
+    - validatePaymentNewWirelessByodSimOnlyGETResponse
+    - validateTermsNewWirelessByodSimOnlyPOSTResponse
+    - validateTermsNewWirelessByodSimOnlyGETResponse
+    - validateBillingPreferenceNewWirelessByodSimOnlyPOSTResponse
+    - validateBillingPreferenceNewWirelessByodSimOnlyGETResponse
+    - validateReviewNewWirelessByodSimOnlyResponse
+    - validateOrderSubmitNewWirelessByodSimOnlyResponse
+    - validateThankYouNewWirelessByodSimOnlyResponse
+  #MDS_CCC_NEW_POSTPAID_C2S_CREDIT$100_TC_330
+  newPostpaidC2SCredit$100:
+    - clearCheckoutDataNewPostpaidC2SCredit$100
+    - flowDataSetupNewPostpaidC2SCredit$100
+    - validateCartNewPostpaidC2SCredit$100Response
+    - validatePreCheckoutNewPostpaidC2SCredit$100
+    - validateCheckoutNewPostpaidC2SCredit$100Response
+    - validatePersonalInfoNewPostpaidC2SCredit$100POSTResponse
+    - validatePersonalInfoNewPostpaidC2SCredit$100GETResponse
+    - validateAddressNewPostpaidC2SCredit$100PostResponse
+    - validateAddressNewPostpaidC2SCredit$100GETResponse
+    - validateNumberSelectionNewPostpaidC2SCredit$100PostResponse
+    - validateNumberSelectionNewPostpaidC2SCredit$100GetResponse
+    - validateCarrierInfoNewPostpaidC2SCredit$100PostResponse
+    - validateCarrierInfoNewPostpaidC2SCredit$100GetResponse
+    - validatePaymentNewPostpaidC2SCredit$100POSTResponse
+    - validatePaymentNewPostpaidC2SCredit$100GETResponse
+    - validateTermsNewPostpaidC2SCredit$100POSTResponse
+    - validateTermsNewPostpaidC2SCredit$100GETResponse
+    - validateBillingPreferenceNewPostpaidC2SCredit$100POSTResponse
+    - validateBillingPreferenceNewPostpaidC2SCredit$100GETResponse
+    - validateReviewNewPostpaidC2SCredit$100Response
+    - validateOrderSubmitNewPostpaidC2SCredit$100Response
+    - validateThankYouNewPostpaidC2SCredit$100Response
+  #EDS_CCC_PROVIDE_SMB_DTV_TC_340
+  provideSMBDTVFailure:
+    - clearCheckoutDataProvideSmbDtvFailure
+    - flowDataSetupProvideSmbDtvFailure
+    - validateCartProvideSmbDtvFailureResponse
+    - validatePreCheckoutProvideSmbDtvFailure
+    - validateCheckoutMetadataProvideSmbDtvFailureResponse
+    - validateBusinessInfoProvideSmbDtvFailurePOSTResponse
+    - validatePersonalInfoProvideSmbDtvFailurePOSTResponse
+    - validateBusinessInfoProvideSmbDtvFailureGETResponse
+    - validatePersonalInfoProvideSmbDtvFailureGETResponse
+    - validateAddressProvideSmbDtvFailurePOSTResponse
+    - validateAddressProvideSmbDtvFailureGETResponse
+    - validatePaymentProvideSmbDtvFailurePOSTResponse
+    - validatePaymentProvideSmbDtvFailureGETResponse
+    - validateBillingPreferenceProvideSmbDtvFailurePOSTResponse
+    - validateBillingPreferenceProvideSmbDtvFailureGETResponse
+    - validateReviewProvideSmbDtvFailureResponse
+    - validateOrderSubmitProvideSmbDtvFailureResponse
+    - validateThankYouProvideSmbDtvFailureResponse

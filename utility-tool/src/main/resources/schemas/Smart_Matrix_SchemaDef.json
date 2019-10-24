@@ -1,0 +1,17 @@
+{
+"smart_matrix": {
+"namedcache": "smart_matrix",
+"contenttype": "application/json",
+"version": "1.0",
+"cachettl": "60",
+"backingmapttl": "7776000",
+"maxlength": 100000,
+"strictvalidation" : "false",
+"matrixData": {
+"versions": {
+"v1":{
+}
+}
+}
+}
+}

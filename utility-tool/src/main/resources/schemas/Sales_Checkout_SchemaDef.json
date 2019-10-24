@@ -1,0 +1,123 @@
+{
+	"sales_checkout": {
+	
+		"namedcache": "checkout",
+		"contenttype": "application/json",
+		"version": "1.0",
+		"cachettl": 10800,
+		"backingmapttl": 5184000,
+		"maxlength": 2097152,
+		"strictvalidation": "false",
+		
+		"header": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"transient": {
+			"cachettl": 10800,
+			"backingmapttl": -1,
+		  	"versions": {
+				"v1": {
+				}
+			}
+		},
+		"metadata": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"components": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"status": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"account_options": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"personal_info": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"business_info": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"address": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"credit_info": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"payment": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"shipping": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"tax": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"dfw_tax": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"number_selection": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"scheduling": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"terms_and_conditions": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"account_registration_setup":{
+			"versions": {
+				"v1": {
+				}
+			}
+		}	
+	}
+}

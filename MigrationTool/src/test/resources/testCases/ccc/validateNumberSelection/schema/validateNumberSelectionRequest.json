@@ -1,0 +1,416 @@
+{
+  "validateNumberSelectionSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPostRequest": {
+    "selectedNumber": [
+      {
+        "losgID": "losg19600001",
+        "addressID": "ADDRESS_01",
+        "displayName": "Apple iPhone 7 Plus - 32GB - Black",
+        "selectedNumber": "3237493001",
+        "assignNewNumber": false,
+        "selectedAreaCode": "Select an area code",
+        "selectedCityCode": "",
+        "altAreaCode": null,
+        "altZipCode": null,
+        "nbiServiceAreaId": null,
+        "serviceAreaId": null,
+        "market": null,
+        "subMarket": null,
+        "areaCodelistCities": [
+          "Select an area code",
+          "206",
+          "253",
+          "360",
+          "425"
+        ],
+        "radioNewNumber": "2"
+      }
+    ],
+    "address": {
+      "ppuAddress": {
+        "losg19600001": {
+          "id": "ADDRESS_01",
+          "city": "BOTHELL",
+          "state": "WA",
+          "zipCode": "98011",
+          "zipCodeExtension": "8235",
+          "source": "billing",
+          "addressLine1": "20111 120TH AVE NE",
+          "addressLine2": "",
+          "shortLived": false,
+          "c2S": false,
+          "lastAttempt": false,
+          "allAttemptExhausted": false,
+          "readOnly": false
+        }
+      }
+    }
+  },
+  "validateNumberSelectionSmartphoneNoCommitmentTermPostRequest": {
+    "selectedNumber": [
+      {
+        "losgID": "losg21470292",
+        "addressID": "ADDRESS_01",
+        "displayName": "Apple iPhone 6s - 128GB - Gold",
+        "selectedNumber": "3237493001",
+        "assignNewNumber": false,
+        "selectedAreaCode": "Select an area code",
+        "selectedCityCode": "",
+        "altAreaCode": null,
+        "altZipCode": null,
+        "nbiServiceAreaId": null,
+        "serviceAreaId": null,
+        "market": null,
+        "subMarket": null,
+        "areaCodelistCities": [
+          "Select an area code",
+          "206",
+          "253",
+          "360",
+          "425"
+        ],
+        "radioNewNumber": "2"
+      }
+    ],
+    "address": {
+      "ppuAddress": {
+        "losg21470292": {
+          "id": "ADDRESS_01",
+          "city": "BOTHELL",
+          "state": "WA",
+          "zipCode": "98011",
+          "zipCodeExtension": "8235",
+          "source": "billing",
+          "addressLine1": "20111 120TH AVE NE",
+          "addressLine2": "",
+          "shortLived": false,
+          "c2S": false,
+          "lastAttempt": false,
+          "allAttemptExhausted": false,
+          "readOnly": false
+        }
+      }
+    }
+  },
+  "validateNumberSelectionNewCitiFlowPostRequest": {
+    "selectedNumber": [
+      {
+        "losgID": "losg21740101",
+        "addressID": "ADDRESS_01",
+        "displayName": "Samsung Galaxy Note8 - Midnight Black",
+        "selectedNumber": "3237493001",
+        "assignNewNumber": false,
+        "selectedAreaCode": "Select an area code",
+        "selectedCityCode": "",
+        "altAreaCode": null,
+        "altZipCode": null,
+        "nbiServiceAreaId": null,
+        "serviceAreaId": null,
+        "market": null,
+        "subMarket": null,
+        "areaCodelistCities": [
+          "Select an area code",
+          "206",
+          "253",
+          "360",
+          "425"
+        ],
+        "radioNewNumber": "2"
+      }
+    ],
+    "address": {
+      "ppuAddress": {
+        "losg21740101": {
+          "id": "ADDRESS_01",
+          "city": "BOTHELL",
+          "state": "WA",
+          "zipCode": "98011",
+          "zipCodeExtension": "8235",
+          "source": "billing",
+          "addressLine1": "20111 120TH AVE NE",
+          "addressLine2": "",
+          "shortLived": false,
+          "c2S": false,
+          "lastAttempt": false,
+          "allAttemptExhausted": false,
+          "readOnly": false
+        }
+      }
+    }
+  },
+  "validateNumberSelectionNewWirelessByodSimOnlyPostRequest": {
+    "selectedNumber": [
+      {
+        "losgID": "losg43220014",
+        "addressID": "ADDRESS_01",
+        "displayName": "AT&T Nano SIM Card - Phones",
+        "selectedNumber": "3237493001",
+        "assignNewNumber": false,
+        "selectedAreaCode": "Select an area code",
+        "selectedCityCode": "",
+        "altAreaCode": null,
+        "altZipCode": null,
+        "nbiServiceAreaId": null,
+        "serviceAreaId": null,
+        "market": null,
+        "subMarket": null,
+        "areaCodelistCities": [
+          "Select an area code",
+          "206",
+          "253",
+          "360",
+          "425"
+        ],
+        "radioNewNumber": "2"
+      }
+    ],
+    "address": {
+      "ppuAddress": {
+        "losg43220014": {
+          "id": "ADDRESS_01",
+          "city": "BOTHELL",
+          "state": "WA",
+          "zipCode": "98011",
+          "zipCodeExtension": "8235",
+          "source": "billing",
+          "addressLine1": "20111 120TH AVE NE",
+          "addressLine2": "",
+          "shortLived": false,
+          "c2S": false,
+          "lastAttempt": false,
+          "allAttemptExhausted": false,
+          "readOnly": false
+        }
+      }
+    }
+  },
+  "validateNumberSelection4PostpaidWirelessCreditCPostRequest": {
+    "selectedNumber": [
+      {
+        "losgID": "losg18780018",
+        "addressID": "ADDRESS_01",
+        "displayName": "Apple iPhone 7 Plus - 32GB - Black",
+        "selectedNumber": "3237493001",
+        "assignNewNumber": false,
+        "selectedAreaCode": "Select an area code",
+        "selectedCityCode": "",
+        "altAreaCode": null,
+        "altZipCode": null,
+        "nbiServiceAreaId": null,
+        "serviceAreaId": null,
+        "market": null,
+        "subMarket": null,
+        "areaCodelistCities": [
+          "Select an area code",
+          "206",
+          "253",
+          "360",
+          "425"
+        ],
+        "radioNewNumber": "2"
+      }
+    ],
+    "address": {
+      "ppuAddress": {
+        "losg18780018": {
+          "id": "ADDRESS_01",
+          "city": "BOTHELL",
+          "state": "WA",
+          "zipCode": "98011",
+          "zipCodeExtension": "8235",
+          "source": "billing",
+          "addressLine1": "20111 120TH AVE NE",
+          "addressLine2": "",
+          "shortLived": false,
+          "c2S": false,
+          "lastAttempt": false,
+          "allAttemptExhausted": false,
+          "readOnly": false
+        }
+      }
+    }
+  },
+  "validateNumberSelectionInfo4PostpaidWirelessCreditCPostRequest": {
+    "selectedNumber": [
+      {
+        "losgID": "losg18780018",
+        "addressID": "ADDRESS_01",
+        "displayName": "Apple iPhone 7 Plus - 32GB - Black",
+        "selectedNumber": "3237493001",
+        "assignNewNumber": false,
+        "selectedAreaCode": "Select an area code",
+        "selectedCityCode": "",
+        "altAreaCode": null,
+        "altZipCode": null,
+        "nbiServiceAreaId": null,
+        "serviceAreaId": null,
+        "market": null,
+        "subMarket": null,
+        "areaCodelistCities": [
+          "Select an area code",
+          "206",
+          "253",
+          "360",
+          "425"
+        ],
+        "radioNewNumber": "2"
+      }
+    ],
+    "address": {
+      "ppuAddress": {
+        "losg18780018": {
+          "id": "ADDRESS_01",
+          "city": "BOTHELL",
+          "state": "WA",
+          "zipCode": "98011",
+          "zipCodeExtension": "8235",
+          "source": "billing",
+          "addressLine1": "20111 120TH AVE NE",
+          "addressLine2": "",
+          "shortLived": false,
+          "c2S": false,
+          "lastAttempt": false,
+          "allAttemptExhausted": false,
+          "readOnly": false
+        }
+      }
+    }
+  },
+  "validateNumberSelectionNewPostpaidC2SCredit$100PostRequest":{
+    "selectedNumber": [
+      {
+        "losgID": "losg18780034",
+        "addressID": "ADDRESS_01",
+        "displayName": "Samsung Galaxy S8 - Midnight Black",
+        "selectedNumber": "3237493001",
+        "assignNewNumber": false,
+        "selectedAreaCode": "Select an area code",
+        "selectedCityCode": "",
+        "altAreaCode": null,
+        "altZipCode": null,
+        "nbiServiceAreaId": null,
+        "serviceAreaId": null,
+        "market": null,
+        "subMarket": null,
+        "areaCodelistCities": [
+          "Select an area code",
+          "206",
+          "253",
+          "360",
+          "425"
+        ],
+        "radioNewNumber": "2"
+      }
+    ],
+    "address": {
+      "ppuAddress": {
+        "losg18780034": {
+          "id": "ADDRESS_01",
+          "city": "BOTHELL",
+          "state": "WA",
+          "zipCode": "98011",
+          "zipCodeExtension": "8235",
+          "source": "billing",
+          "addressLine1": "20111 120TH AVE NE",
+          "addressLine2": "",
+          "shortLived": false,
+          "c2S": false,
+          "lastAttempt": false,
+          "allAttemptExhausted": false,
+          "readOnly": false
+        }
+      }
+    }
+  },
+  "validateNumberSelectionDeviceOnlyPostRequest":{
+    "selectedNumber": [
+      {
+        "losgID": "losg18820015",
+        "addressID": "ADDRESS_01",
+        "displayName": "Apple iPhone 7 Plus - 32GB - Jet Black",
+        "selectedNumber": "3237493001",
+        "assignNewNumber": false,
+        "selectedAreaCode": "Select an area code",
+        "selectedCityCode": "",
+        "altAreaCode": null,
+        "altZipCode": null,
+        "nbiServiceAreaId": null,
+        "serviceAreaId": null,
+        "market": null,
+        "subMarket": null,
+        "areaCodelistCities": [
+          "Select an area code",
+          "206",
+          "253",
+          "360",
+          "425"
+        ],
+        "radioNewNumber": "2"
+      }
+    ],
+    "address": {
+      "ppuAddress": {
+        "losg18820015": {
+          "id": "ADDRESS_01",
+          "city": "BOTHELL",
+          "state": "WA",
+          "zipCode": "98011",
+          "zipCodeExtension": "8235",
+          "source": "billing",
+          "addressLine1": "20111 120TH AVE NE",
+          "addressLine2": "",
+          "shortLived": false,
+          "c2S": false,
+          "lastAttempt": false,
+          "allAttemptExhausted": false,
+          "readOnly": false
+        }
+      }
+    }
+  },
+   "validateNumberSelectionSmartphoneMultiDeviceEnjoyPostRequest":{
+    "selectedNumber": [
+      {
+        "losgID": "losg21470263",
+        "addressID": "ADDRESS_01",
+        "displayName": "Apple iPhone 8 Plus - 64GB - Space Gray",
+        "selectedNumber": "3237493001",
+        "assignNewNumber": false,
+        "selectedAreaCode": "Select an area code",
+        "selectedCityCode": "",
+        "altAreaCode": null,
+        "altZipCode": null,
+        "nbiServiceAreaId": null,
+        "serviceAreaId": null,
+        "market": null,
+        "subMarket": null,
+        "areaCodelistCities": [
+          "Select an area code",
+          "206",
+          "253",
+          "360",
+          "425"
+        ],
+        "radioNewNumber": "2"
+      }
+    ],
+    "address": {
+      "ppuAddress": {
+        "losg21470263": {
+          "id": "ADDRESS_01",
+          "city": "BOTHELL",
+          "state": "WA",
+          "zipCode": "98011",
+          "zipCodeExtension": "8235",
+          "source": "billing",
+          "addressLine1": "20111 120TH AVE NE",
+          "addressLine2": "",
+          "shortLived": false,
+          "c2S": false,
+          "lastAttempt": false,
+          "allAttemptExhausted": false,
+          "readOnly": false
+        }
+      }
+    }
+  }
+}

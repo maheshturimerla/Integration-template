@@ -1,0 +1,45 @@
+{
+  "perf_sales_cart": {    
+    "namedcache": "cart",
+    "contenttype": "application/json",
+    "version": "1.0",
+    "cachettl": 360,
+    "backingmapttl": 600,
+    "strictvalidation" : "false", 
+    "header": {
+      "namedcache": "cart.header",
+      "versions": {
+			"v1":{
+			}
+		}
+    },
+    "metadata": {
+      "namedcache": "cart.metadata",
+      "versions": {
+		"v1":{
+		}
+	  }
+    },
+    "hub": {
+      "namedcache": "cart.hub",
+      "versions": {
+		"v1":{
+		}
+	  }
+    },
+    "wireline": {
+      "namedcache": "cart.wireline",
+      "versions": {
+		"v1":{
+		}
+	  }
+    },
+    "wireless": {
+      "namedcache": "cart.wireless",
+      "versions": {
+		"v1":{
+		}
+	  }
+    }
+  }
+ }

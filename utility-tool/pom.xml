@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BSD License Copyright (c) 2017, AT&T Intellectual Property. All other 
+	rights reserved. Redistribution and use in source and binary forms, with 
+	or without modification, are permitted provided that the following conditions 
+	are met: 1. Redistributions of source code must retain the above copyright 
+	notice, this list of conditions and the following disclaimer. 2. Redistributions 
+	in binary form must reproduce the above copyright notice, this list of conditions 
+	and the following disclaimer in the documentation and/or other materials 
+	provided with the distribution. 3. All advertising materials mentioning features 
+	or use of this software must display the following acknowledgement: This 
+	product includes software developed by the AT&T. 4. Neither the name of AT&T 
+	nor the names of its contributors may be used to endorse or promote products 
+	derived from this software without specific prior written permission. THIS 
+	SOFTWARE IS PROVIDED BY AT&T INTELLECTUAL PROPERTY ''AS IS'' AND ANY EXPRESS 
+	OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
+	OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN 
+	NO EVENT SHALL AT&T INTELLECTUAL PROPERTY BE LIABLE FOR ANY DIRECT, INDIRECT, 
+	INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+	NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+	DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY 
+	OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
+	OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.att.ccc.config</groupId>
+	<artifactId>utility-tool</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<parent>
+		<groupId>com.att.ajsc</groupId>
+		<artifactId>sdk-java-starter-parent</artifactId>
+		<version>6.1.0.4</version>
+	</parent>
+
+	<properties>
+		<icd.package>com.att.ajsc.ccc_cosc.service.rs</icd.package>
+		<java.version>1.8</java.version>
+		<docker.registry>local</docker.registry>
+		<build.number>local</build.number>
+		<kube.namespace>default</kube.namespace>
+		<service.account>ajsc-ccc</service.account>
+		<docker.namespace>com-att-ajsc</docker.namespace>
+		<sdk.java.rest>6.2.0.4</sdk.java.rest>
+		<cosc.version>2.4.0</cosc.version>
+		<hazelcast.version>3.8.0</hazelcast.version>
+		<gpg.skip>true</gpg.skip>
+		<userId>bs291h</userId>
+	</properties>
+
+	<developers>
+		<developer>
+			<id>${userId}</id>
+		</developer>
+	</developers>
+
+
+
+	<repositories>
+		<repository>
+			<id>digitalexp</id>
+			<name>digitalexp</name>
+			<url>http://mavencentral.it.att.com:8084/nexus/content/repositories/digitalexp/</url>
+			<snapshots>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>central</id>
+			<url>http://central.maven.org/maven2/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		
+	</repositories>
+
+	<pluginRepositories>
+
+		<pluginRepository>
+			<id>att-repository-nexus</id>
+			<name>att-public-group</name>
+			<url>http://mavencentral.it.att.com:8084/nexus/content/repositories/att-public-group/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.att.ajsc</groupId>
+			<artifactId>sdk-java-rest</artifactId>
+			<version>${sdk.java.rest}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.att.dets.cosc</groupId>
+			<artifactId>cosc-base</artifactId>
+			<version>${cosc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.att.dets.cosc</groupId>
+			<artifactId>cosc-data-dictionary</artifactId>
+			<version>${cosc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.att.dets.cosc</groupId>
+			<artifactId>cosc-java-api</artifactId>
+			<version>${cosc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.att.dets.cosc</groupId>
+			<artifactId>cosc-schemas</artifactId>
+			<version>${cosc.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>2.24</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-common</artifactId>
+			<version>2.24</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+
+		<!--dependency>
+			<groupId>com.att.ecom.sales</groupId>
+			<artifactId>sales-domain-model</artifactId>
+			<version>${sales.core.version}</version>
+		</dependency-->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.github.kongchen</groupId>
+				<artifactId>swagger-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>exec-maven-plugin</artifactId>
+				<groupId>org.codehaus.mojo</groupId>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.11</version>
+				<configuration>
+					<imageName>${docker.registry}/${docker.namespace}/ccc-cosc</imageName>
+					<dockerDirectory>src/main/docker</dockerDirectory>
+					<serverId>docker-hub</serverId>
+					<registryUrl>https://${docker.registry}</registryUrl>
+					<imageTags>
+						<imageTag>${project.version}</imageTag>
+						<imageTag>latest</imageTag>
+					</imageTags>
+					<forceTags>true</forceTags>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>etc/config/*</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
+		</plugins>
+		<!-- mention the logback.xml location through system property or environment 
+			variable to edit logback.xml at run time -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>${basedir}/etc</directory>
+				<targetPath>${basedir}/target/etc</targetPath>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+</project>

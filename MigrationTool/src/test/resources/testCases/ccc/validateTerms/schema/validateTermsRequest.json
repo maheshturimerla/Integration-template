@@ -1,0 +1,14 @@
+{
+"validateTermsAccessoryFlowPOSTRequest":{"orderTermsAndConditions":{"terms":[{"id":"TOS_6","accepted":true},{"id":"TOS_7","accepted":true,"sourceName":"terms"},{"id":"TOS_8","accepted":true,"sourceName":"terms"}]}},
+"validateTermsDeviceOnlyPOSTRequest":{"orderTermsAndConditions":{"terms":[{"id":"TOS_6","accepted":true},{"id":"TOS_7","accepted":true,"sourceName":"terms"},{"id":"TOS_8","accepted":true,"sourceName":"terms"}]}},
+"validateTermsSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTRequest":{"orderTermsAndConditions":{"terms":[{"id":"TOS_6","accepted":true},{"id":"TOS_7","accepted":true,"sourceName":"terms"},{"id":"TOS_8","accepted":true,"sourceName":"terms"}]}},
+"validateTermsSmartphoneMultiDeviceEnjoyPOSTRequest":{"orderTermsAndConditions":{"terms":[{"id":"TOS_6","accepted":true},{"id":"TOS_7","accepted":true,"sourceName":"terms"},{"id":"TOS_8","accepted":true,"sourceName":"terms"}]}},
+"validateTermsNewPostPaidDownPaymentPOSTRequest":{"orderTermsAndConditions":{"terms":[{"id":"TOS_6","accepted":true},{"id":"TOS_7","accepted":true,"sourceName":"terms"},{"id":"TOS_8","accepted":true,"sourceName":"terms"}]}},
+"validateTerms4PostpaidWirelessCreditCPOSTRequest":{"orderTermsAndConditions":{"terms":[{"id":"TOS_6","accepted":true},{"id":"TOS_7","accepted":true,"sourceName":"terms"},{"id":"TOS_8","accepted":true,"sourceName":"terms"}]}},
+"validateTermsNewPostpaidNextDPCreditCPOSTRequest":{"orderTermsAndConditions":{"terms":[{"id":"TOS_6","accepted":true},{"id":"TOS_7","accepted":true,"sourceName":"terms"},{"id":"TOS_8","accepted":true,"sourceName":"terms"}]}},
+"validateTermsNewCitiFlowPOSTRequest":{"orderTermsAndConditions":{"terms":[{"id":"TOS_6","accepted":true},{"id":"TOS_7","accepted":true,"sourceName":"terms"},{"id":"TOS_8","accepted":true,"sourceName":"terms"}]}},
+"validateTermsExpressUpgradePOSTRequest":{"orderTermsAndConditions":{"terms":[{"id":"TOS_6","accepted":true},{"id":"TOS_7","accepted":true,"sourceName":"terms"},{"id":"TOS_8","accepted":true,"sourceName":"terms"}]}},
+"validateTermsReplaceYourDeviceFlowPOSTRequest":{"orderTermsAndConditions":{"terms":[{"id":"TOS_6","accepted":true},{"id":"TOS_7","accepted":true,"sourceName":"terms"},{"id":"TOS_8","accepted":true,"sourceName":"terms"}]}},
+"validateTermsSmartphoneNoCommitmentTermPOSTRequest":{"orderTermsAndConditions":{"terms":[{"id":"TOS_6","accepted":true},{"id":"TOS_7","accepted":true,"sourceName":"terms"},{"id":"TOS_8","accepted":true,"sourceName":"terms"}]}},
+"validateTermsNewPostpaidC2SCredit$100POSTRequest":{"orderTermsAndConditions":{"terms":[{"id":"TOS_6","accepted":true},{"id":"TOS_7","accepted":true,"sourceName":"terms"},{"id":"TOS_8","accepted":true,"sourceName":"terms"}]}}
+}

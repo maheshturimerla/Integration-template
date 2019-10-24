@@ -1,0 +1,24 @@
+{
+  "UniversalAccountInfo":
+{
+	"namedcache": "universal_accountinfo",
+	"contenttype": "application/json",
+		"version": "1.0",
+		"cachettl": 30,
+		"backingmapttl": 3600,
+		"maxlength": 100000,
+		"strictvalidation": "false",
+		"mre_qualifications": {
+		  	"versions": {
+				"v1": {
+				}
+			}
+		},
+		"account_info": {
+			"versions": {
+				"v1": {
+				}
+			}
+		}
+}
+}

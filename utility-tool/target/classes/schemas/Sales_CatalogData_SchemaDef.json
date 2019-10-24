@@ -1,0 +1,18 @@
+{
+	"dfw_catalog": {	
+		"namedcache": "SalesCatalogData",
+		"contenttype": "application/json",
+		"version": "1.0",
+		"cachettl": 10800,
+		"backingmapttl": 5184000,
+		"maxlength": 2097152,
+		"strictvalidation": "false",
+		
+		"data": {
+			"versions": {
+				"v1": {
+				}
+			}
+		}		
+	}
+}		

@@ -1,0 +1,16 @@
+{
+    "healthcheck": {    
+        "namedcache": "healthcheck",
+        "contenttype": "application/json",
+        "version": "1.0",
+        "cachettl": 10,
+        "backingmapttl" :315360000,
+        "strictvalidation" : "false", 
+        "healthcheckstatus": {
+            "versions": {
+		        "v1":{
+		        }
+	        }
+        }
+    }
+}

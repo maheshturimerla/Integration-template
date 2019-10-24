@@ -1,0 +1,261 @@
+testCases:
+  validateNumberSelectionSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPostResponse:
+   requsstBodyReference: validateNumberSelection/schema/validateNumberSelectionRequest.json
+   cookies:
+        uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/smartphone-next-term-downpayment-insurance-tablet-accessory/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateNumberSelectionSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGetResponse:
+   cookies:
+        uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/smartphone-next-term-downpayment-insurance-tablet-accessory/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.numberSelection.losgDetails[1].losgID: losg19600001
+     - payload.numberSelection.losgDetails[1].addressID: ADDRESS_01
+     - payload.numberSelection.losgDetails[1].displayName: Apple iPhone 6s - 128GB - Gold
+     - payload.numberSelection.losgDetails[1].selectedNumber: 3237493001
+     - payload.numberSelection.losgDetails[1].assignNewNumber: false
+   validationType: partial
+  validateNumberSelectionSmartphoneNoCommitmentTermPostResponse:
+   requsstBodyReference: validateNumberSelection/schema/validateNumberSelectionRequest.json
+   cookies:
+        uuid: "smartphone-no-commitment-term"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/smartphone-no-commitment-term/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionSmartphoneNoCommitmentTermPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateNumberSelectionSmartphoneNoCommitmentTermGetResponse:
+   cookies:
+        uuid: "smartphone-no-commitment-term"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/smartphone-no-commitment-term/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionSmartphoneNoCommitmentTermGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.numberSelection.losgDetails[0].losgID: losg21470292
+     - payload.numberSelection.losgDetails[0].addressID: ADDRESS_01
+     - payload.numberSelection.losgDetails[0].displayName: Apple iPhone 8 - 64GB - Space Gray
+     - payload.numberSelection.losgDetails[0].selectedNumber: 3237493001
+     - payload.numberSelection.losgDetails[0].assignNewNumber: false
+   validationType: partial
+  validateNumberSelectionNewCitiFlowPostResponse:
+   requsstBodyReference: validateNumberSelection/schema/validateNumberSelectionRequest.json
+   cookies:
+        uuid: "new-citi-flow"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/new-citi-flow/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionNewCitiFlowPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateNumberSelectionNewCitiFlowGetResponse:
+   cookies:
+        uuid: "new-citi-flow"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/new-citi-flow/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionNewCitiFlowGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.numberSelection.numberSelectionResponse[0].number: 2145543153
+     - payload.numberSelection.numberSelectionResponse[0].status: true
+     - payload.numberSelection.losgDetails[0].losgID: losg21740101
+     - payload.numberSelection.losgDetails[0].addressID: ADDRESS_01
+     - payload.numberSelection.losgDetails[0].displayName: Samsung Galaxy Note8 - Midnight Black
+     - payload.numberSelection.losgDetails[0].selectedNumber: 3237493001
+     - payload.numberSelection.losgDetails[0].assignNewNumber: false
+   validationType: partial 
+  validateNumberSelectionNewWirelessByodSimOnlyPostResponse:
+   requsstBodyReference: validateNumberSelection/schema/validateNumberSelectionRequest.json
+   cookies:
+        uuid: "new-wireless-byod-simonly-flow"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/new-wireless-byod-simonly-flow/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionNewWirelessByodSimOnlyPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateNumberSelectionNewWirelessByodSimOnlyGetResponse:
+   cookies:
+        uuid: "new-wireless-byod-simonly-flow"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/new-wireless-byod-simonly-flow/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionNewWirelessByodSimOnlyGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.numberSelection.losgDetails[0].losgID: losg43220014
+     - payload.numberSelection.losgDetails[0].addressID: ADDRESS_01
+     - payload.numberSelection.losgDetails[0].displayName: AT&T Nano SIM Card - Phones
+     - payload.numberSelection.losgDetails[0].selectedNumber: 3237493001
+     - payload.numberSelection.losgDetails[0].assignNewNumber: false
+   validationType: partial
+  validateNumberSelectionInfo4PostpaidWirelessCreditCPostResponse:
+   requsstBodyReference: validateNumberSelection/schema/validateNumberSelectionRequest.json
+   cookies:
+        uuid: "4-postpaid-wireless-creditC-deposit"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/4-postpaid-wireless-creditC-deposit/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionInfo4PostpaidWirelessCreditCPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateNumberSelectionInfo4PostpaidWirelessCreditCGetResponse:
+   cookies:
+        uuid: "4-postpaid-wireless-creditC-deposit"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/4-postpaid-wireless-creditC-deposit/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionInfo4PostpaidWirelessCreditCGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.numberSelection.numberSelectionResponse[0].number: 3237493001
+     - payload.numberSelection.numberSelectionResponse[0].status: false
+     - payload.numberSelection.losgDetails[0].losgID: losg18780018
+     - payload.numberSelection.losgDetails[0].addressID: ADDRESS_01
+     - payload.numberSelection.losgDetails[0].displayName: Samsung Galaxy Note8 - Midnight Black
+     - payload.numberSelection.losgDetails[0].selectedNumber: 3237493001
+     - payload.numberSelection.losgDetails[0].assignNewNumber: false
+   validationType: partial
+  validateNumberSelectionNewPostpaidC2SCredit$100PostResponse:
+   requsstBodyReference: validateNumberSelection/schema/validateNumberSelectionRequest.json
+   cookies:
+        uuid: "new-postpaid-c2s-creditC-$100"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/new-postpaid-c2s-creditC-$100/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionNewPostpaidC2SCredit$100PostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateNumberSelectionNewPostpaidC2SCredit$100GetResponse:
+   cookies:
+        uuid: "new-postpaid-c2s-creditC-$100"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/new-postpaid-c2s-creditC-$100/?type=address,numberSelection"
+   testCaseName:  validateNumberSelectionNewPostpaidC2SCredit$100GetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.numberSelection.losgDetails[0].losgID: losg18780034
+     - payload.numberSelection.losgDetails[0].addressID: ADDRESS_01
+     - payload.numberSelection.losgDetails[0].displayName: Samsung Galaxy S8 - Midnight Black
+     - payload.numberSelection.losgDetails[0].selectedNumber: 3237493001
+     - payload.numberSelection.losgDetails[0].assignNewNumber: false
+   validationType: partial
+  validateNumberSelectionDeviceOnlyPostResponse:
+   requsstBodyReference: validateNumberSelection/schema/validateNumberSelectionRequest.json
+   cookies:
+        uuid: "device-only"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/device-only/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionDeviceOnlyPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateNumberSelectionDeviceOnlyGetResponse:
+   cookies:
+        uuid: "device-only"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/device-only/?type=address,numberSelection"
+   testCaseName:  validateNumberSelectionDeviceOnlyGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.numberSelection.losgDetails[0].losgID: losg18820015
+     - payload.numberSelection.losgDetails[0].addressID: ADDRESS_01
+     - payload.numberSelection.losgDetails[0].displayName: Apple iPhone 7 Plus - 32GB - Jet Black
+     - payload.numberSelection.losgDetails[0].selectedNumber: 3237493001
+     - payload.numberSelection.losgDetails[0].assignNewNumber: false
+   validationType: partial 
+  validateNumberSelectionSmartphoneMultiDeviceEnjoyPostResponse:
+   requsstBodyReference: validateNumberSelection/schema/validateNumberSelectionRequest.json
+   cookies:
+        uuid: "smartphone-multi-device-enjoy"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/smartphone-multi-device-enjoy/?type=address,numberSelection"
+   testCaseName: validateNumberSelectionSmartphoneMultiDeviceEnjoyPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateNumberSelectionSmartphoneMultiDeviceEnjoyGetResponse:
+   cookies:
+        uuid: "smartphone-multi-device-enjoy"
+   referenceData: validateNumberSelection/schema/validateNumberSelection.json
+   headers:
+      Referer: "numberdetails.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/smartphone-multi-device-enjoy/?type=address,numberSelection"
+   testCaseName:  validateNumberSelectionSmartphoneMultiDeviceEnjoyGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.numberSelection.losgDetails[0].losgID: losg21470263
+     - payload.numberSelection.losgDetails[0].addressID: ADDRESS_01
+     - payload.numberSelection.losgDetails[0].displayName: Apple iPhone 8 Plus - 64GB - Space Gray
+     - payload.numberSelection.losgDetails[0].selectedNumber: 3237493001
+     - payload.numberSelection.losgDetails[0].assignNewNumber: false
+   validationType: partial   

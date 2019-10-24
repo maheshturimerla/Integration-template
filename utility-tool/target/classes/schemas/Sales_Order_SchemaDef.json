@@ -1,0 +1,94 @@
+{
+	"sales_order": {
+		"namedcache": "order",
+		"contenttype": "application/json",
+		"version": "1.0",
+		"cachettl": 10800,
+		"backingmapttl": 5184000,
+		"maxlength": 2097152,
+		"strictvalidation": "false",
+		"header": {
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"orderData": {
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"status": {
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"metadata": {
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"external_api_response": {
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"wireless_account_info": {
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"wireline_account_info": {
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"external_call_status": {
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"itpa": {
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+		"facility_check_info": {
+			"versions": {
+				"v1": {
+				}
+			}
+		},
+		"iucsp": {
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		},
+        "wireless_upgrade_info": {
+            "versions": {
+                "v1": {
+                                
+                }
+            }
+        }
+	}
+}

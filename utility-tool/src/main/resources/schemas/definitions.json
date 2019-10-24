@@ -1,0 +1,39 @@
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "definitions": {
+            "defaults": {
+                 "Defaultcachettl"  : 60.0,
+                 "Defaultbackingmapttl": -1, 
+                 "secure"      : true, 
+                 "transient"   : false, 
+                 "maxentries"  : 10, 
+                 "maxbytesize" : 1048576,
+                 "maxdepth"    : 3, 
+                 "maxlength"   : 2097152.0,
+                 "pkminlength"   : 3,
+                 "pkmaxlength"   : 128,
+                 "serializer"  : "json", 
+                 "strictvalidation" : "true", 
+			     "dbencryption": "false",
+			     "compression" : "false",
+			     "replication" : "false",
+			     "isvolatile"  : "false",
+			     "suppressWarning" : "false"
+             }, 
+             "address" : { 
+                "type": "object", 
+                "properties": { "street": { "type": "string" } },
+                "required" : [ "street" ]
+              },
+              "base":  {
+                   "type": "object",
+                    "properties":  {
+                       "namedcache":{  "type":"string" },
+		               "firstname": { "type": "string", "minLength": 5, "maxLength": 10 },
+                       "lastname" : { "type": "string" },
+                       "middlename": { "type": "string" }
+                     },
+                     "required": [ "firstname", "lastname" ]
+               }
+     }
+}

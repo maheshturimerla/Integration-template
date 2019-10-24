@@ -1,0 +1,21 @@
+{
+  "idp_ms_private_salesProfile": {
+    "namedcache": "idp_ms_private_salesProfile",
+    "contenttype": "application/json",
+    "version": "1.0",
+    "cachettl": 10800,
+    "backingmapttl": 5184000,
+    "maxlength": 30000,
+    "strictvalidation": "false",
+    "header": {
+      "versions": {
+        "v1": {}
+      }
+    },
+    "profile_info": {
+      "versions": {
+        "v1": {}
+      }
+    }
+  }
+}

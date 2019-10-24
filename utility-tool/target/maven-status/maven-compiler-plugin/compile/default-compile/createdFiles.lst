@@ -1,0 +1,8 @@
+com\att\ajsc\ccc\config\WebConfiguration.class
+com\att\ajsc\ccc\config\service\cosc\JsonService.class
+com\att\ajsc\ccc\config\common\LogMessages.class
+com\att\ajsc\ccc\config\service\cosc\COSCService.class
+com\att\ajsc\ccc\config\Application.class
+com\att\ajsc\ccc\config\common\CCCJsonParser.class
+com\att\ajsc\ccc\config\service\cosc\COSCServiceImpl.class
+com\att\ajsc\ccc\config\WebConfiguration$1.class

@@ -1,0 +1,2566 @@
+testCases:
+  flowDataSetupProvideSmbDtv:
+    testCaseName: flowDataSetupProvideSmbDtv
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-provide-new-dtv-flow"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/provide-smb-dtv/smb-provide-new-dtv-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateCloudDataProvideSmbDtv:
+    testCaseName: validateCloudDataProvideSmbDtv
+    type: "GET"
+    url: "/apis/tools/orders/jsonview/order-id"
+    referenceData: validateCart/schema/validateCart.json
+    orderIdType: "single"
+    asserts:
+     - sales_cart.wireline_metadata.sub_flow_type: "NEW_DTV"
+     - sales_cart.wireline_metadata:  |
+          {"version":0,"ioPromoInCart":false,"flow_types":["PROVIDE"],"buyflow_order_id":"7586190097","sub_flow_type":"NEW_DTV","buyflow_session_id":"G4WlcX5uYTPfLEyd-_EPhUFbp925jue2!1005275161!1488834362990","session_keep_alive_url":"/service/model/att/ecom/api/BuyFlowController/service?Type=sessionKeepAlive","cart_loader_url":"/services/shop/model/ecom/cart/CartService/retrieveCloudCart","count":4,"retrieve_url":"https://tst17.stage.att.com/cart/mycart.html/#/cart/mycart?uuid=b63fd36d-9194-a431-1d1b-5cb13b8ae6d9&retrieveCart=true","extra_params":{"losgList":["dtv"]},"is_io_promo_in_cart":false,"autopay_enrolled":false,"paperless_enrolled":false}
+     - sales_checkout.address. addressInfo.billing: "isNotNull"
+     - sales_checkout.address. addressInfo.billing: "containsKey:\"address_ref_id\""
+     - sales_checkout.address. addressInfo.billing.address_ref_id: "isNotNull"
+    validationType: expression
+  validateCloudDataNACK627:
+    testCaseName: validateCloudDataNACK627
+    type: "GET"
+    url: "/apis/tools/orders/jsonview/order-id"
+    referenceData: validateCart/schema/validateCart.json
+    orderIdType: "multiple"
+    asserts:
+     - sales_checkout.account_options: "containsKey:\"ctn_special_offers\""
+    validationType: expression
+
+  validateCartProvideSmbDtvResponse:
+    testCaseName: validateCartProvideSmbDtvResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "smb-provide-new-dtv-flow"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/smb-provide-new-dtv-flow"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: "false"
+     - payload.metadata.wireline.buyflowSessionId: G4WlcX5uYTPfLEyd-_EPhUFbp925jue2!1005275161!1488834362990
+     - payload.metadata.wireline.subFlowType: NEW_DTV
+     - payload.metadata.wireline.flowtypes[0]: PROVIDE
+     - payload.metadata.wireline.count: 4
+     - payload.metadata.wireline.buyflowOrderId: 7586190097
+     - payload.metadata.wireline.extra_params.losgList[0]: dtv
+     - payload.metadata.wireline.extra_params.wll_flow: false
+     - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+     - payload.metadata.sessionCookies[1]: SALES_USER_ID
+     - payload.metadata.cartLob[0]: wireline
+     - payload.metadata.lobList[0]: wireline
+     - payload.metadata.saveCartOption[0]: emptyCart
+     - payload.metadata.saveCartOption[1]: saveCart
+     - payload.metadata.saveCartOption[2]: retrieveCart
+     - payload.wireline.lobType: wireline	
+     - payload.wireline.status.readyToCheckout: true
+     - payload.wireline.status.cartState: complete
+     - payload.wireline.itemInfoMap.95821009627.itemType: dtvReceiver
+     - payload.wireline.itemInfoMap.95821009627.itemPriceInfo.type: due_monthly
+     - payload.metadata.wireline.flowtypes[0]: "PROVIDE"
+     - payload.wireline.itemInfoMap.95821009446.priceAdjustments[0].adjustment: "5.0"
+     - payload.wireline.extra_attributes.iptvItemKey: iptvItemAdded
+     - payload.wireline.extra_attributes.is_d2lite_eligible: false
+     - payload.wireline.extra_attributes.portInNumberAdditional: true
+     - payload.wireline.extra_attributes.SelectedNetworkTransportType: IP-RT
+     - payload.wireline.extra_attributes.customerSubType: smallbusiness
+     - payload.wireline.extra_attributes.authenticationState: Unauthenticated
+     - payload.wireline.extra_attributes.isUnifyFlow: false
+     - payload.wireline.extra_attributes.is_fmo_customer: true
+     - payload.wireline.extra_attributes.is_restricted_dealer: false
+     - payload.wireline.extra_attributes.id_dtv_connected_community: false
+     - payload.wireline.extra_attributes.isSelfInstallEligible: false
+     - payload.wireline.extra_attributes.InstallTypeSelected: Tech
+     - payload.wireline.extra_attributes.portInNumberPrimary: false
+     - payload.wireline.extra_attributes.isFallOutAutomotion: false
+     - payload.wireline.extra_attributes.isGigaInCart: false
+     - payload.wireline.extra_attributes.bundlePage: /shop/u-verse/offers.html
+    validationType: partial
+  flowDataSetupProvideSmbDslPots:
+      testCaseName: flowDataSetupProvideSmbDslPots
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "provide-smb-dsl-pots"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/provide-smb-dsl-pots/provide-smb-dsl-pots"
+      validationType: actual
+  validateCartProvideSmbDslPotsResponse:
+      testCaseName: validateCartProvideSmbDslPotsResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "provide-smb-dsl-pots"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/provide-smb-dsl-pots"
+      asserts:
+        - response.status: SUCCESS
+        - response.redirect: false
+        - payload.metadata.wireline.buyflowSessionId: 5BAlcIZoihP04wH-PhFqiWgdQz-52kyw!-2069218925!1512456619624
+        - payload.metadata.wireline.subFlowType: NEW_HSIA_NEW_VOIP_NEW_APPS
+        - payload.metadata.wireline.flowtypes[0]: PROVIDE
+        - payload.metadata.wireline.count: 10
+        - payload.metadata.wireline.buyflowOrderId: 20-104100000590542
+        - payload.metadata.wireline.extra_params.cartSummaryUrl: /cart/mycart.html?retrieveCart=true
+        - payload.metadata.wireline.extra_params.domainName: https://tst04.stage.att.com
+        - payload.metadata.wireline.extra_params.losgList[0]: businessApp
+        - payload.metadata.wireline.extra_params.losgList[1]: dsl
+        - payload.metadata.wireline.extra_params.losgList[2]: potsP
+        - payload.metadata.wireline.extra_params.idp_supported_flow: false
+        - payload.metadata.wireline.extra_params.wll_flow: false
+        - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+        - payload.metadata.sessionCookies[1]: SALES_USER_ID
+        - payload.metadata.cartLob[0]: wireline
+        - payload.metadata.lobList[0]: wireline
+        - payload.metadata.saveCartOption[0]: emptyCart
+        - payload.metadata.saveCartOption[1]: saveCart
+        - payload.metadata.saveCartOption[2]: retrieveCart
+        - payload.wireline.lobType: wireline	
+        - payload.wireline.status.readyToCheckout: true
+        - payload.wireline.status.cartState: complete
+        - payload.wireline.itemInfoMap.95598047216.itemType: businessAppsAndServices
+        - payload.wireline.itemInfoMap.95598047216.itemPriceInfo.type: due_monthly
+        - payload.wireline.itemInfoMap.95598047214.itemType: hsia
+        - payload.wireline.itemInfoMap.95598047214.itemPriceInfo.type: due_monthly
+        - payload.wireline.itemInfoMap.95598047261.itemType: uvOption
+        - payload.wireline.itemInfoMap.95598047261.itemPriceInfo.type: onetime
+        - payload.wireline.extra_attributes.SelectedNetworkTransportType: ATM RT
+        - payload.wireline.extra_attributes.portInNumberAdditional: false
+        - payload.wireline.extra_attributes.operation_mode: PMO
+        - payload.wireline.extra_attributes.includedDVRs: 0
+        - payload.wireline.extra_attributes.isUnifyFlow: false
+        - payload.wireline.extra_attributes.voipCsiQuestionsConfirmed: Default
+        - payload.wireline.extra_attributes.TermsAndConditionsVersions: FADSLPLUS,LOCAL_U_P_SMB,Tech-Support-Combined-T&C
+        - payload.wireline.extra_attributes.FWIMoveIndicator: false
+        - payload.wireline.extra_attributes.uverseInstallation: false
+        - payload.wireline.extra_attributes.voipItemKey: voipItemAdded
+        - payload.wireline.extra_attributes.internet_programming_type: DSL-FASTACCESS
+        - payload.wireline.extra_attributes.isCAF2Address: false
+        - payload.wireline.extra_attributes.isSelfInstallEligible: true
+        - payload.wireline.extra_attributes.IPDSLAIndicator: false
+        - payload.wireline.extra_attributes.InstallTypeSelected: Self
+        - payload.wireline.extra_attributes.isGigaInCart: false
+        - payload.wireline.extra_attributes.bundlePage: /shop/u-verse/offers.html
+        - payload.wireline.extra_attributes.includedSTBs: 0
+        - payload.wireline.extra_attributes.authenticationState: Unauthenticated  
+        - payload.wireline.extra_attributes.customerSubType: smallbusiness
+        - payload.wireline.extra_attributes.receiverCount: 0
+        - payload.wireline.extra_attributes.isDSLAvailable: true
+        - payload.wireline.extra_attributes.hsiaItemKey: hsiaItemAdded
+        - payload.wireline.extra_attributes.frequency17MhzIndicator: false
+        - payload.wireline.extra_attributes.floorNo: false
+        - payload.wireline.extra_attributes.isHomeNetworkInCart: false
+        - payload.wireline.extra_attributes.isFallOutAutomotion: false
+        - payload.wireline.extra_attributes.portInNumberPrimary: false
+      validationType: partial
+
+  flowDataSetupProvideSMBBusinessApps:
+    testCaseName: flowDataSetupProvideSMBBusinessApps
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-provide-business-apps"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/provide-smb-apps/smb-provide-business-apps"
+    validationType: actual
+  validateCartProvideSMBBusinessAppsResponse:
+    testCaseName: validateCartProvideSMBBusinessAppsResponse
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-provide-business-apps"
+    body: ""
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/smb-provide-business-apps"
+    asserts:
+      - payload.metadata.wireline.buyflowSessionId: DnDLDquHazHfIfaHPyy2xLdwcruF3LDT!1752626264!1489465420679
+      - payload.metadata.wireline.subFlowType: NEW_APPS
+      - payload.metadata.wireline.flowtypes[0]: PROVIDE
+      - payload.metadata.wireline.count: 4
+      - payload.metadata.wireline.buyflowOrderId: 7587510426
+      - payload.metadata.wireline.extra_params.losgList[0]: businessApp
+      - payload.metadata.wireline.extra_params.wll_flow: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireline
+      - payload.metadata.lobList[0]: wireline
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.wireline.lobType: wireline	
+      - payload.wireline.status.readyToCheckout: true
+      - payload.wireline.status.cartState: complete
+      - payload.wireline.itemInfoMap.95917046077.itemType: businessAppsAndServicesAddon
+      - payload.wireline.itemInfoMap.95917046077.itemPriceInfo.type: due_today
+      - payload.wireline.itemInfoMap.95917046068.itemType: businessAppsAndServices
+      - payload.wireline.itemInfoMap.95917046068.itemPriceInfo.type: due_monthly
+      - payload.wireline.extra_attributes.portInNumberAdditional: true
+      - payload.wireline.extra_attributes.isUnifyFlow: false
+      - payload.metadata.wireline.extra_params.losgList[0]: businessApp
+      - payload.metadata.wireline.extra_params.cartSummaryUrl: /cart/mycart.html?retrieveCart=true
+      - payload.metadata.wireline.extra_params.idp_supported_flow: false
+      - payload.metadata.wireline.extra_params.wll_flow: false
+      - payload.wireline.extra_attributes.portInNumberAdditional: true
+      - payload.wireline.extra_attributes.includedDVRs: 0
+      - payload.wireline.extra_attributes.voipCsiQuestionsConfirmed: Default
+      - payload.wireline.extra_attributes.isUnifyFlow: false
+      - payload.wireline.extra_attributes.id_dtv_connected_community: false
+      - payload.wireline.extra_attributes.voipItemKey: voipItemAdded
+      - payload.wireline.extra_attributes.isSelfInstallEligible: false
+      - payload.wireline.extra_attributes.is_restricted_dealer: false
+      - payload.wireline.extra_attributes.InstallTypeSelected: Tech
+      - payload.wireline.extra_attributes.bundlePage: /shop/u-verse/build-your-own-bundle.html
+      - payload.wireline.extra_attributes.includedSTBs: 0
+      - payload.wireline.extra_attributes.authenticationState: Unauthenticated  
+      - payload.wireline.extra_attributes.customerSubType: smallbusiness
+      - payload.wireline.extra_attributes.receiverCount: 1
+      - payload.wireline.extra_attributes.is_fmo_customer: true
+      - payload.wireline.extra_attributes.isGigaInCart: false
+      - payload.wireline.extra_attributes.hsiaItemKey: hsiaItemAdded
+      - payload.wireline.extra_attributes.floorNo: false
+      - payload.wireline.extra_attributes.isHomeNetworkInCart: false
+      - payload.wireline.extra_attributes.isFallOutAutomotion: false
+      - payload.wireline.extra_attributes.portInNumberPrimary: false
+    validationType: partial
+
+  flowDataSetupAccessoryFlow:
+    testCaseName: flowDataSetupAccessoryFlow
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "accessoryFlow"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/accessoryonly/accessoryFlow"
+    validationType: actual
+  validateCartAccessoryFlowResponse:
+      testCaseName: validateCartAccessoryFlowResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "accessoryFlow"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/accessoryFlow"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.wireless.buyflowSessionId: tgN6g993N9FdGYtXgt6fHTUazioPHeZH!-1954537553!1496704081783
+      - payload.metadata.wireless.subFlowType: ACCESSORYONLY
+      - payload.metadata.wireless.count: 1
+      - payload.metadata.wireless.flowtypes[0]: NEW
+      - payload.metadata.wireless.buyflowOrderId: 21-307100158202435
+      - payload.metadata.wireless.WLS_AuthUser: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireless
+      - payload.metadata.lobList[0]: wireless
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.metadata.wireless.extra_params.isPersistedCartFlag: 0
+      - payload.metadata.wireless.extra_params.isCiti: false
+      - payload.metadata.wireless.extra_params.persistedCartHours: 0
+      - payload.metadata.wireless.extra_params.cartSummaryUrl: "/cart/mycart.html"
+      - payload.metadata.wireless.extra_params.shippingMethod: Priority
+      - payload.metadata.wireless.extra_params.persistedCartAge: 0
+      - payload.metadata.wireless.extra_params.isPrepaid: 'false'
+      - payload.metadata.wireless.extra_params.ipAddress: 135.40.70.63
+      - payload.wireless.lobType: WIRELESS
+      - payload.wireless.status.readyToCheckout: true
+      - payload.wireless.status.cartState: complete
+      - payload.wireless.itemInfoMap.111736011240.itemType: accessory
+      - payload.wireless.shippingMethod.selShippingType: Priority
+      - payload.wireless.eligible_actions[0]: addALine
+      - payload.wireless.eligible_actions[1]: addAccessories
+      validationType: partial
+  flowDataSetupDeviceOnly:
+      testCaseName: flowDataSetupDeviceOnly
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "device-only"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/deviceonly/device-only"
+      validationType: actual
+  validateCartDeviceOnlyResponse:
+      testCaseName: validateCartDeviceOnlyResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "device-only"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/device-only"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.wireless.subFlowType: DEVICEONLY
+      - payload.metadata.wireless.count: 1
+      - payload.metadata.wireless.flowtypes[0]: NEW
+      - payload.metadata.wireless.buyflowOrderId: 21-104100012011332
+      - payload.metadata.wireless.WLS_AuthUser: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireless
+      - payload.metadata.lobList[0]: wireless
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.metadata.wireless.extra_params.isPersistedCartFlag: 0
+      - payload.metadata.wireless.extra_params.isCiti: 'false'
+      - payload.metadata.wireless.extra_params.ECOM_GTM: SetValInConfig_SetValInConfigMgr
+      - payload.metadata.wireless.extra_params.persistedCartHours: 0
+      - payload.metadata.wireless.extra_params.cartSummaryUrl: "/cart/mycart.html?retrieveCart=true"
+      - payload.metadata.wireless.extra_params.isExUpFlow: false
+      - payload.metadata.wireless.extra_params.shippingMethod: Overnight
+      - payload.metadata.wireless.extra_params.persistedCartAge: 0
+      - payload.metadata.wireless.extra_params.isPrepaid: 'false'
+      - payload.metadata.wireless.extra_params.isPostpaid: 'false'
+      - payload.metadata.wireless.extra_params.ipAddress: 135.163.163.136
+      - payload.wireless.lobType: WIRELESS
+      - payload.wireless.status.readyToCheckout: true
+      - payload.wireless.status.cartState: complete
+      - payload.wireless.itemInfoMap.84069000033.itemType: device
+      - payload.wireless.shippingMethod.selShippingType: Overnight
+      - payload.wireless.eligible_actions[0]: addALine
+      - payload.wireless.eligible_actions[1]: addAccessories
+      validationType: partial
+
+  flowDataSetupModifyDtvAddingSubsAccessoriesExpressCheckout:
+      testCaseName: flowDataSetupModifyDtvAddingSubsAccessoriesExpressCheckout
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/modify-dtv-express-checkout/modify-dtv-adding-subs-accessories-express-checkout"
+      validationType: actual
+  validateCartModifyDtvAddingSubsAccessoriesExpressCheckoutResponse:
+      testCaseName: validateCartModifyDtvAddingSubsAccessoriesExpressCheckoutResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/modify-dtv-adding-subs-accessories-express-checkout"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.profileType: authuser
+      - payload.metadata.wireline.buyflowSessionId: JxgIGe8etBgm2qtII4_doVNh8d4aDJFE!1782605882!1511964405534
+      - payload.metadata.wireline.subFlowType: "EXISTING_DTV"
+      - payload.metadata.wireline.scenarioType: "EXISTING_DTV"
+      - payload.metadata.wireline.count: 4
+      - payload.metadata.wireline.flowtypes[0]: "MODIFY"
+      - payload.metadata.wireline.modifyCheckoutType: "Express"
+      - payload.metadata.wireline.buyflowOrderId: 20-114100008480904
+      - payload.metadata.wireline.extra_params.losgList[0]: "dtv"
+      - payload.metadata.wireline.modifyFlowInstallationDateEligibility: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireline
+      - payload.metadata.lobList[0]: wireline
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.wireline.lobType: wireline
+      - payload.wireline.status.readyToCheckout: true
+      - payload.wireline.status.cartState: complete
+      - payload.wireline.itemInfoMap.95816049770.itemType: "dtvBasePackage"
+      - payload.wireline.itemInfoMap.95816049770.itemPriceInfo.type: "due_monthly"
+      - payload.metadata.wireline.extra_params.losgList[0]: dtv
+      - payload.metadata.wireline.extra_params.idp_supported_flow: false
+      - payload.metadata.wireline.extra_params.wll_flow: false
+      - payload.wireline.extra_attributes.portInNumberAdditional: false
+      - payload.wireline.extra_attributes.operation_mode: FMO
+      - payload.wireline.extra_attributes.FWIMoveIndicator: false
+      - payload.wireline.extra_attributes.isUnifyFlow: false
+      - payload.wireline.extra_attributes.isCAF2Address: false
+      - payload.wireline.extra_attributes.isSelfInstallEligible: false
+      - payload.wireline.extra_attributes.IPDSLAIndicator: true
+      - payload.wireline.extra_attributes.isGigaInCart: false
+      - payload.wireline.extra_attributes.isStbPolicyChanged: false
+      - payload.wireline.extra_attributes.authenticationState: authenticated
+      - payload.wireline.extra_attributes.customerSubType: residential
+      - payload.wireline.extra_attributes.isDSLAvailable: false
+      - payload.wireline.extra_attributes.vectoringIndicator: false
+      - payload.wireline.extra_attributes.frequency17MhzIndicator: false
+      - payload.wireline.extra_attributes.cpeRequiredIndicator: false
+      - payload.wireline.extra_attributes.isHomeNetworkInCart: false
+      - payload.wireline.extra_attributes.isFallOutAutomotion: false
+      - payload.wireline.extra_attributes.portInNumberPrimary: false
+      validationType: partial
+#      validationType: actual
+
+  flowDataSetupModifyHisaVoip:
+      testCaseName: flowDataSetupModifyHisaVoip
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-hisa-voip"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/modify-hisa-voip/modify-hisa-voip"
+      validationType: actual
+  validateCartModifyHisaVoipResponse:
+      testCaseName: validateCartModifyHisaVoipResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-hisa-voip"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/modify-hisa-voip"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.profileType: authuser
+      - payload.metadata.wireline.buyflowSessionId: JxgIGe8etBgm2qtII4_doVNh8d4aDJFE!1782605882!1511964405534
+      - payload.metadata.wireline.subFlowType: "EXISTING_DTV"
+      - payload.metadata.wireline.scenarioType: "EXISTING_DTV"
+      - payload.metadata.wireline.count: 4
+      - payload.metadata.wireline.flowtypes[0]: "MODIFY"
+      - payload.metadata.wireline.modifyCheckoutType: "Express"
+      - payload.metadata.wireline.buyflowOrderId: 20-114100008480904
+      - payload.metadata.wireline.extra_params.losgList[0]: "dtv"
+      - payload.metadata.wireline.modifyFlowInstallationDateEligibility: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireline
+      - payload.metadata.lobList[0]: wireline
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.wireline.lobType: wireline
+      - payload.wireline.status.readyToCheckout: true
+      - payload.wireline.status.cartState: complete
+      - payload.wireline.itemInfoMap.95816049770.itemType: "dtvBasePackage"
+      - payload.wireline.itemInfoMap.95816049770.itemPriceInfo.type: "due_monthly"
+      validationType: partial
+
+  flowDataSetupModifyIptvAddReceiverSelfInstallHybridCheckout:
+      testCaseName: flowDataSetupModifyIptvAddReceiverSelfInstallHybridCheckout
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/modify-iptv-addwireless-receiver-selfinstall/modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+      validationType: actual
+  validateCartModifyIptvAddReceiverSelfInstallHybridCheckoutResponse:
+      testCaseName: validateCartModifyIptvAddReceiverSelfInstallHybridCheckoutResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.profileType: authuser
+      - payload.metadata.wireline.buyflowSessionId: bnsIUUzHdufml695cal9-asDayG95Xi2!1782605882!1511968033991
+      - payload.metadata.wireline.subFlowType: "EXISTING_IPTV_EXISTING_HSIA_EXISTING_VOIP"
+      - payload.metadata.wireline.scenarioType: "EXISTING_IPTV_EXISTING_HSIA_EXISTING_VOIP"
+      - payload.metadata.wireline.count: 3
+      - payload.metadata.wireline.flowtypes[0]: "MODIFY"
+      - payload.metadata.wireline.modifyCheckoutType: "Dynamic"
+      - payload.metadata.wireline.buyflowOrderId: 20-114100008480918
+      - payload.metadata.wireline.extra_params.losgList[0]: "hsia"
+      - payload.metadata.wireline.extra_params.losgList[1]: "voipP"
+      - payload.metadata.wireline.extra_params.losgList[2]: "iptv"
+      - payload.metadata.wireline.extra_params.losgList[3]: "misc"
+      - payload.metadata.wireline.modifyFlowInstallationDateEligibility: true
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireline
+      - payload.metadata.lobList[0]: wireline
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.wireline.lobType: wireline
+      - payload.wireline.status.readyToCheckout: false
+      - payload.wireline.status.cartState: complete
+      - payload.wireline.itemInfoMap.95816052432.itemType: "iptv"
+      - payload.wireline.itemInfoMap.95816052432.itemPriceInfo.type: "due_monthly"
+      - payload.wireline.extra_attributes.portInNumberAdditional: false
+      - payload.wireline.extra_attributes.operation_mode: PMO
+      - payload.wireline.extra_attributes.isUnifyFlow: false
+      - payload.wireline.extra_attributes.FWIMoveIndicator: false
+      - payload.wireline.extra_attributes.uverseInstallation: false
+      - payload.wireline.extra_attributes.isCAF2Address: false
+      - payload.wireline.extra_attributes.isSelfInstallEligible: false
+      - payload.wireline.extra_attributes.IPDSLAIndicator: false
+      - payload.wireline.extra_attributes.InstallTypeSelected: Tech
+      - payload.wireline.extra_attributes.profileCode: Med
+      - payload.wireline.extra_attributes.portInNumberPrimary: true
+      - payload.wireline.extra_attributes.isFallOutAutomotion: false
+      - payload.wireline.extra_attributes.isHomeNetworkInCart: false
+      - payload.wireline.extra_attributes.cpeRequiredIndicator: false
+      - payload.wireline.extra_attributes.frequency17MhzIndicator: false
+      - payload.wireline.extra_attributes.isDSLAvailable: false
+      - payload.wireline.extra_attributes.vectoringIndicator: false
+      - payload.wireline.extra_attributes.customerSubType: residential
+      - payload.metadata.wireline.extra_params.idp_supported_flow: false
+      - payload.metadata.wireline.extra_params.wll_flow: false
+      validationType: partial
+  flowDataSetupModifySmbHsiaAddDtvBusinessApps:
+      testCaseName: flowDataSetupModifySmbHsiaAddDtvBusinessApps
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-smb-hsia-add-dtv-businessApps"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/modify-smb-hsia-add-dtv-businessApps/modify-smb-hsia-add-dtv-businessApps"
+      validationType: actual
+  validateCartModifySmbHsiaAddDtvBusinessAppsResponse:
+      testCaseName: validateCartModifySmbHsiaAddDtvBusinessAppsResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-smb-hsia-add-dtv-businessApps"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/modify-smb-hsia-add-dtv-businessApps"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.profileType: authuser
+      - payload.metadata.wireline.buyflowSessionId: HzkM0V_ZZL8G69qSjR-pvORRebGQDOWy!1782605882!1512043536345
+      - payload.metadata.wireline.subFlowType: "NEW_DTV_EXISTING_HSIA_NEW_APPS"
+      - payload.metadata.wireline.scenarioType: "NEW_DTV_EXISTING_HSIA_NEW_APPS"
+      - payload.metadata.wireline.count: 6
+      - payload.metadata.wireline.flowtypes[0]: "MODIFY"
+      - payload.metadata.wireline.modifyCheckoutType: "Dynamic"
+      - payload.metadata.wireline.buyflowOrderId: 20-114100008480976
+      - payload.metadata.wireline.extra_params.losgList[0]: "businessApp"
+      - payload.metadata.wireline.extra_params.losgList[1]: "hsia"
+      - payload.metadata.wireline.extra_params.losgList[2]: "dtv"
+      - payload.metadata.wireline.modifyFlowInstallationDateEligibility: true
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireline
+      - payload.metadata.lobList[0]: wireline
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.wireline.lobType: wireline
+      - payload.wireline.status.readyToCheckout: true
+      - payload.wireline.status.cartState: complete
+      - payload.wireline.itemInfoMap.95816056078.itemType: "hsia"
+      - payload.wireline.itemInfoMap.95816056078.itemPriceInfo.type: "due_monthly"
+      validationType: partial
+
+  flowDataSetupModifySmbIptvHsiaProvideVoipPortIn:
+      testCaseName: flowDataSetupModifySmbIptvHsiaProvideVoipPortIn
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/modify-smb-iptv-hsia-provide-voip-portIn/modify-smb-iptv-hsia-provide-voip-portIn"
+      validationType: actual
+  validateCartModifySmbIptvHsiaProvideVoipPortInResponse:
+      testCaseName: validateCartModifySmbIptvHsiaProvideVoipPortInResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/modify-smb-iptv-hsia-provide-voip-portIn"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.profileType: authuser
+      - payload.metadata.wireline.buyflowSessionId: YrIMxZuD-xlINZghGXKKWdy9sAfSiDz4!1782605882!1512042765187
+      - payload.metadata.wireline.subFlowType: "EXISTING_IPTV_EXISTING_HSIA_NEW_VOIP"
+      - payload.metadata.wireline.scenarioType: "EXISTING_IPTV_EXISTING_HSIA_NEW_VOIP"
+      - payload.metadata.wireline.count: 9
+      - payload.metadata.wireline.flowtypes[0]: "MODIFY"
+      - payload.metadata.wireline.modifyCheckoutType: "Dynamic"
+      - payload.metadata.wireline.buyflowOrderId: 20-114100008480970
+      - payload.metadata.wireline.extra_params.losgList[0]: "hsia"
+      - payload.metadata.wireline.extra_params.losgList[1]: "voipP"
+      - payload.metadata.wireline.extra_params.losgList[2]: "iptv"
+      - payload.metadata.wireline.extra_params.losgList[3]: "misc"
+      - payload.metadata.wireline.modifyFlowInstallationDateEligibility: true
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireline
+      - payload.metadata.lobList[0]: wireline
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.wireline.lobType: wireline
+      - payload.wireline.status.readyToCheckout: false
+      - payload.wireline.status.cartState: complete
+      - payload.wireline.itemInfoMap.95816056014.itemType: "iptv"
+      - payload.wireline.itemInfoMap.95816056014.itemPriceInfo.type: "due_monthly"
+      - payload.metadata.wireline.extra_params.losgList[0]: hsia
+      - payload.metadata.wireline.extra_params.losgList[1]: voipP
+      - payload.metadata.wireline.extra_params.losgList[2]: iptv
+      - payload.metadata.wireline.extra_params.losgList[3]: misc
+      - payload.metadata.wireline.extra_params.idp_supported_flow: false
+      - payload.metadata.wireline.extra_params.wll_flow: false
+      - payload.wireline.extra_attributes.SelectedNetworkTransportType: FTTP-GPON
+      - payload.wireline.extra_attributes.portInNumberAdditional: false
+      - payload.wireline.extra_attributes.portInExistingVoipServiceProvider: CLEC
+      - payload.wireline.extra_attributes.operation_mode: PMO
+      - payload.wireline.extra_attributes.isUnifyFlow: false
+      - payload.wireline.extra_attributes.FWIMoveIndicator: false
+      - payload.wireline.extra_attributes.uverseInstallation: true
+      - payload.wireline.extra_attributes.internet_programming_type: NA
+      - payload.wireline.extra_attributes.isCAF2Address: false
+      - payload.wireline.extra_attributes.isSelfInstallEligible: false
+      - payload.wireline.extra_attributes.IPDSLAIndicator: false
+      - payload.wireline.extra_attributes.InstallTypeSelected: Tech
+      - payload.wireline.extra_attributes.profileCode: UvClass18G
+      - payload.wireline.extra_attributes.isGigaInCart: false
+      - payload.wireline.extra_attributes.authenticationState: authenticated
+      - payload.wireline.extra_attributes.portInNumberPrimary: true
+      validationType: partial
+  flowDataSetupProvideDtv:
+      testCaseName: flowDataSetupProvideDtv
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "provide-dtv"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/provide-dtv/provide-dtv"
+      validationType: actual
+  validateCartProvideDtvResponse:
+      testCaseName: validateCartProvideDtvResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "provide-dtv"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/provide-dtv"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.wireline.buyflowSessionId: k4UxUGznz2D8Vm6Wi40qS4SpDViDoygx!1611908424!1495475973351
+      - payload.metadata.wireline.subFlowType: NEW_DTV
+      - payload.metadata.wireline.flowtypes[0]: PROVIDE
+      - payload.metadata.wireline.count: 6
+      - payload.metadata.wireline.buyflowOrderId: 7580312076
+      - payload.metadata.wireline.extra_params.losgList[0]: dtv
+      - payload.metadata.wireline.extra_params.wll_flow: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireline
+      - payload.metadata.lobList[0]: wireline
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.wireline.lobType: wireline	
+      - payload.wireline.status.readyToCheckout: true
+      - payload.wireline.status.cartState: complete
+      - payload.wireline.itemInfoMap.95550216506.itemType: dtvBasePackage
+      - payload.wireline.itemInfoMap.95550216506.itemPriceInfo.type: due_monthly
+      - payload.wireline.extra_attributes.iptvItemKey: iptvItemAdded
+      - payload.wireline.extra_attributes.portInNumberAdditional: false
+      - payload.wireline.extra_attributes.operation_mode: PMO
+      - payload.wireline.extra_attributes.isUnifyFlow: false
+      - payload.wireline.extra_attributes.isSelfInstallEligible: false
+      - payload.wireline.extra_attributes.IPDSLAIndicator: false
+      - payload.wireline.extra_attributes.isGigaInCart: false
+      - payload.wireline.extra_attributes.hsiaItemKey: hsiaItemAdded
+      - payload.wireline.extra_attributes.frequency17MhzIndicator: false
+      - payload.wireline.extra_attributes.cpeRequiredIndicator: false
+      - payload.wireline.extra_attributes.isHomeNetworkInCart: false
+      - payload.wireline.extra_attributes.isFallOutAutomotion: false
+      - payload.wireline.extra_attributes.portInNumberPrimary: false
+      validationType: partial
+
+  flowDataSetupProvideHsia:
+      testCaseName: flowDataSetupProvideHsia
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "provide-hsia"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/provide-internet/provide-hsia"
+      validationType: actual
+  validateCartProvideHsiaResponse:
+      testCaseName: validateCartProvideHsiaResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "provide-hsia"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/provide-hsia"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.wireline.buyflowSessionId: dgzzE2vM32tdLUXCBQ2uaz2Hs1-0THvL!-436127561!1485841853388
+      - payload.metadata.wireline.subFlowType: NEW_HSIA
+      - payload.metadata.wireline.flowtypes[0]: PROVIDE
+      - payload.metadata.wireline.count: 4
+      - payload.metadata.wireline.buyflowOrderId: 7586290094
+      - payload.metadata.wireline.extra_params.cartSummaryUrl: /cart/mycart.html?retrieveCart=true
+      - payload.metadata.wireline.extra_params.losgList[0]: hsia
+      - payload.metadata.wireline.extra_params.idp_supported_flow: false
+      - payload.metadata.wireline.extra_params.wll_flow: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireline
+      - payload.metadata.lobList[0]: wireline
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.wireline.lobType: wireline	
+      - payload.wireline.status.readyToCheckout: true
+      - payload.wireline.status.cartState: complete
+      - payload.wireline.itemInfoMap.95859007095.itemType: hsia
+      - payload.wireline.itemInfoMap.95859007095.itemPriceInfo.type: due_monthly
+      - payload.wireline.itemInfoMap.95859007092.itemType: uvInstall
+      - payload.wireline.itemInfoMap.95859007092.itemPriceInfo.type: onetime
+      - payload.wireline.itemInfoMap.95859007094.itemType: uvIPUsage
+      - payload.wireline.itemInfoMap.95859007094.itemPriceInfo.type: due_monthly
+      - payload.wireline.extra_attributes.SelectedNetworkTransportType: FTTP-GPON
+      - payload.wireline.extra_attributes.portInNumberAdditional: false
+      - payload.wireline.extra_attributes.fulfillment_pmo_type: FMO
+      - payload.wireline.extra_attributes.includedDVRs: 0
+      - payload.wireline.extra_attributes.customerSubType: residential
+      - payload.wireline.extra_attributes.authenticationState: Unauthenticated
+      - payload.wireline.extra_attributes.receiverCount: 0
+      - payload.wireline.extra_attributes.isUnifyFlow: false
+      - payload.wireline.extra_attributes.voipCsiQuestionsConfirmed: Default
+      - payload.wireline.extra_attributes.TermsAndConditionsVersions: IS0637
+      - payload.wireline.extra_attributes.hsiaItemKey: hsiaItemAdded
+      - payload.wireline.extra_attributes.isSelfInstallEligible: false
+      - payload.wireline.extra_attributes.isHomeNetworkInCart: false
+      - payload.wireline.extra_attributes.InstallTypeSelected: Tech
+      - payload.wireline.extra_attributes.isFallOutAutomotion: false
+      - payload.wireline.extra_attributes.portInNumberPrimary: false
+      - payload.wireline.extra_attributes.isGigaInCart: true
+      validationType: partial
+
+  flowDataSetupProvideIptvVoip:
+      testCaseName: flowDataSetupProvideIptvVoip
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "provide-iptv-voip"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/provide-iptv-voip/provide-iptv-voip"
+      validationType: actual
+  validateCartProvideIptvVoipResponse:
+      testCaseName: validateCartProvideIptvVoipResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "provide-iptv-voip"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/provide-iptv-voip"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.wireline.buyflowSessionId: W9QHhqrOry2ASugYcO_VO-ThdGLY9kSx!1782605882!1511954754254
+      - payload.metadata.wireline.subFlowType: NEW_IPTV_NEW_VOIP
+      - payload.metadata.wireline.flowtypes[0]: PROVIDE
+      - payload.metadata.wireline.count: 7
+      - payload.metadata.wireline.buyflowOrderId: 20-114100008480808
+      - payload.metadata.wireline.extra_params.losgList[0]: voipP
+      - payload.metadata.wireline.extra_params.losgList[1]: iptv
+      - payload.metadata.wireline.extra_params.wll_flow: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireline
+      - payload.metadata.lobList[0]: wireline
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.wireline.lobType: wireline
+      - payload.wireline.status.readyToCheckout: true
+      - payload.wireline.status.cartState: complete
+      - payload.wireline.itemInfoMap.95816042742.itemType: dirListing
+      - payload.wireline.itemInfoMap.95816042742.itemPriceInfo.type: due_monthly
+      - payload.wireline.itemInfoMap.95816042741.itemType: voip
+      - payload.wireline.itemInfoMap.95816042741.itemPriceInfo.type: due_monthly
+      - payload.wireline.itemInfoMap.95816042740.itemType: iptv
+      - payload.wireline.itemInfoMap.95816042740.itemPriceInfo.type: due_monthly
+      - payload.metadata.wireline.extra_params.losgList[0]: voipP
+      - payload.metadata.wireline.extra_params.losgList[1]: iptv
+      - payload.metadata.wireline.extra_params.idp_supported_flow: false
+      - payload.metadata.wireline.extra_params.wll_flow: false
+      - payload.wireline.extra_attributes.iptvItemKey: iptvItemAdded
+      - payload.wireline.extra_attributes.SelectedNetworkTransportType: FTTN
+      - payload.wireline.extra_attributes.portInNumberAdditional: false
+      - payload.wireline.extra_attributes.operation_mode: PMO
+      - payload.wireline.extra_attributes.isUnifyFlow: false
+      - payload.wireline.extra_attributes.isCAF2Address: false
+      - payload.wireline.extra_attributes.isSelfInstallEligible: false
+      - payload.wireline.extra_attributes.IPDSLAIndicator: false
+      - payload.wireline.extra_attributes.InstallTypeSelected: Tech
+      - payload.wireline.extra_attributes.profileCode: TDD033
+      - payload.wireline.extra_attributes.isStbPolicyChanged: false
+      - payload.wireline.extra_attributes.frequency17MhzIndicator: false
+      - payload.wireline.extra_attributes.authenticationState: Unauthenticated
+      - payload.wireline.extra_attributes.customerSubType: residential
+      validationType: partial
+  flowDataSetupProvideSmbDslSelfInstall:
+      testCaseName: flowDataSetupProvideSmbDslSelfInstall
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "provide-smb-dsl-self-install"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/provide-smb-dsl-self-install/provide-smb-dsl-self-install"
+      validationType: actual
+  validateCartProvideSmbDslSelfInstallResponse:
+      testCaseName: validateCartProvideSmbDslSelfInstallResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "provide-smb-dsl-self-install"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/provide-smb-dsl-self-install"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.wireline.buyflowSessionId: MycHxzuM99544YKr955x8Ksnje8a6aO0!1782605882!1511958985612
+      - payload.metadata.wireline.subFlowType: NEW_HSIA
+      - payload.metadata.wireline.flowtypes[0]: PROVIDE
+      - payload.metadata.wireline.count: 6
+      - payload.metadata.wireline.buyflowOrderId: 20-114100008480843
+      - payload.metadata.wireline.extra_params.losgList[0]: dsl
+      - payload.metadata.wireline.extra_params.wll_flow: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireline
+      - payload.metadata.lobList[0]: wireline
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.wireline.lobType: wireline
+      - payload.wireline.status.readyToCheckout: true
+      - payload.wireline.status.cartState: complete
+      - payload.wireline.itemInfoMap.95816046944.itemType: hsia
+      - payload.wireline.itemInfoMap.95816046944.itemPriceInfo.type: due_monthly
+      - payload.wireline.itemInfoMap.95816046965.itemType: uvoption
+      - payload.wireline.itemInfoMap.95816046965.itemPriceInfo.type: onetime
+      - payload.wireline.itemInfoMap.95816046963.itemType: uvInstall
+      - payload.wireline.itemInfoMap.95816046963.itemPriceInfo.type: onetime
+      - payload.wireline.extra_attributes.portInNumberAdditional: false
+      - payload.wireline.extra_attributes.isSelfInstallEligible: true
+      - payload.wireline.extra_attributes.customerSubType: smallbusiness
+      - payload.metadata.wireline.extra_params.losgList[0]: dsl
+      - payload.metadata.wireline.extra_params.idp_supported_flow: false
+      - payload.metadata.wireline.extra_params.wll_flow: false
+      - payload.wireline.extra_attributes.portInNumberAdditional: false
+      - payload.wireline.extra_attributes.operation_mode: PMO
+      - payload.wireline.extra_attributes.isUnifyFlow: false
+      - payload.wireline.extra_attributes.FWIMoveIndicator: false
+      - payload.wireline.extra_attributes.uverseInstallation: false
+      - payload.wireline.extra_attributes.internet_programming_type: DSL-FASTACCESS
+      - payload.wireline.extra_attributes.isCAF2Address: false
+      - payload.wireline.extra_attributes.isSelfInstallEligible: true
+      - payload.wireline.extra_attributes.IPDSLAIndicator: false
+      - payload.wireline.extra_attributes.InstallTypeSelected: Self
+      - payload.wireline.extra_attributes.isGigaInCart: false
+      - payload.wireline.extra_attributes.authenticationState: Unauthenticated
+      - payload.wireline.extra_attributes.portInNumberPrimary: false
+      - payload.wireline.extra_attributes.cpeRequiredIndicator: false
+      - payload.wireline.extra_attributes.isHomeNetworkInCart: false
+      validationType: partial
+  flowDataSetupReplaceYourDeviceFlow:
+      testCaseName: flowDataSetupReplaceYourDeviceFlow
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "replace-your-device-flow"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/replace-your-device-flow/replace-your-device-flow"
+      validationType: actual
+  validateCartReplaceYourDeviceFlowResponse:
+      testCaseName: validateCartReplaceYourDeviceFlowResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "replace-your-device-flow"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/replace-your-device-flow"
+      asserts:
+      - payload.metadata.wireless.subFlowType: POSTPAID
+      - payload.metadata.wireless.count: 2
+      - payload.metadata.wireless.flowtypes[0]: UP
+      - payload.metadata.wireless.buyflowOrderId: 21-302100563805546
+      - payload.metadata.wireless.WLS_AuthUser: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireless
+      - payload.metadata.lobList[0]: wireless
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.wireless.lobType: WIRELESS
+      - payload.wireless.status.readyToCheckout: true
+      - payload.wireless.status.cartState: complete
+      - payload.wireless.itemInfoMap.122407010409-2.itemType: sharedDataPlan
+      - payload.wireless.itemInfoMap.122407010409-1.itemType: sharedDataGroup
+      - payload.wireless.itemInfoMap.122407010409.itemType: feature
+      - payload.wireless.itemInfoMap.122407010408.itemType: device
+      - payload.wireless.shippingMethod.selShippingType: Overnight
+      - payload.wireless.eligible_actions[0]: addAccessories
+      validationType: partial
+  flowDataSetupSmartphoneNextTermDownpaymentInsuranceTabletAccessory:
+      testCaseName: flowDataSetupSmartphoneNextTermDownpaymentInsuranceTabletAccessory
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/wireless-new/smartphone-next-term-downpayment-insurance-tablet-accessory"
+      validationType: actual
+  validateCartSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse:
+      testCaseName: validateCartSmartphoneNextTermDownpaymentInsuranceTabletAccessoryResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/smartphone-next-term-downpayment-insurance-tablet-accessory"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.wireless.subFlowType: POSTPAID
+      - payload.metadata.wireless.count: 10
+      - payload.metadata.wireless.flowtypes[0]: NEW
+      - payload.metadata.wireless.buyflowOrderId: 21-101100010210010
+      - payload.metadata.wireless.WLS_AuthUser: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireless
+      - payload.metadata.lobList[0]: wireless
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.wireless.lobType: WIRELESS
+      - payload.wireless.status.readyToCheckout: true
+      - payload.wireless.status.cartState: complete
+      - payload.wireless.itemInfoMap.84165000010.itemType: sharedDataPlan
+      - payload.wireless.itemInfoMap.84165000011.itemType: sharedDataGroup
+      - payload.wireless.itemInfoMap.84165000013.itemType: feature
+      - payload.wireless.shippingMethod.selShippingType: Overnight
+      - payload.wireless.eligible_actions[0]: addALine
+      - payload.wireless.eligible_actions[1]: addAccessories
+      - payload.metadata.wireless.extra_params.isCiti: false
+      - payload.metadata.wireless.extra_params.ECOM_GTM: SetValInConfig_SetValInConfigMgr
+      - payload.metadata.wireless.extra_params.isExUpFlow: false
+      - payload.metadata.wireless.extra_params.shippingMethod: Overnight
+      - payload.metadata.wireless.extra_params.isPrepaid: false
+      - payload.wireless.lineOfServiceGroups.losg19600000.extra_attributes.primaryline: true
+      - payload.wireless.lineOfServiceGroups.losg19600000.extra_attributes.subtype: WIRELESS_LINE
+      - payload.wireless.lineOfServiceGroups.losg19600000.extra_attributes.is_iphone_device: false
+      - payload.wireless.lineOfServiceGroups.losg19600001.extra_attributes.parentLOSGID: losg19600000
+      - payload.wireless.lineOfServiceGroups.losg19600001.extra_attributes.primaryline: false
+      - payload.wireless.lineOfServiceGroups.losg19600001.extra_attributes.subtype: WIRELESS_LINE
+      - payload.wireless.lineOfServiceGroups.losg19600001.extra_attributes.is_iphone_device: true
+      validationType: partial
+  flowDataSetupSmartphoneMultiDeviceEnjoy:
+    testCaseName: flowDataSetupSmartphoneMultiDeviceEnjoy
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smartphone-multi-device-enjoy"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/smartphone-multi-device-enjoy/smartphone-multi-device-enjoy"
+    validationType: actual
+  validateCartSmartphoneMultiDeviceEnjoyResponse:
+    testCaseName: validateCartSmartphoneMultiDeviceEnjoyResponse
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smartphone-multi-device-enjoy"
+    body: ""
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/smartphone-multi-device-enjoy"
+    asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.wireless.subFlowType: POSTPAID
+      - payload.metadata.wireless.count: 13
+      - payload.metadata.wireless.flowtypes[0]: NEW
+      - payload.metadata.wireless.buyflowOrderId: 21-101100014045869
+      - payload.metadata.wireless.WLS_AuthUser: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireless
+      - payload.metadata.lobList[0]: wireless
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.wireless.lobType: WIRELESS
+      - payload.wireless.status.readyToCheckout: true
+      - payload.wireless.status.cartState: complete
+      - payload.wireless.itemInfoMap.84352000531.itemType: sharedDataPlan
+      - payload.wireless.itemInfoMap.84352000530.itemType: sharedDataGroup
+      - payload.wireless.itemInfoMap.84352000518.itemType: device
+      - payload.wireless.shippingMethod.selShippingType: Overnight
+      - payload.wireless.eligible_actions[0]: addALine
+      - payload.metadata.wireless.extra_params.isPersistedCartFlag: 0
+      - payload.metadata.wireless.extra_params.isCiti: false
+      - payload.metadata.wireless.extra_params.ECOM_GTM: SetValInConfig_SetValInConfigMgr
+      - payload.metadata.wireless.extra_params.persistedCartHours: 0
+      - payload.metadata.wireless.extra_params.cartSummaryUrl: /cart/mycart.html?retrieveCart=true
+      - payload.metadata.wireless.extra_params.isExUpFlow: false
+      - payload.metadata.wireless.extra_params.shippingMethod: Overnight
+      - payload.metadata.wireless.extra_params.persistedCartAge: 0
+      - payload.metadata.wireless.extra_params.isPrepaid: false
+      - payload.metadata.wireless.extra_params.ipAddress: 135.163.163.138 
+    validationType: partial
+  flowDataSetupNewPostPaidDownPayment:
+    testCaseName: flowDataSetupNewPostPaidDownPayment
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-postpaid-down-payment"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/new-postpaid-down-payment/new-postpaid-down-payment"
+    validationType: actual
+  validateCartNewPostPaidDownPaymentResponse:
+    testCaseName: validateCartNewPostPaidDownPaymentResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "new-postpaid-down-payment"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/new-postpaid-down-payment"
+    asserts:
+    - response.status: SUCCESS
+    - response.redirect: false
+    - payload.metadata.wireless.subFlowType: POSTPAID
+    - payload.metadata.wireless.count: 4
+    - payload.metadata.wireless.flowtypes[0]: NEW
+    - payload.metadata.wireless.buyflowOrderId: 21-101100014046286
+    - payload.metadata.wireless.WLS_AuthUser: false
+    - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+    - payload.metadata.sessionCookies[1]: SALES_USER_ID
+    - payload.metadata.cartLob[0]: wireless
+    - payload.metadata.lobList[0]: wireless
+    - payload.metadata.saveCartOption[0]: emptyCart
+    - payload.metadata.saveCartOption[1]: saveCart
+    - payload.metadata.saveCartOption[2]: retrieveCart
+    - payload.wireless.lobType: WIRELESS
+    - payload.wireless.status.readyToCheckout: true
+    - payload.wireless.status.cartState: complete
+    - payload.wireless.itemInfoMap.84352000622.itemType: sharedDataPlan
+    - payload.wireless.itemInfoMap.84352000621.itemType: sharedDataGroup
+    - payload.wireless.itemInfoMap.84352000620.itemType: device
+    - payload.wireless.shippingMethod.selShippingType: Overnight
+    - payload.wireless.eligible_actions[0]: addALine
+    - payload.wireless.eligible_actions[1]: addAccessories
+    - payload.wireless.lineOfServiceGroups.losg21470289.extra_attributes.primaryline: true
+    - payload.wireless.lineOfServiceGroups.losg21470289.extra_attributes.subtype: WIRELESS_LINE
+    - payload.wireless.lineOfServiceGroups.losg21470289.extra_attributes.is_iphone_device: false
+    - payload.metadata.wireless.extra_params.isCiti: false
+    - payload.metadata.wireless.extra_params.ECOM_GTM: SetValInConfig_SetValInConfigMgr
+    - payload.metadata.wireless.extra_params.isExUpFlow: false
+    - payload.metadata.wireless.extra_params.shippingMethod: Overnight
+    - payload.metadata.wireless.extra_params.isPrepaid: false
+    - payload.metadata.wireless.extra_params.isPostpaid: true
+    validationType: partial
+  flowDataSetupNewWirelessByodSimOnly:
+      testCaseName: flowDataSetupNewWirelessByodSimOnly
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "new-wireless-byod-simonly-flow"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/new-wireless-byod-simonly/new-wireless-byod-simonly-flow"
+      validationType: actual      
+  validateCartNewWirelessByodSimOnlyResponse:
+      testCaseName: validateCartNewWirelessByodSimOnlyResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "new-wireless-byod-simonly-flow"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/new-wireless-byod-simonly-flow"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.wireless.subFlowType: POSTPAID
+      - payload.metadata.wireless.count: 4
+      - payload.metadata.wireless.flowtypes[0]: NEW
+      - payload.metadata.wireless.buyflowOrderId: 21-114100003658963
+      - payload.metadata.wireless.WLS_AuthUser: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireless
+      - payload.metadata.lobList[0]: wireless
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.wireless.lobType: WIRELESS
+      - payload.wireless.status.readyToCheckout: true
+      - payload.wireless.status.cartState: complete
+      - payload.wireless.itemInfoMap.86327000654.itemType: sharedDataPlan
+      - payload.wireless.itemInfoMap.86327000653.itemType: sharedDataGroup
+      - payload.wireless.itemInfoMap.86327000652.itemType: device
+      - payload.wireless.shippingMethod.selShippingType: Overnight
+      - payload.wireless.eligible_actions[0]: addALine
+      - payload.wireless.eligible_actions[1]: addAccessories
+      - payload.metadata.wireless.extra_params.isCiti: false
+      - payload.metadata.wireless.extra_params.ECOM_GTM: SetValInConfig_SetValInConfigMgr
+      - payload.metadata.wireless.extra_params.isExUpFlow: false
+      - payload.metadata.wireless.extra_params.shippingMethod: Overnight
+      - payload.metadata.wireless.extra_params.isPrepaid: false
+      - payload.metadata.wireless.extra_params.isPostpaid: true
+      - payload.wireless.lineOfServiceGroups.losg43220014.extra_attributes.primaryline: true
+      - payload.wireless.lineOfServiceGroups.losg43220014.extra_attributes.isByod: true
+      - payload.wireless.lineOfServiceGroups.losg43220014.extra_attributes.subtype: WIRELESS_LINE
+      - payload.wireless.lineOfServiceGroups.losg43220014.extra_attributes.is_iphone_device: false
+      validationType: partial
+  flowDataSetupModifyDtvRtpProducts:
+      testCaseName: flowDataSetupModifyDtvRtpProducts
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-dtv-rtpproducts"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/modify-dtv-rtpproducts/modify-dtv-rtpproducts"
+      validationType: actual      
+  validateCartModifyDtvRtpProductsResponse:
+      testCaseName: validateCartModifyDtvRtpProductsResponse
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "modify-dtv-rtpproducts"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/modify-dtv-rtpproducts"
+      asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.wireline.status.readyToCheckout: true
+      - payload.wireline.status.cartState: complete
+      - payload.metadata.wireline.extra_params.losgList[0]: hsia
+      - payload.metadata.wireline.extra_params.losgList[1]: dtv
+      - payload.metadata.wireline.extra_params.idp_supported_flow: false
+      - payload.metadata.wireline.extra_params.wll_flow: false
+      - payload.wireline.extra_attributes.SelectedNetworkTransportType: FTTN
+      - payload.wireline.extra_attributes.portInNumberAdditional: false
+      - payload.wireline.extra_attributes.operation_mode: FMO
+      - payload.wireline.extra_attributes.isUnifyFlow: false
+      - payload.wireline.extra_attributes.FWIMoveIndicator: false
+      - payload.wireline.extra_attributes.uverseInstallation: false
+      - payload.wireline.extra_attributes.isCAF2Address: false
+      - payload.wireline.extra_attributes.isSelfInstallEligible: false
+      - payload.wireline.extra_attributes.IPDSLAIndicator: false
+      - payload.wireline.extra_attributes.InstallTypeSelected: Tech
+      - payload.wireline.extra_attributes.isGigaInCart: false
+      - payload.wireline.extra_attributes.isStbPolicyChanged: false
+      - payload.wireline.extra_attributes.authenticationState: authenticated
+      - payload.wireline.extra_attributes.customerSubType: residential
+      - payload.wireline.extra_attributes.vectoringIndicator: false
+      - payload.wireline.extra_attributes.isDSLAvailable: false
+      - payload.wireline.extra_attributes.frequency17MhzIndicator: false
+      - payload.wireline.extra_attributes.cpeRequiredIndicator: false
+      - payload.wireline.extra_attributes.isHomeNetworkInCart: false
+      - payload.wireline.extra_attributes.isFallOutAutomotion: false
+      - payload.wireline.extra_attributes.portInNumberPrimary: false
+      
+      validationType: partial
+  flowDataSetupModifyIptvHisaVoipModifyAll:
+    testCaseName: flowDataSetupModifyIptvHisaVoipModifyAll
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-iptvhisavoip-modifyall"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/modify-iptvhisavoip-modifyall/modify-iptvhisavoip-modifyall"
+    validationType: actual
+  validateCartModifyIptvHisaVoipModifyAllResponse:
+    testCaseName: validateCartModifyIptvHisaVoipModifyAllResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "modify-iptvhisavoip-modifyall"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/modify-iptvhisavoip-modifyall"
+    asserts:
+    - response.status: SUCCESS
+    - response.redirect: false
+    - payload.metadata.profileType: authuser
+    - payload.metadata.wireline.buyflowSessionId: YUgIOjVtc3Js2E6lZfgt63j435UQsd2L!1782605882!1511966520685
+    - payload.metadata.wireline.subFlowType: "EXISTING_IPTV_EXISTING_HSIA_EXISTING_VOIP"
+    - payload.metadata.wireline.scenarioType: "EXISTING_IPTV_EXISTING_HSIA_EXISTING_VOIP"
+    - payload.metadata.wireline.count: 10
+    - payload.metadata.wireline.flowtypes[0]: "MODIFY"
+    - payload.metadata.wireline.modifyCheckoutType: "Dynamic"
+    - payload.metadata.wireline.buyflowOrderId: 20-114100008480914
+    - payload.metadata.wireline.extra_params.losgList[0]: "hsia"
+    - payload.metadata.wireline.extra_params.losgList[1]: "voipA"
+    - payload.metadata.wireline.extra_params.losgList[2]: "voipP"
+    - payload.metadata.wireline.extra_params.losgList[3]: "iptv"
+    - payload.metadata.wireline.extra_params.losgList[4]: "misc"
+    - payload.metadata.wireline.modifyFlowInstallationDateEligibility: true
+    - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+    - payload.metadata.sessionCookies[1]: SALES_USER_ID
+    - payload.metadata.cartLob[0]: wireline
+    - payload.metadata.lobList[0]: wireline
+    - payload.metadata.saveCartOption[0]: emptyCart
+    - payload.wireline.lobType: wireline
+    - payload.wireline.status.readyToCheckout: false
+    - payload.wireline.status.cartState: complete
+    - payload.wireline.itemInfoMap.95816051930.itemType: "programming"
+    - payload.wireline.itemInfoMap.95816051930.itemPriceInfo.type: "due_monthly"
+    - payload.wireline.itemInfoMap.95816052309.itemType: "uvinstall"
+    - payload.wireline.itemInfoMap.95816052309.itemPriceInfo.type: "onetime"
+    - payload.wireline.extra_attributes.SelectedNetworkTransportType: WLL-LTE
+    - payload.wireline.extra_attributes.portInNumberAdditional: false
+    - payload.wireline.extra_attributes.operation_mode: PMO
+    - payload.wireline.extra_attributes.isUnifyFlow: false
+    - payload.wireline.extra_attributes.FWIMoveIndicator: false
+    - payload.wireline.extra_attributes.uverseInstallation: false
+    - payload.wireline.extra_attributes.isCAF2Address: false
+    - payload.wireline.extra_attributes.uvNadType: iNID
+    - payload.wireline.extra_attributes.isSelfInstallEligible: false
+    - payload.wireline.extra_attributes.IPDSLAIndicator: false
+    - payload.wireline.extra_attributes.InstallTypeSelected: Tech
+    - payload.wireline.extra_attributes.profileCode: Med
+    - payload.wireline.extra_attributes.isGigaInCart: false
+    - payload.wireline.extra_attributes.isStbPolicyChanged: false
+    - payload.wireline.extra_attributes.authenticationState: authenticated
+    - payload.wireline.extra_attributes.customerSubType: residential
+    - payload.wireline.extra_attributes.vectoringIndicator: false
+    - payload.wireline.extra_attributes.isDSLAvailable: false
+    - payload.wireline.extra_attributes.frequency17MhzIndicator: false
+    - payload.wireline.extra_attributes.cpeRequiredIndicator: false
+    - payload.wireline.extra_attributes.isHomeNetworkInCart: false
+    - payload.wireline.extra_attributes.isFallOutAutomotion: false
+    - payload.wireline.extra_attributes.portInNumberPrimary: true
+    validationType: partial
+
+  flowDataSetupNewCitiFlow:
+    testCaseName: flowDataSetupNewCitiFlow
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-citi-flow"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/new-citi-flow/new-citi-flow"
+    validationType: actual
+  validateCartNewCitiFlowResponse:
+    testCaseName: validateCartNewCitiFlowResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "new-citi-flow"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/new-citi-flow"
+    asserts:
+    - response.status: SUCCESS
+    - response.redirect: false
+    - payload.metadata.wireless.subFlowType: POSTPAID
+    - payload.metadata.wireless.count: 6
+    - payload.metadata.wireless.flowtypes[0]: NEW
+    - payload.metadata.wireless.buyflowOrderId: 21-102100019871935
+    - payload.metadata.wireless.WLS_AuthUser: false
+    - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+    - payload.metadata.sessionCookies[1]: SALES_USER_ID
+    - payload.metadata.cartLob[0]: wireless
+    - payload.metadata.lobList[0]: wireless
+    - payload.metadata.saveCartOption[0]: emptyCart
+    - payload.wireless.lobType: WIRELESS
+    - payload.wireless.status.readyToCheckout: true
+    - payload.wireless.status.cartState: complete
+    - payload.wireless.itemInfoMap.84359000295.itemType: sharedDataPlan
+    - payload.wireless.itemInfoMap.84359000294.itemType: sharedDataGroup
+    - payload.wireless.itemInfoMap.84359000291.itemType: device
+    - payload.wireless.shippingMethod.selShippingType: Overnight
+    - payload.wireless.eligible_actions[0]: addAccessories
+    - payload.metadata.wireless.extra_params.isCiti: true
+    - payload.metadata.wireless.extra_params.ECOM_GTM: SetValInLiveConfig
+    - payload.metadata.wireless.extra_params.isExUpFlow: false
+    - payload.metadata.wireless.extra_params.shippingMethod: Overnight
+    - payload.metadata.wireless.extra_params.isPrepaid: false
+    - payload.metadata.wireless.extra_params.isPostpaid: true
+    - payload.wireless.lineOfServiceGroups.losg21740101.extra_attributes.primaryline: true
+    - payload.wireless.lineOfServiceGroups.losg21740101.extra_attributes.subtype: WIRELESS_LINE
+    - payload.wireless.lineOfServiceGroups.losg21740101.extra_attributes.is_iphone_device: false    
+    validationType: partial	
+
+  flowDataSetupProvideIptvVoipPortin:
+    testCaseName: flowDataSetupProvideIptvVoipPortin
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-iptv-voip-portin"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/provide-iptv-voipPortin/provide-iptv-voip-portin"
+    validationType: actual
+  validateCartProvideIptvVoipPortinResponse:
+    testCaseName: validateCartProvideIptvVoipPortinResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "provide-iptv-voip-portin"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/provide-iptv-voip-portin"
+    asserts:
+    - response.status: SUCCESS
+    - response.redirect: false
+    - payload.metadata.wireline.buyflowSessionId: cdwHwjgdbA4m7Gn0jV36oc1JYw1Tp8Db!1782605882!1511958657053
+    - payload.metadata.wireline.subFlowType: NEW_IPTV_NEW_VOIP
+    - payload.metadata.wireline.flowtypes[0]: PROVIDE
+    - payload.metadata.wireline.count: 7
+    - payload.metadata.wireline.buyflowOrderId: 20-114100008480841
+    - payload.metadata.wireline.extra_params.losgList[0]: voipP
+    - payload.metadata.wireline.extra_params.losgList[1]: iptv
+    - payload.metadata.wireline.extra_params.wll_flow: false
+    - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+    - payload.metadata.sessionCookies[1]: SALES_USER_ID
+    - payload.metadata.cartLob[0]: wireline
+    - payload.metadata.lobList[0]: wireline
+    - payload.metadata.saveCartOption[0]: emptyCart
+    - payload.metadata.saveCartOption[1]: saveCart
+    - payload.metadata.saveCartOption[2]: retrieveCart
+    - payload.wireline.lobType: wireline	
+    - payload.wireline.status.readyToCheckout: true
+    - payload.wireline.status.cartState: complete
+    - payload.wireline.itemInfoMap.95816047196.itemType: voip
+    - payload.wireline.itemInfoMap.95816047196.itemPriceInfo.type: due_monthly
+    - payload.metadata.wireline.extra_params.losgList[0]: voipP
+    - payload.metadata.wireline.extra_params.losgList[1]: iptv
+    - payload.metadata.wireline.extra_params.idp_supported_flow: false
+    - payload.metadata.wireline.extra_params.wll_flow: false
+    - payload.wireline.extra_attributes.iptvItemKey: iptvItemAdded
+    - payload.wireline.extra_attributes.SelectedNetworkTransportType: FTTN
+    - payload.wireline.extra_attributes.portInNumberAdditional: false
+    - payload.wireline.extra_attributes.portInExistingVoipServiceProvider: CLEC
+    - payload.wireline.extra_attributes.operation_mode: PMO
+    - payload.wireline.extra_attributes.isUnifyFlow: false
+    - payload.wireline.extra_attributes.isCAF2Address: false
+    - payload.wireline.extra_attributes.isSelfInstallEligible: false
+    - payload.wireline.extra_attributes.IPDSLAIndicator: false
+    - payload.wireline.extra_attributes.InstallTypeSelected: Tech
+    - payload.wireline.extra_attributes.profileCode: TDD033
+    - payload.wireline.extra_attributes.isStbPolicyChanged: false
+    - payload.wireline.extra_attributes.frequency17MhzIndicator: false
+    - payload.wireline.extra_attributes.authenticationState: Unauthenticated
+    - payload.wireline.extra_attributes.customerSubType: residential
+    - payload.wireline.extra_attributes.uvNadType: iNID
+    validationType: partial
+  flowDataSetupModifyDtvHsiaVoipNonPublishedListing:
+    testCaseName: flowDataSetupModifyDtvHsiaVoipNonPublishedListing
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-dtv-hsia-voip-non-published-listing"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/modify-dtv-hsia-voip-non-published-listing/modify-dtv-hsia-voip-non-published-listing"
+    validationType: actual
+  validateCartModifyDtvHsiaVoipNonPublishedListingResponse:
+    testCaseName: validateCartModifyDtvHsiaVoipNonPublishedListingResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "modify-dtv-hsia-voip-non-published-listing"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/modify-dtv-hsia-voip-non-published-listing"
+    asserts:
+    - response.status: SUCCESS
+    - response.redirect: false
+    - payload.metadata.profileType: authuser
+    - payload.metadata.wireline.buyflowSessionId: AmMMuarPQNeRVfXtbociuyTs9dZaTo1R!1782605882!1512041982671
+    - payload.metadata.wireline.subFlowType: "EXISTING_DTV_NEW_HSIA_NEW_VOIP"
+    - payload.metadata.wireline.scenarioType: "EXISTING_DTV_NEW_HSIA_NEW_VOIP"
+    - payload.metadata.wireline.count: 7
+    - payload.metadata.wireline.flowtypes[0]: "MODIFY"
+    - payload.metadata.wireline.modifyCheckoutType: "Dynamic"
+    - payload.metadata.wireline.buyflowOrderId: 20-114100008480968
+    - payload.metadata.wireline.extra_params.losgList[0]: "hsia"
+    - payload.metadata.wireline.extra_params.losgList[1]: "voipP"
+    - payload.metadata.wireline.extra_params.losgList[2]: "dtv"
+    - payload.metadata.wireline.modifyFlowInstallationDateEligibility: true
+    - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+    - payload.metadata.sessionCookies[1]: SALES_USER_ID
+    - payload.metadata.cartLob[0]: wireline
+    - payload.metadata.lobList[0]: wireline
+    - payload.metadata.saveCartOption[0]: emptyCart
+    - payload.wireline.lobType: wireline
+    - payload.wireline.status.readyToCheckout: false
+    - payload.wireline.status.cartState: complete
+    - payload.wireline.itemInfoMap.95816055007.itemType: "dtvProgramming"
+    - payload.wireline.itemInfoMap.95816055007.itemPriceInfo.type: "due_monthly"
+    - payload.wireline.itemInfoMap.95816055008.itemType: "dtvProtectionPlan"
+    - payload.wireline.itemInfoMap.95816055008.itemPriceInfo.type: "due_monthly"
+    - payload.metadata.wireline.extra_params.losgList[0]: hsia
+    - payload.metadata.wireline.extra_params.losgList[1]: voipP
+    - payload.metadata.wireline.extra_params.losgList[2]: dtv
+    - payload.metadata.wireline.extra_params.idp_supported_flow: false
+    - payload.metadata.wireline.extra_params.wll_flow: false
+    - payload.wireline.extra_attributes.SelectedNetworkTransportType: IP-RT
+    - payload.wireline.extra_attributes.portInNumberAdditional: false
+    - payload.wireline.extra_attributes.portInExistingVoipServiceProvider: CLEC
+    - payload.wireline.extra_attributes.operation_mode: FMO
+    - payload.wireline.extra_attributes.isUnifyFlow: false
+    - payload.wireline.extra_attributes.isCAF2Address: false
+    - payload.wireline.extra_attributes.isSelfInstallEligible: false
+    - payload.wireline.extra_attributes.IPDSLAIndicator: true
+    - payload.wireline.extra_attributes.InstallTypeSelected: Tech
+    - payload.wireline.extra_attributes.profileCode: IP-Low
+    - payload.wireline.extra_attributes.isStbPolicyChanged: false
+    - payload.wireline.extra_attributes.frequency17MhzIndicator: false
+    - payload.wireline.extra_attributes.authenticationState: authenticated
+    - payload.wireline.extra_attributes.customerSubType: residential
+    - payload.wireline.extra_attributes.uvNadType: IG
+    - payload.wireline.extra_attributes.TermsAndConditionsVersions: IS0602
+    
+    validationType: partial
+  flowDataSetupSmartphoneNoCommitmentTerm:
+    testCaseName: flowDataSetupSmartphoneNoCommitmentTerm
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smartphone-no-commitment-term"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/smartphone-no-commitment-term/smartphone-no-commitment-term"
+    validationType: actual
+  validateCartSmartphoneNoCommitmentTermResponse:
+    testCaseName: validateCartSmartphoneNoCommitmentTermResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "smartphone-no-commitment-term"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/smartphone-no-commitment-term"
+    asserts:
+    - response.status: SUCCESS
+    - response.redirect: false
+    - payload.metadata.wireless.subFlowType: POSTPAID
+    - payload.metadata.wireless.count: 4
+    - payload.metadata.wireless.flowtypes[0]: NEW
+    - payload.metadata.wireless.buyflowOrderId: 21-101100014046355
+    - payload.metadata.wireless.WLS_AuthUser: false
+    - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+    - payload.metadata.sessionCookies[1]: SALES_USER_ID
+    - payload.metadata.cartLob[0]: wireless
+    - payload.metadata.lobList[0]: wireless
+    - payload.metadata.saveCartOption[0]: emptyCart
+    - payload.metadata.saveCartOption[1]: saveCart
+    - payload.metadata.saveCartOption[2]: retrieveCart
+    - payload.wireless.lobType: WIRELESS
+    - payload.wireless.status.readyToCheckout: true
+    - payload.wireless.status.cartState: complete
+    - payload.wireless.itemInfoMap.84352000634.itemType: sharedDataPlan
+    - payload.wireless.itemInfoMap.84352000633.itemType: sharedDataGroup
+    - payload.wireless.itemInfoMap.84352000632.itemType: device
+    - payload.wireless.shippingMethod.selShippingType: Overnight
+    - payload.wireless.eligible_actions[0]: addALine
+    - payload.wireless.eligible_actions[1]: addAccessories
+    - payload.metadata.wireless.extra_params.isCiti: false
+    - payload.metadata.wireless.extra_params.ECOM_GTM: SetValInConfig_SetValInConfigMgr
+    - payload.metadata.wireless.extra_params.isExUpFlow: false
+    - payload.metadata.wireless.extra_params.shippingMethod: Overnight
+    - payload.metadata.wireless.extra_params.isPrepaid: false
+    - payload.metadata.wireless.extra_params.isPostpaid: true
+    validationType: partial
+  flowDataSetup4PostpaidWirelessCreditC:
+    testCaseName: flowDataSetup4PostpaidWirelessCreditC
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "4-postpaid-wireless-creditC-deposit"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/4-postpaid-wireless-creditC-deposit/4-postpaid-wireless-creditC-deposit"
+    validationType: actual
+  validateCart4PostpaidWirelessCreditCResponse:
+    testCaseName: validateCart4PostpaidWirelessCreditCResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "4-postpaid-wireless-creditC-deposit"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/4-postpaid-wireless-creditC-deposit"
+    asserts:
+      - response.status: success
+      - response.redirect: false
+      - payload.metadata.wireless.subFlowType: POSTPAID
+      - payload.metadata.wireless.count: 16
+      - payload.metadata.wireless.flowtypes[0]: NEW
+      - payload.metadata.wireless.buyflowOrderId: 21-104100011920697
+      - payload.metadata.wireless.WLS_AuthUser: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireless
+      - payload.metadata.lobList[0]: wireless
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.wireless.lobType: WIRELESS
+      - payload.wireless.status.readyToCheckout: true
+      - payload.wireless.status.cartState: complete
+      - payload.wireless.itemInfoMap.84065000277.itemType: sharedDataPlan
+      - payload.wireless.itemInfoMap.84065000275.itemType: sharedDataGroup
+      - payload.wireless.itemInfoMap.84065000274.itemType: device
+      - payload.wireless.shippingMethod.selShippingType: Overnight
+      - payload.wireless.eligible_actions[0]: addALine
+      - payload.wireless.eligible_actions[1]: addAccessories
+    validationType: partial
+  flowDataSetupNewPostpaidNextDPCreditC:
+    testCaseName: flowDataSetupNewPostpaidNextDPCreditC
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-postpaid-nextDP-creditC"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/new-postpaid-nextDP-creditC/new-postpaid-nextDP-creditC"
+    validationType: actual
+  validateCartNewPostpaidNextDPCreditCResponse:
+    testCaseName: validateCartNewPostpaidNextDPCreditCResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "new-postpaid-nextDP-creditC"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/new-postpaid-nextDP-creditC"
+    asserts:
+    - response.status: SUCCESS
+    - response.redirect: false
+    - payload.metadata.wireless.subFlowType: POSTPAID
+    - payload.metadata.wireless.count: 4
+    - payload.metadata.wireless.flowtypes[0]: NEW
+    - payload.metadata.wireless.buyflowOrderId: 21-104100011920794
+    - payload.metadata.wireless.WLS_AuthUser: false
+    - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+    - payload.metadata.sessionCookies[1]: SALES_USER_ID
+    - payload.metadata.cartLob[0]: wireless
+    - payload.metadata.lobList[0]: wireless
+    - payload.metadata.saveCartOption[0]: emptyCart
+    - payload.metadata.saveCartOption[1]: saveCart
+    - payload.metadata.saveCartOption[2]: retrieveCart
+    - payload.wireless.lobType: WIRELESS
+    - payload.wireless.status.readyToCheckout: true
+    - payload.wireless.status.cartState: complete
+    - payload.wireless.itemInfoMap.84065000283.itemType: sharedDataGroup
+    - payload.wireless.itemInfoMap.84065000284.itemType: sharedDataPlan
+    - payload.wireless.itemInfoMap.84065000285.itemType: voiceplan
+    - payload.wireless.shippingMethod.selShippingType: Overnight
+    - payload.wireless.eligible_actions[0]: addALine
+    - payload.wireless.eligible_actions[1]: addAccessories
+    validationType: partial
+
+  flowDataSetupNewDtvHsiaVoipHighRisk:
+    testCaseName: flowDataSetupNewDtvHsiaVoipHighRisk
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/new-dtv-hsia-voip-high-unkonwn-risk/new-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: actual
+  validateCartNewDtvHsiaVoipHighRiskResponse:
+    testCaseName: validateCartNewDtvHsiaVoipHighRiskResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/new-dtv-hsia-voip-high-unkonwn-risk"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: "false"
+     - payload.metadata.wireline.buyflowSessionId: FH0lpoHYSHO9tXhr830hzLpZDSlaStAO!-2069218925!1512460157400
+     - payload.metadata.wireline.subFlowType: NEW_DTV_NEW_HSIA_NEW_VOIP
+     - payload.metadata.wireline.flowtypes[0]: PROVIDE
+     - payload.metadata.wireline.count: 12
+     - payload.metadata.wireline.buyflowOrderId: 20-104100000590553
+     - payload.metadata.wireline.extra_params.losgList[0]: hsia
+     - payload.metadata.wireline.extra_params.losgList[1]: voipP
+     - payload.metadata.wireline.extra_params.losgList[2]: dtv
+     - payload.metadata.wireline.extra_params.losgList[3]: misc
+     - payload.metadata.wireline.extra_params.wll_flow: false
+     - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+     - payload.metadata.sessionCookies[1]: SALES_USER_ID
+     - payload.metadata.cartLob[0]: wireline
+     - payload.metadata.lobList[0]: wireline
+     - payload.metadata.saveCartOption[0]: emptyCart
+     - payload.metadata.saveCartOption[1]: saveCart
+     - payload.metadata.saveCartOption[2]: retrieveCart
+     - payload.wireline.lobType: wireline	
+     - payload.wireline.status.readyToCheckout: true
+     - payload.wireline.status.cartState: complete
+     - payload.wireline.itemInfoMap.95598050101.itemType: uvIPUsage
+     - payload.wireline.itemInfoMap.95598050101.itemPriceInfo.type: due_monthly
+     - payload.wireline.extra_attributes.isUnifyFlow : false
+     - payload.wireline.extra_attributes.FWIMoveIndicator : false
+     - payload.wireline.extra_attributes.isCAF2Address : false
+     - payload.wireline.extra_attributes.isSelfInstallEligible : false
+     - payload.wireline.extra_attributes.IPDSLAIndicator : false
+     - payload.wireline.extra_attributes.isGigaInCart : true
+     - payload.wireline.extra_attributes.isStbPolicyChanged : false
+     - payload.wireline.extra_attributes.vectoringIndicator : false
+     - payload.wireline.extra_attributes.isDSLAvailable : false
+     - payload.wireline.extra_attributes.frequency17MhzIndicator : false
+     - payload.wireline.extra_attributes.cpeRequiredIndicator : false
+     - payload.wireline.extra_attributes.isHomeNetworkInCart : false
+     - payload.wireline.extra_attributes.isFallOutAutomotion : false
+     - payload.wireline.extra_attributes.portInNumberPrimary : false
+    validationType: partial
+  flowDataSetupExpressUpgrade:
+    testCaseName: flowDataSetupExpressUpgrade
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "express-upgrade"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/express-upgrade/express-upgrade"
+    validationType: actual
+  validateCartExpressUpgradeResponse:
+    testCaseName: validateCartExpressUpgradeResponse
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "express-upgrade"
+    body: ""
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/express-upgrade"
+    asserts:
+      - response.status: SUCCESS
+      - response.redirect: false
+      - payload.metadata.wireless.subFlowType: POSTPAID
+      - payload.metadata.wireless.count: 2
+      - payload.metadata.wireless.flowtypes[0]: UP
+      - payload.metadata.wireless.buyflowOrderId: 21-102100020533977
+      - payload.metadata.wireless.WLS_AuthUser: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireless
+      - payload.metadata.lobList[0]: wireless
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.wireless.lobType: WIRELESS
+      - payload.wireless.status.readyToCheckout: true
+      - payload.wireless.status.cartState: complete
+      - payload.wireless.itemInfoMap.84375003529-2.itemType: sharedDataPlan
+      - payload.wireless.itemInfoMap.84375003529-1.itemType: sharedDataGroup
+      - payload.wireless.itemInfoMap.84375003529.itemType: feature
+      - payload.wireless.itemInfoMap.84375003528.itemType: device
+      - payload.wireless.shippingMethod.selShippingType: Overnight
+      - payload.wireless.eligible_actions[0]: addAccessories
+      
+    validationType: partial
+  flowDataSetupProvideSmbDtvHsiaVoipHighRisk:
+    testCaseName: flowDataSetupProvideSmbDtvHsiaVoipHighRisk
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/provide-smb-dtv-hsia-voip-high-unkonwn-risk/provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    validationType: actual
+  validateCartProvideSmbDtvHsiaVoipHighRiskResponse:
+    testCaseName: validateCartProvideSmbDtvHsiaVoipHighRiskResponse
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    body: ""
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: "false"
+     - payload.metadata.wireline.buyflowSessionId: pVQxFz67AWK_IjXxhzjnqfLRI8is665H!-580283968!1512652095163
+     - payload.metadata.wireline.subFlowType: NEW_DTV_NEW_HSIA_NEW_VOIP
+     - payload.metadata.wireline.flowtypes[0]: PROVIDE
+     - payload.metadata.wireline.count: 11
+     - payload.metadata.wireline.buyflowOrderId: 20-102100001040754
+     - payload.metadata.wireline.extra_params.losgList[0]: dsl
+     - payload.metadata.wireline.extra_params.losgList[1]: potsP
+     - payload.metadata.wireline.extra_params.losgList[2]: dtv
+     - payload.metadata.wireline.extra_params.wll_flow: false
+     - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+     - payload.metadata.sessionCookies[1]: SALES_USER_ID
+     - payload.metadata.cartLob[0]: wireline
+     - payload.metadata.lobList[0]: wireline
+     - payload.metadata.saveCartOption[0]: emptyCart
+     - payload.metadata.saveCartOption[1]: saveCart
+     - payload.metadata.saveCartOption[2]: retrieveCart
+     - payload.wireline.lobType: wireline	
+     - payload.wireline.status.readyToCheckout: true
+     - payload.wireline.status.cartState: complete
+     - payload.wireline.itemInfoMap.95684033922.itemType: dtvReceiver
+     - payload.wireline.itemInfoMap.95684033922.itemPriceInfo.type: due_monthly
+    validationType: partial
+  flowDataSetupModifySmbPotsAddHsiaTechInstall:
+    testCaseName: flowDataSetupModifySmbPotsAddHsiaTechInstall
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/modify-smb-existing-pots-highrisk-add-hsia-tech-install/modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validateCartModifySmbPotsAddHsiaTechInstallResponse:
+    testCaseName: validateCartModifySmbPotsAddHsiaTechInstallResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    asserts:
+    - response.status: SUCCESS
+    - response.redirect: false
+    - payload.metadata.wireline.buyflowSessionId: H1g0djposRNViFbCpi1OjVRzSkl2yrxr!-604603231!1512708651624
+    - payload.metadata.wireline.subFlowType: "EXISTING_POTS_NEW_HSIA"
+    - payload.metadata.wireline.scenarioType: "EXISTING_POTS_NEW_HSIA"
+    - payload.metadata.wireline.count: 4
+    - payload.metadata.wireline.flowtypes[0]: "MODIFY"
+    - payload.metadata.wireline.modifyCheckoutType: "Dynamic"
+    - payload.metadata.wireline.buyflowOrderId: 20-101100002491562
+    - payload.metadata.wireline.extra_params.losgList[0]: "hsia"
+    - payload.metadata.wireline.extra_params.losgList[1]: "potsP"
+    - payload.metadata.wireline.modifyFlowInstallationDateEligibility: true
+    - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+    - payload.metadata.sessionCookies[1]: SALES_USER_ID
+    - payload.metadata.cartLob[0]: wireline
+    - payload.metadata.lobList[0]: wireline
+    - payload.metadata.saveCartOption[0]: emptyCart
+    - payload.wireline.lobType: wireline
+    - payload.wireline.status.readyToCheckout: true
+    - payload.wireline.status.cartState: complete
+    - payload.wireline.itemInfoMap.95611024618.itemType: "uvBusinessVoipAddon"
+    - payload.wireline.itemInfoMap.95611024618.itemPriceInfo.type: "due_monthly"
+    - payload.wireline.itemInfoMap.95611024617.itemType: "voip"
+    - payload.wireline.itemInfoMap.95611024617.itemPriceInfo.type: "due_monthly"
+    validationType: partial
+  flowDataSetupSmbModifyExtDslAddingHsiaBizApps:
+    testCaseName: flowDataSetupSmbModifyExtDslAddingHsiaBizApps
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/smb_modify_extdsl_addinghsia_bizapps/smb-modify-extdsl-addinghsia-bizapps"
+    validationType: actual
+  validateCartSmbModifyExtDslAddingHsiaBizAppsResponse:
+    testCaseName: validateCartSmbModifyExtDslAddingHsiaBizAppsResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/smb-modify-extdsl-addinghsia-bizapps"
+    asserts:
+    - response.status: SUCCESS
+    - response.redirect: false
+    - payload.metadata.wireline.buyflowSessionId: wbk16dAc9InKtoIjk4vk_gRx5GA1jcYd!1782605882!1512733003804
+    - payload.metadata.wireline.subFlowType: "EXISTING_DSL_NEW_HSIA_NEW_APPS"
+    - payload.metadata.wireline.scenarioType: "EXISTING_DSL_NEW_HSIA_NEW_APPS"
+    - payload.metadata.wireline.count: 5
+    - payload.metadata.wireline.flowtypes[0]: "MODIFY"
+    - payload.metadata.wireline.modifyCheckoutType: "Dynamic"
+    - payload.metadata.wireline.buyflowOrderId: 20-114100008481268
+    - payload.metadata.wireline.extra_params.losgList[0]: "businessApp"
+    - payload.metadata.wireline.extra_params.losgList[1]: "dsl"
+    - payload.metadata.wireline.extra_params.losgList[2]: "hsia"
+    - payload.metadata.wireline.modifyFlowInstallationDateEligibility: true
+    - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+    - payload.metadata.sessionCookies[1]: SALES_USER_ID
+    - payload.metadata.cartLob[0]: wireline
+    - payload.metadata.lobList[0]: wireline
+    - payload.metadata.saveCartOption[0]: emptyCart
+    - payload.wireline.lobType: wireline
+    - payload.wireline.status.readyToCheckout: true
+    - payload.wireline.status.cartState: complete
+    - payload.wireline.itemInfoMap.95816067917.itemType: "businessAppsAndServices"
+    - payload.wireline.itemInfoMap.95816067917.itemPriceInfo.type: "due_monthly"
+    - payload.wireline.itemInfoMap.95816067914.itemType: "hsia"
+    - payload.wireline.itemInfoMap.95816067914.itemPriceInfo.type: "due_monthly"
+    validationType: partial
+  flowDataSetupModifyExistingIptvHighriskAddingVoip:
+    testCaseName: flowDataSetupModifyExistingIptvHighriskAddingVoip
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-existing-iptv-highrisk-adding-voip"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/modify-existing-iptv-highrisk-adding-voip/modify-existing-iptv-highrisk-adding-voip"
+    validationType: actual
+  validateCartModifyExistingIptvHighriskAddingVoipResponse:
+    testCaseName: validateCartModifyExistingIptvHighriskAddingVoipResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "modify-existing-iptv-highrisk-adding-voip"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/modify-existing-iptv-highrisk-adding-voip"
+    asserts:
+    - response.status: SUCCESS
+    - response.redirect: false
+    - payload.metadata.profileType: authuser
+    - payload.metadata.wireline.buyflowSessionId: IcBPbX0tmf1j5qCo6YV6yk7RGgOu4KFj!1782605882!1513161063725
+    - payload.metadata.wireline.subFlowType: "EXISTING_IPTV_NEW_VOIP"
+    - payload.metadata.wireline.scenarioType: "EXISTING_IPTV_NEW_VOIP"
+    - payload.metadata.wireline.count: 6
+    - payload.metadata.wireline.flowtypes[0]: "MODIFY"
+    - payload.metadata.wireline.modifyCheckoutType: "Dynamic"
+    - payload.metadata.wireline.buyflowOrderId: 20-114100008481443
+    - payload.metadata.wireline.extra_params.cartSummaryUrl: "/cart/mycart.html?retrieveCart=true"
+    - payload.metadata.wireline.extra_params.domainName: https://tst14.stage.att.com
+    - payload.metadata.wireline.extra_params.losgList[0]: "voipA"
+    - payload.metadata.wireline.extra_params.losgList[1]: "voipP"
+    - payload.metadata.wireline.extra_params.losgList[2]: "iptv"
+    - payload.metadata.wireline.extra_params.losgList[3]: "misc"
+    - payload.metadata.wireline.extra_params.idp_supported_flow: false
+    - payload.metadata.wireline.extra_params.wll_flow: false
+    - payload.metadata.wireline.modifyFlowInstallationDateEligibility: true
+    - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+    - payload.metadata.sessionCookies[1]: SALES_USER_ID
+    - payload.metadata.cartLob[0]: wireline
+    - payload.metadata.lobList[0]: wireline
+    - payload.metadata.saveCartOption[0]: emptyCart
+    - payload.wireline.lobType: wireline
+    - payload.wireline.status.readyToCheckout: false
+    - payload.wireline.status.cartState: complete
+    - payload.wireline.itemInfoMap.95816075158.itemType: "voip"
+    - payload.wireline.itemInfoMap.95816075158.itemPriceInfo.type: "due_monthly"
+    - payload.wireline.itemInfoMap.95816075165.itemType: "programming"
+    - payload.wireline.itemInfoMap.95816075165.itemPriceInfo.type: "due_monthly"
+    - payload.wireline.extra_attributes.SelectedNetworkTransportType: FTTN-BP
+    - payload.wireline.extra_attributes.portInNumberAdditional: 'false'
+    - payload.wireline.extra_attributes.operation_mode: PMO
+    - payload.wireline.extra_attributes.includedDVRs: '1'
+    - payload.wireline.extra_attributes.isUnifyFlow: 'false'
+    - payload.wireline.extra_attributes.FWIMoveIndicator: 'false'
+    - payload.wireline.extra_attributes.uverseInstallation: 'true'
+    - payload.wireline.extra_attributes.isCAF2Address: 'false'
+    - payload.wireline.extra_attributes.uvNadType: iNID
+    - payload.wireline.extra_attributes.isSelfInstallEligible: 'false'
+    - payload.wireline.extra_attributes.IPDSLAIndicator: 'false'
+    - payload.wireline.extra_attributes.InstallTypeSelected: Tech
+    - payload.wireline.extra_attributes.profileCode: ULow
+    - payload.wireline.extra_attributes.isGigaInCart: 'false'
+    - payload.wireline.extra_attributes.bundlePage: "/shop/u-verse/offers.html"
+    - payload.wireline.extra_attributes.includedSTBs: '3'
+    - payload.wireline.extra_attributes.isStbPolicyChanged: 'false'
+    - payload.wireline.extra_attributes.authenticationState: authenticated
+    - payload.wireline.extra_attributes.customerSubType: residential
+    - payload.wireline.extra_attributes.receiverCount: '0'
+    - payload.wireline.extra_attributes.vectoringIndicator: 'false'
+    - payload.wireline.extra_attributes.isDSLAvailable: 'false'
+    - payload.wireline.extra_attributes.frequency17MhzIndicator: 'false'
+    - payload.wireline.extra_attributes.cpeRequiredIndicator: 'false'
+    - payload.wireline.extra_attributes.isHomeNetworkInCart: 'false'
+    - payload.wireline.extra_attributes.isFallOutAutomotion: 'false'
+    - payload.wireline.extra_attributes.portInNumberPrimary: 'false'
+    validationType: partial
+  flowDataSetupNewPostpaidC2SCredit$100:
+      testCaseName: flowDataSetupNewPostpaidC2SCredit$100
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "new-postpaid-c2s-creditC-$100"
+      body: ""
+      referenceData: validateCart/schema/flowDataSetup.json
+      type: "GET"
+      url: "/apis/cart/tools/mockdata/setup/new-postpaid-c2s-creditC-$100/new-postpaid-c2s-creditC-$100"
+      validationType: actual
+  validateCartNewPostpaidC2SCredit$100Response:
+      testCaseName: validateCartNewPostpaidC2SCredit$100Response
+      params:
+          serviceType: "None"
+      cookies:
+          uuid: "new-postpaid-c2s-creditC-$100"
+      body: ""
+      referenceData: validateCart/schema/validateCart.json
+      type: "GET"
+      url: "/apis/cart/v1/new-postpaid-c2s-creditC-$100"
+      asserts:
+      - payload.metadata.wireless.subFlowType: POSTPAID
+      - payload.metadata.wireless.count: 4
+      - payload.metadata.wireless.flowtypes[0]: NEW
+      - payload.metadata.wireless.buyflowOrderId: 21-104100011920794
+      - payload.metadata.wireless.WLS_AuthUser: false
+      - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+      - payload.metadata.sessionCookies[1]: SALES_USER_ID
+      - payload.metadata.cartLob[0]: wireless
+      - payload.metadata.lobList[0]: wireless
+      - payload.metadata.saveCartOption[0]: emptyCart
+      - payload.metadata.saveCartOption[1]: saveCart
+      - payload.metadata.saveCartOption[2]: retrieveCart
+      - payload.metadata.wireless.extra_params.isCiti: false
+      - payload.metadata.wireless.extra_params.isExUpFlow: false
+      - payload.metadata.wireless.extra_params.isPrepaid: false
+      - payload.metadata.wireless.extra_params.isPostpaid: true
+      - payload.wireless.lobType: WIRELESS
+      - payload.wireless.status.readyToCheckout: true
+      - payload.wireless.status.cartState: complete
+      - payload.wireless.itemInfoMap.84065000284.itemType: sharedDataPlan
+      - payload.wireless.itemInfoMap.84065000283.itemType: sharedDataGroup
+      - payload.wireless.itemInfoMap.84065000282.itemType: device
+      - payload.wireless.shippingMethod.selShippingType: Overnight
+      - payload.wireless.eligible_actions[0]: addALine
+      - payload.wireless.eligible_actions[1]: addAccessories
+      - payload.wireless.hboIheartOffer: false
+      - payload.wireless.enableIRUCoupon: false
+      - payload.wireless.wirelessTaxInfo.taxCalculated: false
+      - payload.wireless.isVice: true
+      - payload.wireless.isLegacySDG: true
+      - payload.wireless.wirelessPromotions[0].complexDiscount: false
+      - payload.wireless.wirelessPromotions[0].iruPromotion: false
+      - payload.wireless.cartPageTaxSwitch: true
+      - payload.wireless.globalTaxSwitch: true
+      - payload.wireless.clickToStoreEligible: true
+      - payload.wireless.upgradeEligible: true
+      - payload.wireless.deliverByDateOn: false
+      - payload.wireless.shipByDateOn: false
+      validationType: partial
+  flowDataSetupProvideSmbDtvFailure:
+    testCaseName: flowDataSetupProvideSmbDtvFailure
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-provide-new-dtv-flow-failure"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/setup/provide-smb-dtv/smb-provide-new-dtv-flow-failure"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validateCartProvideSmbDtvFailureResponse:
+    testCaseName: validateCartProvideSmbDtvFailureResponse
+    params: 
+        serviceType: "None"
+    cookies:
+        uuid: "smb-provide-new-dtv-flow-failure"
+    body: ""  
+    referenceData: validateCart/schema/validateCart.json
+    type: "GET"
+    url: "/apis/cart/v1/smb-provide-new-dtv-flow-failure"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: "false"
+     - payload.metadata.wireline.buyflowSessionId: G4WlcX5uYTPfLEyd-_EPhUFbp925jue2!1005275161!1488834362990
+     - payload.metadata.wireline.subFlowType: NEW_DTV
+     - payload.metadata.wireline.flowtypes[0]: PROVIDE
+     - payload.metadata.wireline.count: 4
+     - payload.metadata.wireline.buyflowOrderId: 7586190097
+     - payload.metadata.wireline.extra_params.losgList[0]: dtv
+     - payload.metadata.wireline.extra_params.wll_flow: false
+     - payload.metadata.sessionCookies[0]: SHOPSESSIONID
+     - payload.metadata.sessionCookies[1]: SALES_USER_ID
+     - payload.metadata.cartLob[0]: wireline
+     - payload.metadata.lobList[0]: wireline
+     - payload.metadata.saveCartOption[0]: emptyCart
+     - payload.metadata.saveCartOption[1]: saveCart
+     - payload.metadata.saveCartOption[2]: retrieveCart
+     - payload.wireline.lobType: wireline	
+     - payload.wireline.status.readyToCheckout: true
+     - payload.wireline.status.cartState: complete
+     - payload.wireline.itemInfoMap.95821009627.itemType: dtvReceiver
+     - payload.wireline.itemInfoMap.95821009627.itemPriceInfo.type: due_monthly
+     - payload.metadata.wireline.flowtypes[0]: "PROVIDE"
+     - payload.wireline.itemInfoMap.95821009446.priceAdjustments[0].adjustment: "5.0"
+    validationType: partial
+  clearCheckoutDataProvideSmbDtv:
+    testCaseName: clearCheckoutDataProvideSmbDtv
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-provide-new-dtv-flow"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/smb-provide-new-dtv-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataExpressUpgrade:
+    testCaseName: clearCheckoutDataExpressUpgrade
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "express-upgrade"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/express-upgrade"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataModifySmbIptvHsiaProvideVoipPortIn:
+    testCaseName: clearCheckoutDataModifySmbIptvHsiaProvideVoipPortIn
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/modify-smb-iptv-hsia-provide-voip-portIn"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataModifySmbPotsAddHsiaTechInstall:
+    testCaseName: clearCheckoutDataModifySmbPotsAddHsiaTechInstall
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataSmartphoneNextTermDownpaymentInsuranceTabletAccessory:
+    testCaseName: clearCheckoutDataSmartphoneNextTermDownpaymentInsuranceTabletAccessory
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/smartphone-next-term-downpayment-insurance-tablet-accessory"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataProvideDtv:
+    testCaseName: clearCheckoutDataProvideDtv
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-dtv"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/provide-dtv"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataProvideIptvVoip:
+    testCaseName: clearCheckoutDataProvideIptvVoip
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-iptv-voip"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/provide-iptv-voip"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataProvideHsia:
+    testCaseName: clearCheckoutDataProvideHsia
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-hsia"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/provide-hsia"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataProvideIptvVoipPortin:
+    testCaseName: clearCheckoutDataProvideIptvVoipPortin
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-iptv-voip-portin"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/provide-iptv-voip-portin"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataNewDtvHsiaVoipHighRisk:
+    testCaseName: clearCheckoutDataNewDtvHsiaVoipHighRisk
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/new-dtv-hsia-voip-high-unkonwn-risk"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataModifyDtvHsiaVoipNonPublishedListing:
+    testCaseName: clearCheckoutDataModifyDtvHsiaVoipNonPublishedListing
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-dtv-hsia-voip-non-published-listing"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/modify-dtv-hsia-voip-non-published-listing"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataModifyExistingIptvHighriskAddingVoip:
+    testCaseName: clearCheckoutDataModifyExistingIptvHighriskAddingVoip
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-existing-iptv-highrisk-adding-voip"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/modify-existing-iptv-highrisk-adding-voip"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataModifyDtvRtpProducts:
+    testCaseName: clearCheckoutDataModifyDtvRtpProducts
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-dtv-rtpproducts"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/modify-dtv-rtpproducts"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataModifyDtvAddingSubsAccessoriesExpressCheckout:
+    testCaseName: clearCheckoutDataModifyDtvAddingSubsAccessoriesExpressCheckout
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/modify-dtv-adding-subs-accessories-express-checkout"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataModifyIptvAddReceiverSelfInstallHybridCheckout:
+    testCaseName: clearCheckoutDataModifyIptvAddReceiverSelfInstallHybridCheckout
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataModifyIptvHisaVoipModifyAll:
+    testCaseName: clearCheckoutDataModifyIptvHisaVoipModifyAll
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-iptvhisavoip-modifyall"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/modify-iptvhisavoip-modifyall"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataProvideSmbDtvHsiaVoipHighRisk:
+    testCaseName: clearCheckoutDataProvideSmbDtvHsiaVoipHighRisk
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataProvideSmbDslSelfInstall:
+    testCaseName: clearCheckoutDataProvideSmbDslSelfInstall
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-smb-dsl-self-install"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/provide-smb-dsl-self-install"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataProvideSmbDslPots:
+    testCaseName: clearCheckoutDataProvideSmbDslPots
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "provide-smb-dsl-pots"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/provide-smb-dsl-pots"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataProvideSMBBusinessApps:
+    testCaseName: clearCheckoutDataProvideSMBBusinessApps
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-provide-business-apps"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/smb-provide-business-apps"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataModifySmbHsiaAddDtvBusinessApps:
+    testCaseName: clearCheckoutDataModifySmbHsiaAddDtvBusinessApps
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "modify-smb-hsia-add-dtv-businessApps"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/modify-smb-hsia-add-dtv-businessApps"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataSmbModifyExtDslAddingHsiaBizApps:
+    testCaseName: clearCheckoutDataSmbModifyExtDslAddingHsiaBizApps
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/smb-modify-extdsl-addinghsia-bizapps"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataAccessoryFlow:
+    testCaseName: clearCheckoutDataAccessoryFlow
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "accessoryFlow"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/accessoryFlow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataSmartphoneMultiDeviceEnjoy:
+    testCaseName: clearCheckoutDataSmartphoneMultiDeviceEnjoy
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smartphone-multi-device-enjoy"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/smartphone-multi-device-enjoy"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataNewPostpaidNextDPCreditC:
+    testCaseName: clearCheckoutDataNewPostpaidNextDPCreditC
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-postpaid-nextDP-creditC"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/new-postpaid-nextDP-creditC"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataDeviceOnly:
+    testCaseName: clearCheckoutDataDeviceOnly
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "device-only"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/device-only"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataReplaceYourDeviceFlow:
+    testCaseName: clearCheckoutDataReplaceYourDeviceFlow
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "replace-your-device-flow"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/replace-your-device-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataNewPostPaidDownPayment:
+    testCaseName: clearCheckoutDataNewPostPaidDownPayment
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-postpaid-down-payment"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/new-postpaid-down-payment"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataSmartphoneNoCommitmentTerm:
+    testCaseName: clearCheckoutDataSmartphoneNoCommitmentTerm
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smartphone-no-commitment-term"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/smartphone-no-commitment-term"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutData4PostpaidWirelessCreditC:
+    testCaseName: clearCheckoutData4PostpaidWirelessCreditC
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "4-postpaid-wireless-creditC-deposit"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/4-postpaid-wireless-creditC-deposit"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataNewCitiFlow:
+    testCaseName: clearCheckoutDataNewCitiFlow
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-citi-flow"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/new-citi-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataNewWirelessByodSimOnly:
+    testCaseName: clearCheckoutDataNewWirelessByodSimOnly
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-wireless-byod-simonly-flow"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/new-wireless-byod-simonly-flow"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataNewPostpaidC2SCredit$100:
+    testCaseName: clearCheckoutDataNewPostpaidC2SCredit$100
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "new-postpaid-c2s-creditC-$100"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/new-postpaid-c2s-creditC-$100"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  clearCheckoutDataProvideSmbDtvFailure:
+    testCaseName: clearCheckoutDataProvideSmbDtvFailure
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "smb-provide-new-dtv-flow-failure"
+    body: ""
+    referenceData: validateCart/schema/flowDataSetup.json
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/smb-provide-new-dtv-flow-failure"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial

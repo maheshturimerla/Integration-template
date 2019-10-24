@@ -1,0 +1,85 @@
+testCases:
+  validateDirectoryListingProvideIptvVoipPortinPostResponse:
+   requsstBodyReference: validateDirectoryListing/schema/validateDirectoryListingRequest.json
+   cookies:
+        uuid: "provide-iptv-voip-portin"
+   referenceData: validateDirectoryListing/schema/validateDirectoryListing.json
+   headers:
+      Referer: "directorylisting.html"
+   type: "POST"
+   url: "apis/checkout/v1/controller/provide-iptv-voip-portin/?type=directoryListing"
+   testCaseName: validateDirectoryListingProvideIptvVoipPortinPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload: true
+   validationType: partial
+  validateDirectoryListingProvideIptvVoipPortinGetResponse:
+   cookies:
+        uuid: "provide-iptv-voip-portin"
+   referenceData: validateDirectoryListing/schema/validateDirectoryListing.json
+   headers:
+      Referer: "directorylisting.html"
+   type: "GET"
+   url: "apis/checkout/v1/controller/provide-iptv-voip-portin/?type=directoryListing"
+   testCaseName: validateDirectoryListingProvideIptvVoipPortinGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateDirectoryListingProvideIptvVoipPostResponse:
+   requsstBodyReference: validateDirectoryListing/schema/validateDirectoryListingRequest.json
+   cookies:
+        uuid: "provide-iptv-voip"
+   referenceData: validateDirectoryListing/schema/validateDirectoryListing.json
+   headers:
+      Referer: "directorylisting.html"
+   type: "POST"
+   url: "apis/checkout/v1/controller/provide-iptv-voip/?type=directoryListing"
+   testCaseName: validateDirectoryListingProvideIptvVoipPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload: true
+   validationType: partial
+  validateDirectoryListingProvideIptvVoipGetResponse:
+   cookies:
+        uuid: "provide-iptv-voip"
+   referenceData: validateDirectoryListing/schema/validateDirectoryListing.json
+   headers:
+      Referer: "directorylisting.html"
+   type: "GET"
+   url: "apis/checkout/v1/controller/provide-iptv-voip/?type=directoryListing"
+   testCaseName: validateDirectoryListingProvideIptvVoipGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateDirectoryListingNewDtvHsiaVoipHighRiskPostResponse:
+   requsstBodyReference: validateDirectoryListing/schema/validateDirectoryListingRequest.json
+   cookies:
+        uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+   referenceData: validateDirectoryListing/schema/validateDirectoryListing.json
+   headers:
+      Referer: "directorylisting.html"
+   type: "POST"
+   url: "apis/checkout/v1/controller/new-dtv-hsia-voip-high-unkonwn-risk/?type=directoryListing"
+   testCaseName: validateDirectoryListingNewDtvHsiaVoipHighRiskPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload: true
+   validationType: partial
+  validateDirectoryListingNewDtvHsiaVoipHighRiskGetResponse:
+   cookies:
+        uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+   referenceData: validateDirectoryListing/schema/validateDirectoryListing.json
+   headers:
+      Referer: "directorylisting.html"
+   type: "GET"
+   url: "apis/checkout/v1/controller/new-dtv-hsia-voip-high-unkonwn-risk/?type=directoryListing"
+   testCaseName: validateDirectoryListingNewDtvHsiaVoipHighRiskGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial  

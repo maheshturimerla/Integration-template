@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hazelcast-client xsi:schemaLocation="http://www.hazelcast.com/schema/client-config hazelcast-client-config-3.6.xsd"
+           xmlns="http://www.hazelcast.com/schema/client-config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+           
+    <group>
+        <name>dev</name> 
+        <password>dev-pass</password> 
+    </group>
+        
+    <license-key>HazelcastENTERPRISE_HD#9999Nodes#1jKkbJ5NE7ASwHIfmuUyVa0Fr6lOT5011001999210019011068199011029</license-key>
+    <properties>
+        <property name="hazelcast.client.shuffle.member.list">true</property>
+        <property name="hazelcast.client.heartbeat.timeout">60000</property>
+        <property name="hazelcast.client.heartbeat.interval">5000</property>
+        <property name="hazelcast.client.event.thread.count">5</property>
+        <property name="hazelcast.client.event.queue.capacity">1000000</property>
+        <property name="hazelcast.client.invocation.timeout.seconds">120</property>
+    </properties>
+
+	<network>
+		<cluster-members>
+			<address>127.0.0.1</address>
+		</cluster-members>
+		
+		<smart-routing>true</smart-routing>
+		
+		<redo-operation>true</redo-operation>
+		
+		<!-- Timeout value in miliseconds -->
+		<connection-timeout>5000</connection-timeout>
+
+		<connection-attempt-limit>5</connection-attempt-limit>
+		
+        <socket-options>
+            <tcp-no-delay>false</tcp-no-delay>
+            <keep-alive>true</keep-alive>
+            <reuse-address>true</reuse-address>
+            <linger-seconds>3</linger-seconds>
+            <timeout>-1</timeout>
+            <buffer-size>32</buffer-size>
+        </socket-options>
+		
+		<aws enabled="false">
+			<access-key>my-access-key</access-key>
+			<secret-key>my-secret-key</secret-key>
+			<region>us-west-1</region>
+			<host-header>ec2.amazonaws.com</host-header>
+			<security-group-name>hazelcast-sg</security-group-name>
+			<tag-key>type</tag-key>
+			<tag-value>hz-nodes</tag-value>
+		</aws>
+	</network>
+
+	<!-- <serialization>
+		<serializers>
+			<serializer type-class="com.att.detsplatform.cosc.base.COSCKey" class-name="com.att.detsplatform.cosc.serializer.COSCKeyKryoSerializer" />
+			<serializer type-class="com.att.detsplatform.cosc.base.COSCEntry" class-name="com.att.detsplatform.cosc.serializer.COSCEntryKryoSerializer" />
+		</serializers>		
+	</serialization> -->
+	
+</hazelcast-client>

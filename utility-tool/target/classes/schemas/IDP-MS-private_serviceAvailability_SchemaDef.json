@@ -1,0 +1,23 @@
+{
+  "idp_ms_private_serviceAvailability": {    
+    "namedcache": "idp_ms_private_serviceAvailability",
+    "contenttype": "application/json",
+    "version": "1.0",
+    "cachettl": 10800,
+    "backingmapttl": 14400,
+	"maxlength": 30000,
+    "strictvalidation" : "false", 
+    "header": {
+      "versions": {
+			"v1":{
+			}
+		}
+    },
+    "data": {
+      "versions": {
+		"v1":{
+		}
+	  }
+    }
+  }
+ }

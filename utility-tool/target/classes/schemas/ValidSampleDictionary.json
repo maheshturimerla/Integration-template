@@ -1,0 +1,64 @@
+{
+ "profile": {
+      "namedcache": "bothell",
+      "contenttype": "application/json",      
+      "maxlength"   : 500.0,
+      "version": "1.0",
+      "segment": {
+             "cachettl": 100,
+             "backingmapttl": 360,
+             "maxlength"   : 550.0,
+             "namedcache": "bothell-segment",
+             "versions": {
+                  "v1": {
+                       "type": "object",  
+                       "properties": { 
+                             "state": { "type": "string" } ,
+                             "city" : { "type": "string" } ,
+                             "zip"  : { "type": "string" } , 
+                             "ipv4" : { "type": "string", "format": "ipv4" },
+                             "ipv6" : { "type": "string", "format": "ipv6" },
+                             "hostname": { "type": "string", "format": "hostname" }
+                        },
+                        "patternProperties": {
+                             "^[a-z]{4}_[0-9]$": { "type": "string", "maxLength": 1 }
+                         },
+                         "additionalProperties": false
+                   }
+              }
+       },
+       "contact": {
+                    "cachettl": 160,
+             		"backingmapttl": 260,
+                     "versions": {
+                         "v1":  {
+                            "type": "object",
+                            "allOf": [
+                                    { "$ref": "resource:/definitions/definitions.json#/definitions/defaults"},
+                                    { "$ref": "resource:/definitions/definitions.json#/definitions/base" },
+                                    { "properties" : {
+                                            "mobile": {"type": "string", "pattern": "[0-9]{3}-[0-9]{3}-[0-9]{4}" },
+                                            "address" : { "$ref": "resource:/definitions/definitions.json#/definitions/address" }
+                                        }
+                                    }
+                             ]
+                         }, 
+                         "v2":  {
+                             "type": "object",
+                             "allOf": [
+                                    { "$ref": "resource:/definitions/definitions.json#/definitions/defaults"},
+                                    { "$ref": "resource:/definitions/definitions.json#/definitions/base" },
+                                    {                            
+                                       "properties":  {
+                                              "address" : { "$ref": "resource:/definitions/definitions.json#/definitions/address" },
+                                              "email": { "type": "string", "format": "email" },
+                                              "dob": { "type": "string", "format": "date" }
+                                        }
+                                     }
+                               ]
+                         }
+                    }
+         }
+     }
+}
+

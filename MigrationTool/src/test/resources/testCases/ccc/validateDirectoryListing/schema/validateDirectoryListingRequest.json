@@ -1,0 +1,59 @@
+{
+"validateDirectoryListingProvideIptvVoipPortinPostRequest":{
+	"directoryListing": 
+	[	
+	   {
+	    "prefix": "Mr.",
+		"firstName": "FirstName1",
+		"lastName": "LastName1",
+		"suffix": "M",
+		"losgId":"52416308"
+		},
+	  {
+	   "prefix": "Mr.",
+		"firstName": "FirstName2",
+		"lastName": "LastName2",
+		"suffix": "M",
+		"losgId":"52416309"
+	  }
+	]
+},
+"validateDirectoryListingProvideIptvVoipPostResponse":{
+	"directoryListing": 
+	[	
+	   {
+	    "prefix": "Mr.",
+		"firstName": "FirstName1",
+		"lastName": "LastName1",
+		"suffix": "M",
+		"losgId":"52416308"
+		},
+	  {
+	   "prefix": "Mr.",
+		"firstName": "FirstName2",
+		"lastName": "LastName2",
+		"suffix": "M",
+		"losgId":"52416309"
+	  }
+	]
+},
+"validateDirectoryListingNewDtvHsiaVoipHighRiskPostResponse":{
+	"directoryListing": 
+	[	
+	   {
+	    "prefix": "Mr.",
+		"firstName": "FirstName1",
+		"lastName": "LastName1",
+		"suffix": "M",
+		"losgId":"52416308"
+		},
+	  {
+	   "prefix": "Mr.",
+		"firstName": "FirstName2",
+		"lastName": "LastName2",
+		"suffix": "M",
+		"losgId":"52416309"
+	  }
+	]
+}
+}

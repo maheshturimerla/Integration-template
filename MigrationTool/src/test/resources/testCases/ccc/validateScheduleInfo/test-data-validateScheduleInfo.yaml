@@ -1,0 +1,153 @@
+---
+testCases:
+  validateScheduleInfoModifyIptvHisaVoipModifyAllPostResponse:
+   requsstBodyReference: validateScheduleInfo/schema/validateScheduleInfoRequest.json
+   cookies:
+        uuid: "modify-iptvhisavoip-modifyall"
+   referenceData: validateScheduleInfo/schema/validateScheduleInfo.json
+   headers:
+      Referer: "installation.html"
+   type: "POST"
+   url: "/apis/checkout/v1/scheduling/wireline/modify-iptvhisavoip-modifyall/appointments"
+   testCaseName: validateScheduleInfoModifyIptvHisaVoipModifyAllPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload: true
+   validationType: partial
+  validateScheduleInfoModifyIptvHisaVoipModifyAllGetResponse:
+   referenceData: validateScheduleInfo/schema/validateScheduleInfo.json
+   cookies:
+        uuid: "modify-iptvhisavoip-modifyall"
+   headers:
+      Referer: "installation.html"
+   type: "GET"
+   url: "/apis/checkout/v1/scheduling/wireline/modify-iptvhisavoip-modifyall"
+   testCaseName: validateScheduleInfoModifyIptvHisaVoipModifyAllGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.scheduleAppointmentBean.email: sales.pvtuser@gmail.com
+     - payload.scheduleAppointmentBean.realTimeCalendarEnabled: false
+     - payload.scheduleAppointmentBean.calendarType: TECH
+     - payload.scheduleAppointmentBean.singleDispatchEligible: true
+     - payload.scheduleAppointmentBean.dateTimeslotSelectionType: defaultDateTimeslot
+     - payload.scheduleAppointmentBean.numberOfSTB: 4
+     - payload.scheduleAppointmentBean.primaryPhoneNum: 2145755798
+     - payload.morningAppointment: true
+     - payload.weekDayAppointment: true
+     - payload.preferenceCalendarEnabled: true
+   validationType: partial
+  validateScheduleInfoModifyDtvHsiaVoipNonPublishedListingPostResponse:
+   requsstBodyReference: validateScheduleInfo/schema/validateScheduleInfoRequest.json
+   cookies:
+        uuid: "modify-dtv-hsia-voip-non-published-listing"
+   referenceData: validateScheduleInfo/schema/validateScheduleInfo.json
+   headers:
+      Referer: "installation.html"
+   type: "POST"
+   url: "/apis/checkout/v1/scheduling/wireline/modify-dtv-hsia-voip-non-published-listing/appointments"
+   testCaseName: validateScheduleInfoModifyDtvHsiaVoipNonPublishedListingPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload: true
+   validationType: partial
+  validateScheduleInfoModifyDtvHsiaVoipNonPublishedListingGetResponse:
+   referenceData: validateScheduleInfo/schema/validateScheduleInfo.json
+   cookies:
+        uuid: "modify-dtv-hsia-voip-non-published-listing"
+   headers:
+      Referer: "installation.html"
+   type: "GET"
+   url: "/apis/checkout/v1/scheduling/wireline/modify-dtv-hsia-voip-non-published-listing"
+   testCaseName: validateScheduleInfoModifyDtvHsiaVoipNonPublishedListingGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.scheduleAppointmentBean.email: sales.pvtuser@gmail.com
+     - payload.scheduleAppointmentBean.realTimeCalendarEnabled: true
+     - payload.scheduleAppointmentBean.calendarType: TECH
+     - payload.scheduleAppointmentBean.singleDispatchEligible: true
+     - payload.scheduleAppointmentBean.dateTimeslotSelectionType: defaultDateTimeslot
+     - payload.scheduleAppointmentBean.numberOfSTB: 0
+     - payload.scheduleAppointmentBean.primaryPhoneNum: 2145755798
+     - payload.morningAppointment: true
+     - payload.weekDayAppointment: true
+     - payload.preferenceCalendarEnabled: false
+   validationType: partial
+  validateScheduleInfoProvideIptvVoipPostResponse:
+   requsstBodyReference: validateScheduleInfo/schema/validateScheduleInfoRequest.json
+   cookies:
+        uuid: "provide-iptv-voip"
+   referenceData: validateScheduleInfo/schema/validateScheduleInfo.json
+   headers:
+      Referer: "installation.html"
+   type: "POST"
+   url: "/apis/checkout/v1/scheduling/wireline/provide-iptv-voip/appointments"
+   testCaseName: validateScheduleInfoProvideIptvVoipPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload: true
+   validationType: partial
+  validateScheduleInfoProvideIptvVoipGetResponse:
+   cookies:
+        uuid: "provide-iptv-voip"
+   referenceData: validateScheduleInfo/schema/validateScheduleInfo.json
+   headers:
+      Referer: "installation.html"
+   type: "GET"
+   url: "/apis/checkout/v1/scheduling/wireline/provide-iptv-voip"
+   testCaseName: validateScheduleInfoProvideIptvVoipGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.scheduleAppointmentBean.email: sales.pvtuser@gmail.com
+     - payload.scheduleAppointmentBean.realTimeCalendarEnabled: false
+     - payload.scheduleAppointmentBean.calendarType: TECH
+     - payload.scheduleAppointmentBean.singleDispatchEligible: true
+     - payload.scheduleAppointmentBean.dateTimeslotSelectionType: defaultDateTimeslot
+     - payload.scheduleAppointmentBean.numberOfSTB: 1
+     - payload.scheduleAppointmentBean.primaryPhoneNum: 4334357654
+     - payload.morningAppointment: false
+     - payload.weekDayAppointment: false
+     - payload.preferenceCalendarEnabled: true
+   validationType: partial
+  validateScheduleInfoProvideDtvPostResponse:
+   requsstBodyReference: validateScheduleInfo/schema/validateScheduleInfoRequest.json
+   referenceData: validateScheduleInfo/schema/validateScheduleInfo.json 
+   cookies: 
+        uuid: provide-dtv
+   headers:
+      Referer: "installation.html"
+   testCaseName: validateScheduleInfoProvideDtvPostResponse
+   type: "POST"
+   url: "/apis/checkout/v1/scheduling/wireline/provide-dtv/appointments"
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial  
+  validateScheduleInfoProvideDtvGetResponse: 
+   cookies:
+        uuid: "provide-dtv"
+   referenceData: validateScheduleInfo/schema/validateScheduleInfo.json
+   headers:
+      Referer: "installation.html"
+   type: "GET"
+   url: "/apis/checkout/v1/scheduling/wireline/provide-dtv"
+   testCaseName: validateScheduleInfoProvideIptvVoipGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.scheduleAppointmentBean.email: sales.pvtuser@gmail.com
+     - payload.scheduleAppointmentBean.realTimeCalendarEnabled: false
+     - payload.scheduleAppointmentBean.calendarType: TECH
+     - payload.scheduleAppointmentBean.singleDispatchEligible: true
+     - payload.scheduleAppointmentBean.dateTimeslotSelectionType: defaultDateTimeslot
+     - payload.scheduleAppointmentBean.numberOfSTB: 1
+     - payload.scheduleAppointmentBean.primaryPhoneNum: 4334357654
+     - payload.morningAppointment: false
+     - payload.weekDayAppointment: false
+     - payload.preferenceCalendarEnabled: true
+   validationType: partial     

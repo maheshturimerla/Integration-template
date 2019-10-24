@@ -1,0 +1,297 @@
+testCases:
+  validateCarrierInfo4PostpaidWirelessCreditCPostResponse:
+   requsstBodyReference: validateCarrierInfo/schema/validateCarrierInfoRequest.json
+   cookies:
+        uuid: "4-postpaid-wireless-creditC-deposit"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/4-postpaid-wireless-creditC-deposit/?type=carrierInfo"
+   testCaseName: validateCarrierInfo4PostpaidWirelessCreditCPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateCarrierInfo4PostpaidWirelessCreditCGetResponse:
+   cookies:
+        uuid: "4-postpaid-wireless-creditC-deposit"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/4-postpaid-wireless-creditC-deposit/?type=carrierInfo"
+   testCaseName: validateCarrierInfo4PostpaidWirelessCreditCGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateCarrierInfoSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPostResponse:
+   requsstBodyReference: validateCarrierInfo/schema/validateCarrierInfoRequest.json
+   cookies:
+        uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/smartphone-next-term-downpayment-insurance-tablet-accessory/?type=carrierInfo"
+   testCaseName: validateCarrierInfoSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateCarrierInfoSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGetResponse:
+   cookies:
+        uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/smartphone-next-term-downpayment-insurance-tablet-accessory/?type=carrierInfo"
+   testCaseName: validateCarrierInfoSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.carrierInfo.address.losg19600001.id: ADDRESS_01
+     - payload.carrierInfo.address.losg19600001.addressType: S
+     - payload.carrierInfo.address.losg19600001.addressLine1: 20111 120TH AVE NE
+     - payload.carrierInfo.address.losg19600001.city: BOTHELL
+     - payload.carrierInfo.address.losg19600001.zipCode: 98011
+     - payload.carrierInfo.currentCarrierInfo[0].losgID: losg19600001
+     - payload.carrierInfo.currentCarrierInfo[0].phoneNumber: 3237493001
+     - payload.carrierInfo.currentCarrierInfo[0].type: consumer
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.firstName: ATTLOM
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.lastName: XLOW
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.ssn: XXXXX1376
+     - payload.carrierInfo.currentCarrierInfo[0].accountDetails.accountNumber: XXXXXXXXXXXXXXXXXXX
+   validationType: partial 
+  validateCarrierInfoSmartphoneNoCommitmentTermPostResponse:
+   requsstBodyReference: validateCarrierInfo/schema/validateCarrierInfoRequest.json
+   cookies:
+        uuid: "smartphone-no-commitment-term"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/smartphone-no-commitment-term/?type=carrierInfo"
+   testCaseName: validateCarrierInfoSmartphoneNoCommitmentTermPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateCarrierInfoSmartphoneNoCommitmentTermGetResponse:
+   cookies:
+        uuid: "smartphone-no-commitment-term"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/smartphone-no-commitment-term/?type=carrierInfo"
+   testCaseName: validateCarrierInfoSmartphoneNoCommitmentTermGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.carrierInfo.address.losg21470292.id: ADDRESS_01
+     - payload.carrierInfo.address.losg21470292.addressType: S
+     - payload.carrierInfo.address.losg21470292.addressLine1: 20111 120TH AVE NE
+     - payload.carrierInfo.address.losg21470292.city: BOTHELL
+     - payload.carrierInfo.address.losg21470292.zipCode: 98011
+     - payload.carrierInfo.currentCarrierInfo[0].losgID: losg21470292
+     - payload.carrierInfo.currentCarrierInfo[0].phoneNumber: 3237493001
+     - payload.carrierInfo.currentCarrierInfo[0].type: consumer
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.firstName: ATTLOM
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.lastName: XLOW
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.ssn: XXXXX1376
+     - payload.carrierInfo.currentCarrierInfo[0].accountDetails.accountNumber: XXXXXXXXXXXXXXXXXXX
+   validationType: partial 
+  validateCarrierInfoNewCitiFlowPostResponse:
+   requsstBodyReference: validateCarrierInfo/schema/validateCarrierInfoRequest.json
+   cookies:
+        uuid: "new-citi-flow"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/new-citi-flow/?type=carrierInfo"
+   testCaseName: validateCarrierInfoNewCitiFlowPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateCarrierInfoNewCitiFlowGetResponse:
+   cookies:
+        uuid: "new-citi-flow"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/new-citi-flow/?type=carrierInfo"
+   testCaseName: validateCarrierInfoNewCitiFlowGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.carrierInfo.address.losg21740101.id: ADDRESS_01
+     - payload.carrierInfo.address.losg21740101.addressType: S
+     - payload.carrierInfo.address.losg21740101.addressLine1: 20111 120TH AVE NE
+     - payload.carrierInfo.address.losg21740101.city: BOTHELL
+     - payload.carrierInfo.address.losg21740101.zipCode: 98011
+     - payload.carrierInfo.currentCarrierInfo[0].losgID: losg21740101
+     - payload.carrierInfo.currentCarrierInfo[0].phoneNumber: 3237493001
+     - payload.carrierInfo.currentCarrierInfo[0].type: consumer
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.firstName: ATTLOM
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.lastName: XLOW
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.ssn: XXXXX1376
+     - payload.carrierInfo.currentCarrierInfo[0].accountDetails.accountNumber: XXXXXXXXXXXXXXXXXXX
+   validationType: partial
+  validateCarrierInfoNewWirelessByodSimOnlyPostResponse:
+   requsstBodyReference: validateCarrierInfo/schema/validateCarrierInfoRequest.json
+   cookies:
+        uuid: "new-wireless-byod-simonly-flow"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/new-wireless-byod-simonly-flow/?type=carrierInfo"
+   testCaseName: validateCarrierInfoNewWirelessByodSimOnlyPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateCarrierInfoNewWirelessByodSimOnlyGetResponse:
+   cookies:
+        uuid: "new-wireless-byod-simonly-flow"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/new-wireless-byod-simonly-flow/?type=carrierInfo"
+   testCaseName: validateCarrierInfoNewWirelessByodSimOnlyGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.carrierInfo.address.losg43220014.id: ADDRESS_01
+     - payload.carrierInfo.address.losg43220014.addressType: S
+     - payload.carrierInfo.address.losg43220014.addressLine1: 20111 120TH AVE NE
+     - payload.carrierInfo.address.losg43220014.city: BOTHELL
+     - payload.carrierInfo.address.losg43220014.zipCode: 98011
+     - payload.carrierInfo.currentCarrierInfo[0].losgID: losg43220014
+     - payload.carrierInfo.currentCarrierInfo[0].phoneNumber: 3237493001
+     - payload.carrierInfo.currentCarrierInfo[0].type: consumer
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.firstName: ATTLOM
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.lastName: XLOW
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.ssn: XXXXX1376
+     - payload.carrierInfo.currentCarrierInfo[0].accountDetails.accountNumber: XXXXXXXXXXXXXXXXXXX
+   validationType: partial
+  validateCarrierInfoNewPostpaidC2SCredit$100PostResponse:
+   requsstBodyReference: validateCarrierInfo/schema/validateCarrierInfoRequest.json
+   cookies:
+        uuid: "new-postpaid-c2s-creditC-$100"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/new-postpaid-c2s-creditC-$100/?type=carrierInfo"
+   testCaseName: validateCarrierInfoNewPostpaidC2SCredit$100PostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateCarrierInfoNewPostpaidC2SCredit$100GetResponse:
+   cookies:
+        uuid: "new-postpaid-c2s-creditC-$100"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/new-postpaid-c2s-creditC-$100/?type=carrierInfo"
+   testCaseName:  validateCarrierInfoNewPostpaidC2SCredit$100GetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.carrierInfo.address.losg18780034.id: ADDRESS_01
+     - payload.carrierInfo.address.losg18780034.addressType: S
+     - payload.carrierInfo.address.losg18780034.addressLine1: 20111 120TH AVE NE
+     - payload.carrierInfo.address.losg18780034.city: BOTHELL
+     - payload.carrierInfo.address.losg18780034.zipCode: 98011
+     - payload.carrierInfo.currentCarrierInfo[0].losgID: losg18780034
+     - payload.carrierInfo.currentCarrierInfo[0].phoneNumber: 3237493001
+     - payload.carrierInfo.currentCarrierInfo[0].type: consumer
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.firstName: ATTLOM
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.lastName: XLOW
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.ssn: XXXXX1376
+     - payload.carrierInfo.currentCarrierInfo[0].accountDetails.accountNumber: XXXXXXXXXXXXXXXXXXX
+   validationType: partial
+  validateCarrierInfoDeviceOnlyPostResponse:
+   requsstBodyReference: validateCarrierInfo/schema/validateCarrierInfoRequest.json
+   cookies:
+        uuid: "device-only"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/device-only/?type=carrierInfo"
+   testCaseName: validateCarrierInfoDeviceOnlyPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateCarrierInfoDeviceOnlyGetResponse:
+   cookies:
+        uuid: "device-only"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/device-only/?type=carrierInfo"
+   testCaseName:  validateCarrierInfoDeviceOnlyGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.carrierInfo.address.losg18820015.id: ADDRESS_01
+     - payload.carrierInfo.address.losg18820015.addressType: S
+     - payload.carrierInfo.address.losg18820015.addressLine1: 20111 120TH AVE NE
+     - payload.carrierInfo.address.losg18820015.city: BOTHELL
+     - payload.carrierInfo.address.losg18820015.zipCode: 98011
+     - payload.carrierInfo.currentCarrierInfo[0].losgID: losg18820015
+     - payload.carrierInfo.currentCarrierInfo[0].phoneNumber: 3237493001
+     - payload.carrierInfo.currentCarrierInfo[0].type: consumer
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.firstName: ATTLOM
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.lastName: XLOW
+   validationType: partial
+  validateCarrierInfoSmartphoneMultiDeviceEnjoyPostResponse:
+   requsstBodyReference: validateCarrierInfo/schema/validateCarrierInfoRequest.json
+   cookies:
+        uuid: "smartphone-multi-device-enjoy"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "POST"
+   url: "/apis/checkout/v1/controller/smartphone-multi-device-enjoy/?type=carrierInfo"
+   testCaseName: validateCarrierInfoSmartphoneMultiDeviceEnjoyPostResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateCarrierInfoSmartphoneMultiDeviceEnjoyGetResponse:
+   cookies:
+        uuid: "smartphone-multi-device-enjoy"
+   referenceData: validateCarrierInfo/schema/validateCarrierInfo.json
+   headers:
+      Referer: "carrierinfo.html"
+   type: "GET"
+   url: "/apis/checkout/v1/controller/smartphone-multi-device-enjoy/?type=carrierInfo"
+   testCaseName:  validateCarrierInfoSmartphoneMultiDeviceEnjoyGetResponse
+   asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.carrierInfo.address.losg21470263.id: ADDRESS_01
+     - payload.carrierInfo.address.losg21470263.addressType: S
+     - payload.carrierInfo.address.losg21470263.addressLine1: 20111 120TH AVE NE
+     - payload.carrierInfo.address.losg21470263.city: BOTHELL
+     - payload.carrierInfo.address.losg21470263.zipCode: 98011
+     - payload.carrierInfo.currentCarrierInfo[0].losgID: losg21470263
+     - payload.carrierInfo.currentCarrierInfo[0].phoneNumber: 3237493001
+     - payload.carrierInfo.currentCarrierInfo[0].type: consumer
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.firstName: ATTLOM
+     - payload.carrierInfo.currentCarrierInfo[0].personalDetails.lastName: XLOW
+   validationType: partial          

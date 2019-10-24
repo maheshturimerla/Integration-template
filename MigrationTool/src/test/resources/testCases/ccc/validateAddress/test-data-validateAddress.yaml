@@ -1,0 +1,1509 @@
+--- 
+testCases: 
+  validateAddress4PostpaidWirelessCreditCGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.ppuAddress.losg18780021.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.ppuAddress.losg18780021.source: billing
+      - 
+        payload.address.shippingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: 4-postpaid-wireless-creditC-deposit
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddress4PostpaidWirelessCreditCGETResponse
+    type: GET
+    url: /apis/checkout/v1/controller/4-postpaid-wireless-creditC-deposit/?type=address
+    validationType: partial
+  validateAddress4PostpaidWirelessCreditCPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - payload.address.shippingAddress.matchingAddressObjects[0].addressLine1: "12516 NE 183RD ST APT 513"
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: 4-postpaid-wireless-creditC-deposit
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddress4PostpaidWirelessCreditCPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/4-postpaid-wireless-creditC-deposit/?type=address
+    validationType: partial
+  validateAddressAccessoryFlowGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.shippingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183rd ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: accessoryFlow
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressAccessoryFlowGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/accessoryFlow/?type=address,personal_info"
+    validationType: partial
+  validateAddressAccessoryFlowPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: accessoryFlow
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressAccessoryFlowPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/accessoryFlow/?type=address
+    validationType: partial
+  validateAddressDeviceOnlyGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.shippingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: device-only
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressDeviceOnlyGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/device-only/?type=address,personal_info"
+    validationType: partial
+  validateAddressDeviceOnlyPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - payload.address.shippingAddress.matchingAddressObjects[0].addressLine1: "12516 NE 183RD ST APT 513"
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json    
+    cookies: 
+      uuid: device-only
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressDeviceOnlyPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/device-only/?type=address
+    validationType: partial
+  validateAddressExpressUpgradeGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.shippingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.addressLine1: "1306 E BELT LINE RD"
+      - 
+        payload.address.ppuAddress.ppuAddress.addressLine1: "1306 E BELT LINE RD"
+      - 
+        payload.address.billingAddress.city: RICHARDSON
+      - 
+        payload.address.billingAddress.zipCode: "75081"
+      - 
+        payload.address.billingAddress.state: TX
+    body: ""
+    cookies: 
+      uuid: express-upgrade
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressExpressUpgradeGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/express-upgrade/?type=address,personalInfo"
+    validationType: partial
+  validateAddressExpressUpgradePOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: express-upgrade
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressExpressUpgradePOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/express-upgrade/?type=address
+    validationType: partial
+  validateAddressModifyDtvAddingSubsAccessoriesExpressCheckoutGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "17435 OAK PARK ROW"
+      - 
+        payload.address.billingAddress.addressLine1: "1640 MAPLE DR"
+      - 
+        payload.address.billingAddress.city: "CHULA VISTA"
+      - 
+        payload.address.billingAddress.zipCode: "91911"
+      - 
+        payload.address.billingAddress.state: CA
+    body: ""
+    cookies: 
+      uuid: modify-dtv-adding-subs-accessories-express-checkout
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifyDtvAddingSubsAccessoriesExpressCheckoutGETResponse
+    type: GET
+    url: /apis/checkout/v1/controller/modify-dtv-adding-subs-accessories-express-checkout/?type=address
+    validationType: partial
+  validateAddressModifyDtvAddingSubsAccessoriesExpressCheckoutPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: modify-dtv-adding-subs-accessories-express-checkout
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifyDtvAddingSubsAccessoriesExpressCheckoutPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/modify-dtv-adding-subs-accessories-express-checkout/?type=address
+    validationType: partial
+  validateAddressModifyDtvHsiaVoipNonPublishedListingGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "1716 CHATTANOOGA PL"
+      - 
+        payload.address.billingAddress.addressLine1: "PO Box 4697"
+      - 
+        payload.address.billingAddress.city: Logan
+      - 
+        payload.address.billingAddress.zipCode: "84323"
+      - 
+        payload.address.billingAddress.state: UT
+    body: ""
+    cookies: 
+      uuid: modify-dtv-hsia-voip-non-published-listing
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifyDtvHsiaVoipNonPublishedListingGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-dtv-hsia-voip-non-published-listing/?type=address,personal_info"
+    validationType: partial
+  validateAddressModifyDtvHsiaVoipNonPublishedListingPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: modify-dtv-hsia-voip-non-published-listing
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifyDtvHsiaVoipNonPublishedListingPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/modify-dtv-hsia-voip-non-published-listing/?type=address
+    validationType: partial
+  validateAddressModifyDtvRtpProductsGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "15630 W ST FRANCIS DR"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: modify-dtv-rtpproducts
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifyDtvRtpProductsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-dtv-rtpproducts/?type=address,personal_info"
+    validationType: partial
+  validateAddressModifyDtvRtpProductsPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    cookies: 
+      uuid: modify-dtv-rtpproducts
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: "address,personal_info"
+    referenceData: validateAddress/schema/validateAddress.json
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    testCaseName: validateAddressModifyDtvRtpProductsPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-dtv-rtpproducts/?address,personal_info"
+    validationType: partial
+  validateAddressModifyExistingIptvHighriskAddingVoipGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "3400 MORRIS ST"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: modify-existing-iptv-highrisk-adding-voip
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifyExistingIptvHighriskAddingVoipGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-existing-iptv-highrisk-adding-voip/?type=address,personal_info"
+    validationType: partial
+  validateAddressModifyExistingIptvHighriskAddingVoipPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    cookies: 
+      uuid: modify-existing-iptv-highrisk-adding-voip
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    testCaseName: validateAddressModifyExistingIptvHighriskAddingVoipPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/modify-existing-iptv-highrisk-adding-voip/?type=address
+    validationType: partial
+  validateAddressModifyIptvAddReceiverSelfInstallHybridGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "2511 RESTON"
+      - 
+        payload.address.billingAddress.addressLine1: "2511 Reston Dr"
+      - 
+        payload.address.billingAddress.city: "San Antonio"
+      - 
+        payload.address.billingAddress.zipCode: "78232"
+      - 
+        payload.address.billingAddress.state: TX
+    body: ""
+    cookies: 
+      uuid: modify-iptv-add-receiver-selfInstall-hybrid-checkout
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifyIptvAddReceiverSelfInstallHybridGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-iptv-add-receiver-selfInstall-hybrid-checkout/?type=address,personal_info"
+    validationType: partial
+  validateAddressModifyIptvAddReceiverSelfInstallHybridPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: modify-iptv-add-receiver-selfInstall-hybrid-checkout
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: "address,personal_info"
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifyIptvAddReceiverSelfInstallHybridPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-iptv-add-receiver-selfInstall-hybrid-checkout/?address,personal_info"
+    validationType: partial
+  validateAddressModifyIptvHisaVoipModifyAllGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "2511 RESTON"
+      - 
+        payload.address.billingAddress.addressLine1: "2511 Reston Dr"
+      - 
+        payload.address.billingAddress.city: "SAN ANTONIO"
+      - 
+        payload.address.billingAddress.zipCode: "78232"
+      - 
+        payload.address.billingAddress.state: TX
+    body: ""
+    cookies: 
+      uuid: modify-iptvhisavoip-modifyall
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifyIptvHisaVoipModifyAllGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-iptvhisavoip-modifyall/?type=address,personal_info"
+    validationType: partial
+  validateAddressModifyIptvHisaVoipModifyAllPOSTResponse:
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    headers:
+      Referer: "addresses.html"
+    cookies:
+      uuid: "modify-iptvhisavoip-modifyall"
+    params:
+      type: "address"
+    referenceData: "validateAddress/schema/validateAddress.json"
+    testCaseName: validateAddressModifyIptvHisaVoipModifyAllPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/modify-iptvhisavoip-modifyall/?type=address"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateAddressModifySmbHsiaAddDtvBusinessAppsGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "1716 CHATTANOOGA PL"
+      - 
+        payload.address.billingAddress.addressLine1: "PO Box 4697"
+      - 
+        payload.address.billingAddress.city: Logan
+      - 
+        payload.address.billingAddress.zipCode: "84323"
+      - 
+        payload.address.billingAddress.state: UT
+    body: ""
+    cookies: 
+      uuid: modify-smb-hsia-add-dtv-businessApps
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifySmbHsiaAddDtvBusinessAppsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-smb-hsia-add-dtv-businessApps/?type=address,personalInfo"
+    validationType: partial
+  validateAddressModifySmbHsiaAddDtvBusinessAppsPOSTResponse:
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json 
+    cookies: 
+      uuid: modify-smb-hsia-add-dtv-businessApps
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifySmbHsiaAddDtvBusinessAppsPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-smb-hsia-add-dtv-businessApps/?type=address,businessInfo"
+    asserts: 
+      - response.status: success
+      - response.redirect: false
+    validationType: partial
+  validateAddressModifySmbIptvHsiaProvideVoipPortInGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: modify-smb-iptv-hsia-provide-voip-portIn
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifySmbIptvHsiaProvideVoipPortInGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-smb-iptv-hsia-provide-voip-portIn/?type=address,personalInfo"
+    validationType: partial
+  validateAddressModifySmbIptvHsiaProvideVoipPortInPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - payload.address.billingAddress.matchingAddressObjects[0].addressLine1: "12516 NE 183RD ST APT 513"
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: modify-smb-iptv-hsia-provide-voip-portIn
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifySmbIptvHsiaProvideVoipPortInPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/modify-smb-iptv-hsia-provide-voip-portIn/?type=address
+    validationType: partial
+  validateAddressModifySmbPotsAddHsiaTechInstallGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.billingAddress.addressLine1: "HANOOVER COURT CONDO"
+      - 
+        payload.address.billingAddress.city: MOUNTAIN BRK
+      - 
+        payload.address.billingAddress.zipCode: "35223"
+      - 
+        payload.address.billingAddress.state: AL
+    body: ""
+    cookies: 
+      uuid: modify-smb-existing-pots-highrisk-add-hsia-tech-install
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifySmbPotsAddHsiaTechInstallGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-smb-existing-pots-highrisk-add-hsia-tech-install/?type=address,personal_info"
+    validationType: partial
+  validateAddressModifySmbPotsAddHsiaTechInstallPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: modify-smb-existing-pots-highrisk-add-hsia-tech-install
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressModifySmbPotsAddHsiaTechInstallPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/modify-smb-existing-pots-highrisk-add-hsia-tech-install/?address
+    validationType: partial
+  validateAddressNewCitiFlowGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.ppuAddress.losg21740101.addressLine1: "8139 GREENHOLLOW LN"
+      - 
+        payload.address.ppuAddress.losg21740101.source: billing
+      - 
+        payload.address.shippingAddress.addressLine1: "8139 GREENHOLLOW LN"
+      - 
+        payload.address.billingAddress.addressLine1: "8139 GREENHOLLOW LN"
+      - 
+        payload.address.billingAddress.city: DALLAS
+      - 
+        payload.address.billingAddress.zipCode: "75240"
+      - 
+        payload.address.billingAddress.state: TX
+    body: ""
+    cookies: 
+      uuid: new-citi-flow
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressNewCitiFlowGETResponse
+    type: GET
+    url: /apis/checkout/v1/controller/new-citi-flow/?type=address
+    validationType: partial
+  validateAddressNewCitiFlowPOSTResponse:
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    headers:
+      Referer: "addresses.html"
+    cookies:
+      uuid: "new-citi-flow"
+    params:
+      type: "address"
+    referenceData: "validateAddress/schema/validateAddress.json"
+    testCaseName: validateAddressNewCitiFlowPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/new-citi-flow/?type=address"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.address.shippingAddress.matchingAddressObjects[0].addressLine1: "8139 GREENHOLLOW LN"
+    validationType: partial
+  validateAddressNewDtvHsiaVoipHighRiskGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "18827 STAR GAZER WAY"
+      - 
+        payload.address.serviceAddress.city: PFLUGERVILLE
+      - 
+        payload.address.serviceAddress.state: TX
+      - 
+        payload.address.serviceAddress.zipCode: "78660"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: new-dtv-hsia-voip-high-unkonwn-risk
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressNewDtvHsiaVoipHighRiskGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/new-dtv-hsia-voip-high-unkonwn-risk/?type=address,personalInfo"
+    validationType: partial
+  validateAddressNewDtvHsiaVoipHighRiskPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - payload.address.billingAddress.matchingAddressObjects[0].addressLine1: "12516 NE 183rd ST APT 513"
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: new-dtv-hsia-voip-high-unkonwn-risk
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressNewDtvHsiaVoipHighRiskPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/new-dtv-hsia-voip-high-unkonwn-risk/?type=address
+    validationType: partial
+  validateAddressNewPostPaidDownPaymentGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.shippingAddress.addressLine1: "8139 GREENHOLLOW LN"
+      - 
+        payload.address.billingAddress.addressLine1: "8139 GREENHOLLOW LN"
+      - 
+        payload.address.billingAddress.city: DALLAS
+      - 
+        payload.address.billingAddress.zipCode: "75240"
+      - 
+        payload.address.billingAddress.state: TX
+    body: ""
+    cookies: 
+      uuid: new-postpaid-down-payment
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressNewPostPaidDownPaymentGETResponse
+    type: GET
+    url: /apis/checkout/v1/controller/new-postpaid-down-payment/?type=address
+    validationType: partial
+  validateAddressNewPostPaidDownPaymentPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - payload.address.shippingAddress.matchingAddressObjects[0].addressLine1: "8139 GREENHOLLOW LN"
+    cookies: 
+      uuid: new-postpaid-down-payment
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    testCaseName: validateAddressNewPostPaidDownPaymentPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/new-postpaid-down-payment/?type=address
+    validationType: partial
+  validateAddressNewPostpaidC2SCredit$100GETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.billingAddress.addressLine1: "8139 GREENHOLLOW LN"
+      - 
+        payload.address.ppuAddress.losg18780034.source: billing
+      - 
+        payload.address.billingAddress.city: DALLAS
+      - 
+        payload.address.billingAddress.zipCode: "75240"
+      - 
+        payload.address.billingAddress.state: TX
+    body: ""
+    cookies: 
+      uuid: new-postpaid-c2s-creditC-$100
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressNewPostpaidC2SCredit$100GETResponse
+    type: GET
+    url: /apis/checkout/v1/controller/new-postpaid-c2s-creditC-$100/?type=address
+    validationType: partial
+  validateAddressNewPostpaidC2SCredit$100PostResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    cookies: 
+      uuid: new-postpaid-c2s-creditC-$100
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: "address,personal_info"
+    referenceData: validateAddress/schema/validateAddress.json
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    testCaseName: validateAddressNewPostpaidC2SCredit$100PostResponse
+    type: POST
+    url: /apis/checkout/v1/controller/new-postpaid-c2s-creditC-$100/?address
+    validationType: partial
+  validateAddressNewPostpaidNextDPCreditCGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.ppuAddress.losg18780034.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.ppuAddress.losg18780034.source: billing
+      - 
+        payload.address.shippingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+    body: ""
+    cookies: 
+      uuid: new-postpaid-nextDP-creditC
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressNewPostpaidNextDPCreditCGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/new-postpaid-nextDP-creditC/?type=address,personalInfo"
+    validationType: partial
+  validateAddressNewPostpaidNextDPCreditCPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - payload.address.shippingAddress.matchingAddressObjects[0].addressLine1: "12516 NE 183RD ST APT 513"
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: new-postpaid-nextDP-creditC
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressNewPostpaidNextDPCreditCPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/new-postpaid-nextDP-creditC/?type=address
+    validationType: partial
+  validateAddressNewWirelessByodSimOnlyGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.ppuAddress.losg43220014.source: billing
+      - 
+        payload.address.shippingAddress.addressLine1: "8139 GREENHOLLOW LN"
+      - 
+        payload.address.billingAddress.addressLine1: "8139 GREENHOLLOW LN"
+    body: ""
+    cookies: 
+      uuid: new-wireless-byod-simonly-flow
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressNewWirelessByodSimOnlyGETResponse
+    type: GET
+    url: /apis/checkout/v1/controller/new-wireless-byod-simonly-flow/?type=address
+    validationType: partial
+  validateAddressNewWirelessByodSimOnlyPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - payload.address.shippingAddress.matchingAddressObjects[0].addressLine1: "8139 GREENHOLLOW LN"
+    cookies: 
+      uuid: new-wireless-byod-simonly-flow
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: "address,personal_info"
+    referenceData: validateAddress/schema/validateAddress.json
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    testCaseName: validateAddressNewWirelessByodSimOnlyPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/new-wireless-byod-simonly-flow/?address
+    validationType: partial
+  validateAddressProvideDtvGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "314 MAPLE CT"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: provide-dtv
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideDtvGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-dtv/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideDtvPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: provide-dtv
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: "address,personal_info"
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideDtvPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-dtv/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideHsiaGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "625 CENTER"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: provide-hsia
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideHsiaGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-hsia/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideHsiaPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    cookies: 
+      uuid: provide-hsia
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: "address,personal_info"
+    referenceData: validateAddress/schema/validateAddress.json
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    testCaseName: validateAddressProvideHsiaPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-hsia/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideIptvVoipGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "18827 Star Gazer Way "
+      - 
+        payload.address.serviceAddress.city: "MUSCLE SHOALS"
+      - 
+        payload.address.serviceAddress.state: AL
+      - 
+        payload.address.serviceAddress.zipCode: "78660"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183rd ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: provide-iptv-voip
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideIptvVoipGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-iptv-voip/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideIptvVoipPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: provide-iptv-voip
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideIptvVoipPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/provide-iptv-voip/?type=address
+    validationType: partial
+  validateAddressProvideIptvVoipPortinGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "18827 Star Gazer Way "
+      - 
+        payload.address.serviceAddress.city: "MUSCLE SHOALS"
+      - 
+        payload.address.serviceAddress.state: AL
+      - 
+        payload.address.serviceAddress.zipCode: "78660"
+    body: ""
+    cookies: 
+      uuid: provide-iptv-voip-portin
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideIptvVoipPortinGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-iptv-voip-portin/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideIptvVoipPortinPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: provide-iptv-voip-portin
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideIptvVoipPortinPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/provide-iptv-voip-portin/?type=address
+    validationType: partial
+  validateAddressProvideSMBBusinessAppsGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "314 MAPLE CT"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: smb-provide-business-apps
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideSMBBusinessAppsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smb-provide-business-apps/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideSMBBusinessAppsPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - payload.address.billingAddress.matchingAddressObjects[0].addressLine1: "12516 NE 183RD ST APT 513"
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: smb-provide-business-apps
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideSMBBusinessAppsPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/smb-provide-business-apps/?type=address
+    validationType: partial
+  validateAddressProvideSmbDslPotsGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "4800 WILLOW BLUFF CIR"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: provide-smb-dsl-pots
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideSmbDslPotsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-pots/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideSmbDslPotsPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: provide-smb-dsl-pots
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: "address,personal_info"
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideSmbDslPotsPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-pots/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideSmbDslSelfInstallGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "4800 WILLOW BLUFF CIR"
+      - 
+        payload.address.businessAddress.addressLine1: "4800 WILLOW BLUFF CIR "
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: provide-smb-dsl-self-install
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideSmbDslSelfInstallGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-self-install/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideSmbDslSelfInstallPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: provide-smb-dsl-self-install
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: "address,personal_info"
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideSmbDslSelfInstallPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-self-install/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideSmbDtvGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "314 MAPLE CT"
+      - 
+        payload.address.billingAddress.matchingAddressObjects[0].addressLine1 : "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: smb-provide-new-dtv-flow
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideSmbDtvGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideSmbDtvHsiaVoipHighRiskGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: provide-smb-dtv-hsia-voip-high-unkonwn-risk
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideSmbDtvHsiaVoipHighRiskGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-smb-dtv-hsia-voip-high-unkonwn-risk/?type=address,personalInfo"
+    validationType: partial
+  validateAddressProvideSmbDtvHsiaVoipHighRiskPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: provide-smb-dtv-hsia-voip-high-unkonwn-risk
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideSmbDtvHsiaVoipHighRiskPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/provide-smb-dtv-hsia-voip-high-unkonwn-risk/?type=address
+    validationType: partial
+  validateAddressProvideSmbDtvPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    cookies: 
+      uuid: smb-provide-new-dtv-flow
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: "address,personal_info"
+    referenceData: validateAddress/schema/validateAddress.json
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    testCaseName: validateAddressProvideSmbDtvPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow/?type=address"
+    validationType: partial
+  validateAddressReplaceYourDeviceFlowGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.billingAddress.addressLine1: "12150 RESEARCH PKWY"
+      - 
+        payload.address.billingAddress.city: ORLANDO
+      - 
+        payload.address.billingAddress.zipCode: "32826"
+      - 
+        payload.address.billingAddress.state: FL
+    body: ""
+    cookies: 
+      uuid: replace-your-device-flow
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressReplaceYourDeviceFlowGETResponse
+    type: GET
+    url: /apis/checkout/v1/controller/replace-your-device-flow/?type=address
+    validationType: partial
+  validateAddressReplaceYourDeviceFlowPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - payload.address.shippingAddress.matchingAddressObjects[0].addressLine1: "12516 NE 183RD ST APT 513"
+    cookies: 
+      uuid: replace-your-device-flow
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: "address,personal_info"
+    referenceData: validateAddress/schema/validateAddress.json
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    testCaseName: validateAddressReplaceYourDeviceFlowPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/replace-your-device-flow/?address
+    validationType: partial
+  validateAddressSmartphoneMultiDeviceEnjoyGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.ppuAddress.losg21470266.addressLine1: "12516 NE 183rd ST APT 513"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: smartphone-multi-device-enjoy
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressSmartphoneMultiDeviceEnjoyGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smartphone-multi-device-enjoy/?type=address,personal_info"
+    validationType: partial
+  validateAddressSmartphoneMultiDeviceEnjoyPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: smartphone-multi-device-enjoy
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressSmartphoneMultiDeviceEnjoyPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/smartphone-multi-device-enjoy/?type=address
+    validationType: partial
+  validateAddressSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.shippingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: smartphone-next-term-downpayment-insurance-tablet-accessory
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smartphone-next-term-downpayment-insurance-tablet-accessory/?type=address,personal_info"
+    validationType: partial
+  validateAddressSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: smartphone-next-term-downpayment-insurance-tablet-accessory
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/smartphone-next-term-downpayment-insurance-tablet-accessory/?type=address
+    validationType: partial
+  validateAddressSmartphoneNoCommitmentTermGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.ppuAddress.losg21470292.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.ppuAddress.losg21470292.source: billing
+      - 
+        payload.address.shippingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: smartphone-no-commitment-term
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressSmartphoneNoCommitmentTermGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smartphone-no-commitment-term/?type=address,personalInfo"
+    validationType: partial
+  validateAddressSmartphoneNoCommitmentTermPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    cookies: 
+      uuid: smartphone-no-commitment-term
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressSmartphoneNoCommitmentTermPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/smartphone-no-commitment-term/?type=address
+    validationType: partial
+  validateAddressSmbModifyExtDslAddingHsiaBizAppsGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "1050 NINE NORTH DR"
+      - 
+        payload.address.billingAddress.addressLine1: "12516 NE 183rd ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: smb-modify-extdsl-addinghsia-bizapps
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressSmbModifyExtDslAddingHsiaBizAppsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smb-modify-extdsl-addinghsia-bizapps/?type=address,personal_info"
+    validationType: partial
+  validateAddressSmbModifyExtDslAddingHsiaBizAppsPOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    cookies: 
+      uuid: smb-modify-extdsl-addinghsia-bizapps
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: address
+    referenceData: validateAddress/schema/validateAddress.json
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    testCaseName: validateAddressSmbModifyExtDslAddingHsiaBizAppsPOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/smb-modify-extdsl-addinghsia-bizapps/?type=address
+    validationType: partial
+  validateAddressProvideSmbDtvFailureGETResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+      - 
+        payload.address.serviceAddress.addressLine1: "314 MAPLE CT"
+      - payload.address.billingAddress.matchingAddressObjects[0].addressLine1: "12516 NE 183RD ST APT 513"
+      - 
+        payload.address.billingAddress.city: BOTHELL
+      - 
+        payload.address.billingAddress.zipCode: "98011"
+      - 
+        payload.address.billingAddress.state: WA
+    body: ""
+    cookies: 
+      uuid: smb-provide-new-dtv-flow-failure
+    params: 
+      serviceType: None
+    referenceData: validateAddress/schema/validateAddress.json
+    testCaseName: validateAddressProvideSmbDtvFailureGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow-failure/?type=address,personal_info"
+    validationType: partial
+  validateAddressProvideSmbDtvFailurePOSTResponse: 
+    asserts: 
+      - 
+        response.status: success
+      - 
+        response.redirect: false
+    cookies: 
+      uuid: smb-provide-new-dtv-flow-failure
+    headers: 
+      Referer: addresses.html
+    params: 
+      type: "address,personal_info"
+    referenceData: validateAddress/schema/validateAddress.json
+    requsstBodyReference: validateAddress/schema/validateAddressRequest.json
+    testCaseName: validateAddressProvideSmbDtvFailurePOSTResponse
+    type: POST
+    url: /apis/checkout/v1/controller/smb-provide-new-dtv-flow-failure/?type=address
+    validationType: partial

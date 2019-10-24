@@ -1,0 +1,19 @@
+{
+    "sales_scenarios": {
+    
+		"namedcache": "scenarios",
+		"contenttype": "application/json",
+		"version": "1.0",
+		"cachettl": "10800",
+		"backingmapttl": "2592000",
+		"maxlength": 2097152,
+		"strictvalidation" : "false",
+	
+		"data": {
+		  "versions": {
+				"v1":{
+				}
+			}
+		}
+    }
+}

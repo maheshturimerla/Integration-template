@@ -1,0 +1,1630 @@
+---
+testCases:
+  verifyStatusAPIResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-new-dtv-flow"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: verifyStatusAPIResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow/?type=status"
+    validationType: actual
+  validateBusinessInfoProvideSmbDtvPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "smb-provide-new-dtv-flow"
+    headers:
+      Referer: "businessinfo.html"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideSmbDtvPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow/?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+
+  validatePersonalInfoProvideSmbDtvPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "smb-provide-new-dtv-flow"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideSmbDtvPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+
+  validatePersonalInfoProvideSmbDtvGETResponse:
+    body: ""
+    cookies:
+      uuid: smb-provide-new-dtv-flow
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideSmbDtvGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validateBusinessInfoProvideSmbDtvGETResponse:
+    body: ""
+    cookies:
+      uuid: smb-provide-new-dtv-flow
+    headers:
+      Referer: "businessinfo.html"
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideSmbDtvGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.businessCreditInfo.businessCreditInfoList[0].firstName: "Sales"
+     - payload.businessCreditInfo.businessCreditInfoList[0].lastName: "Kumar"
+     - payload.businessCreditInfo.businessCreditInfoList[0].phoneNumber: "9618444408"
+     - payload.businessCreditInfo.businessCreditInfoList[0].email: "sales.kumar@gmail.com"
+     - payload.businessCreditInfo.businessCreditInfoList[0].identityType: "SSN"
+     - payload.businessCreditInfo.businessCreditInfoList[0].maskedIdentityNumber: "XXXXX1376"
+     - payload.businessCreditInfo.businessCreditInfoList[0].dob: "XXXXXXXXXX"
+     - payload.address.businessAddress.addressLine1: "314 MAPLE CT"
+     - payload.businessInfo.registered_business_name: "Business Name 123"
+    validationType: partial
+
+
+  validateBusinessInfoProvideSmbDtvFailurePOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "smb-provide-new-dtv-flow-failure"
+    headers:
+      Referer: "businessinfo.html"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideSmbDtvFailurePOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow-failure/?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+
+  validatePersonalInfoProvideSmbDtvFailurePOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "smb-provide-new-dtv-flow-failure"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideSmbDtvFailurePOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow-failure/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+
+  validatePersonalInfoProvideSmbDtvFailureGETResponse:
+    body: ""
+    cookies:
+      uuid: smb-provide-new-dtv-flow-failure
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideSmbDtvFailureGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow-failure?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validateBusinessInfoProvideSmbDtvFailureGETResponse:
+    body: ""
+    cookies:
+      uuid: smb-provide-new-dtv-flow-failure
+    headers:
+      Referer: "businessinfo.html"
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideSmbDtvFailureGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow-failure?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.businessCreditInfo.businessCreditInfoList[0].firstName: "Sales"
+     - payload.businessCreditInfo.businessCreditInfoList[0].lastName: "Kumar"
+     - payload.businessCreditInfo.businessCreditInfoList[0].phoneNumber: "9618444408"
+     - payload.businessCreditInfo.businessCreditInfoList[0].email: "sales.kumar@gmail.com"
+     - payload.businessCreditInfo.businessCreditInfoList[0].identityType: "SSN"
+     - payload.businessCreditInfo.businessCreditInfoList[0].maskedIdentityNumber: "XXXXX1376"
+     - payload.businessCreditInfo.businessCreditInfoList[0].dob: "XXXXXXXXXX"
+     - payload.address.businessAddress.addressLine1: "314 MAPLE CT "
+     - payload.businessInfo.registered_business_name: "Business Name 123"
+    validationType: partial
+  validateBusinessInfoProvideHsiaPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: provide-hsia
+    headers:
+      Referer: "businessinfo.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideHsiaPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-hsia/?type=address,businessInfo,businessCreditInfo"
+    validationType: actual
+
+  validatePersonalInfoProvideHsiaPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: provide-hsia
+    params:
+      type: "personalInfo,creditInfo"
+    headers:
+      Referer: "personal.html"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideHsiaPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-hsia/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateBusinessInfoProvideSmbDslPotsPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: provide-smb-dsl-pots
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    headers:
+      Referer: "businessinfo.html"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideSmbDslPotsPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-pots/?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoProvideSmbDslPotsPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: provide-smb-dsl-pots
+    params:
+      type: "personalInfo,creditInfo"
+    headers:
+      Referer: "personal.html"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideSmbDslPotsPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-pots/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoProvideHsiaGETResponse:
+    body: ""
+    cookies:
+      uuid: provide-hsia
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideHsiaGETResponse
+    type: GET
+    url: /apis/checkout/v1/controller/provide-hsia?type=personalInfo,creditInfo
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validateBusinessInfoProvideHsiaGETResponse:
+    body: ""
+    cookies:
+      uuid: provide-hsia
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideHsiaGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-hsia?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.businessCreditInfo.businessCreditInfoList[0].firstName: "Sales"
+     - payload.businessCreditInfo.businessCreditInfoList[0].lastName: "Kumar"
+     - payload.businessCreditInfo.businessCreditInfoList[0].phoneNumber: "9618444408"
+     - payload.businessCreditInfo.businessCreditInfoList[0].email: "sales.kumar@gmail.com"
+     - payload.businessCreditInfo.businessCreditInfoList[0].identityType: "SSN"
+     - payload.businessCreditInfo.businessCreditInfoList[0].maskedIdentityNumber: "XXXXX1376"
+     - payload.businessCreditInfo.businessCreditInfoList[0].dob: "XXXXXXXXXX"
+     - payload.address.businessAddress.addressLine1: "12516 NE 183RD ST APT 513"
+     - payload.businessInfo.registered_business_name: "Business Name 123"
+    validationType: partial
+  validatePersonalInfoProvideSmbDslPotsGETResponse:
+    body: ""
+    cookies:
+      uuid: provide-smb-dsl-pots
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideSmbDslPotsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-pots?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validateBusinessInfoProvideSmbDslPotsGETResponse:
+    body: ""
+    cookies:
+      uuid: provide-smb-dsl-pots
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideSmbDslPotsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-pots?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.businessCreditInfo.businessCreditInfoList[0].firstName: "Sales"
+     - payload.businessCreditInfo.businessCreditInfoList[0].lastName: "Kumar"
+     - payload.businessCreditInfo.businessCreditInfoList[0].phoneNumber: "9618444408"
+     - payload.businessCreditInfo.businessCreditInfoList[0].email: "sales.kumar@gmail.com"
+     - payload.businessCreditInfo.businessCreditInfoList[0].identityType: "SSN"
+     - payload.businessCreditInfo.businessCreditInfoList[0].maskedIdentityNumber: "XXXXX1376"
+     - payload.businessCreditInfo.businessCreditInfoList[0].dob: "XXXXXXXXXX"
+     - payload.address.businessAddress.addressLine1: "4800 WILLOW BLUFF CIR "
+     - payload.businessInfo.registered_business_name: "Business Name 123"
+    validationType: partial
+
+
+
+# will start here
+  validatePersonalInfoProvideDtvPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "provide-dtv"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideDtvPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-dtv/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoProvideDtvGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-dtv"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideDtvGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-dtv?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.creditInfo.dob : XXXXXXXXXX
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoAccessoryFlowPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "accessoryFlow"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoAccessoryFlowPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/accessoryFlow/?type=personalInfo"
+    validationType: actual
+  validatePersonalInfoAccessoryFlowGETResponse:
+    body: ""
+    cookies:
+      uuid: "accessoryFlow"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoAccessoryFlowGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/accessoryFlow?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Surya"
+     - payload.personalInfo.lastName: "Vellore"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+    validationType: partial
+
+
+  validatePersonalInfoDeviceOnlyPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "device-only"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoDeviceOnlyPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/device-only/?type=personalInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoDeviceOnlyGETResponse:
+    body: ""
+    cookies:
+      uuid: "device-only"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoDeviceOnlyGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/device-only?type=personalInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+    validationType: partial
+  validatePersonalInfoSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/smartphone-next-term-downpayment-insurance-tablet-accessory/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smartphone-next-term-downpayment-insurance-tablet-accessory?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.creditInfo.maskedIdentityNumber: "XXXXX1376"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoSmartphoneMultiDeviceEnjoyPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoSmartphoneMultiDeviceEnjoyPOSTResponse    
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+    type: POST
+    url: "/apis/checkout/v1/controller/smartphone-multi-device-enjoy/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoSmartphoneMultiDeviceEnjoyGETResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoSmartphoneMultiDeviceEnjoyGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smartphone-multi-device-enjoy/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.creditInfo.maskedIdentityNumber: "XXXXX1376"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoProvideSMBBusinessAppsPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "smb-provide-business-apps"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideSMBBusinessAppsPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/smb-provide-business-apps/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoProvideSMBBusinessAppsGETResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-business-apps"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideSMBBusinessAppsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smb-provide-business-apps/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validateBusinessInfoProvideSMBBusinessAppsPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "smb-provide-business-apps"
+    headers:
+      Referer: "businessinfo.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideSMBBusinessAppsPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/smb-provide-business-apps/?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateBusinessInfoProvideSMBBusinessAppsGETResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-business-apps"
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideSMBBusinessAppsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smb-provide-business-apps/?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.businessCreditInfo.businessCreditInfoList[0].firstName: "Sales"
+     - payload.businessCreditInfo.businessCreditInfoList[0].lastName: "Kumar"
+     - payload.businessCreditInfo.businessCreditInfoList[0].phoneNumber: "9618444408"
+     - payload.businessCreditInfo.businessCreditInfoList[0].email: "sales.kumar@gmail.com"
+     - payload.businessCreditInfo.businessCreditInfoList[0].identityType: "SSN"
+     - payload.businessCreditInfo.businessCreditInfoList[0].maskedIdentityNumber: "XXXXX1376"
+     - payload.businessCreditInfo.businessCreditInfoList[0].dob: "XXXXXXXXXX"
+    validationType: partial
+
+  validatePersonalInfoNewPostPaidDownPaymentPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoNewPostPaidDownPaymentPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/new-postpaid-down-payment/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePersonalInfoNewPostPaidDownPaymentGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoNewPostPaidDownPaymentGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/new-postpaid-down-payment?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.creditInfo.maskedIdentityNumber: "XXXXX1376"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoNewWirelessByodSimOnlyPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "new-wireless-byod-simonly-flow"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoNewWirelessByodSimOnlyPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/new-wireless-byod-simonly-flow/?type=personalInfo,creditInfo"
+    validationType: actual
+  validatePersonalInfoNewWirelessByodSimOnlyGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-wireless-byod-simonly-flow"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoNewWirelessByodSimOnlyGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/new-wireless-byod-simonly-flow?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "hari.pvtuser@gmail.com"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.creditInfo.maskedIdentityNumber: "XXXXX1376"
+    validationType: partial
+
+  validatePersonalInfoModifyDtvAddingSubsAccessoriesExpressCheckoutPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifyDtvAddingSubsAccessoriesExpressCheckoutPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-dtv-adding-subs-accessories-express-checkout/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoModifyDtvAddingSubsAccessoriesExpressCheckoutGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifyDtvAddingSubsAccessoriesExpressCheckoutGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-dtv-adding-subs-accessories-express-checkout?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.preferredContactMethod: "email"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoModifyDtvRtpProductsPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "modify-dtv-rtpproducts"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifyDtvRtpProductsPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-dtv-rtpproducts/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoModifyDtvRtpProductsGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-rtpproducts"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifyDtvRtpProductsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-dtv-rtpproducts?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "hari.pvtuser@gmail.com"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+     - payload.personalInfo.preferredContactMethod: "email"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+    validationType: partial
+  validatePersonalInfoModifyIptvHisaVoipModifyAllPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "modify-iptvhisavoip-modifyall"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifyIptvHisaVoipModifyAllPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-iptvhisavoip-modifyall/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoModifyIptvHisaVoipModifyAllGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptvhisavoip-modifyall"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifyIptvHisaVoipModifyAllGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-iptvhisavoip-modifyall?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.preferredContactMethod: "email"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoModifyIptvAddReceiverSelfInstallHybridPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifyIptvAddReceiverSelfInstallHybridPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-iptv-add-receiver-selfInstall-hybrid-checkout/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoModifyIptvAddReceiverSelfInstallHybridGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifyIptvAddReceiverSelfInstallHybridGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-iptv-add-receiver-selfInstall-hybrid-checkout?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "hari.pvtuser@gmail.com"
+     - payload.personalInfo.preferredContactMethod: "email"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoNewCitiFlowPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "new-citi-flow"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoNewCitiFlowPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/new-citi-flow/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoNewCitiFlowGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-citi-flow"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoNewCitiFlowGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/new-citi-flow?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.creditInfo.maskedIdentityNumber: "XXXXX1376"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoProvideIptvVoipPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "provide-iptv-voip"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideIptvVoipPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-iptv-voip/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoProvideIptvVoipGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-iptv-voip"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideIptvVoipGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-iptv-voip?type=personalInfo,creditInfo"
+    asserts:
+    - response.status: success
+    - response.redirect: false
+    - payload.personalInfo.firstName: "Sales"
+    - payload.personalInfo.lastName: "Testing"
+    - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+    - payload.creditInfo.dob: "XXXXXXXXXX"
+    - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoProvideIptvVoipPortinPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "provide-iptv-voip-portin"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideIptvVoipPortinPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-iptv-voip-portin/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePersonalInfoProvideIptvVoipPortinGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-iptv-voip-portin"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideIptvVoipPortinGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-iptv-voip-portin?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoModifyDtvHsiaVoipNonPublishedListingPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "modify-dtv-hsia-voip-non-published-listing"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifyDtvHsiaVoipNonPublishedListingPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-dtv-hsia-voip-non-published-listing/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoModifyDtvHsiaVoipNonPublishedListingGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-hsia-voip-non-published-listing"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifyDtvHsiaVoipNonPublishedListingGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-dtv-hsia-voip-non-published-listing?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.preferredContactMethod: "email"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoSmartphoneNoCommitmentTermPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "smartphone-no-commitment-term"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoSmartphoneNoCommitmentTermPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/smartphone-no-commitment-term/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoSmartphoneNoCommitmentTermGETResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-no-commitment-term"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoSmartphoneNoCommitmentTermGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smartphone-no-commitment-term/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.creditInfo.maskedIdentityNumber: "XXXXX1376"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial 
+  validatePersonalInfoModifySmbIptvHsiaProvideVoipPortInPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifySmbIptvHsiaProvideVoipPortInPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-smb-iptv-hsia-provide-voip-portIn/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoModifySmbIptvHsiaProvideVoipPortInGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifySmbIptvHsiaProvideVoipPortInGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-smb-iptv-hsia-provide-voip-portIn/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.preferredContactMethod: "email"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+
+  validateBusinessInfoModifySmbIptvHsiaProvideVoipPortInGETResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: modify-smb-iptv-hsia-provide-voip-portIn
+    headers:
+      Referer: "businessinfo.html"
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoModifySmbIptvHsiaProvideVoipPortInGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-smb-iptv-hsia-provide-voip-portIn?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.businessCreditInfo.identityType: "SSN"
+     - payload.businessCreditInfo.maskedIdentityNumber: "XXXXX1376"
+     - payload.businessCreditInfo.dob: "XXXXXXXXXX"
+     - payload.address.businessAddress.addressLine1: "1050 NINE NORTH DR"
+     - payload.businessInfo.registered_business_name: "WEAVER DISTRIBUTORS; INC"
+    validationType: partial
+
+  validateBusinessInfoModifySmbIptvHsiaProvideVoipPortInPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: modify-smb-iptv-hsia-provide-voip-portIn
+    headers:
+      Referer: "businessinfo.html"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoModifySmbIptvHsiaProvideVoipPortInPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-smb-iptv-hsia-provide-voip-portIn/?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+
+  validatePersonalInfo4PostpaidWirelessCreditCPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "4-postpaid-wireless-creditC-deposit"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfo4PostpaidWirelessCreditCPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/4-postpaid-wireless-creditC-deposit/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfo4PostpaidWirelessCreditCGETResponse:
+    body: ""
+    cookies:
+      uuid: "4-postpaid-wireless-creditC-deposit"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfo4PostpaidWirelessCreditCGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/4-postpaid-wireless-creditC-deposit/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.creditInfo.maskedIdentityNumber: "XXXXX1376"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoNewPostpaidNextDPCreditCPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "new-postpaid-nextDP-creditC"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoNewPostpaidNextDPCreditCPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/new-postpaid-nextDP-creditC/?type=personalInfo,creditInfo"
+    asserts:
+    - response.status: success
+    - response.redirect: false
+    validationType: partial
+  validatePersonalInfoNewPostpaidNextDPCreditCGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-nextDP-creditC"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoNewPostpaidNextDPCreditCGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/new-postpaid-nextDP-creditC/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "ONALD"
+     - payload.personalInfo.lastName: "NGCBLK"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.creditInfo.maskedIdentityNumber: "XXXXX6872"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial 
+  validatePersonalInfoNewDtvHsiaVoipHighRiskPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoNewDtvHsiaVoipHighRiskPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/new-dtv-hsia-voip-high-unkonwn-risk/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoNewDtvHsiaVoipHighRiskGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoNewDtvHsiaVoipHighRiskGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/new-dtv-hsia-voip-high-unkonwn-risk/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoProvideSmbDslSelfInstallPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "provide-smb-dsl-self-install"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideSmbDslSelfInstallPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-self-install/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePersonalInfoProvideSmbDslSelfInstallGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-self-install"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideSmbDslSelfInstallGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-self-install/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoModifySmbHsiaAddDtvBusinessAppsPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "modify-smb-hsia-add-dtv-businessApps"
+    headers:
+      Referer: "businessinfo.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifySmbHsiaAddDtvBusinessAppsPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-smb-hsia-add-dtv-businessApps/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoModifySmbHsiaAddDtvBusinessAppsGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-hsia-add-dtv-businessApps"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifySmbHsiaAddDtvBusinessAppsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-smb-hsia-add-dtv-businessApps/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "VICTOR"
+     - payload.personalInfo.lastName: "MARTINEZ"
+     - payload.personalInfo.email: "qay104860607@att.net"
+     - payload.personalInfo.preferredContactMethod: "email"
+     - payload.personalInfo.contactNumbers[0].number: "2142679700"
+    validationType: partial
+ 
+  validatePersonalInfoExpressUpgradePOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "express-upgrade"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoExpressUpgradePOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/express-upgrade/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoExpressUpgradeGETResponse:
+    body: ""
+    cookies:
+      uuid: "express-upgrade"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoExpressUpgradeGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/express-upgrade?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "hari.pvtuser@gmail.com"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+
+  validateBusinessInfoProvideSmbDtvHsiaVoipHighRiskPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    headers:
+      Referer: "businessinfo.html"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideSmbDtvHsiaVoipHighRiskPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-smb-dtv-hsia-voip-high-unkonwn-risk/?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoProvideSmbDtvHsiaVoipHighRiskPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideSmbDtvHsiaVoipHighRiskPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-smb-dtv-hsia-voip-high-unkonwn-risk/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoProvideSmbDtvHsiaVoipHighRiskGETResponse:
+    body: ""
+    cookies:
+      uuid: provide-smb-dtv-hsia-voip-high-unkonwn-risk
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoProvideSmbDtvHsiaVoipHighRiskGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-smb-dtv-hsia-voip-high-unkonwn-risk?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateBusinessInfoProvideSmbDtvHsiaVoipHighRiskGETResponse:
+    body: ""
+    cookies:
+      uuid: provide-smb-dtv-hsia-voip-high-unkonwn-risk
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideSmbDtvHsiaVoipHighRiskGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-smb-dtv-hsia-voip-high-unkonwn-risk?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.businessCreditInfo.businessCreditInfoList[0].firstName: "Sales"
+     - payload.businessCreditInfo.businessCreditInfoList[0].lastName: "Kumar"
+     - payload.businessCreditInfo.businessCreditInfoList[0].phoneNumber: "9618444408"
+     - payload.businessCreditInfo.businessCreditInfoList[0].email: "sales.kumar@gmail.com"
+     - payload.businessCreditInfo.businessCreditInfoList[0].identityType: "SSN"
+     - payload.businessCreditInfo.businessCreditInfoList[0].maskedIdentityNumber: "XXXXX1376"
+     - payload.businessCreditInfo.businessCreditInfoList[0].dob: "XXXXXXXXXX"
+     - payload.address.businessAddress.addressLine1: "3232 PURDUE AVE "
+     - payload.businessInfo.registered_business_name: "Business Name 123"
+    validationType: partial
+  validatePersonalInfoSmbModifyExtDslAddingHsiaBizAppsPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoSmbModifyExtDslAddingHsiaBizAppsPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/smb-modify-extdsl-addinghsia-bizapps/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoSmbModifyExtDslAddingHsiaBizAppsGETResponse:
+    body: ""
+    cookies:
+      uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoSmbModifyExtDslAddingHsiaBizAppsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smb-modify-extdsl-addinghsia-bizapps/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.preferredContactMethod: "email"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validateBusinessInfoSmbModifyExtDslAddingHsiaBizAppsGETResponse:
+    body: ""
+    cookies:
+      uuid: smb-modify-extdsl-addinghsia-bizapps
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoSmbModifyExtDslAddingHsiaBizAppsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/smb-modify-extdsl-addinghsia-bizapps?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.businessCreditInfo.businessCreditInfoList[0].firstName: "Sales"
+     - payload.businessCreditInfo.businessCreditInfoList[0].lastName: "Kumar"
+     - payload.businessCreditInfo.businessCreditInfoList[0].phoneNumber: "9618444408"
+     - payload.businessCreditInfo.businessCreditInfoList[0].email: "sales.kumar@gmail.com"
+     - payload.businessCreditInfo.businessCreditInfoList[0].identityType: "SSN"
+     - payload.businessCreditInfo.businessCreditInfoList[0].maskedIdentityNumber: "XXXXX1376"
+     - payload.address.businessAddress.addressLine1: "1050 NINE NORTH DR"
+     - payload.businessInfo.registered_business_name: "WEAVER DISTRIBUTORS; INC"
+    validationType: partial
+  validateBusinessInfoSmbModifyExtDslAddingHsiaBizAppsPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: smb-modify-extdsl-addinghsia-bizapps
+    headers:
+      Referer: "businessinfo.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoSmbModifyExtDslAddingHsiaBizAppsPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/smb-modify-extdsl-addinghsia-bizapps/?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoModifySmbPotsAddHsiaTechInstallGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifySmbPotsAddHsiaTechInstallGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-smb-existing-pots-highrisk-add-hsia-tech-install?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.preferredContactMethod: "email"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoModifySmbPotsAddHsiaTechInstallPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifySmbPotsAddHsiaTechInstallPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-smb-existing-pots-highrisk-add-hsia-tech-install/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateBusinessInfoModifySmbPotsAddHsiaTechInstallGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoModifySmbPotsAddHsiaTechInstallGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-smb-existing-pots-highrisk-add-hsia-tech-install?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.businessCreditInfo.businessCreditInfoList[0].firstName: "Sales"
+     - payload.businessCreditInfo.businessCreditInfoList[0].lastName: "Kumar"
+     - payload.businessCreditInfo.businessCreditInfoList[0].phoneNumber: "9618444408"
+     - payload.businessCreditInfo.businessCreditInfoList[0].email: "sales.kumar@gmail.com"
+     - payload.businessCreditInfo.businessCreditInfoList[0].identityType: "SSN"
+     - payload.businessCreditInfo.businessCreditInfoList[0].maskedIdentityNumber: "XXXXX1376"
+     - payload.businessCreditInfo.businessCreditInfoList[0].dob: "XXXXXXXXXX"
+     - payload.address.businessAddress.addressLine1: "2620 HIGHLAND AV"
+     - payload.businessInfo.registered_business_name: "BOOTHBY REALTY"
+    validationType: partial
+  validateBusinessInfoModifySmbPotsAddHsiaTechInstallPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    headers:
+      Referer: "businessinfo.html"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoModifySmbPotsAddHsiaTechInstallPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-smb-existing-pots-highrisk-add-hsia-tech-install/?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoModifyExistingIptvHighriskAddingVoipPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "modify-existing-iptv-highrisk-adding-voip"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifyExistingIptvHighriskAddingVoipPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-existing-iptv-highrisk-adding-voip/?type=personalInfo,creditInfo"
+    validationType: actual
+  validatePersonalInfoModifyExistingIptvHighriskAddingVoipGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-existing-iptv-highrisk-adding-voip"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoModifyExistingIptvHighriskAddingVoipGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-existing-iptv-highrisk-adding-voip?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.preferredContactMethod: "email"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+    validationType: partial
+  validatePersonalInfoReplaceYourDeviceFlowPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "replace-your-device-flow"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoReplaceYourDeviceFlowPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/replace-your-device-flow/?type=personalInfo,creditInfo"
+    validationType: actual
+  validatePersonalInfoReplaceYourDeviceFlowGETResponse:
+    body: ""
+    cookies:
+      uuid: "replace-your-device-flow"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoReplaceYourDeviceFlowGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/replace-your-device-flow?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "hari.pvtuser@gmail.com"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+  #   - payload.creditInfo.dob: "XXXXXXXXXX"
+  #   - payload.creditInfo.maskedIdentityNumber: "XXXXX1376"
+    validationType: partial
+  validateBusinessInfoProvideSmbDslSelfInstallPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: provide-smb-dsl-self-install
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    headers:
+      Referer: "businessinfo.html"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideSmbDslSelfInstallPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-self-install/?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateBusinessInfoProvideSmbDslSelfInstallGETResponse:
+    body: ""
+    cookies:
+      uuid: provide-smb-dsl-self-install
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoProvideSmbDslSelfInstallGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-self-install?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.businessCreditInfo.businessCreditInfoList[0].firstName: "Sales"
+     - payload.businessCreditInfo.businessCreditInfoList[0].lastName: "Kumar"
+     - payload.businessCreditInfo.businessCreditInfoList[0].phoneNumber: "9618444408"
+     - payload.businessCreditInfo.businessCreditInfoList[0].email: "sales.kumar@gmail.com"
+     - payload.businessCreditInfo.businessCreditInfoList[0].identityType: "SSN"
+     - payload.businessCreditInfo.businessCreditInfoList[0].maskedIdentityNumber: "XXXXX1376"
+     - payload.businessCreditInfo.businessCreditInfoList[0].dob: "XXXXXXXXXX"
+     - payload.address.businessAddress.addressLine1: "4800 WILLOW BLUFF CIR "
+     - payload.businessInfo.registered_business_name: "Business Name 123"
+    validationType: partial
+  validateBusinessInfoModifySmbHsiaAddDtvBusinessAppsPOSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "modify-smb-hsia-add-dtv-businessApps"
+    headers:
+      Referer: "businessinfo.html"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoModifySmbHsiaAddDtvBusinessAppsPOSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/modify-smb-hsia-add-dtv-businessApps/?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateBusinessInfoModifySmbHsiaAddDtvBusinessAppsGETResponse:
+    body: ""
+    cookies:
+      uuid: modify-smb-hsia-add-dtv-businessApps
+    params:
+      type: "address,businessInfo,businessCreditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validateBusinessInfoModifySmbHsiaAddDtvBusinessAppsGETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/modify-smb-hsia-add-dtv-businessApps?type=address,businessInfo,businessCreditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.businessCreditInfo.businessCreditInfoList[0].firstName: "VICTOR"
+     - payload.businessCreditInfo.businessCreditInfoList[0].lastName: "MARTINEZ"
+     - payload.businessCreditInfo.businessCreditInfoList[0].phoneNumber: "2142679700"
+     - payload.businessCreditInfo.businessCreditInfoList[0].email: "qay104860607@att.net"
+     - payload.businessCreditInfo.businessCreditInfoList[0].identityType: "fedtaxid"
+     - payload.businessCreditInfo.businessCreditInfoList[0].maskedIdentityNumber: "XXXXX6789"
+     - payload.address.businessAddress.addressLine1: "1716 CHATTANOOGA PL"
+     - payload.businessInfo.registered_business_name: "B Comp Rosemont at Arlington Park"
+    validationType: partial
+  validatePersonalInfoNewPostpaidC2SCredit$100POSTResponse:
+    requsstBodyReference: validatePersonalInfo/schema/validatePersonalInfoRequest.json
+    cookies:
+      uuid: "new-postpaid-c2s-creditC-$100"
+    headers:
+      Referer: "personal.html"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoNewPostpaidC2SCredit$100POSTResponse
+    type: POST
+    url: "/apis/checkout/v1/controller/new-postpaid-c2s-creditC-$100/?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePersonalInfoNewPostpaidC2SCredit$100GETResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-c2s-creditC-$100"
+    params:
+      type: "personalInfo,creditInfo"
+    referenceData: validatePersonalInfo/schema/validatePersonalInfo.json
+    testCaseName: validatePersonalInfoNewPostpaidC2SCredit$100GETResponse
+    type: GET
+    url: "/apis/checkout/v1/controller/new-postpaid-c2s-creditC-$100?type=personalInfo,creditInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.personalInfo.firstName: "Sales"
+     - payload.personalInfo.lastName: "Testing"
+     - payload.personalInfo.email: "sales.pvtuser@gmail.com"
+     - payload.personalInfo.contactNumbers[0].number: "4334357654"
+     - payload.creditInfo.dob: "XXXXXXXXXX"
+     - payload.creditInfo.maskedIdentityNumber: "XXXXX1376"
+    validationType: partial

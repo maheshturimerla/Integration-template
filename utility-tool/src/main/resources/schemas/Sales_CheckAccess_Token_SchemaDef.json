@@ -1,0 +1,15 @@
+{
+	"sales_checkout_access_token": {
+		"namedcache": "accesstoken",
+		"cachettl": 1800,
+		"backingmapttl": 20000,
+		"maxlength": 10000,
+		"strictvalidation": "false",
+		"token": {
+			"versions": {
+				"v1": {
+				}
+			}
+		}
+	}
+}

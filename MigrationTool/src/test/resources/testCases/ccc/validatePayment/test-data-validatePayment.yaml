@@ -1,0 +1,1657 @@
+
+testCases: 
+  validatePaymentProvideSmbDtvPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    cookies:
+      uuid: "smb-provide-new-dtv-flow"
+    headers:
+      Referer: "payment.html"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideSmbDtvPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow/?paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.transactionSuccess: true
+    validationType: partial
+  validatePaymentProvideSmbDtvGETResponse:
+    body: ""
+    cookies: 
+      uuid: "smb-provide-new-dtv-flow"
+    params: 
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideSmbDtvGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX2784
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 12
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2017
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: true
+     - payload.paymentInfo.onlyDTVInCart: true
+    validationType: partial
+  validatePaymentProvideSmbDtvFailurePOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    cookies:
+      uuid: "smb-provide-new-dtv-flow-failure"
+    headers:
+      Referer: "payment.html"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideSmbDtvFailurePOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow-failure/?paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.transactionSuccess: true
+    validationType: partial
+  validatePaymentProvideSmbDtvFailureGETResponse:
+    body: ""
+    cookies: 
+      uuid: "smb-provide-new-dtv-flow-failure"
+    params: 
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideSmbDtvFailureGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/smb-provide-new-dtv-flow-failure/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX2784
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 12
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2017
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: true
+     - payload.paymentInfo.onlyDTVInCart: true
+    validationType: partial
+  validatePaymentProvideHsiaGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-hsia"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideHsiaGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/provide-hsia/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX2784
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 12
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2017
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.metadata.extraData.autoPayKey: Voluntary
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentProvideHsiaPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "provide-hsia"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideHsiaPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/provide-hsia/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentProvideSmbDslPotsGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-pots"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideSmbDslPotsGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-pots/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX2784
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 12
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2017
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+    # - payload.paymentInfo.metadata.extraData: {}
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentProvideSmbDslPotsPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "provide-smb-dsl-pots"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideSmbDslPotsPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-pots/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentProvideDtvGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-dtv"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideDtvGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/provide-dtv/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX2784
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 12
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2017
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     #- payload.paymentInfo.metadata.extraData: {}
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: true
+     - payload.paymentInfo.autopayEnrolled: false
+     - payload.paymentInfo.onlyDTVInCart: true
+    validationType: partial
+  validatePaymentProvideDtvPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "provide-dtv"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideDtvPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/provide-dtv/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentAccessoryFlowGETResponse:
+    body: ""
+    cookies:
+      uuid: "accessoryFlow"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentAccessoryFlowGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/accessoryFlow/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePaymentAccessoryFlowPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "accessoryFlow"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentAccessoryFlowPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/accessoryFlow/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePaymentDeviceOnlyGETResponse:
+    body: ""
+    cookies:
+      uuid: "device-only"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentDeviceOnlyGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/device-only/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX2784
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 12
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2017
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireless
+     #- payload.paymentInfo.metadata.extraData: {}
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 368.5
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentDeviceOnlyPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "device-only"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentDeviceOnlyPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/device-only/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentSmartphoneNextTermDownpaymentInsuranceTabletAccessoryGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/smartphone-next-term-downpayment-insurance-tablet-accessory/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.metadata.lob[0]: wireless
+     - payload.paymentInfo.metadata.extraData.btmPaymentMaxAmount: 0.0
+     - payload.paymentInfo.metadata.extraData.btmPaymentAvailable: false
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 130.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "smartphone-next-term-downpayment-insurance-tablet-accessory"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentSmartphoneNextTermDownpaymentInsuranceTabletAccessoryPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/smartphone-next-term-downpayment-insurance-tablet-accessory/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentSmartphoneMultiDeviceEnjoyGETResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentSmartphoneMultiDeviceEnjoyGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/smartphone-multi-device-enjoy/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireless
+     - payload.paymentInfo.metadata.extraData.btmPaymentMaxAmount: 0.0
+     - payload.paymentInfo.metadata.extraData.btmPaymentAvailable: false
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.upgradeFlow: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentSmartphoneMultiDeviceEnjoyPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "smartphone-multi-device-enjoy"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentSmartphoneMultiDeviceEnjoyPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/smartphone-multi-device-enjoy/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentProvideSMBBusinessAppsGETResponse:
+    body: ""
+    cookies:
+      uuid: "smb-provide-business-apps"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideSMBBusinessAppsGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/smb-provide-business-apps/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX2784
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 12
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2017
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+    # - payload.paymentInfo.metadata.extraData: {}
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentProvideSMBBusinessAppsPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "smb-provide-business-apps"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideSMBBusinessAppsPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/smb-provide-business-apps/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentNewPostPaidDownPaymentGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentNewPostPaidDownPaymentGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/new-postpaid-down-payment/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireless
+     - payload.paymentInfo.metadata.extraData.btmPaymentMaxAmount: 0.0
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 100.0
+     - payload.paymentInfo.totalDueTodayFee: 100.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentNewPostPaidDownPaymentPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "new-postpaid-down-payment"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentNewPostPaidDownPaymentPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/new-postpaid-down-payment/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentNewWirelessByodSimOnlyGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-wireless-byod-simonly-flow"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentNewWirelessByodSimOnlyGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/new-wireless-byod-simonly-flow/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireless
+     - payload.paymentInfo.metadata.extraData.btmPaymentMaxAmount: 0
+     - payload.paymentInfo.metadata.extraDatabtmPaymentAvailable: false
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+
+  validatePaymentNewWirelessByodSimOnlyPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "new-wireless-byod-simonly-flow"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentNewWirelessByodSimOnlyPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/new-wireless-byod-simonly-flow/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePaymentModifyDtvAddingSubsAccessoriesExpressCheckoutGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyDtvAddingSubsAccessoriesExpressCheckoutGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/modify-dtv-adding-subs-accessories-express-checkout/?type=paymentInfo"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.metadata.extraData.autoPayKey: Voluntary
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.autopayEnrolled: false
+     - payload.paymentInfo.dtvunified: true
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false 
+    validationType: partial
+  validatePaymentModifyDtvAddingSubsAccessoriesExpressCheckoutPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyDtvAddingSubsAccessoriesExpressCheckoutPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/modify-dtv-adding-subs-accessories-express-checkout/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentModifyDtvRtpProductsGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-rtpproducts"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyDtvRtpProductsGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/modify-dtv-rtpproducts/?type=paymentInfo"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.metadata.extraData.autoPayKey: Voluntary
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.autopayEnrolled: false
+     - payload.paymentInfo.dtvunified: true
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: true
+    validationType: partial
+  validatePaymentModifyDtvRtpProductsPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "modify-dtv-rtpproducts"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyDtvRtpProductsPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/modify-dtv-rtpproducts/?type=paymentInfo"
+    validationType: actual
+  validatePaymentModifyIptvAddReceiverSelfInstallHybridGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyIptvAddReceiverSelfInstallHybridGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/modify-iptv-add-receiver-selfInstall-hybrid-checkout/?type=paymentInfo"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber: XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.metadata.extraData.autoPayKey: Voluntary
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.autopayEnrolled: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false 
+    validationType: partial
+
+  validatePaymentModifyIptvAddReceiverSelfInstallHybridPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyIptvAddReceiverSelfInstallHybridPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/modify-iptv-add-receiver-selfInstall-hybrid-checkout/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePaymentModifyIptvHisaVoipModifyAllPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "modify-iptvhisavoip-modifyall"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyIptvHisaVoipModifyAllPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/modify-iptvhisavoip-modifyall/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentModifyIptvHisaVoipModifyAllGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptvhisavoip-modifyall"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyIptvHisaVoipModifyAllGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/modify-iptvhisavoip-modifyall/?type=paymentInfo"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.metadata.extraData.autoPayKey: Voluntary
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.autopayEnrolled: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false 
+    validationType: partial
+  validatePaymentModifyIptvHisaVoipModifyAllPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "modify-iptvhisavoip-modifyall"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyIptvHisaVoipModifyAllPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/modify-iptvhisavoip-modifyall/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentModifyIptvHisaVoipModifyAllGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-iptvhisavoip-modifyall"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyIptvHisaVoipModifyAllGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/modify-iptvhisavoip-modifyall/?type=paymentInfo"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0  
+    validationType: partial
+  validatePayment4PostpaidWirelessCreditCPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "4-postpaid-wireless-creditC-deposit"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePayment4PostpaidWirelessCreditCPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/4-postpaid-wireless-creditC-deposit/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePayment4PostpaidWirelessCreditCGETResponse:
+    body: ""
+    cookies:
+      uuid: "4-postpaid-wireless-creditC-deposit"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePayment4PostpaidWirelessCreditCGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/4-postpaid-wireless-creditC-deposit/?type=paymentInfo"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: false
+     - payload.paymentInfo.metadata.lob[0]: wireless  
+     - payload.paymentInfo.metadata.extraData.btmPaymentMaxAmount: 0.0
+     - payload.paymentInfo.metadata.extraData.btmPaymentAvailable: false
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 602.5
+     - payload.paymentInfo.totalDueTodayFee: 602.5
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false  
+    validationType: partial
+  validatePaymentNewPostpaidNextDPCreditCPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "new-postpaid-nextDP-creditC"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentNewPostpaidNextDPCreditCPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/new-postpaid-nextDP-creditC/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentNewPostpaidNextDPCreditCGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-nextDP-creditC"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentNewPostpaidNextDPCreditCGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/new-postpaid-nextDP-creditC/?type=paymentInfo"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireless
+     - payload.paymentInfo.metadata.extraData.btmPaymentMaxAmount: 0.0
+     - payload.paymentInfo.metadata.extraData.btmPaymentAvailable: false
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 100.0
+     - payload.paymentInfo.totalDueTodayFee: 200.0
+#     - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 100.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentNewDtvHsiaVoipHighRiskPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentNewDtvHsiaVoipHighRiskPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/new-dtv-hsia-voip-high-unkonwn-risk/?type=paymentInfo"
+    validationType: actual
+  validatePaymentNewDtvHsiaVoipHighRiskGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentNewDtvHsiaVoipHighRiskGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/new-dtv-hsia-voip-high-unkonwn-risk/?type=paymentInfo"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0 
+    validationType: partial
+    
+    
+  validatePaymentNewCitiFlowPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "new-citi-flow"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentNewCitiFlowPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/new-citi-flow/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentNewCitiFlowGETResponse:
+    body: ""
+    cookies:
+      uuid: "new-citi-flow"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentNewCitiFlowGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/new-citi-flow/?type=paymentInfo"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX2200
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 07
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2019
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 32256  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireless
+     - payload.paymentInfo.metadata.extraData.btmPaymentMaxAmount: 0.0
+     - payload.paymentInfo.metadata.extraData.citiFlow: true
+     - payload.paymentInfo.metadata.extraData.plentiPointsEligible: true
+     - payload.paymentInfo.metadata.extraData.citiAccessCardMessage: true
+     - payload.paymentInfo.metadata.extraData.btmPaymentAvailable: false
+     - payload.paymentInfo.metadata.extraData.storePickupOrder: true
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 949.99
+     - payload.paymentInfo.totalDueTodayFee: 1028.36
+     - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false 
+    validationType: partial
+  validatePaymentProvideIptvVoipPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "provide-iptv-voip"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideIptvVoipPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/provide-iptv-voip/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentProvideIptvVoipGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-iptv-voip"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideIptvVoipGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/provide-iptv-voip/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.metadata.extraData.autoPayKey: Mandatory
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false 
+    validationType: partial
+  validatePaymentProvideIptvVoipPortinPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "provide-iptv-voip-portin"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideIptvVoipPortinPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/provide-iptv-voip-portin/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePaymentProvideIptvVoipPortinGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-iptv-voip-portin"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideIptvVoipPortinGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/provide-iptv-voip-portin/?type=paymentInfo"
+    asserts:
+     - response.status: SUCCESS
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.metadata.extraData.autoPayKey: Mandatory
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.autopayEnrolled: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false  
+    validationType: partial   
+  validatePaymentModifyDtvHsiaVoipNonPublishedListingPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "modify-dtv-hsia-voip-non-published-listing"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyDtvHsiaVoipNonPublishedListingPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/modify-dtv-hsia-voip-non-published-listing/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePaymentModifyDtvHsiaVoipNonPublishedListingGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-dtv-hsia-voip-non-published-listing"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyDtvHsiaVoipNonPublishedListingGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/modify-dtv-hsia-voip-non-published-listing/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.metadata.extraData.autoPayKey: Voluntary
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.autopayEnrolled: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentReplaceYourDeviceFlowPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "replace-your-device-flow"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentReplaceYourDeviceFlowPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/replace-your-device-flow/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentReplaceYourDeviceFlowGETResponse:
+    body: ""
+    cookies:
+      uuid: "replace-your-device-flow"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentReplaceYourDeviceFlowGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/replace-your-device-flow/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireless
+     - payload.paymentInfo.metadata.extraData.btmPaymentMaxAmount: 0.0
+     - payload.paymentInfo.metadata.extraData.btmPaymentAvailable: false
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 299.99
+     - payload.paymentInfo.totalDueTodayFee: 329.99
+     - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentSmartphoneNoCommitmentTermPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "smartphone-no-commitment-term"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentSmartphoneNoCommitmentTermPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/smartphone-no-commitment-term/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentSmartphoneNoCommitmentTermGETResponse:
+    body: ""
+    cookies:
+      uuid: "smartphone-no-commitment-term"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentSmartphoneNoCommitmentTermGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/smartphone-no-commitment-term/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireless
+     - payload.paymentInfo.metadata.extraData.btmPaymentMaxAmount: 0.0
+     - payload.paymentInfo.metadata.extraData.btmPaymentAvailable: false
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 769.99
+     - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentModifySmbHsiaAddDtvBusinessAppsPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "modify-smb-hsia-add-dtv-businessApps"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifySmbHsiaAddDtvBusinessAppsPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/modify-smb-hsia-add-dtv-businessApps/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentModifySmbHsiaAddDtvBusinessAppsGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-hsia-add-dtv-businessApps"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifySmbHsiaAddDtvBusinessAppsGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/modify-smb-hsia-add-dtv-businessApps/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.metadata.extraData.autoPayKey: Voluntary
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: true
+     - payload.paymentInfo.onlyDTVInCart: true
+    validationType: partial
+  validatePaymentProvideSmbDslSelfInstallPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "provide-smb-dsl-self-install"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideSmbDslSelfInstallPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-self-install/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePaymentProvideSmbDslSelfInstallGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dsl-self-install"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideSmbDslSelfInstallGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/provide-smb-dsl-self-install/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+   #  - payload.paymentInfo.metadata.extraData: {}
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+
+  validatePaymentModifySmbIptvHsiaProvideVoipPortInPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifySmbIptvHsiaProvideVoipPortInPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/modify-smb-iptv-hsia-provide-voip-portIn/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePaymentModifySmbIptvHsiaProvideVoipPortInGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-smb-iptv-hsia-provide-voip-portIn"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifySmbIptvHsiaProvideVoipPortInGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/modify-smb-iptv-hsia-provide-voip-portIn/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.metadata.extraData.autoPayKey: Voluntary
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentExpressUpgradePOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "express-upgrade"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentExpressUpgradePOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/express-upgrade/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePaymentExpressUpgradeGETResponse:
+    body: ""
+    cookies:
+      uuid: "express-upgrade"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentExpressUpgradeGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/express-upgrade/?type=paymentInfo"
+    asserts:
+      - response.status: success
+      - response.redirect: false
+      - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+      - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+      - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+      - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+      - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+      - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+      - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+      - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+      - payload.paymentInfo.metadata.lob[0]: wireless
+      - payload.paymentInfo.creditManagementFee: 0.0
+      - payload.paymentInfo.dueToday: 0.0
+      - payload.paymentInfo.totalDueTodayFee: 0.0
+      - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+      - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+      - payload.paymentInfo.showAutoPayDiscount: false
+      - payload.paymentInfo.paperlessBillingOptIn: false
+      - payload.paymentInfo.dtvunified: false
+      - payload.paymentInfo.wirelessDepositAmount: 0.0
+      - payload.paymentInfo.creditCardOnFile: false
+      - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentProvideSmbDtvHsiaVoipHighRiskPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideSmbDtvHsiaVoipHighRiskPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/provide-smb-dtv-hsia-voip-high-unkonwn-risk/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+
+  validatePaymentProvideSmbDtvHsiaVoipHighRiskGETResponse:
+    body: ""
+    cookies:
+      uuid: "provide-smb-dtv-hsia-voip-high-unkonwn-risk"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentProvideSmbDtvHsiaVoipHighRiskGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/provide-smb-dtv-hsia-voip-high-unkonwn-risk/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0 
+    validationType: partial
+  validatePaymentModifySmbPotsAddHsiaTechInstallPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    cookies:
+      uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    headers:
+      Referer: "payment.html"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifySmbPotsAddHsiaTechInstallPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/modify-smb-existing-pots-highrisk-add-hsia-tech-install/?paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentModifySmbPotsAddHsiaTechInstallGETResponse:
+    body: ""
+    cookies: 
+      uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    params: 
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifySmbPotsAddHsiaTechInstallGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/modify-smb-existing-pots-highrisk-add-hsia-tech-install/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.metadata.extraData.autoPayKey: Voluntary
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false 
+     
+    validationType: partial
+  validatePaymentSmbModifyExtDslAddingHsiaBizAppsPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentSmbModifyExtDslAddingHsiaBizAppsPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/smb-modify-extdsl-addinghsia-bizapps/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentSmbModifyExtDslAddingHsiaBizAppsGETResponse:
+    body: ""
+    cookies:
+      uuid: "smb-modify-extdsl-addinghsia-bizapps"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentSmbModifyExtDslAddingHsiaBizAppsGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/smb-modify-extdsl-addinghsia-bizapps/?type=paymentInfo"
+    asserts:
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expMonth: 04
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.expYear: 2020
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.name: SALES TESTING
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.appliedTo[0]: duetoday
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.billingZipCode: 98011  
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.metadata.lob[0]: wireline
+     - payload.paymentInfo.metadata.extraData.autoPayKey: Voluntary
+     - payload.paymentInfo.creditManagementFee: 0.0
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0
+     - payload.paymentInfo.wirelessSecurityDepositAmount: 0.0
+     - payload.paymentInfo.dtvSecurityFeeAmount: 0.0
+     - payload.paymentInfo.showAutoPayDiscount: false
+     - payload.paymentInfo.paperlessBillingOptIn: false
+     - payload.paymentInfo.dtvunified: false
+     - payload.paymentInfo.wirelessDepositAmount: 0.0
+     - payload.paymentInfo.creditCardOnFile: false
+     - payload.paymentInfo.onlyDTVInCart: false
+    validationType: partial
+  validatePaymentNewPostpaidC2SCredit$100POSTResponse:
+#    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    body: |
+       {"paymentInfo":{"duetoday":{"type":"creditCard","cardNumber":"2221000000000009","expMonth":"04","expYear":"2020","cvv":"123","name":"Sales Testing","zip":"98011"}}}
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "new-postpaid-c2s-creditC-$100"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentNewPostpaidC2SCredit$100POSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/new-postpaid-c2s-creditC-$100/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentNewPostpaidC2SCredit$100GETResponse:
+    body: ""
+    cookies:
+      uuid: "new-postpaid-c2s-creditC-$100"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentNewPostpaidC2SCredit$100GETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/new-postpaid-c2s-creditC-$100/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.dueToday: 100.0
+     - payload.paymentInfo.totalDueTodayFee: 100.0
+    validationType: partial
+  validatePaymentModifyExistingIptvHighriskAddingVoipPOSTResponse:
+    requsstBodyReference: validatePayment/schema/validatePaymentRequest.json
+    headers:
+      Referer: "payment.html"
+    cookies:
+      uuid: "modify-existing-iptv-highrisk-adding-voip"
+    params:
+      type: "paymentInfo"
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyExistingIptvHighriskAddingVoipPOSTResponse
+    type: "POST"
+    url: "/apis/checkout/v1/controller/modify-existing-iptv-highrisk-adding-voip/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validatePaymentModifyExistingIptvHighriskAddingVoipGETResponse:
+    body: ""
+    cookies:
+      uuid: "modify-existing-iptv-highrisk-adding-voip"
+    params:
+      serviceType: None
+    referenceData: "validatePayment/schema/validatePayment.json"
+    testCaseName: validatePaymentModifyExistingIptvHighriskAddingVoipGETResponse
+    type: "GET"
+    url: "/apis/checkout/v1/controller/modify-existing-iptv-highrisk-adding-voip/?type=paymentInfo"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.paymentType: creditCard
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.cardNumber : XXXXXXXXXXXX0009
+     - payload.paymentInfo.paymentMethods.PAYMENT_OPTION_01.autopayEnrolled: false
+     - payload.paymentInfo.dueToday: 0.0
+     - payload.paymentInfo.totalDueTodayFee: 0.0 
+    validationType: partial

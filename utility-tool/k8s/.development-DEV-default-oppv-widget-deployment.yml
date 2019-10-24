@@ -1,0 +1,36 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: "oppv-widget"
+  namespace: "default"
+  labels:
+    app: "oppv-widget"
+    version: "0.0.1"    
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "oppv-widget"
+      version: "0.0.1"
+  template:
+    metadata:
+      labels:
+        app: "oppv-widget"
+        version: "0.0.1"
+    spec:
+      serviceAccount: "default"
+      containers:
+      - env:
+        - name: ENV
+          valueFrom:
+            configMapKeyRef:
+              key: config-env
+              name: "oppv-widget"
+        image: ""
+        imagePullPolicy: Always
+        name: "oppv-widget"
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+      restartPolicy: Always

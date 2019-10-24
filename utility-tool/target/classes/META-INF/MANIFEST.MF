@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: utility-tool
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: kiruthika.l
+Implementation-Vendor-Id: com.att.ccc.config
+Build-Jdk: 1.8.0_112
+Implementation-URL: https://github.com/att/AJSC6/utility-tool
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

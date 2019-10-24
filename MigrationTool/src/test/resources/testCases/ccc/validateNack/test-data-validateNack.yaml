@@ -1,0 +1,254 @@
+testCases:
+  clearCheckoutDataNACK605:
+    testCaseName: clearCheckoutDataNACK605
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack605"
+    body: ""
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/nack605"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  postCloudDataNACK605:
+    testCaseName: postCloudDataNACK605
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack605"
+    body: ""
+    referenceData: validateNack/schema/postCloudData.json
+    type: "GET"
+    url: "/apis/cart/dev/api/nack605"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateCloudDataNACK605:
+    testCaseName: validateCloudDataNACK605
+    type: "GET"
+    url: "/apis/tools/orders/jsonview/order-id"
+    orderIdType: "multiple"
+    asserts:
+     - sales_cart.wireless.line_of_service_groups: "isNotNull"
+     - sales_order.orderData.order_extra_data.FulfillmentMethod: C2S
+     - sales_cart.wireless_shipping.shipping_info_list: "isNotNull"
+     - sales_cart.wireless_shipping.shipping_info_list[0].shipping_group: "isNotNull"
+    validationType: expression
+  clearCheckoutDataNACK581:
+    testCaseName: clearCheckoutDataNACK581
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack581"
+    body: ""
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/nack581"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  postCloudDataNACK581:
+    testCaseName: postCloudDataNACK581
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack581"
+    body: ""
+    referenceData: validateNack/schema/postCloudData.json
+    type: "GET"
+    url: "/apis/cart/dev/api/nack581"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateCloudDataNACK581:
+    testCaseName: validateCloudDataNACK581
+    type: "GET"
+    url: "/apis/tools/orders/jsonview/order-id"
+    orderIdType: "multiple"
+    asserts:
+     - sales_checkout.address.addressInfo.shipping.wireless_ppu: "isNotNull"
+    validationType: expression
+  clearCheckoutDataNACK596:
+    testCaseName: clearCheckoutDataNACK596
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack596"
+    body: ""
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/nack596"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  postCloudDataNACK596:
+    testCaseName: postCloudDataNACK596
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack596"
+    body: ""
+    referenceData: validateNack/schema/postCloudData.json
+    type: "GET"
+    url: "/apis/cart/dev/api/nack596"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateCloudDataNACK596:
+    testCaseName: validateCloudDataNACK596
+    type: "GET"
+    url: "/apis/tools/orders/jsonview/order-id"
+    orderIdType: "multiple"
+    asserts:
+     - sales_checkout: "isNotNull"
+     - sales_order.wireless_account_info.wireless_ban: "isNotNull"
+    validationType: expression
+  clearCheckoutDataNACK565:
+    testCaseName: clearCheckoutDataNACK565
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack565"
+    body: ""
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/nack596"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  postCloudDataNACK565:
+    testCaseName: postCloudDataNACK565
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack565"
+    body: ""
+    referenceData: validateNack/schema/postCloudData.json
+    type: "GET"
+    url: "/apis/cart/dev/api/nack565"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateCloudDataNACK565:
+    testCaseName: validateCloudDataNACK565
+    type: "GET"
+    url: "/apis/tools/orders/jsonview/order-id"
+    orderIdType: "multiple"
+    asserts:
+     - sales_cart.wireless.geography_info: "isNotNull"
+     - sales_cart.wireless.geography_info.market: "isNotNull"
+     - sales_cart.wireless.geography_info.sub_market: "isNotNull"
+     - sales_order.orderData.order_extra_data.dealerCode: "isNotNull"
+    validationType: expression
+  clearCheckoutDataNACK543:
+    testCaseName: clearCheckoutDataNACK543
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack543"
+    body: ""
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/nack543"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  postCloudDataNACK543:
+    testCaseName: postCloudDataNACK543
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack543"
+    body: ""
+    referenceData: validateNack/schema/postCloudData.json
+    type: "GET"
+    url: "/apis/cart/dev/api/nack543"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateCloudDataNACK543:
+    testCaseName: validateCloudDataNACK543
+    type: "GET"
+    url: "/apis/tools/orders/jsonview/order-id"
+    orderIdType: "multiple"
+    asserts:
+     - sales_checkout.credit_info.credit_info.dob: "isNotNull"
+    validationType: expression
+  clearCheckoutDataNACK541:
+    testCaseName: clearCheckoutDataNACK541
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack541"
+    body: ""
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/nack541"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  postCloudDataNACK541:
+    testCaseName: postCloudDataNACK541
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack541"
+    body: ""
+    referenceData: validateNack/schema/postCloudData.json
+    type: "GET"
+    url: "/apis/cart/dev/api/nack541"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateCloudDataNACK541:
+    testCaseName: validateCloudDataNACK541
+    type: "GET"
+    url: "/apis/tools/orders/jsonview/order-id"
+    orderIdType: "multiple"
+    asserts:
+     - sales_checkout.credit_info.credit_info.ssn: "isNotNull"
+    validationType: expression
+  clearCheckoutDataNACK546:
+    testCaseName: clearCheckoutDataNACK546
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack546"
+    body: ""
+    type: "GET"
+    url: "/apis/cart/tools/mockdata/clearcheckoutdata/nack546"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  postCloudDataNACK546:
+    testCaseName: postCloudDataNACK546
+    params:
+        serviceType: "None"
+    cookies:
+        uuid: "nack546"
+    body: ""
+    referenceData: validateNack/schema/postCloudData.json
+    type: "GET"
+    url: "/apis/cart/dev/api/nack546"
+    asserts:
+     - response.status: success
+     - response.redirect: false
+    validationType: partial
+  validateCloudDataNACK546:
+    testCaseName: validateCloudDataNACK546
+    type: "GET"
+    url: "/apis/tools/orders/jsonview/order-id"
+    orderIdType: "multiple"
+    asserts:
+     - sales_checkout.personal_info.contact_info.contact_numbers: "isNotNull"
+     - sales_checkout.personal_info.contact_info.contact_numbers[0].number: "isNotNull"
+    validationType: expression

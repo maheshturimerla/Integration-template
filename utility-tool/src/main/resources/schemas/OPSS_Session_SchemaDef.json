@@ -1,0 +1,18 @@
+{
+	"opss_session_info": {
+		"namedcache": "opss_session_info",
+		"contenttype": "application/json",
+		"version": "1.0",
+		"cachettl": 1800,
+		"backingmapttl": 1801,
+		"maxlength": 10000,
+		"strictvalidation": "false",
+		"prepaidActivation": {
+			"versions": {
+				"v1": {
+					
+				}
+			}
+		}
+	}
+}

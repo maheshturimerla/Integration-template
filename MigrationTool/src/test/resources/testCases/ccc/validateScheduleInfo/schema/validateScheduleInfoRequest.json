@@ -1,0 +1,107 @@
+{
+"validateScheduleInfoModifyIptvHisaVoipModifyAllPostRequest":{
+"contactInfo": {
+"firstName": "Gowtham",
+"lastName": "Nallavadla",
+"primaryContactNumber": "2145755798",
+"primaryContactType": "work",
+"secondaryContactType":"Other",
+"comments" : "I need it ASAP, please do it......."
+},
+"scheduleDateSelection":{
+"preferSpecificAppointment":"false"
+}
+},
+"validateScheduleInfoModifyDtvHsiaVoipNonPublishedListingPostRequest":{
+"contactInfo": {
+"firstName": "Gowtham",
+"lastName": "Nallavadla",
+"primaryContactNumber": "2145755798",
+"primaryContactType": "work",
+"secondaryContactType":"Other",
+"comments" : "I need it ASAP, please do it......."
+},
+"scheduleDateSelection":{
+"preferSpecificAppointment":"false"
+}
+},
+"validateScheduleInfoProvideIptvVoipPostRequest":{
+"contactInfo": {
+"firstName": "Gowtham",
+"lastName": "Nallavadla",
+"primaryContactNumber": "2145755798",
+"primaryContactType": "work",
+"secondaryContactType":"Other",
+"comments" : "I need it ASAP, please do it......."
+},
+"scheduleDateSelection":{
+"preferSpecificAppointment":"false"
+}
+},
+"validateScheduleInfoProvideDtvPostRequest":{
+"contactInfo": {
+"firstName": "Gowtham",
+"lastName": "Nallavadla",
+"primaryContactNumber": "2145755798",
+"primaryContactType": "work",
+"secondaryContactType":"Other",
+"comments" : "I need it ASAP, please do it......."
+},
+"scheduleDateSelection":{
+"preferSpecificAppointment":"false"
+}
+},
+"validateScheduleInfoProvideHsiaPostRequest":{
+"contactInfo": {
+"firstName": "Gowtham",
+"lastName": "Nallavadla",
+"primaryContactNumber": "2145755798",
+"primaryContactType": "work",
+"secondaryContactType":"Other",
+"comments" : "I need it ASAP, please do it......."
+},
+"scheduleDateSelection":{
+"preferSpecificAppointment":"false"
+}
+},
+"validateScheduleInfoProvideIptvVoipPortinPostRequest":{
+"contactInfo": {
+"firstName": "Gowtham",
+"lastName": "Nallavadla",
+"primaryContactNumber": "2145755798",
+"primaryContactType": "work",
+"secondaryContactType":"Other",
+"comments" : "I need it ASAP, please do it......."
+},
+"scheduleDateSelection":{
+"preferSpecificAppointment":"false"
+}
+},
+"validateScheduleInfoProvideIptvVoipPostRequest":{
+"contactInfo": {
+"firstName": "Gowtham",
+"lastName": "Nallavadla",
+"primaryContactNumber": "2145755798",
+"primaryContactType": "work",
+"secondaryContactType":"Other",
+"comments" : "I need it ASAP, please do it......."
+},
+"scheduleDateSelection":{
+"preferSpecificAppointment":"false"
+}
+},
+"validateScheduleInfoProvideIptvVoipPostRequest":{
+"contactInfo": {
+"firstName": "Gowtham",
+"lastName": "Nallavadla",
+"primaryContactNumber": "2145755798",
+"primaryContactType": "work",
+"secondaryContactType":"Other",
+"comments" : "I need it ASAP, please do it......."
+},
+"scheduleDateSelection":{
+"preferSpecificAppointment":"false"
+}
+}
+
+}

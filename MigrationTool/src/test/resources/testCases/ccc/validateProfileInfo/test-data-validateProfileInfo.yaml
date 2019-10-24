@@ -1,0 +1,112 @@
+testCases:
+  validateProfileInfoModifyDtvHsiaVoipNonPublishedListing:
+   referenceData: validateAccountSetup/schema/validateAccountSetup.json
+   cookies:
+        uuid: "modify-dtv-hsia-voip-non-published-listing"
+   
+   type: "GET"
+   url: "/apis/profile/v1/profileInfo/modify-dtv-hsia-voip-non-published-listing"
+   testCaseName: validateProfileInfoModifyDtvHsiaVoipNonPublishedListing
+   asserts:
+     - response.status: success
+     - response.redirect: false
+   validationType: partial
+  validateProfileInfoModifyIptvHisaVoipModifyAll:
+   referenceData: validateProfileInfo/schema/validateProfileInfo.json
+   cookies:
+        uuid: "modify-iptvhisavoip-modifyall"
+   type: "GET"
+   url: "/apis/profile/v1/profileInfo/modify-iptvhisavoip-modifyall"
+   testCaseName: validateProfileInfoModifyDtvHsiaVoipNonPublishedListing
+   asserts:
+      - response.status: success
+      - response.redirect: false
+      - payload: true
+   validationType: partial
+  validateProfileInfoModifyDtvRtpProducts:
+    cookies:
+         uuid: modify-dtv-rtpproducts
+    referenceData: validateProfileInfo/schema/validateProfileInfo.json
+    type: GET
+    url: "/apis/profile/v1/profileInfo/modify-dtv-rtpproducts"
+    testCaseName: validateProfileInfoModifyDtvRtpProducts
+    asserts:
+      - response.status: success
+      - response.redirect: false
+      - payload: true
+    validationType: partial
+  validateProfileInfoModifyDtvAddingSubsAccessoriesExpressCheckout:
+    cookies:
+         uuid: "modify-dtv-adding-subs-accessories-express-checkout"
+    referenceData: validateProfileInfo/schema/validateProfileInfo.json
+    type: "GET"
+    url: "/apis/profile/v1/profileInfo/modify-dtv-adding-subs-accessories-express-checkout"
+    testCaseName: validateProfileInfoModifyDtvAddingSubsAccessoriesExpressCheckout
+    asserts:
+      - response.status: success
+      - response.redirect: false
+      - payload: true
+    validationType: partial
+  validateProfileInfoModifyIptvAddReceiverSelfInstallHybridCheckout:
+    cookies:
+         uuid: modify-iptv-add-receiver-selfInstall-hybrid-checkout
+    referenceData: validateProfileInfo/schema/validateProfileInfo.json
+    type: GET
+    url: "/apis/profile/v1/profileInfo/modify-iptv-add-receiver-selfInstall-hybrid-checkout"
+    testCaseName: validateProfileInfoModifyIptvAddReceiverSelfInstallHybridCheckout
+    asserts:
+      - response.status: success
+      - response.redirect: false
+      - payload: true
+  validationType: partial
+  validateProfileInfoModifyIptvHsiaVoipAddChannelonsProtectionplansReceiverVoipResponse:
+    body: ""
+    cookies:
+      uuid: modify-iptv-hsia-voip-add-channelons-protectionplans-receiver-voip
+    referenceData: validateProfileInfo/schema/validateProfileInfo.json
+    testCaseName: validateProfileInfoModifyIptvHsiaVoipAddChannelonsProtectionplansReceiverVoipResponse
+    type: GET
+    url: /apis/cart/v1/modify-iptv-hsia-voip-add-channelons-protectionplans-receiver-voip
+    asserts:
+      - response.status: success
+      - response.redirect: false
+      - payload: true
+  validationType: partial
+  validateProfileInfoModifySmbIptvHsiaProvideVoipPortInResponse:
+    cookies:
+      uuid: modify-smb-iptv-hsia-provide-voip-portIn
+    referenceData: validateProfileInfo/schema/validateProfileInfo.json
+    type: GET
+    url: /apis/cart/v1/modify-smb-iptv-hsia-provide-voip-portIn
+    testCaseName: validateProfileInfoModifySmbIptvHsiaProvideVoipPortInResponse
+    asserts:
+      - response.status: success
+      - response.redirect: false
+      - payload: true
+  validationType: partial
+  validateProfileInfoModifySmbHsiaAddDtvBusinessApps:
+    testCaseName: validateProfileInfoModifySmbHsiaAddDtvBusinessApps
+    cookies:
+        uuid: "modify-smb-hsia-add-dtv-businessApps"
+    body: ""
+    referenceData: validateProfileInfo/schema/validateProfileInfo.json
+    type: "GET"
+    url: "/apis/profile/v1/profileInfo/modify-smb-hsia-add-dtv-businessApps"
+    asserts:
+      - response.status: success
+      - response.redirect: false
+      - payload: true
+  validationType: partial
+  validateProfileInfoModifySmbPotsAddHsiaTechInstall:
+    testCaseName: validateProfileInfoModifySmbPotsAddHsiaTechInstall
+    cookies:
+        uuid: "modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    body: ""
+    referenceData: validateProfileInfo/schema/validateProfileInfo.json
+    type: "GET"
+    url: "/apis/profile/v1/profileInfo/modify-smb-existing-pots-highrisk-add-hsia-tech-install"
+    asserts:
+      - response.status: success
+      - response.redirect: false
+      - payload: true
+  validationType: partial
